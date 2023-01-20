@@ -32,7 +32,7 @@ public class TwitterBarChart implements TwitterView {
         DefaultCategoryDataset dataset = (DefaultCategoryDataset) datasetCreator.createDataset(data1, data2, data3, data4, name1, name2, name3, name4);
 
         JFreeChart barChart = ChartFactory.createBarChart(
-                "Diagrama de barras",
+                "Tweets totales (48h)",
                 "",
                 "Tweets",
                 dataset,

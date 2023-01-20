@@ -40,7 +40,7 @@ public class TwitterHistogram implements TwitterView {
         DefaultCategoryDataset dataset = (DefaultCategoryDataset) datasetCreator.createDataset(data1, data2, data3, data4, name1, name2, name3, name4);
 
         JFreeChart chart = ChartFactory.createBarChart(
-                "Tweets por día",
+                "Tweets por hora",
                 "",
                 "Tweets",
                 dataset,

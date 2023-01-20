@@ -36,7 +36,7 @@ public class TwitterAPIQueries {
         ArrayList<NameValuePair> queryParameters;
         queryParameters = new ArrayList<>();
         queryParameters.add(new BasicNameValuePair("query", searchString));
-        queryParameters.add(new BasicNameValuePair("granularity", "day"));
+        queryParameters.add(new BasicNameValuePair("granularity", "minute"));
         uriBuilder.addParameters(queryParameters);
 
         HttpGet httpGet = new HttpGet(uriBuilder.build());

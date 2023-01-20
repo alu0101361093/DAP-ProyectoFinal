@@ -27,7 +27,7 @@ public class TwitterPieChart implements TwitterView {
         PieDataset dataset = (DefaultPieDataset) datasetCreator.createDataset(data1, data2, data3, data4, name1, name2, name3, name4);
 
         JFreeChart barChart = ChartFactory.createPieChart(
-                "Diagrama de tarta",
+                "Últimas 48h",
                 dataset,
                 true, false, false);
 

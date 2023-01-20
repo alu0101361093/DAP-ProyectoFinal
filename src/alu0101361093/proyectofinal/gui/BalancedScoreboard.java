@@ -219,23 +219,20 @@ public class BalancedScoreboard extends JFrame {
         final ChartPanel chartPanel3 = chartPanels.get(2);
         final ChartPanel chartPanel4 = chartPanels.get(3);
 
-        chartPanel1.setPreferredSize(new Dimension(500,400));
-        chartPanel2.setPreferredSize(new Dimension(500,400));
-        chartPanel3.setPreferredSize(new Dimension(500,400));
-        chartPanel4.setPreferredSize(new Dimension(500,400));
+        chartPanel1.setPreferredSize(new Dimension(550,400));
+        chartPanel2.setPreferredSize(new Dimension(550,400));
+        chartPanel3.setPreferredSize(new Dimension(550,400));
+        chartPanel4.setPreferredSize(new Dimension(550,400));
 
         panel1.add(chartPanel1, BorderLayout.CENTER);
         panel1.validate();
 
-        chartPanel2.setPreferredSize(new Dimension(500,400));
         panel2.add(chartPanel2, BorderLayout.CENTER);
         panel2.validate();
 
-        chartPanel3.setPreferredSize(new Dimension(500,400));
         panel3.add(chartPanel3, BorderLayout.CENTER);
         panel3.validate();
 
-        chartPanel4.setPreferredSize(new Dimension(500,400));
         panel4.add(chartPanel4, BorderLayout.CENTER);
         panel4.validate();
 

@@ -1,10 +1,9 @@
 package alu0101361093.proyectofinal.twitterdatasetcreator;
 
 import org.jfree.data.general.Dataset;
-import org.jfree.data.time.Day;
-import org.jfree.data.time.TimeSeries;
-import org.jfree.data.time.TimeSeriesCollection;
+import org.jfree.data.time.*;
 import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.json.JSONArray;
@@ -25,39 +24,40 @@ public class TwitterTimeSeriesDatasetCreator implements TwitterDatasetCreator {
         dataset.setDomainIsPointsInTime(true);
 
         if (!name1.isEmpty() || !(name1 == "#") || !(name1 == "@")) {
-            final TimeSeries s1 = new TimeSeries(name1, Day.class);
+            final TimeSeries s1 = new TimeSeries(name1, Minute.class);
             for (Object o : (JSONArray) ( (JSONObject) data1).get("data") ) {
                 JSONObject jsonObject = (JSONObject) o;
+                LocalDateTime recordTime = formatter.parseLocalDateTime((String) jsonObject.get("start"));
                 LocalDate recordDate = formatter.parseLocalDate((String) jsonObject.get("start"));
-                s1.add(new Day(recordDate.getDayOfMonth(), recordDate.getMonthOfYear(), recordDate.getYear()), (int) jsonObject.get("tweet_count"));
+                s1.add(new Minute(recordTime.getMinuteOfHour(), recordTime.getHourOfDay(), recordDate.getDayOfMonth(), recordDate.getMonthOfYear(), recordDate.getYear()), (int) jsonObject.get("tweet_count"));
             }
             dataset.addSeries(s1);
         }
         if (!name2.isEmpty() || !(name2 == "#") || !(name2 == "@")) {
-            final TimeSeries s2 = new TimeSeries(name2, Day.class);
+            final TimeSeries s2 = new TimeSeries(name2, Minute.class);
             for (Object o : (JSONArray) ( (JSONObject) data2).get("data") ) {
                 JSONObject jsonObject = (JSONObject) o;
+                LocalDateTime recordTime = formatter.parseLocalDateTime((String) jsonObject.get("start"));
                 LocalDate recordDate = formatter.parseLocalDate((String) jsonObject.get("start"));
-                s2.add(new Day(recordDate.getDayOfMonth(), recordDate.getMonthOfYear(), recordDate.getYear()), (int) jsonObject.get("tweet_count"));
-            }
+                s2.add(new Minute(recordTime.getMinuteOfHour(), recordTime.getHourOfDay(), recordDate.getDayOfMonth(), recordDate.getMonthOfYear(), recordDate.getYear()), (int) jsonObject.get("tweet_count"));}
             dataset.addSeries(s2);
         }
         if (!name3.isEmpty() || !(name3 == "#") || !(name3 == "@")) {
-            final TimeSeries s3 = new TimeSeries(name3, Day.class);
+            final TimeSeries s3 = new TimeSeries(name3, Minute.class);
             for (Object o : (JSONArray) ( (JSONObject) data3).get("data") ) {
                 JSONObject jsonObject = (JSONObject) o;
+                LocalDateTime recordTime = formatter.parseLocalDateTime((String) jsonObject.get("start"));
                 LocalDate recordDate = formatter.parseLocalDate((String) jsonObject.get("start"));
-                s3.add(new Day(recordDate.getDayOfMonth(), recordDate.getMonthOfYear(), recordDate.getYear()), (int) jsonObject.get("tweet_count"));
-            }
+                s3.add(new Minute(recordTime.getMinuteOfHour(), recordTime.getHourOfDay(), recordDate.getDayOfMonth(), recordDate.getMonthOfYear(), recordDate.getYear()), (int) jsonObject.get("tweet_count"));}
             dataset.addSeries(s3);
         }
         if (!name4.isEmpty() || !(name4 == "#") || !(name4 == "@")) {
-            final TimeSeries s4 = new TimeSeries(name4, Day.class);
+            final TimeSeries s4 = new TimeSeries(name4, Minute.class);
             for (Object o : (JSONArray) ( (JSONObject) data4).get("data") ) {
                 JSONObject jsonObject = (JSONObject) o;
+                LocalDateTime recordTime = formatter.parseLocalDateTime((String) jsonObject.get("start"));
                 LocalDate recordDate = formatter.parseLocalDate((String) jsonObject.get("start"));
-                s4.add(new Day(recordDate.getDayOfMonth(), recordDate.getMonthOfYear(), recordDate.getYear()), (int) jsonObject.get("tweet_count"));
-            }
+                s4.add(new Minute(recordTime.getMinuteOfHour(), recordTime.getHourOfDay(), recordDate.getDayOfMonth(), recordDate.getMonthOfYear(), recordDate.getYear()), (int) jsonObject.get("tweet_count"));}
             dataset.addSeries(s4);
         }
 
