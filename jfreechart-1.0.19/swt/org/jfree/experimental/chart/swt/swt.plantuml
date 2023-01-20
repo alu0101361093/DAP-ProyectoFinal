@@ -1,0 +1,167 @@
+@startuml
+
+title __SWT's Class Diagram__\n
+
+  namespace org.jfree.experimental.chart.swt {
+    class org.jfree.experimental.chart.swt.ChartComposite {
+        {static} + DEFAULT_BUFFER_USED : boolean
+        {static} + DEFAULT_HEIGHT : int
+        {static} + DEFAULT_MAXIMUM_DRAW_HEIGHT : int
+        {static} + DEFAULT_MAXIMUM_DRAW_WIDTH : int
+        {static} + DEFAULT_MINIMUM_DRAW_HEIGHT : int
+        {static} + DEFAULT_MINIMUM_DRAW_WIDTH : int
+        {static} + DEFAULT_WIDTH : int
+        {static} + DEFAULT_ZOOM_TRIGGER_DISTANCE : int
+        {static} + PRINT_COMMAND : String
+        {static} + PROPERTIES_COMMAND : String
+        {static} + SAVE_COMMAND : String
+        {static} + ZOOM_IN_BOTH_COMMAND : String
+        {static} + ZOOM_IN_DOMAIN_COMMAND : String
+        {static} + ZOOM_IN_RANGE_COMMAND : String
+        {static} + ZOOM_OUT_BOTH_COMMAND : String
+        {static} + ZOOM_OUT_DOMAIN_COMMAND : String
+        {static} + ZOOM_OUT_RANGE_COMMAND : String
+        {static} + ZOOM_RESET_BOTH_COMMAND : String
+        {static} + ZOOM_RESET_DOMAIN_COMMAND : String
+        {static} + ZOOM_RESET_RANGE_COMMAND : String
+        {static} # localizationResources : ResourceBundle
+        - anchor : Point2D
+        - canvas : Canvas
+        - chart : JFreeChart
+        - chartBuffer : Image
+        - chartBufferHeight : int
+        - chartBufferWidth : int
+        - chartMouseListeners : EventListenerList
+        - displayToolTips : boolean
+        - domainZoomable : boolean
+        - enforceFileExtensions : boolean
+        - horizontalAxisTrace : boolean
+        - horizontalTraceLineY : int
+        - info : ChartRenderingInfo
+        - maximumDrawHeight : int
+        - maximumDrawWidth : int
+        - minimumDrawHeight : int
+        - minimumDrawWidth : int
+        - orientation : PlotOrientation
+        - popup : Menu
+        - rangeZoomable : boolean
+        - refreshBuffer : boolean
+        - scaleX : double
+        - scaleY : double
+        - useBuffer : boolean
+        - verticalAxisTrace : boolean
+        - verticalTraceLineX : int
+        - zoomInBothMenuItem : MenuItem
+        - zoomInDomainMenuItem : MenuItem
+        - zoomInFactor : double
+        - zoomInRangeMenuItem : MenuItem
+        - zoomOutBothMenuItem : MenuItem
+        - zoomOutDomainMenuItem : MenuItem
+        - zoomOutFactor : double
+        - zoomOutRangeMenuItem : MenuItem
+        - zoomPoint : Point
+        - zoomRectangle : Rectangle
+        - zoomResetBothMenuItem : MenuItem
+        - zoomResetDomainMenuItem : MenuItem
+        - zoomResetRangeMenuItem : MenuItem
+        - zoomTriggerDistance : int
+        + ChartComposite()
+        + ChartComposite()
+        + ChartComposite()
+        + ChartComposite()
+        + ChartComposite()
+        + addChartMouseListener()
+        + addSWTListener()
+        + chartChanged()
+        + chartProgress()
+        + createChartPrintJob()
+        + dispose()
+        + doSaveAs()
+        + forceRedraw()
+        + getAnchor()
+        + getChart()
+        + getChartRenderingInfo()
+        + getHorizontalAxisTrace()
+        + getScaleX()
+        + getScaleY()
+        + getScreenDataArea()
+        + getScreenDataArea()
+        + getToolTipText()
+        + getVerticalAxisTrace()
+        + getZoomInFactor()
+        + getZoomOutFactor()
+        + isDomainZoomable()
+        + isEnforceFileExtensions()
+        + isRangeZoomable()
+        + mouseDoubleClick()
+        + mouseDown()
+        + mouseMove()
+        + mouseUp()
+        + paintControl()
+        + print()
+        + removeChartMouseListener()
+        + restoreAutoBounds()
+        + restoreAutoDomainBounds()
+        + restoreAutoRangeBounds()
+        + scale()
+        + setChart()
+        + setDisplayToolTips()
+        + setDomainZoomable()
+        + setEnforceFileExtensions()
+        + setHorizontalAxisTrace()
+        + setRangeZoomable()
+        + setVerticalAxisTrace()
+        + setZoomInFactor()
+        + setZoomOutFactor()
+        + translateJava2DToScreen()
+        + translateScreenToJava2D()
+        + translateScreenToJavaSWT()
+        + widgetDefaultSelected()
+        + widgetSelected()
+        + zoom()
+        + zoomInBoth()
+        + zoomInDomain()
+        + zoomInRange()
+        + zoomOutBoth()
+        + zoomOutDomain()
+        + zoomOutRange()
+        # createPopupMenu()
+        # displayPopupMenu()
+        # setAnchor()
+        - attemptEditChartProperties()
+        - getPointInRectangle()
+    }
+  }
+  
+
+  namespace org.jfree.experimental.chart.swt {
+    class org.jfree.experimental.chart.swt.ChartPrintJob {
+        {static} - BORDER : double
+        - jobName : String
+        + ChartPrintJob()
+        + print()
+        # startPrintJob()
+        ~ calcFittedSize()
+        - getPrintableArea()
+        - printComposite()
+    }
+  }
+  
+
+  org.jfree.experimental.chart.swt.ChartComposite .up.|> ChartChangeListener
+  org.jfree.experimental.chart.swt.ChartComposite .up.|> ChartProgressListener
+  org.jfree.experimental.chart.swt.ChartComposite .up.|> MouseListener
+  org.jfree.experimental.chart.swt.ChartComposite .up.|> MouseMoveListener
+  org.jfree.experimental.chart.swt.ChartComposite .up.|> PaintListener
+  org.jfree.experimental.chart.swt.ChartComposite .up.|> Printable
+  org.jfree.experimental.chart.swt.ChartComposite .up.|> SelectionListener
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

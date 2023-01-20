@@ -1,0 +1,631 @@
+@startuml
+
+title __DIAL's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        abstract class org.jfree.chart.plot.dial.AbstractDialLayer {
+            - listenerList : EventListenerList
+            - visible : boolean
+            + addChangeListener()
+            + clone()
+            + equals()
+            + hasListener()
+            + hashCode()
+            + isVisible()
+            + removeChangeListener()
+            + setVisible()
+            # AbstractDialLayer()
+            # notifyListeners()
+            - readObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        class org.jfree.chart.plot.dial.ArcDialFrame {
+            {static} ~ serialVersionUID : long
+            - backgroundPaint : Paint
+            - extent : double
+            - foregroundPaint : Paint
+            - innerRadius : double
+            - outerRadius : double
+            - startAngle : double
+            - stroke : Stroke
+            + ArcDialFrame()
+            + ArcDialFrame()
+            + clone()
+            + draw()
+            + equals()
+            + getBackgroundPaint()
+            + getExtent()
+            + getForegroundPaint()
+            + getInnerRadius()
+            + getOuterRadius()
+            + getStartAngle()
+            + getStroke()
+            + getWindow()
+            + hashCode()
+            + isClippedToWindow()
+            + setBackgroundPaint()
+            + setExtent()
+            + setForegroundPaint()
+            + setInnerRadius()
+            + setOuterRadius()
+            + setStartAngle()
+            + setStroke()
+            # getOuterWindow()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        class org.jfree.chart.plot.dial.DialBackground {
+            {static} ~ serialVersionUID : long
+            - gradientPaintTransformer : GradientPaintTransformer
+            - paint : Paint
+            + DialBackground()
+            + DialBackground()
+            + clone()
+            + draw()
+            + equals()
+            + getGradientPaintTransformer()
+            + getPaint()
+            + hashCode()
+            + isClippedToWindow()
+            + setGradientPaintTransformer()
+            + setPaint()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        class org.jfree.chart.plot.dial.DialCap {
+            {static} ~ serialVersionUID : long
+            - fillPaint : Paint
+            - outlinePaint : Paint
+            - outlineStroke : Stroke
+            - radius : double
+            + DialCap()
+            + clone()
+            + draw()
+            + equals()
+            + getFillPaint()
+            + getOutlinePaint()
+            + getOutlineStroke()
+            + getRadius()
+            + hashCode()
+            + isClippedToWindow()
+            + setFillPaint()
+            + setOutlinePaint()
+            + setOutlineStroke()
+            + setRadius()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        interface org.jfree.chart.plot.dial.DialFrame {
+            {abstract} + getWindow()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        interface org.jfree.chart.plot.dial.DialLayer {
+            {abstract} + addChangeListener()
+            {abstract} + draw()
+            {abstract} + hasListener()
+            {abstract} + isClippedToWindow()
+            {abstract} + isVisible()
+            {abstract} + removeChangeListener()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        class org.jfree.chart.plot.dial.DialLayerChangeEvent {
+            - layer : DialLayer
+            + DialLayerChangeEvent()
+            + getDialLayer()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        interface org.jfree.chart.plot.dial.DialLayerChangeListener {
+            {abstract} + dialLayerChanged()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        class org.jfree.chart.plot.dial.DialPlot {
+            - background : DialLayer
+            - cap : DialLayer
+            - datasetToScaleMap : ObjectList
+            - datasets : ObjectList
+            - dialFrame : DialFrame
+            - layers : List
+            - pointers : List
+            - scales : ObjectList
+            - viewH : double
+            - viewW : double
+            - viewX : double
+            - viewY : double
+            + DialPlot()
+            + DialPlot()
+            + addLayer()
+            + addPointer()
+            + addScale()
+            + dialLayerChanged()
+            + draw()
+            + equals()
+            + getBackground()
+            + getCap()
+            + getDataset()
+            + getDataset()
+            + getDatasetCount()
+            + getDialFrame()
+            + getLayerIndex()
+            + getPlotType()
+            + getPointerForDataset()
+            + getPointerIndex()
+            + getScale()
+            + getScaleForDataset()
+            + getValue()
+            + getViewHeight()
+            + getViewWidth()
+            + getViewX()
+            + getViewY()
+            + hashCode()
+            + mapDatasetToScale()
+            {static} + rectangleByRadius()
+            + removeLayer()
+            + removeLayer()
+            + removePointer()
+            + removePointer()
+            + setBackground()
+            + setCap()
+            + setDataset()
+            + setDataset()
+            + setDialFrame()
+            + setView()
+            - readObject()
+            - viewToFrame()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        abstract class org.jfree.chart.plot.dial.DialPointer {
+            ~ datasetIndex : int
+            ~ radius : double
+            + clone()
+            + equals()
+            + getDatasetIndex()
+            + getRadius()
+            + hashCode()
+            + isClippedToWindow()
+            + setDatasetIndex()
+            + setRadius()
+            # DialPointer()
+            # DialPointer()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        class org.jfree.chart.plot.dial.DialPointer.Pin {
+            {static} ~ serialVersionUID : long
+            - paint : Paint
+            - stroke : Stroke
+            + Pin()
+            + Pin()
+            + draw()
+            + equals()
+            + getPaint()
+            + getStroke()
+            + hashCode()
+            + setPaint()
+            + setStroke()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        class org.jfree.chart.plot.dial.DialPointer.Pointer {
+            {static} ~ serialVersionUID : long
+            - fillPaint : Paint
+            - outlinePaint : Paint
+            - widthRadius : double
+            + Pointer()
+            + Pointer()
+            + draw()
+            + equals()
+            + getFillPaint()
+            + getOutlinePaint()
+            + getWidthRadius()
+            + hashCode()
+            + setFillPaint()
+            + setOutlinePaint()
+            + setWidthRadius()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        interface org.jfree.chart.plot.dial.DialScale {
+            {abstract} + angleToValue()
+            {abstract} + valueToAngle()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        class org.jfree.chart.plot.dial.DialTextAnnotation {
+            {static} ~ serialVersionUID : long
+            - anchor : TextAnchor
+            - angle : double
+            - font : Font
+            - label : String
+            - paint : Paint
+            - radius : double
+            + DialTextAnnotation()
+            + clone()
+            + draw()
+            + equals()
+            + getAnchor()
+            + getAngle()
+            + getFont()
+            + getLabel()
+            + getPaint()
+            + getRadius()
+            + hashCode()
+            + isClippedToWindow()
+            + setAnchor()
+            + setAngle()
+            + setFont()
+            + setLabel()
+            + setPaint()
+            + setRadius()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        class org.jfree.chart.plot.dial.DialValueIndicator {
+            {static} ~ serialVersionUID : long
+            - angle : double
+            - backgroundPaint : Paint
+            - datasetIndex : int
+            - font : Font
+            - formatter : NumberFormat
+            - frameAnchor : RectangleAnchor
+            - insets : RectangleInsets
+            - maxTemplateValue : Number
+            - outlinePaint : Paint
+            - outlineStroke : Stroke
+            - paint : Paint
+            - radius : double
+            - templateValue : Number
+            - textAnchor : TextAnchor
+            - valueAnchor : RectangleAnchor
+            + DialValueIndicator()
+            + DialValueIndicator()
+            + clone()
+            + draw()
+            + equals()
+            + getAngle()
+            + getBackgroundPaint()
+            + getDatasetIndex()
+            + getFont()
+            + getFrameAnchor()
+            + getInsets()
+            + getMaxTemplateValue()
+            + getNumberFormat()
+            + getOutlinePaint()
+            + getOutlineStroke()
+            + getPaint()
+            + getRadius()
+            + getTemplateValue()
+            + getTextAnchor()
+            + getValueAnchor()
+            + hashCode()
+            + isClippedToWindow()
+            + setAngle()
+            + setBackgroundPaint()
+            + setDatasetIndex()
+            + setFont()
+            + setFrameAnchor()
+            + setInsets()
+            + setMaxTemplateValue()
+            + setNumberFormat()
+            + setOutlinePaint()
+            + setOutlineStroke()
+            + setPaint()
+            + setRadius()
+            + setTemplateValue()
+            + setTextAnchor()
+            + setValueAnchor()
+            - fixToRange()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        class org.jfree.chart.plot.dial.StandardDialFrame {
+            {static} ~ serialVersionUID : long
+            - backgroundPaint : Paint
+            - foregroundPaint : Paint
+            - radius : double
+            - stroke : Stroke
+            + StandardDialFrame()
+            + clone()
+            + draw()
+            + equals()
+            + getBackgroundPaint()
+            + getForegroundPaint()
+            + getRadius()
+            + getStroke()
+            + getWindow()
+            + hashCode()
+            + isClippedToWindow()
+            + setBackgroundPaint()
+            + setForegroundPaint()
+            + setRadius()
+            + setStroke()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        class org.jfree.chart.plot.dial.StandardDialRange {
+            {static} ~ serialVersionUID : long
+            - innerRadius : double
+            - lowerBound : double
+            - outerRadius : double
+            - paint : Paint
+            - scaleIndex : int
+            - upperBound : double
+            + StandardDialRange()
+            + StandardDialRange()
+            + clone()
+            + draw()
+            + equals()
+            + getInnerRadius()
+            + getLowerBound()
+            + getOuterRadius()
+            + getPaint()
+            + getScaleIndex()
+            + getUpperBound()
+            + hashCode()
+            + isClippedToWindow()
+            + setBounds()
+            + setInnerRadius()
+            + setLowerBound()
+            + setOuterRadius()
+            + setPaint()
+            + setScaleIndex()
+            + setUpperBound()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      namespace dial {
+        class org.jfree.chart.plot.dial.StandardDialScale {
+            {static} ~ serialVersionUID : long
+            - extent : double
+            - firstTickLabelVisible : boolean
+            - lowerBound : double
+            - majorTickIncrement : double
+            - majorTickLength : double
+            - majorTickPaint : Paint
+            - majorTickStroke : Stroke
+            - minorTickCount : int
+            - minorTickLength : double
+            - minorTickPaint : Paint
+            - minorTickStroke : Stroke
+            - startAngle : double
+            - tickLabelFont : Font
+            - tickLabelFormatter : NumberFormat
+            - tickLabelOffset : double
+            - tickLabelPaint : Paint
+            - tickLabelsVisible : boolean
+            - tickRadius : double
+            - upperBound : double
+            + StandardDialScale()
+            + StandardDialScale()
+            + angleToValue()
+            + clone()
+            + draw()
+            + equals()
+            + getExtent()
+            + getFirstTickLabelVisible()
+            + getLowerBound()
+            + getMajorTickIncrement()
+            + getMajorTickLength()
+            + getMajorTickPaint()
+            + getMajorTickStroke()
+            + getMinorTickCount()
+            + getMinorTickLength()
+            + getMinorTickPaint()
+            + getMinorTickStroke()
+            + getStartAngle()
+            + getTickLabelFont()
+            + getTickLabelFormatter()
+            + getTickLabelOffset()
+            + getTickLabelPaint()
+            + getTickLabelsVisible()
+            + getTickRadius()
+            + getUpperBound()
+            + hashCode()
+            + isClippedToWindow()
+            + setExtent()
+            + setFirstTickLabelVisible()
+            + setLowerBound()
+            + setMajorTickIncrement()
+            + setMajorTickLength()
+            + setMajorTickPaint()
+            + setMajorTickStroke()
+            + setMinorTickCount()
+            + setMinorTickLength()
+            + setMinorTickPaint()
+            + setMinorTickStroke()
+            + setStartAngle()
+            + setTickLabelFont()
+            + setTickLabelFormatter()
+            + setTickLabelOffset()
+            + setTickLabelPaint()
+            + setTickLabelsVisible()
+            + setTickRadius()
+            + setUpperBound()
+            + valueToAngle()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  org.jfree.chart.plot.dial.AbstractDialLayer .up.|> DialLayer
+  org.jfree.chart.plot.dial.ArcDialFrame .up.|> Cloneable
+  org.jfree.chart.plot.dial.ArcDialFrame .up.|> DialFrame
+  org.jfree.chart.plot.dial.ArcDialFrame .up.|> PublicCloneable
+  org.jfree.chart.plot.dial.ArcDialFrame .up.|> Serializable
+  org.jfree.chart.plot.dial.DialBackground .up.|> Cloneable
+  org.jfree.chart.plot.dial.DialBackground .up.|> DialLayer
+  org.jfree.chart.plot.dial.DialBackground .up.|> PublicCloneable
+  org.jfree.chart.plot.dial.DialBackground .up.|> Serializable
+  org.jfree.chart.plot.dial.DialCap .up.|> Cloneable
+  org.jfree.chart.plot.dial.DialCap .up.|> DialLayer
+  org.jfree.chart.plot.dial.DialCap .up.|> PublicCloneable
+  org.jfree.chart.plot.dial.DialCap .up.|> Serializable
+  org.jfree.chart.plot.dial.DialPlot .up.|> DialLayerChangeListener
+  org.jfree.chart.plot.dial.DialPointer .up.|> Cloneable
+  org.jfree.chart.plot.dial.DialPointer .up.|> DialLayer
+  org.jfree.chart.plot.dial.DialPointer .up.|> PublicCloneable
+  org.jfree.chart.plot.dial.DialPointer .up.|> Serializable
+  org.jfree.chart.plot.dial.DialPointer +-down- org.jfree.chart.plot.dial.DialPointer.Pin
+  org.jfree.chart.plot.dial.DialPointer +-down- org.jfree.chart.plot.dial.DialPointer.Pointer
+  org.jfree.chart.plot.dial.DialPointer.Pin -up-|> org.jfree.chart.plot.dial.DialPointer
+  org.jfree.chart.plot.dial.DialPointer.Pointer -up-|> org.jfree.chart.plot.dial.DialPointer
+  org.jfree.chart.plot.dial.DialTextAnnotation .up.|> Cloneable
+  org.jfree.chart.plot.dial.DialTextAnnotation .up.|> DialLayer
+  org.jfree.chart.plot.dial.DialTextAnnotation .up.|> PublicCloneable
+  org.jfree.chart.plot.dial.DialTextAnnotation .up.|> Serializable
+  org.jfree.chart.plot.dial.DialValueIndicator .up.|> Cloneable
+  org.jfree.chart.plot.dial.DialValueIndicator .up.|> DialLayer
+  org.jfree.chart.plot.dial.DialValueIndicator .up.|> PublicCloneable
+  org.jfree.chart.plot.dial.DialValueIndicator .up.|> Serializable
+  org.jfree.chart.plot.dial.StandardDialFrame .up.|> Cloneable
+  org.jfree.chart.plot.dial.StandardDialFrame .up.|> DialFrame
+  org.jfree.chart.plot.dial.StandardDialFrame .up.|> PublicCloneable
+  org.jfree.chart.plot.dial.StandardDialFrame .up.|> Serializable
+  org.jfree.chart.plot.dial.StandardDialRange .up.|> Cloneable
+  org.jfree.chart.plot.dial.StandardDialRange .up.|> DialLayer
+  org.jfree.chart.plot.dial.StandardDialRange .up.|> PublicCloneable
+  org.jfree.chart.plot.dial.StandardDialRange .up.|> Serializable
+  org.jfree.chart.plot.dial.StandardDialScale .up.|> Cloneable
+  org.jfree.chart.plot.dial.StandardDialScale .up.|> DialScale
+  org.jfree.chart.plot.dial.StandardDialScale .up.|> PublicCloneable
+  org.jfree.chart.plot.dial.StandardDialScale .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,2817 @@
+@startuml
+
+title __PLOT's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace plot {
+      abstract class org.jfree.chart.plot.AbstractPieLabelDistributor {
+          # labels : List
+          + AbstractPieLabelDistributor()
+          + addPieLabelRecord()
+          + clear()
+          {abstract} + distributeLabels()
+          + getItemCount()
+          + getPieLabelRecord()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CategoryCrosshairState {
+          - columnKey : Comparable
+          - rowKey : Comparable
+          + CategoryCrosshairState()
+          + getColumnKey()
+          + getRowKey()
+          + setColumnKey()
+          + setRowKey()
+          + updateCrosshairPoint()
+          + updateCrosshairX()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CategoryMarker {
+          - drawAsLine : boolean
+          - key : Comparable
+          + CategoryMarker()
+          + CategoryMarker()
+          + CategoryMarker()
+          + equals()
+          + getDrawAsLine()
+          + getKey()
+          + setDrawAsLine()
+          + setKey()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CategoryPlot {
+          {static} + DEFAULT_CROSSHAIR_PAINT : Paint
+          {static} + DEFAULT_CROSSHAIR_STROKE : Stroke
+          {static} + DEFAULT_CROSSHAIR_VISIBLE : boolean
+          {static} + DEFAULT_DOMAIN_GRIDLINES_VISIBLE : boolean
+          {static} + DEFAULT_GRIDLINE_PAINT : Paint
+          {static} + DEFAULT_GRIDLINE_STROKE : Stroke
+          {static} + DEFAULT_RANGE_GRIDLINES_VISIBLE : boolean
+          {static} + DEFAULT_VALUE_LABEL_FONT : Font
+          {static} # localizationResources : ResourceBundle
+          - anchorValue : double
+          - annotations : List
+          - axisOffset : RectangleInsets
+          - backgroundDomainMarkers : Map
+          - backgroundRangeMarkers : Map
+          - columnRenderingOrder : SortOrder
+          - crosshairDatasetIndex : int
+          - datasetToDomainAxesMap : TreeMap
+          - datasetToRangeAxesMap : TreeMap
+          - datasets : Map<Integer, CategoryDataset>
+          - domainAxes : Map<Integer, CategoryAxis>
+          - domainAxisLocations : Map<Integer, AxisLocation>
+          - domainCrosshairColumnKey : Comparable
+          - domainCrosshairPaint : Paint
+          - domainCrosshairRowKey : Comparable
+          - domainCrosshairStroke : Stroke
+          - domainCrosshairVisible : boolean
+          - domainGridlinePaint : Paint
+          - domainGridlinePosition : CategoryAnchor
+          - domainGridlineStroke : Stroke
+          - domainGridlinesVisible : boolean
+          - drawSharedDomainAxis : boolean
+          - fixedDomainAxisSpace : AxisSpace
+          - fixedLegendItems : LegendItemCollection
+          - fixedRangeAxisSpace : AxisSpace
+          - foregroundDomainMarkers : Map
+          - foregroundRangeMarkers : Map
+          - orientation : PlotOrientation
+          - rangeAxes : Map<Integer, ValueAxis>
+          - rangeAxisLocations : Map<Integer, AxisLocation>
+          - rangeCrosshairLockedOnData : boolean
+          - rangeCrosshairPaint : Paint
+          - rangeCrosshairStroke : Stroke
+          - rangeCrosshairValue : double
+          - rangeCrosshairVisible : boolean
+          - rangeGridlinePaint : Paint
+          - rangeGridlineStroke : Stroke
+          - rangeGridlinesVisible : boolean
+          - rangeMinorGridlinePaint : Paint
+          - rangeMinorGridlineStroke : Stroke
+          - rangeMinorGridlinesVisible : boolean
+          - rangePannable : boolean
+          - rangeZeroBaselinePaint : Paint
+          - rangeZeroBaselineStroke : Stroke
+          - rangeZeroBaselineVisible : boolean
+          - renderers : Map<Integer, CategoryItemRenderer>
+          - renderingOrder : DatasetRenderingOrder
+          - rowRenderingOrder : SortOrder
+          {static} - serialVersionUID : long
+          - shadowGenerator : ShadowGenerator
+          - weight : int
+          + CategoryPlot()
+          + CategoryPlot()
+          + addAnnotation()
+          + addAnnotation()
+          + addDomainMarker()
+          + addDomainMarker()
+          + addDomainMarker()
+          + addDomainMarker()
+          + addRangeMarker()
+          + addRangeMarker()
+          + addRangeMarker()
+          + addRangeMarker()
+          + annotationChanged()
+          + clearAnnotations()
+          + clearDomainAxes()
+          + clearDomainMarkers()
+          + clearDomainMarkers()
+          + clearRangeAxes()
+          + clearRangeMarkers()
+          + clearRangeMarkers()
+          + clone()
+          + configureDomainAxes()
+          + configureRangeAxes()
+          + datasetChanged()
+          + draw()
+          + drawBackground()
+          + equals()
+          + getAnchorValue()
+          + getAnnotations()
+          + getAxisOffset()
+          + getCategories()
+          + getCategoriesForAxis()
+          + getColumnRenderingOrder()
+          + getCrosshairDatasetIndex()
+          + getDataRange()
+          + getDataset()
+          + getDataset()
+          + getDatasetCount()
+          + getDatasetRenderingOrder()
+          + getDomainAxis()
+          + getDomainAxis()
+          + getDomainAxisCount()
+          + getDomainAxisEdge()
+          + getDomainAxisEdge()
+          + getDomainAxisForDataset()
+          + getDomainAxisIndex()
+          + getDomainAxisLocation()
+          + getDomainAxisLocation()
+          + getDomainCrosshairColumnKey()
+          + getDomainCrosshairPaint()
+          + getDomainCrosshairRowKey()
+          + getDomainCrosshairStroke()
+          + getDomainGridlinePaint()
+          + getDomainGridlinePosition()
+          + getDomainGridlineStroke()
+          + getDomainMarkers()
+          + getDomainMarkers()
+          + getDrawSharedDomainAxis()
+          + getFixedDomainAxisSpace()
+          + getFixedLegendItems()
+          + getFixedRangeAxisSpace()
+          + getIndexOf()
+          + getLegendItems()
+          + getOrientation()
+          + getPlotType()
+          + getRangeAxis()
+          + getRangeAxis()
+          + getRangeAxisCount()
+          + getRangeAxisEdge()
+          + getRangeAxisEdge()
+          + getRangeAxisForDataset()
+          + getRangeAxisIndex()
+          + getRangeAxisLocation()
+          + getRangeAxisLocation()
+          + getRangeCrosshairPaint()
+          + getRangeCrosshairStroke()
+          + getRangeCrosshairValue()
+          + getRangeGridlinePaint()
+          + getRangeGridlineStroke()
+          + getRangeMarkers()
+          + getRangeMarkers()
+          + getRangeMinorGridlinePaint()
+          + getRangeMinorGridlineStroke()
+          + getRangeZeroBaselinePaint()
+          + getRangeZeroBaselineStroke()
+          + getRenderer()
+          + getRenderer()
+          + getRendererCount()
+          + getRendererForDataset()
+          + getRowRenderingOrder()
+          + getShadowGenerator()
+          + getWeight()
+          + handleClick()
+          + indexOf()
+          + isDomainCrosshairVisible()
+          + isDomainGridlinesVisible()
+          + isDomainPannable()
+          + isDomainZoomable()
+          + isRangeCrosshairLockedOnData()
+          + isRangeCrosshairVisible()
+          + isRangeGridlinesVisible()
+          + isRangeMinorGridlinesVisible()
+          + isRangePannable()
+          + isRangeZeroBaselineVisible()
+          + isRangeZoomable()
+          + mapDatasetToDomainAxes()
+          + mapDatasetToDomainAxis()
+          + mapDatasetToRangeAxes()
+          + mapDatasetToRangeAxis()
+          + panDomainAxes()
+          + panRangeAxes()
+          + removeAnnotation()
+          + removeAnnotation()
+          + removeDomainMarker()
+          + removeDomainMarker()
+          + removeDomainMarker()
+          + removeDomainMarker()
+          + removeRangeMarker()
+          + removeRangeMarker()
+          + removeRangeMarker()
+          + removeRangeMarker()
+          + render()
+          + rendererChanged()
+          + setAnchorValue()
+          + setAnchorValue()
+          + setAxisOffset()
+          + setColumnRenderingOrder()
+          + setCrosshairDatasetIndex()
+          + setCrosshairDatasetIndex()
+          + setDataset()
+          + setDataset()
+          + setDatasetRenderingOrder()
+          + setDomainAxes()
+          + setDomainAxis()
+          + setDomainAxis()
+          + setDomainAxis()
+          + setDomainAxisLocation()
+          + setDomainAxisLocation()
+          + setDomainAxisLocation()
+          + setDomainAxisLocation()
+          + setDomainCrosshairColumnKey()
+          + setDomainCrosshairColumnKey()
+          + setDomainCrosshairPaint()
+          + setDomainCrosshairRowKey()
+          + setDomainCrosshairRowKey()
+          + setDomainCrosshairStroke()
+          + setDomainCrosshairVisible()
+          + setDomainGridlinePaint()
+          + setDomainGridlinePosition()
+          + setDomainGridlineStroke()
+          + setDomainGridlinesVisible()
+          + setDrawSharedDomainAxis()
+          + setFixedDomainAxisSpace()
+          + setFixedDomainAxisSpace()
+          + setFixedLegendItems()
+          + setFixedRangeAxisSpace()
+          + setFixedRangeAxisSpace()
+          + setOrientation()
+          + setRangeAxes()
+          + setRangeAxis()
+          + setRangeAxis()
+          + setRangeAxis()
+          + setRangeAxisLocation()
+          + setRangeAxisLocation()
+          + setRangeAxisLocation()
+          + setRangeAxisLocation()
+          + setRangeCrosshairLockedOnData()
+          + setRangeCrosshairPaint()
+          + setRangeCrosshairStroke()
+          + setRangeCrosshairValue()
+          + setRangeCrosshairValue()
+          + setRangeCrosshairVisible()
+          + setRangeGridlinePaint()
+          + setRangeGridlineStroke()
+          + setRangeGridlinesVisible()
+          + setRangeMinorGridlinePaint()
+          + setRangeMinorGridlineStroke()
+          + setRangeMinorGridlinesVisible()
+          + setRangePannable()
+          + setRangeZeroBaselinePaint()
+          + setRangeZeroBaselineStroke()
+          + setRangeZeroBaselineVisible()
+          + setRenderer()
+          + setRenderer()
+          + setRenderer()
+          + setRenderer()
+          + setRenderers()
+          + setRowRenderingOrder()
+          + setShadowGenerator()
+          + setWeight()
+          + zoom()
+          + zoomDomainAxes()
+          + zoomDomainAxes()
+          + zoomDomainAxes()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          # calculateAxisSpace()
+          # calculateDomainAxisSpace()
+          # calculateRangeAxisSpace()
+          # drawAnnotations()
+          # drawAxes()
+          # drawDomainCrosshair()
+          # drawDomainGridlines()
+          # drawDomainMarkers()
+          # drawRangeCrosshair()
+          # drawRangeGridlines()
+          # drawRangeLine()
+          # drawRangeMarkers()
+          # drawZeroRangeBaseline()
+          - checkAxisIndices()
+          - cloneMarkerMap()
+          - datasetsMappedToDomainAxis()
+          - datasetsMappedToRangeAxis()
+          - findRangeAxisIndex()
+          - getDatasetIndices()
+          - getRendererIndices()
+          - integerise()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      enum CenterTextMode {
+        FIXED
+        NONE
+        VALUE
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      abstract class org.jfree.chart.plot.ColorPalette {
+          # b : int[]
+          # g : int[]
+          # inverse : boolean
+          {static} # log10 : double
+          # logscale : boolean
+          # maxZ : double
+          # minZ : double
+          # paletteName : String
+          # r : int[]
+          # stepped : boolean
+          # tickValues : double[]
+          {static} - serialVersionUID : long
+          + ColorPalette()
+          + clone()
+          + equals()
+          + getColor()
+          + getColor()
+          + getColorLinear()
+          + getColorLog()
+          + getMaxZ()
+          + getMinZ()
+          + getPaint()
+          + getPaletteName()
+          + getTickValues()
+          + hashCode()
+          {abstract} + initialize()
+          + invertPalette()
+          + isInverse()
+          + isLogscale()
+          + isStepped()
+          + setInverse()
+          + setLogscale()
+          + setMaxZ()
+          + setMinZ()
+          + setPaletteName()
+          + setStepped()
+          + setTickValues()
+          + setTickValues()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CombinedDomainCategoryPlot {
+          - gap : double
+          {static} - serialVersionUID : long
+          - subplotAreas : Rectangle2D[]
+          - subplots : List
+          + CombinedDomainCategoryPlot()
+          + CombinedDomainCategoryPlot()
+          + add()
+          + add()
+          + clone()
+          + draw()
+          + equals()
+          + findSubplot()
+          + getCategories()
+          + getCategoriesForAxis()
+          + getDataRange()
+          + getGap()
+          + getLegendItems()
+          + getSubplots()
+          + handleClick()
+          + plotChanged()
+          + remove()
+          + setGap()
+          + setOrientation()
+          + setShadowGenerator()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          # calculateAxisSpace()
+          # setFixedRangeAxisSpaceForSubplots()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CombinedDomainXYPlot {
+          - gap : double
+          {static} - serialVersionUID : long
+          - subplotAreas : Rectangle2D[]
+          - subplots : List<XYPlot>
+          + CombinedDomainXYPlot()
+          + CombinedDomainXYPlot()
+          + add()
+          + add()
+          + clone()
+          + draw()
+          + equals()
+          + findSubplot()
+          + getDataRange()
+          + getGap()
+          + getLegendItems()
+          + getPlotType()
+          + getSubplots()
+          + handleClick()
+          + isRangePannable()
+          + panRangeAxes()
+          + plotChanged()
+          + remove()
+          + setFixedRangeAxisSpace()
+          + setGap()
+          + setOrientation()
+          + setRangePannable()
+          + setRenderer()
+          + setShadowGenerator()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          # calculateAxisSpace()
+          # setFixedRangeAxisSpaceForSubplots()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CombinedRangeCategoryPlot {
+          - gap : double
+          {static} - serialVersionUID : long
+          - subplotArea : Rectangle2D[]
+          - subplots : List
+          + CombinedRangeCategoryPlot()
+          + CombinedRangeCategoryPlot()
+          + add()
+          + add()
+          + clone()
+          + draw()
+          + equals()
+          + getDataRange()
+          + getGap()
+          + getLegendItems()
+          + getSubplots()
+          + handleClick()
+          + plotChanged()
+          + remove()
+          + setGap()
+          + setOrientation()
+          + setShadowGenerator()
+          # calculateAxisSpace()
+          # setFixedDomainAxisSpaceForSubplots()
+          - readObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CombinedRangeXYPlot {
+          - gap : double
+          {static} - serialVersionUID : long
+          - subplotAreas : Rectangle2D[]
+          - subplots : List<XYPlot>
+          + CombinedRangeXYPlot()
+          + CombinedRangeXYPlot()
+          + add()
+          + add()
+          + clone()
+          + draw()
+          + equals()
+          + findSubplot()
+          + getDataRange()
+          + getGap()
+          + getLegendItems()
+          + getPlotType()
+          + getSubplots()
+          + handleClick()
+          + isDomainPannable()
+          + panDomainAxes()
+          + plotChanged()
+          + remove()
+          + setDomainPannable()
+          + setGap()
+          + setOrientation()
+          + setRenderer()
+          + setShadowGenerator()
+          + zoomDomainAxes()
+          + zoomDomainAxes()
+          + zoomDomainAxes()
+          # calculateAxisSpace()
+          # setFixedDomainAxisSpaceForSubplots()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CompassPlot {
+          {static} + DEFAULT_LABEL_FONT : Font
+          {static} + NO_LABELS : int
+          {static} + VALUE_LABELS : int
+          {static} # localizationResources : ResourceBundle
+          # revolutionDistance : double
+          - a1 : Area
+          - a2 : Area
+          - circle1 : Ellipse2D
+          - circle2 : Ellipse2D
+          - compassFont : Font
+          - datasets : ValueDataset[]
+          - drawBorder : boolean
+          - labelFont : Font
+          - labelType : int
+          - rect1 : Rectangle2D
+          - roseCenterPaint : Paint
+          - roseHighlightPaint : Paint
+          - rosePaint : Paint
+          {static} - serialVersionUID : long
+          - seriesNeedle : MeterNeedle[]
+          + CompassPlot()
+          + CompassPlot()
+          + addDataset()
+          + addDataset()
+          + clone()
+          + draw()
+          + equals()
+          + getDatasets()
+          + getDrawBorder()
+          + getLabelFont()
+          + getLabelType()
+          + getLegendItems()
+          + getPlotType()
+          + getRevolutionDistance()
+          + getRoseCenterPaint()
+          + getRoseHighlightPaint()
+          + getRosePaint()
+          + setDrawBorder()
+          + setLabelFont()
+          + setLabelType()
+          + setRevolutionDistance()
+          + setRoseCenterPaint()
+          + setRoseHighlightPaint()
+          + setRosePaint()
+          + setSeriesNeedle()
+          + setSeriesNeedle()
+          + setSeriesNeedle()
+          + setSeriesOutlinePaint()
+          + setSeriesOutlineStroke()
+          + setSeriesPaint()
+          + zoom()
+          # getCompassFont()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.ContourPlot {
+          {static} # DEFAULT_INSETS : RectangleInsets
+          {static} # localizationResources : ResourceBundle
+          - annotations : List
+          - clipPath : ClipPath
+          - colorBar : ColorBar
+          - colorBarLocation : RectangleEdge
+          - dataAreaRatio : double
+          - dataset : ContourDataset
+          - domainAxis : ValueAxis
+          - domainCrosshairLockedOnData : boolean
+          - domainCrosshairPaint : Paint
+          - domainCrosshairStroke : Stroke
+          - domainCrosshairValue : double
+          - domainCrosshairVisible : boolean
+          - domainMarkers : List
+          - missingPaint : Paint
+          - ptSizePct : double
+          - rangeAxis : ValueAxis
+          - rangeCrosshairLockedOnData : boolean
+          - rangeCrosshairPaint : Paint
+          - rangeCrosshairStroke : Stroke
+          - rangeCrosshairValue : double
+          - rangeCrosshairVisible : boolean
+          - rangeMarkers : List
+          - renderAsPoints : boolean
+          {static} - serialVersionUID : long
+          - toolTipGenerator : ContourToolTipGenerator
+          - urlGenerator : XYURLGenerator
+          + ContourPlot()
+          + ContourPlot()
+          + addAnnotation()
+          + addDomainMarker()
+          + addRangeMarker()
+          + axisChanged()
+          + clearAnnotations()
+          + clearDomainMarkers()
+          + clearRangeMarkers()
+          + clone()
+          + contourRenderer()
+          + datasetChanged()
+          + draw()
+          + drawDomainMarker()
+          + drawRangeMarker()
+          + getClipPath()
+          + getColorBar()
+          + getColorBarLocation()
+          + getContourDataRange()
+          + getDataAreaRatio()
+          + getDataRange()
+          + getDataset()
+          + getDomainAxis()
+          + getDomainCrosshairPaint()
+          + getDomainCrosshairStroke()
+          + getDomainCrosshairValue()
+          + getMissingPaint()
+          + getPlotType()
+          + getPtSizePct()
+          + getRangeAxis()
+          + getRangeCrosshairPaint()
+          + getRangeCrosshairStroke()
+          + getRangeCrosshairValue()
+          + getToolTipGenerator()
+          + getURLGenerator()
+          + handleClick()
+          + isCompatibleDomainAxis()
+          + isDomainCrosshairLockedOnData()
+          + isDomainCrosshairVisible()
+          + isDomainZoomable()
+          + isRangeCrosshairLockedOnData()
+          + isRangeCrosshairVisible()
+          + isRangeZoomable()
+          + isRenderAsPoints()
+          + pointRenderer()
+          + propertyChange()
+          + render()
+          + setClipPath()
+          + setColorBarAxis()
+          + setColorBarLocation()
+          + setDataAreaRatio()
+          + setDataset()
+          + setDomainAxis()
+          + setDomainCrosshairLockedOnData()
+          + setDomainCrosshairPaint()
+          + setDomainCrosshairStroke()
+          + setDomainCrosshairValue()
+          + setDomainCrosshairValue()
+          + setDomainCrosshairVisible()
+          + setMissingPaint()
+          + setPtSizePct()
+          + setRangeAxis()
+          + setRangeCrosshairLockedOnData()
+          + setRangeCrosshairPaint()
+          + setRangeCrosshairStroke()
+          + setRangeCrosshairValue()
+          + setRangeCrosshairValue()
+          + setRangeCrosshairVisible()
+          + setRenderAsPoints()
+          + setToolTipGenerator()
+          + setURLGenerator()
+          + visibleRange()
+          + zoom()
+          + zoomDomainAxes()
+          + zoomDomainAxes()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          # drawHorizontalLine()
+          # drawVerticalLine()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      abstract class org.jfree.chart.plot.ContourPlotUtilities {
+          {static} + visibleRange()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      interface org.jfree.chart.plot.ContourValuePlot {
+          {abstract} + getContourDataRange()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.Crosshair {
+          - labelAnchor : RectangleAnchor
+          - labelBackgroundPaint : Paint
+          - labelFont : Font
+          - labelGenerator : CrosshairLabelGenerator
+          - labelOutlinePaint : Paint
+          - labelOutlineStroke : Stroke
+          - labelOutlineVisible : boolean
+          - labelPaint : Paint
+          - labelVisible : boolean
+          - labelXOffset : double
+          - labelYOffset : double
+          - paint : Paint
+          - pcs : PropertyChangeSupport
+          - stroke : Stroke
+          - value : double
+          - visible : boolean
+          + Crosshair()
+          + Crosshair()
+          + Crosshair()
+          + addPropertyChangeListener()
+          + clone()
+          + equals()
+          + getLabelAnchor()
+          + getLabelBackgroundPaint()
+          + getLabelFont()
+          + getLabelGenerator()
+          + getLabelOutlinePaint()
+          + getLabelOutlineStroke()
+          + getLabelPaint()
+          + getLabelXOffset()
+          + getLabelYOffset()
+          + getPaint()
+          + getStroke()
+          + getValue()
+          + hashCode()
+          + isLabelOutlineVisible()
+          + isLabelVisible()
+          + isVisible()
+          + removePropertyChangeListener()
+          + setLabelAnchor()
+          + setLabelBackgroundPaint()
+          + setLabelFont()
+          + setLabelGenerator()
+          + setLabelOutlinePaint()
+          + setLabelOutlineStroke()
+          + setLabelOutlineVisible()
+          + setLabelPaint()
+          + setLabelVisible()
+          + setLabelXOffset()
+          + setLabelYOffset()
+          + setPaint()
+          + setStroke()
+          + setValue()
+          + setVisible()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CrosshairState {
+          - anchor : Point2D
+          - anchorX : double
+          - anchorY : double
+          - calculateDistanceInDataSpace : boolean
+          - crosshairX : double
+          - crosshairY : double
+          - datasetIndex : int
+          - distance : double
+          - domainAxisIndex : int
+          - rangeAxisIndex : int
+          + CrosshairState()
+          + CrosshairState()
+          + getAnchor()
+          + getAnchorX()
+          + getAnchorY()
+          + getCrosshairDistance()
+          + getCrosshairX()
+          + getCrosshairY()
+          + getDatasetIndex()
+          + getDomainAxisIndex()
+          + getRangeAxisIndex()
+          + setAnchor()
+          + setAnchorX()
+          + setAnchorY()
+          + setCrosshairDistance()
+          + setCrosshairX()
+          + setCrosshairY()
+          + setDatasetIndex()
+          + updateCrosshairPoint()
+          + updateCrosshairPoint()
+          + updateCrosshairX()
+          + updateCrosshairX()
+          + updateCrosshairY()
+          + updateCrosshairY()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.DatasetRenderingOrder {
+          {static} + FORWARD : DatasetRenderingOrder
+          {static} + REVERSE : DatasetRenderingOrder
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + hashCode()
+          + toString()
+          - DatasetRenderingOrder()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.DefaultDrawingSupplier {
+          {static} + DEFAULT_FILL_PAINT_SEQUENCE : Paint[]
+          {static} + DEFAULT_OUTLINE_PAINT_SEQUENCE : Paint[]
+          {static} + DEFAULT_OUTLINE_STROKE_SEQUENCE : Stroke[]
+          {static} + DEFAULT_PAINT_SEQUENCE : Paint[]
+          {static} + DEFAULT_SHAPE_SEQUENCE : Shape[]
+          {static} + DEFAULT_STROKE_SEQUENCE : Stroke[]
+          - fillPaintIndex : int
+          - fillPaintSequence : Paint[]
+          - outlinePaintIndex : int
+          - outlinePaintSequence : Paint[]
+          - outlineStrokeIndex : int
+          - outlineStrokeSequence : Stroke[]
+          - paintIndex : int
+          - paintSequence : Paint[]
+          {static} - serialVersionUID : long
+          - shapeIndex : int
+          - shapeSequence : Shape[]
+          - strokeIndex : int
+          - strokeSequence : Stroke[]
+          + DefaultDrawingSupplier()
+          + DefaultDrawingSupplier()
+          + DefaultDrawingSupplier()
+          + clone()
+          {static} + createStandardSeriesShapes()
+          + equals()
+          + getNextFillPaint()
+          + getNextOutlinePaint()
+          + getNextOutlineStroke()
+          + getNextPaint()
+          + getNextShape()
+          + getNextStroke()
+          - equalShapes()
+          {static} - intArray()
+          {static} - intArray()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.DialShape {
+          {static} + CHORD : DialShape
+          {static} + CIRCLE : DialShape
+          {static} + PIE : DialShape
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + hashCode()
+          + toString()
+          - DialShape()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      interface org.jfree.chart.plot.DrawingSupplier {
+          {abstract} + getNextFillPaint()
+          {abstract} + getNextOutlinePaint()
+          {abstract} + getNextOutlineStroke()
+          {abstract} + getNextPaint()
+          {abstract} + getNextShape()
+          {abstract} + getNextStroke()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.FastScatterPlot {
+          {static} + DEFAULT_GRIDLINE_PAINT : Paint
+          {static} + DEFAULT_GRIDLINE_STROKE : Stroke
+          {static} # localizationResources : ResourceBundle
+          - data : float[][]
+          - domainAxis : ValueAxis
+          - domainGridlinePaint : Paint
+          - domainGridlineStroke : Stroke
+          - domainGridlinesVisible : boolean
+          - domainPannable : boolean
+          - paint : Paint
+          - rangeAxis : ValueAxis
+          - rangeGridlinePaint : Paint
+          - rangeGridlineStroke : Stroke
+          - rangeGridlinesVisible : boolean
+          - rangePannable : boolean
+          {static} - serialVersionUID : long
+          - xDataRange : Range
+          - yDataRange : Range
+          + FastScatterPlot()
+          + FastScatterPlot()
+          + clone()
+          + draw()
+          + equals()
+          + getData()
+          + getDataRange()
+          + getDomainAxis()
+          + getDomainGridlinePaint()
+          + getDomainGridlineStroke()
+          + getOrientation()
+          + getPaint()
+          + getPlotType()
+          + getRangeAxis()
+          + getRangeGridlinePaint()
+          + getRangeGridlineStroke()
+          + isDomainGridlinesVisible()
+          + isDomainPannable()
+          + isDomainZoomable()
+          + isRangeGridlinesVisible()
+          + isRangePannable()
+          + isRangeZoomable()
+          + panDomainAxes()
+          + panRangeAxes()
+          + render()
+          + setData()
+          + setDomainAxis()
+          + setDomainGridlinePaint()
+          + setDomainGridlineStroke()
+          + setDomainGridlinesVisible()
+          + setDomainPannable()
+          + setPaint()
+          + setRangeAxis()
+          + setRangeGridlinePaint()
+          + setRangeGridlineStroke()
+          + setRangeGridlinesVisible()
+          + setRangePannable()
+          + zoomDomainAxes()
+          + zoomDomainAxes()
+          + zoomDomainAxes()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          # drawDomainGridlines()
+          # drawRangeGridlines()
+          - calculateXDataRange()
+          - calculateYDataRange()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.GreyPalette {
+          {static} - serialVersionUID : long
+          + GreyPalette()
+          + initialize()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.IntervalMarker {
+          - endValue : double
+          - gradientPaintTransformer : GradientPaintTransformer
+          {static} - serialVersionUID : long
+          - startValue : double
+          + IntervalMarker()
+          + IntervalMarker()
+          + IntervalMarker()
+          + clone()
+          + equals()
+          + getEndValue()
+          + getGradientPaintTransformer()
+          + getStartValue()
+          + setEndValue()
+          + setGradientPaintTransformer()
+          + setStartValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.JThermometer {
+          - chart : JFreeChart
+          - data : DefaultValueDataset
+          - panel : ChartPanel
+          - plot : ThermometerPlot
+          {static} - serialVersionUID : long
+          + JThermometer()
+          + addSubtitle()
+          + addSubtitle()
+          + addSubtitle()
+          + changeTickFontSize()
+          + getShowAxisLocation()
+          + getTickLabelFont()
+          + getValue()
+          + setBackground()
+          + setFollowDataInSubranges()
+          + setForeground()
+          + setOutlinePaint()
+          + setRange()
+          + setShowAxisLocation()
+          + setShowValueLines()
+          + setSubrangeInfo()
+          + setSubrangeInfo()
+          + setTickFontStyle()
+          + setTickLabelFont()
+          + setUnits()
+          + setValue()
+          + setValue()
+          + setValueFont()
+          + setValueFormat()
+          + setValueLocation()
+          + setValuePaint()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      abstract class org.jfree.chart.plot.Marker {
+          - alpha : float
+          - label : String
+          - labelAnchor : RectangleAnchor
+          - labelBackgroundColor : Color
+          - labelFont : Font
+          - labelOffset : RectangleInsets
+          - labelOffsetType : LengthAdjustmentType
+          - labelPaint : Paint
+          - labelTextAnchor : TextAnchor
+          - listenerList : EventListenerList
+          - outlinePaint : Paint
+          - outlineStroke : Stroke
+          - paint : Paint
+          {static} - serialVersionUID : long
+          - stroke : Stroke
+          + addChangeListener()
+          + clone()
+          + equals()
+          + getAlpha()
+          + getLabel()
+          + getLabelAnchor()
+          + getLabelBackgroundColor()
+          + getLabelFont()
+          + getLabelOffset()
+          + getLabelOffsetType()
+          + getLabelPaint()
+          + getLabelTextAnchor()
+          + getListeners()
+          + getOutlinePaint()
+          + getOutlineStroke()
+          + getPaint()
+          + getStroke()
+          + notifyListeners()
+          + removeChangeListener()
+          + setAlpha()
+          + setLabel()
+          + setLabelAnchor()
+          + setLabelBackgroundColor()
+          + setLabelFont()
+          + setLabelOffset()
+          + setLabelOffsetType()
+          + setLabelPaint()
+          + setLabelTextAnchor()
+          + setOutlinePaint()
+          + setOutlineStroke()
+          + setPaint()
+          + setStroke()
+          # Marker()
+          # Marker()
+          # Marker()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.MeterInterval {
+          - backgroundPaint : Paint
+          - label : String
+          - outlinePaint : Paint
+          - outlineStroke : Stroke
+          - range : Range
+          {static} - serialVersionUID : long
+          + MeterInterval()
+          + MeterInterval()
+          + equals()
+          + getBackgroundPaint()
+          + getLabel()
+          + getOutlinePaint()
+          + getOutlineStroke()
+          + getRange()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.MeterPlot {
+          {static} + DEFAULT_BORDER_SIZE : float
+          {static} + DEFAULT_CIRCLE_SIZE : float
+          {static} + DEFAULT_LABEL_FONT : Font
+          {static} + DEFAULT_METER_ANGLE : int
+          {static} # localizationResources : ResourceBundle
+          {static} ~ DEFAULT_DIAL_BACKGROUND_PAINT : Paint
+          {static} ~ DEFAULT_NEEDLE_PAINT : Paint
+          {static} ~ DEFAULT_VALUE_FONT : Font
+          {static} ~ DEFAULT_VALUE_PAINT : Paint
+          - dataset : ValueDataset
+          - dialBackgroundPaint : Paint
+          - dialOutlinePaint : Paint
+          - drawBorder : boolean
+          - intervals : List
+          - meterAngle : int
+          - needlePaint : Paint
+          - range : Range
+          {static} - serialVersionUID : long
+          - shape : DialShape
+          - tickLabelFont : Font
+          - tickLabelFormat : NumberFormat
+          - tickLabelPaint : Paint
+          - tickLabelsVisible : boolean
+          - tickPaint : Paint
+          - tickSize : double
+          - units : String
+          - valueFont : Font
+          - valuePaint : Paint
+          + MeterPlot()
+          + MeterPlot()
+          + addInterval()
+          + clearIntervals()
+          + clone()
+          + draw()
+          + equals()
+          + getDataset()
+          + getDialBackgroundPaint()
+          + getDialOutlinePaint()
+          + getDialShape()
+          + getDrawBorder()
+          + getIntervals()
+          + getLegendItems()
+          + getMeterAngle()
+          + getNeedlePaint()
+          + getPlotType()
+          + getRange()
+          + getTickLabelFont()
+          + getTickLabelFormat()
+          + getTickLabelPaint()
+          + getTickLabelsVisible()
+          + getTickPaint()
+          + getTickSize()
+          + getUnits()
+          + getValueFont()
+          + getValuePaint()
+          + setDataset()
+          + setDialBackgroundPaint()
+          + setDialOutlinePaint()
+          + setDialShape()
+          + setDrawBorder()
+          + setMeterAngle()
+          + setNeedlePaint()
+          + setRange()
+          + setTickLabelFont()
+          + setTickLabelFormat()
+          + setTickLabelPaint()
+          + setTickLabelsVisible()
+          + setTickPaint()
+          + setTickSize()
+          + setUnits()
+          + setValueFont()
+          + setValuePaint()
+          + valueToAngle()
+          + zoom()
+          # drawArc()
+          # drawArcForInterval()
+          # drawTick()
+          # drawTick()
+          # drawTicks()
+          # drawValueLabel()
+          # fillArc()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.MultiplePiePlot {
+          - aggregatedItemsKey : Comparable
+          - aggregatedItemsPaint : Paint
+          - dataExtractOrder : TableOrder
+          - dataset : CategoryDataset
+          - legendItemShape : Shape
+          - limit : double
+          - pieChart : JFreeChart
+          - sectionPaints : Map
+          {static} - serialVersionUID : long
+          + MultiplePiePlot()
+          + MultiplePiePlot()
+          + clone()
+          + draw()
+          + equals()
+          + getAggregatedItemsKey()
+          + getAggregatedItemsPaint()
+          + getDataExtractOrder()
+          + getDataset()
+          + getLegendItemShape()
+          + getLegendItems()
+          + getLimit()
+          + getPieChart()
+          + getPlotType()
+          + setAggregatedItemsKey()
+          + setAggregatedItemsPaint()
+          + setDataExtractOrder()
+          + setDataset()
+          + setLegendItemShape()
+          + setLimit()
+          + setPieChart()
+          - prefetchSectionPaints()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      interface org.jfree.chart.plot.Pannable {
+          {abstract} + getOrientation()
+          {abstract} + isDomainPannable()
+          {abstract} + isRangePannable()
+          {abstract} + panDomainAxes()
+          {abstract} + panRangeAxes()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PieLabelDistributor {
+          - minGap : double
+          + PieLabelDistributor()
+          + distributeLabels()
+          + sort()
+          + toString()
+          # adjustDownwards()
+          # adjustInwards()
+          # adjustUpwards()
+          # spreadEvenly()
+          - isOverlap()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PieLabelLinkStyle {
+          {static} + CUBIC_CURVE : PieLabelLinkStyle
+          {static} + QUAD_CURVE : PieLabelLinkStyle
+          {static} + STANDARD : PieLabelLinkStyle
+          - name : String
+          + equals()
+          + hashCode()
+          + toString()
+          - PieLabelLinkStyle()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PieLabelRecord {
+          - allocatedY : double
+          - angle : double
+          - baseY : double
+          - gap : double
+          - key : Comparable
+          - label : TextBox
+          - labelHeight : double
+          - linkPercent : double
+          + PieLabelRecord()
+          + compareTo()
+          + equals()
+          + getAllocatedY()
+          + getAngle()
+          + getBaseY()
+          + getGap()
+          + getKey()
+          + getLabel()
+          + getLabelHeight()
+          + getLinkPercent()
+          + getLowerY()
+          + getUpperY()
+          + setAllocatedY()
+          + setBaseY()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PiePlot {
+          {static} + DEFAULT_INTERIOR_GAP : double
+          {static} + DEFAULT_LABEL_BACKGROUND_PAINT : Paint
+          {static} + DEFAULT_LABEL_FONT : Font
+          {static} + DEFAULT_LABEL_OUTLINE_PAINT : Paint
+          {static} + DEFAULT_LABEL_OUTLINE_STROKE : Stroke
+          {static} + DEFAULT_LABEL_PAINT : Paint
+          {static} + DEFAULT_LABEL_SHADOW_PAINT : Paint
+          {static} + DEFAULT_MINIMUM_ARC_ANGLE_TO_DRAW : double
+          {static} + DEFAULT_START_ANGLE : double
+          {static} + MAX_INTERIOR_GAP : double
+          {static} # localizationResources : ResourceBundle
+          {static} ~ DEBUG_DRAW_INTERIOR : boolean
+          {static} ~ DEBUG_DRAW_LINK_AREA : boolean
+          {static} ~ DEBUG_DRAW_PIE_AREA : boolean
+          - autoPopulateSectionOutlinePaint : boolean
+          - autoPopulateSectionOutlineStroke : boolean
+          - autoPopulateSectionPaint : boolean
+          - baseSectionOutlinePaint : Paint
+          - baseSectionOutlineStroke : Stroke
+          - baseSectionPaint : Paint
+          - circular : boolean
+          - dataset : PieDataset
+          - direction : Rotation
+          - explodePercentages : Map
+          - ignoreNullValues : boolean
+          - ignoreZeroValues : boolean
+          - interiorGap : double
+          - labelBackgroundPaint : Paint
+          - labelDistributor : AbstractPieLabelDistributor
+          - labelFont : Font
+          - labelGap : double
+          - labelGenerator : PieSectionLabelGenerator
+          - labelLinkMargin : double
+          - labelLinkPaint : Paint
+          - labelLinkStroke : Stroke
+          - labelLinkStyle : PieLabelLinkStyle
+          - labelLinksVisible : boolean
+          - labelOutlinePaint : Paint
+          - labelOutlineStroke : Stroke
+          - labelPadding : RectangleInsets
+          - labelPaint : Paint
+          - labelShadowPaint : Paint
+          - legendItemShape : Shape
+          - legendLabelGenerator : PieSectionLabelGenerator
+          - legendLabelToolTipGenerator : PieSectionLabelGenerator
+          - legendLabelURLGenerator : PieURLGenerator
+          - maximumLabelWidth : double
+          - minimumArcAngleToDraw : double
+          - pieIndex : int
+          - sectionOutlinePaint : Paint
+          - sectionOutlinePaintMap : PaintMap
+          - sectionOutlineStroke : Stroke
+          - sectionOutlineStrokeMap : StrokeMap
+          - sectionOutlinesVisible : boolean
+          - sectionPaint : Paint
+          - sectionPaintMap : PaintMap
+          {static} - serialVersionUID : long
+          - shadowGenerator : ShadowGenerator
+          - shadowPaint : Paint
+          - shadowXOffset : double
+          - shadowYOffset : double
+          - simpleLabelOffset : RectangleInsets
+          - simpleLabels : boolean
+          - startAngle : double
+          - toolTipGenerator : PieToolTipGenerator
+          - urlGenerator : PieURLGenerator
+          + PiePlot()
+          + PiePlot()
+          + clearSectionOutlinePaints()
+          + clearSectionOutlineStrokes()
+          + clearSectionPaints()
+          + clone()
+          + draw()
+          + equals()
+          + getAutoPopulateSectionOutlinePaint()
+          + getAutoPopulateSectionOutlineStroke()
+          + getAutoPopulateSectionPaint()
+          + getBaseSectionOutlinePaint()
+          + getBaseSectionOutlineStroke()
+          + getBaseSectionPaint()
+          + getDataset()
+          + getDirection()
+          + getExplodePercent()
+          + getExplodePercent()
+          + getIgnoreNullValues()
+          + getIgnoreZeroValues()
+          + getInteriorGap()
+          + getLabelBackgroundPaint()
+          + getLabelDistributor()
+          + getLabelFont()
+          + getLabelGap()
+          + getLabelGenerator()
+          + getLabelLinkMargin()
+          + getLabelLinkPaint()
+          + getLabelLinkStroke()
+          + getLabelLinkStyle()
+          + getLabelLinksVisible()
+          + getLabelOutlinePaint()
+          + getLabelOutlineStroke()
+          + getLabelPadding()
+          + getLabelPaint()
+          + getLabelShadowPaint()
+          + getLegendItemShape()
+          + getLegendItems()
+          + getLegendLabelGenerator()
+          + getLegendLabelToolTipGenerator()
+          + getLegendLabelURLGenerator()
+          + getMaximumExplodePercent()
+          + getMaximumLabelWidth()
+          + getMinimumArcAngleToDraw()
+          + getPieIndex()
+          + getPlotType()
+          + getSectionOutlinePaint()
+          + getSectionOutlinePaint()
+          + getSectionOutlinePaint()
+          + getSectionOutlineStroke()
+          + getSectionOutlineStroke()
+          + getSectionOutlineStroke()
+          + getSectionOutlinesVisible()
+          + getSectionPaint()
+          + getSectionPaint()
+          + getSectionPaint()
+          + getShadowGenerator()
+          + getShadowPaint()
+          + getShadowXOffset()
+          + getShadowYOffset()
+          + getSimpleLabelOffset()
+          + getSimpleLabels()
+          + getStartAngle()
+          + getToolTipGenerator()
+          + getURLGenerator()
+          + handleMouseWheelRotation()
+          + initialise()
+          + isCircular()
+          + setAutoPopulateSectionOutlinePaint()
+          + setAutoPopulateSectionOutlineStroke()
+          + setAutoPopulateSectionPaint()
+          + setBaseSectionOutlinePaint()
+          + setBaseSectionOutlineStroke()
+          + setBaseSectionPaint()
+          + setCircular()
+          + setCircular()
+          + setDataset()
+          + setDirection()
+          + setExplodePercent()
+          + setExplodePercent()
+          + setIgnoreNullValues()
+          + setIgnoreZeroValues()
+          + setInteriorGap()
+          + setLabelBackgroundPaint()
+          + setLabelDistributor()
+          + setLabelFont()
+          + setLabelGap()
+          + setLabelGenerator()
+          + setLabelLinkMargin()
+          + setLabelLinkPaint()
+          + setLabelLinkStroke()
+          + setLabelLinkStyle()
+          + setLabelLinksVisible()
+          + setLabelOutlinePaint()
+          + setLabelOutlineStroke()
+          + setLabelPadding()
+          + setLabelPaint()
+          + setLabelShadowPaint()
+          + setLegendItemShape()
+          + setLegendLabelGenerator()
+          + setLegendLabelToolTipGenerator()
+          + setLegendLabelURLGenerator()
+          + setMaximumLabelWidth()
+          + setMinimumArcAngleToDraw()
+          + setPieIndex()
+          + setSectionOutlinePaint()
+          + setSectionOutlinePaint()
+          + setSectionOutlinePaint()
+          + setSectionOutlineStroke()
+          + setSectionOutlineStroke()
+          + setSectionOutlineStroke()
+          + setSectionOutlinesVisible()
+          + setSectionPaint()
+          + setSectionPaint()
+          + setSectionPaint()
+          + setShadowGenerator()
+          + setShadowPaint()
+          + setShadowXOffset()
+          + setShadowYOffset()
+          + setSimpleLabelOffset()
+          + setSimpleLabels()
+          + setStartAngle()
+          + setToolTipGenerator()
+          + setURLGenerator()
+          # drawItem()
+          # drawLabels()
+          # drawLeftLabel()
+          # drawLeftLabels()
+          # drawPie()
+          # drawRightLabel()
+          # drawRightLabels()
+          # drawSimpleLabels()
+          # getArcBounds()
+          # getArcCenter()
+          # getLabelLinkDepth()
+          # getSectionKey()
+          # lookupSectionOutlinePaint()
+          # lookupSectionOutlinePaint()
+          # lookupSectionOutlineStroke()
+          # lookupSectionOutlineStroke()
+          # lookupSectionPaint()
+          # lookupSectionPaint()
+          # lookupSectionPaint()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PiePlot3D {
+          - darkerSides : boolean
+          - depthFactor : double
+          {static} - serialVersionUID : long
+          + PiePlot3D()
+          + PiePlot3D()
+          + draw()
+          + equals()
+          + getDarkerSides()
+          + getDepthFactor()
+          + getPlotType()
+          + setDarkerSides()
+          + setDepthFactor()
+          # drawSide()
+          - isAngleAtBack()
+          - isAngleAtFront()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PiePlotState {
+          - explodedPieArea : Rectangle2D
+          - latestAngle : double
+          - linkArea : Rectangle2D
+          - passesRequired : int
+          - pieArea : Rectangle2D
+          - pieCenterX : double
+          - pieCenterY : double
+          - pieHRadius : double
+          - pieWRadius : double
+          - total : double
+          + PiePlotState()
+          + getExplodedPieArea()
+          + getLatestAngle()
+          + getLinkArea()
+          + getPassesRequired()
+          + getPieArea()
+          + getPieCenterX()
+          + getPieCenterY()
+          + getPieHRadius()
+          + getPieWRadius()
+          + getTotal()
+          + setExplodedPieArea()
+          + setLatestAngle()
+          + setLinkArea()
+          + setPassesRequired()
+          + setPieArea()
+          + setPieCenterX()
+          + setPieCenterY()
+          + setPieHRadius()
+          + setPieWRadius()
+          + setTotal()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      abstract class org.jfree.chart.plot.Plot {
+          {static} + DEFAULT_BACKGROUND_ALPHA : float
+          {static} + DEFAULT_BACKGROUND_PAINT : Paint
+          {static} + DEFAULT_FOREGROUND_ALPHA : float
+          {static} + DEFAULT_INSETS : RectangleInsets
+          {static} + DEFAULT_LEGEND_ITEM_BOX : Shape
+          {static} + DEFAULT_LEGEND_ITEM_CIRCLE : Shape
+          {static} + DEFAULT_OUTLINE_PAINT : Paint
+          {static} + DEFAULT_OUTLINE_STROKE : Stroke
+          {static} + MINIMUM_HEIGHT_TO_DRAW : int
+          {static} + MINIMUM_WIDTH_TO_DRAW : int
+          {static} + ZERO : Number
+          - backgroundAlpha : float
+          - backgroundImage : Image
+          - backgroundImageAlignment : int
+          - backgroundImageAlpha : float
+          - backgroundPaint : Paint
+          - datasetGroup : DatasetGroup
+          - drawingSupplier : DrawingSupplier
+          - foregroundAlpha : float
+          - insets : RectangleInsets
+          - listenerList : EventListenerList
+          - noDataMessage : String
+          - noDataMessageFont : Font
+          - noDataMessagePaint : Paint
+          - notify : boolean
+          - outlinePaint : Paint
+          - outlineStroke : Stroke
+          - outlineVisible : boolean
+          {static} - serialVersionUID : long
+          + addChangeListener()
+          + annotationChanged()
+          + axisChanged()
+          + clone()
+          + datasetChanged()
+          {abstract} + draw()
+          + drawBackground()
+          + drawBackgroundImage()
+          + drawOutline()
+          + equals()
+          + getBackgroundAlpha()
+          + getBackgroundImage()
+          + getBackgroundImageAlignment()
+          + getBackgroundImageAlpha()
+          + getBackgroundPaint()
+          + getDatasetGroup()
+          + getDrawingSupplier()
+          + getForegroundAlpha()
+          + getInsets()
+          + getLegendItems()
+          + getNoDataMessage()
+          + getNoDataMessageFont()
+          + getNoDataMessagePaint()
+          + getOutlinePaint()
+          + getOutlineStroke()
+          + getParent()
+          {abstract} + getPlotType()
+          + getRootPlot()
+          + handleClick()
+          + isNotify()
+          + isOutlineVisible()
+          + isSubplot()
+          + markerChanged()
+          + notifyListeners()
+          + removeChangeListener()
+          {static} + resolveDomainAxisLocation()
+          {static} + resolveRangeAxisLocation()
+          + setBackgroundAlpha()
+          + setBackgroundImage()
+          + setBackgroundImageAlignment()
+          + setBackgroundImageAlpha()
+          + setBackgroundPaint()
+          + setDrawingSupplier()
+          + setDrawingSupplier()
+          + setForegroundAlpha()
+          + setInsets()
+          + setInsets()
+          + setNoDataMessage()
+          + setNoDataMessageFont()
+          + setNoDataMessagePaint()
+          + setNotify()
+          + setOutlinePaint()
+          + setOutlineStroke()
+          + setOutlineVisible()
+          + setParent()
+          + zoom()
+          # Plot()
+          # createAndAddEntity()
+          # drawNoDataMessage()
+          # fillBackground()
+          # fillBackground()
+          # fireChangeEvent()
+          # getRectX()
+          # getRectY()
+          # setDatasetGroup()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PlotOrientation {
+          {static} + HORIZONTAL : PlotOrientation
+          {static} + VERTICAL : PlotOrientation
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + hashCode()
+          + isHorizontal()
+          + isVertical()
+          + toString()
+          - PlotOrientation()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PlotRenderingInfo {
+          - dataArea : Rectangle2D
+          - owner : ChartRenderingInfo
+          - plotArea : Rectangle2D
+          {static} - serialVersionUID : long
+          - subplotInfo : List
+          + PlotRenderingInfo()
+          + addSubplotInfo()
+          + clone()
+          + equals()
+          + getDataArea()
+          + getOwner()
+          + getPlotArea()
+          + getSubplotCount()
+          + getSubplotIndex()
+          + getSubplotInfo()
+          + setDataArea()
+          + setPlotArea()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PlotState {
+          - sharedAxisStates : Map
+          + PlotState()
+          + getSharedAxisStates()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PlotUtilities {
+          {static} + isEmptyOrNull()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PolarAxisLocation {
+          {static} + EAST_ABOVE : PolarAxisLocation
+          {static} + EAST_BELOW : PolarAxisLocation
+          {static} + NORTH_LEFT : PolarAxisLocation
+          {static} + NORTH_RIGHT : PolarAxisLocation
+          {static} + SOUTH_LEFT : PolarAxisLocation
+          {static} + SOUTH_RIGHT : PolarAxisLocation
+          {static} + WEST_ABOVE : PolarAxisLocation
+          {static} + WEST_BELOW : PolarAxisLocation
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + toString()
+          - PolarAxisLocation()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PolarPlot {
+          {static} + DEFAULT_ANGLE_OFFSET : double
+          {static} + DEFAULT_ANGLE_TICK_UNIT_SIZE : double
+          {static} + DEFAULT_GRIDLINE_PAINT : Paint
+          {static} + DEFAULT_GRIDLINE_STROKE : Stroke
+          {static} # localizationResources : ResourceBundle
+          {static} - ANNOTATION_MARGIN : double
+          {static} - DEFAULT_MARGIN : int
+          - angleGridlinePaint : Paint
+          - angleGridlineStroke : Stroke
+          - angleGridlinesVisible : boolean
+          - angleLabelFont : Font
+          - angleLabelPaint : Paint
+          - angleLabelsVisible : boolean
+          - angleOffset : double
+          - angleTickUnit : TickUnit
+          - angleTicks : List
+          - axes : ObjectList
+          - axisLocations : ObjectList
+          - cornerTextItems : List
+          - counterClockwise : boolean
+          - datasetToAxesMap : Map
+          - datasets : ObjectList
+          - fixedLegendItems : LegendItemCollection
+          - margin : int
+          - radiusGridlinePaint : Paint
+          - radiusGridlineStroke : Stroke
+          - radiusGridlinesVisible : boolean
+          - radiusMinorGridlinesVisible : boolean
+          - renderers : ObjectList
+          {static} - serialVersionUID : long
+          + PolarPlot()
+          + PolarPlot()
+          + addCornerTextItem()
+          + clearCornerTextItems()
+          + clone()
+          + datasetChanged()
+          + draw()
+          + equals()
+          + getAngleGridlinePaint()
+          + getAngleGridlineStroke()
+          + getAngleLabelFont()
+          + getAngleLabelPaint()
+          + getAngleOffset()
+          + getAngleTickUnit()
+          + getAxis()
+          + getAxis()
+          + getAxisCount()
+          + getAxisForDataset()
+          + getAxisIndex()
+          + getAxisLocation()
+          + getAxisLocation()
+          + getDataRange()
+          + getDataset()
+          + getDataset()
+          + getDatasetCount()
+          + getFixedLegendItems()
+          + getIndexOf()
+          + getLegendItems()
+          + getMargin()
+          + getMaxRadius()
+          + getOrientation()
+          + getPlotType()
+          + getRadiusGridlinePaint()
+          + getRadiusGridlineStroke()
+          + getRenderer()
+          + getRenderer()
+          + getSeriesCount()
+          + indexOf()
+          + isAngleGridlinesVisible()
+          + isAngleLabelsVisible()
+          + isCounterClockwise()
+          + isDomainZoomable()
+          + isRadiusGridlinesVisible()
+          + isRadiusMinorGridlinesVisible()
+          + isRangeZoomable()
+          + mapDatasetToAxes()
+          + mapDatasetToAxis()
+          + removeCornerTextItem()
+          + rendererChanged()
+          + setAngleGridlinePaint()
+          + setAngleGridlineStroke()
+          + setAngleGridlinesVisible()
+          + setAngleLabelFont()
+          + setAngleLabelPaint()
+          + setAngleLabelsVisible()
+          + setAngleOffset()
+          + setAngleTickUnit()
+          + setAxis()
+          + setAxis()
+          + setAxis()
+          + setAxisLocation()
+          + setAxisLocation()
+          + setAxisLocation()
+          + setAxisLocation()
+          + setCounterClockwise()
+          + setDataset()
+          + setDataset()
+          + setFixedLegendItems()
+          + setMargin()
+          + setRadiusGridlinePaint()
+          + setRadiusGridlineStroke()
+          + setRadiusGridlinesVisible()
+          + setRadiusMinorGridlinesVisible()
+          + setRenderer()
+          + setRenderer()
+          + setRenderer()
+          + translateToJava2D()
+          + translateValueThetaRadiusToJava2D()
+          + zoom()
+          + zoomDomainAxes()
+          + zoomDomainAxes()
+          + zoomDomainAxes()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          # buildRadialTicks()
+          # calculateTextAnchor()
+          # drawAxis()
+          # drawAxis()
+          # drawCornerTextItems()
+          # drawGridlines()
+          # refreshAngleTicks()
+          # render()
+          - checkAxisIndices()
+          - getDatasetsMappedToAxis()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.RainbowPalette {
+          - blue : int[]
+          - green : int[]
+          - red : int[]
+          {static} - serialVersionUID : long
+          + RainbowPalette()
+          + initialize()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.RingPlot {
+          - centerText : String
+          - centerTextColor : Color
+          - centerTextFont : Font
+          - centerTextFormatter : Format
+          - centerTextMode : CenterTextMode
+          - innerSeparatorExtension : double
+          - outerSeparatorExtension : double
+          - sectionDepth : double
+          - separatorPaint : Paint
+          - separatorStroke : Stroke
+          - separatorsVisible : boolean
+          {static} - serialVersionUID : long
+          + RingPlot()
+          + RingPlot()
+          + equals()
+          + getCenterText()
+          + getCenterTextColor()
+          + getCenterTextFont()
+          + getCenterTextFormatter()
+          + getCenterTextMode()
+          + getInnerSeparatorExtension()
+          + getOuterSeparatorExtension()
+          + getSectionDepth()
+          + getSeparatorPaint()
+          + getSeparatorStroke()
+          + getSeparatorsVisible()
+          + initialise()
+          + setCenterText()
+          + setCenterTextColor()
+          + setCenterTextFont()
+          + setCenterTextFormatter()
+          + setCenterTextMode()
+          + setInnerSeparatorExtension()
+          + setOuterSeparatorExtension()
+          + setSectionDepth()
+          + setSeparatorPaint()
+          + setSeparatorStroke()
+          + setSeparatorsVisible()
+          # drawItem()
+          # getLabelLinkDepth()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.SeriesRenderingOrder {
+          {static} + FORWARD : SeriesRenderingOrder
+          {static} + REVERSE : SeriesRenderingOrder
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + hashCode()
+          + toString()
+          - SeriesRenderingOrder()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.SpiderWebPlot {
+          {static} + DEFAULT_AXIS_LABEL_GAP : double
+          {static} + DEFAULT_HEAD : double
+          {static} + DEFAULT_INTERIOR_GAP : double
+          {static} + DEFAULT_LABEL_BACKGROUND_PAINT : Paint
+          {static} + DEFAULT_LABEL_FONT : Font
+          {static} + DEFAULT_LABEL_OUTLINE_PAINT : Paint
+          {static} + DEFAULT_LABEL_OUTLINE_STROKE : Stroke
+          {static} + DEFAULT_LABEL_PAINT : Paint
+          {static} + DEFAULT_LABEL_SHADOW_PAINT : Paint
+          {static} + DEFAULT_MAX_VALUE : double
+          {static} + DEFAULT_START_ANGLE : double
+          {static} + MAX_INTERIOR_GAP : double
+          # headPercent : double
+          - axisLabelGap : double
+          - axisLinePaint : Paint
+          - axisLineStroke : Stroke
+          - baseSeriesOutlinePaint : Paint
+          - baseSeriesOutlineStroke : Stroke
+          - baseSeriesPaint : Paint
+          - dataExtractOrder : TableOrder
+          - dataset : CategoryDataset
+          - direction : Rotation
+          - interiorGap : double
+          - labelFont : Font
+          - labelGenerator : CategoryItemLabelGenerator
+          - labelPaint : Paint
+          - legendItemShape : Shape
+          - maxValue : double
+          {static} - serialVersionUID : long
+          - seriesOutlinePaint : Paint
+          - seriesOutlinePaintList : PaintList
+          - seriesOutlineStroke : Stroke
+          - seriesOutlineStrokeList : StrokeList
+          - seriesPaint : Paint
+          - seriesPaintList : PaintList
+          - startAngle : double
+          - toolTipGenerator : CategoryToolTipGenerator
+          - urlGenerator : CategoryURLGenerator
+          - webFilled : boolean
+          + SpiderWebPlot()
+          + SpiderWebPlot()
+          + SpiderWebPlot()
+          + clone()
+          + draw()
+          + equals()
+          + getAxisLabelGap()
+          + getAxisLinePaint()
+          + getAxisLineStroke()
+          + getBaseSeriesOutlinePaint()
+          + getBaseSeriesOutlineStroke()
+          + getBaseSeriesPaint()
+          + getDataExtractOrder()
+          + getDataset()
+          + getDirection()
+          + getHeadPercent()
+          + getInteriorGap()
+          + getLabelFont()
+          + getLabelGenerator()
+          + getLabelPaint()
+          + getLegendItemShape()
+          + getLegendItems()
+          + getMaxValue()
+          + getPlotType()
+          + getSeriesOutlinePaint()
+          + getSeriesOutlinePaint()
+          + getSeriesOutlineStroke()
+          + getSeriesOutlineStroke()
+          + getSeriesPaint()
+          + getSeriesPaint()
+          + getStartAngle()
+          + getToolTipGenerator()
+          + getURLGenerator()
+          + isWebFilled()
+          + setAxisLabelGap()
+          + setAxisLinePaint()
+          + setAxisLineStroke()
+          + setBaseSeriesOutlinePaint()
+          + setBaseSeriesOutlineStroke()
+          + setBaseSeriesPaint()
+          + setDataExtractOrder()
+          + setDataset()
+          + setDirection()
+          + setHeadPercent()
+          + setInteriorGap()
+          + setLabelFont()
+          + setLabelGenerator()
+          + setLabelPaint()
+          + setLegendItemShape()
+          + setMaxValue()
+          + setSeriesOutlinePaint()
+          + setSeriesOutlinePaint()
+          + setSeriesOutlineStroke()
+          + setSeriesOutlineStroke()
+          + setSeriesPaint()
+          + setSeriesPaint()
+          + setStartAngle()
+          + setToolTipGenerator()
+          + setURLGenerator()
+          + setWebFilled()
+          # calculateLabelLocation()
+          # drawLabel()
+          # drawRadarPoly()
+          # getPlotValue()
+          # getWebPoint()
+          - calculateMaxValue()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.ThermometerPlot {
+          {static} + BULB : int
+          {static} + CRITICAL : int
+          {static} + LEFT : int
+          {static} + NONE : int
+          {static} + NORMAL : int
+          {static} + RIGHT : int
+          {static} + UNITS_CELCIUS : int
+          {static} + UNITS_FAHRENHEIT : int
+          {static} + UNITS_KELVIN : int
+          {static} + UNITS_NONE : int
+          {static} + WARNING : int
+          {static} # AXIS_GAP : int
+          {static} # BULB_DIAMETER : int
+          {static} # BULB_RADIUS : int
+          {static} # COLUMN_DIAMETER : int
+          {static} # COLUMN_RADIUS : int
+          {static} # DEFAULT_BULB_RADIUS : int
+          {static} # DEFAULT_COLUMN_RADIUS : int
+          {static} # DEFAULT_GAP : int
+          {static} # DEFAULT_LOWER_BOUND : double
+          {static} # DEFAULT_UPPER_BOUND : double
+          {static} # DISPLAY_HIGH : int
+          {static} # DISPLAY_LOW : int
+          {static} # GAP_DIAMETER : int
+          {static} # GAP_RADIUS : int
+          {static} # RANGE_HIGH : int
+          {static} # RANGE_LOW : int
+          {static} # UNITS : String[]
+          {static} # localizationResources : ResourceBundle
+          - axisLocation : int
+          - bulbRadius : int
+          - columnRadius : int
+          - dataset : ValueDataset
+          - followDataInSubranges : boolean
+          - gap : int
+          - lowerBound : double
+          - mercuryPaint : Paint
+          - padding : RectangleInsets
+          - rangeAxis : ValueAxis
+          - rangeIndicatorStroke : Stroke
+          {static} - serialVersionUID : long
+          - showValueLines : boolean
+          - subrange : int
+          - subrangeIndicatorStroke : Stroke
+          - subrangeIndicatorsVisible : boolean
+          - subrangeInfo : double[][]
+          - subrangePaint : Paint[]
+          - thermometerPaint : Paint
+          - thermometerStroke : Stroke
+          - units : int
+          - upperBound : double
+          - useSubrangePaint : boolean
+          - valueFont : Font
+          - valueFormat : NumberFormat
+          - valueLocation : int
+          - valuePaint : Paint
+          + ThermometerPlot()
+          + ThermometerPlot()
+          + clone()
+          + datasetChanged()
+          + draw()
+          + equals()
+          + getAxisLocation()
+          + getBulbDiameter()
+          + getBulbRadius()
+          + getColumnDiameter()
+          + getColumnRadius()
+          + getDataRange()
+          + getDataset()
+          + getFollowDataInSubranges()
+          + getGap()
+          + getLegendItems()
+          + getLowerBound()
+          + getMaximumVerticalDataValue()
+          + getMercuryPaint()
+          + getMinimumVerticalDataValue()
+          + getOrientation()
+          + getPadding()
+          + getPlotType()
+          + getRangeAxis()
+          + getShowValueLines()
+          + getSubrangePaint()
+          + getThermometerPaint()
+          + getThermometerStroke()
+          + getUnits()
+          + getUpperBound()
+          + getUseSubrangePaint()
+          + getValueFont()
+          + getValueLocation()
+          + getValuePaint()
+          + isDomainZoomable()
+          + isRangeZoomable()
+          + setAxisLocation()
+          + setBulbRadius()
+          + setColumnRadius()
+          + setDataset()
+          + setDisplayRange()
+          + setFollowDataInSubranges()
+          + setGap()
+          + setLowerBound()
+          + setMercuryPaint()
+          + setPadding()
+          + setRange()
+          + setRangeAxis()
+          + setShowValueLines()
+          + setSubrange()
+          + setSubrangeInfo()
+          + setSubrangeInfo()
+          + setSubrangePaint()
+          + setThermometerPaint()
+          + setThermometerStroke()
+          + setUnits()
+          + setUnits()
+          + setUpperBound()
+          + setUseSubrangePaint()
+          + setValueFont()
+          + setValueFormat()
+          + setValueLocation()
+          + setValuePaint()
+          + zoom()
+          + zoomDomainAxes()
+          + zoomDomainAxes()
+          + zoomDomainAxes()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          {static} # isValidNumber()
+          # setAxisRange()
+          {static} - equal()
+          - getCurrentPaint()
+          - inSubrange()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      interface org.jfree.chart.plot.ValueAxisPlot {
+          {abstract} + getDataRange()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.ValueMarker {
+          - value : double
+          + ValueMarker()
+          + ValueMarker()
+          + ValueMarker()
+          + equals()
+          + getValue()
+          + setValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.WaferMapPlot {
+          {static} + DEFAULT_CROSSHAIR_PAINT : Paint
+          {static} + DEFAULT_CROSSHAIR_STROKE : Stroke
+          {static} + DEFAULT_CROSSHAIR_VISIBLE : boolean
+          {static} + DEFAULT_GRIDLINE_PAINT : Paint
+          {static} + DEFAULT_GRIDLINE_STROKE : Stroke
+          {static} # localizationResources : ResourceBundle
+          - dataset : WaferMapDataset
+          - orientation : PlotOrientation
+          - renderer : WaferMapRenderer
+          {static} - serialVersionUID : long
+          + WaferMapPlot()
+          + WaferMapPlot()
+          + WaferMapPlot()
+          + draw()
+          + getDataset()
+          + getLegendItems()
+          + getPlotType()
+          + rendererChanged()
+          + setDataset()
+          + setRenderer()
+          # drawChipGrid()
+          # drawWaferEdge()
+          # getWaferEdge()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.XYCrosshairState {
+          + XYCrosshairState()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.XYPlot {
+          {static} + DEFAULT_CROSSHAIR_PAINT : Paint
+          {static} + DEFAULT_CROSSHAIR_STROKE : Stroke
+          {static} + DEFAULT_CROSSHAIR_VISIBLE : boolean
+          {static} + DEFAULT_GRIDLINE_PAINT : Paint
+          {static} + DEFAULT_GRIDLINE_STROKE : Stroke
+          {static} # localizationResources : ResourceBundle
+          - annotations : List<XYAnnotation>
+          - axisOffset : RectangleInsets
+          - backgroundDomainMarkers : Map
+          - backgroundRangeMarkers : Map
+          - datasetRenderingOrder : DatasetRenderingOrder
+          - datasetToDomainAxesMap : Map<Integer, List<Integer>>
+          - datasetToRangeAxesMap : Map<Integer, List<Integer>>
+          - datasets : Map<Integer, XYDataset>
+          - domainAxes : Map<Integer, ValueAxis>
+          - domainAxisLocations : Map<Integer, AxisLocation>
+          - domainCrosshairLockedOnData : boolean
+          - domainCrosshairPaint : Paint
+          - domainCrosshairStroke : Stroke
+          - domainCrosshairValue : double
+          - domainCrosshairVisible : boolean
+          - domainGridlinePaint : Paint
+          - domainGridlineStroke : Stroke
+          - domainGridlinesVisible : boolean
+          - domainMinorGridlinePaint : Paint
+          - domainMinorGridlineStroke : Stroke
+          - domainMinorGridlinesVisible : boolean
+          - domainPannable : boolean
+          - domainTickBandPaint : Paint
+          - domainZeroBaselinePaint : Paint
+          - domainZeroBaselineStroke : Stroke
+          - domainZeroBaselineVisible : boolean
+          - fixedDomainAxisSpace : AxisSpace
+          - fixedLegendItems : LegendItemCollection
+          - fixedRangeAxisSpace : AxisSpace
+          - foregroundDomainMarkers : Map
+          - foregroundRangeMarkers : Map
+          - orientation : PlotOrientation
+          - quadrantOrigin : Point2D
+          - quadrantPaint : Paint[]
+          - rangeAxes : Map<Integer, ValueAxis>
+          - rangeAxisLocations : Map<Integer, AxisLocation>
+          - rangeCrosshairLockedOnData : boolean
+          - rangeCrosshairPaint : Paint
+          - rangeCrosshairStroke : Stroke
+          - rangeCrosshairValue : double
+          - rangeCrosshairVisible : boolean
+          - rangeGridlinePaint : Paint
+          - rangeGridlineStroke : Stroke
+          - rangeGridlinesVisible : boolean
+          - rangeMinorGridlinePaint : Paint
+          - rangeMinorGridlineStroke : Stroke
+          - rangeMinorGridlinesVisible : boolean
+          - rangePannable : boolean
+          - rangeTickBandPaint : Paint
+          - rangeZeroBaselinePaint : Paint
+          - rangeZeroBaselineStroke : Stroke
+          - rangeZeroBaselineVisible : boolean
+          - renderers : Map<Integer, XYItemRenderer>
+          {static} - serialVersionUID : long
+          - seriesRenderingOrder : SeriesRenderingOrder
+          - shadowGenerator : ShadowGenerator
+          - weight : int
+          + XYPlot()
+          + XYPlot()
+          + addAnnotation()
+          + addAnnotation()
+          + addDomainMarker()
+          + addDomainMarker()
+          + addDomainMarker()
+          + addDomainMarker()
+          + addRangeMarker()
+          + addRangeMarker()
+          + addRangeMarker()
+          + addRangeMarker()
+          + annotationChanged()
+          + clearAnnotations()
+          + clearDomainAxes()
+          + clearDomainMarkers()
+          + clearDomainMarkers()
+          + clearRangeAxes()
+          + clearRangeMarkers()
+          + clearRangeMarkers()
+          + clone()
+          + configureDomainAxes()
+          + configureRangeAxes()
+          + datasetChanged()
+          + draw()
+          + drawAnnotations()
+          + drawBackground()
+          + drawDomainTickBands()
+          + drawRangeTickBands()
+          + equals()
+          + getAnnotations()
+          + getAxisOffset()
+          + getDataRange()
+          + getDataset()
+          + getDataset()
+          + getDatasetCount()
+          + getDatasetRenderingOrder()
+          + getDomainAxis()
+          + getDomainAxis()
+          + getDomainAxisCount()
+          + getDomainAxisEdge()
+          + getDomainAxisEdge()
+          + getDomainAxisForDataset()
+          + getDomainAxisIndex()
+          + getDomainAxisLocation()
+          + getDomainAxisLocation()
+          + getDomainCrosshairPaint()
+          + getDomainCrosshairStroke()
+          + getDomainCrosshairValue()
+          + getDomainGridlinePaint()
+          + getDomainGridlineStroke()
+          + getDomainMarkers()
+          + getDomainMarkers()
+          + getDomainMinorGridlinePaint()
+          + getDomainMinorGridlineStroke()
+          + getDomainTickBandPaint()
+          + getDomainZeroBaselinePaint()
+          + getDomainZeroBaselineStroke()
+          + getFixedDomainAxisSpace()
+          + getFixedLegendItems()
+          + getFixedRangeAxisSpace()
+          + getIndexOf()
+          + getLegendItems()
+          + getOrientation()
+          + getPlotType()
+          + getQuadrantOrigin()
+          + getQuadrantPaint()
+          + getRangeAxis()
+          + getRangeAxis()
+          + getRangeAxisCount()
+          + getRangeAxisEdge()
+          + getRangeAxisEdge()
+          + getRangeAxisForDataset()
+          + getRangeAxisIndex()
+          + getRangeAxisLocation()
+          + getRangeAxisLocation()
+          + getRangeCrosshairPaint()
+          + getRangeCrosshairStroke()
+          + getRangeCrosshairValue()
+          + getRangeGridlinePaint()
+          + getRangeGridlineStroke()
+          + getRangeMarkers()
+          + getRangeMarkers()
+          + getRangeMinorGridlinePaint()
+          + getRangeMinorGridlineStroke()
+          + getRangeTickBandPaint()
+          + getRangeZeroBaselinePaint()
+          + getRangeZeroBaselineStroke()
+          + getRenderer()
+          + getRenderer()
+          + getRendererCount()
+          + getRendererForDataset()
+          + getSeriesCount()
+          + getSeriesRenderingOrder()
+          + getShadowGenerator()
+          + getWeight()
+          + handleClick()
+          + indexOf()
+          + isDomainCrosshairLockedOnData()
+          + isDomainCrosshairVisible()
+          + isDomainGridlinesVisible()
+          + isDomainMinorGridlinesVisible()
+          + isDomainPannable()
+          + isDomainZeroBaselineVisible()
+          + isDomainZoomable()
+          + isRangeCrosshairLockedOnData()
+          + isRangeCrosshairVisible()
+          + isRangeGridlinesVisible()
+          + isRangeMinorGridlinesVisible()
+          + isRangePannable()
+          + isRangeZeroBaselineVisible()
+          + isRangeZoomable()
+          + mapDatasetToDomainAxes()
+          + mapDatasetToDomainAxis()
+          + mapDatasetToRangeAxes()
+          + mapDatasetToRangeAxis()
+          + panDomainAxes()
+          + panRangeAxes()
+          + removeAnnotation()
+          + removeAnnotation()
+          + removeDomainMarker()
+          + removeDomainMarker()
+          + removeDomainMarker()
+          + removeDomainMarker()
+          + removeRangeMarker()
+          + removeRangeMarker()
+          + removeRangeMarker()
+          + removeRangeMarker()
+          + render()
+          + rendererChanged()
+          + setAxisOffset()
+          + setDataset()
+          + setDataset()
+          + setDatasetRenderingOrder()
+          + setDomainAxes()
+          + setDomainAxis()
+          + setDomainAxis()
+          + setDomainAxis()
+          + setDomainAxisLocation()
+          + setDomainAxisLocation()
+          + setDomainAxisLocation()
+          + setDomainAxisLocation()
+          + setDomainCrosshairLockedOnData()
+          + setDomainCrosshairPaint()
+          + setDomainCrosshairStroke()
+          + setDomainCrosshairValue()
+          + setDomainCrosshairValue()
+          + setDomainCrosshairVisible()
+          + setDomainGridlinePaint()
+          + setDomainGridlineStroke()
+          + setDomainGridlinesVisible()
+          + setDomainMinorGridlinePaint()
+          + setDomainMinorGridlineStroke()
+          + setDomainMinorGridlinesVisible()
+          + setDomainPannable()
+          + setDomainTickBandPaint()
+          + setDomainZeroBaselinePaint()
+          + setDomainZeroBaselineStroke()
+          + setDomainZeroBaselineVisible()
+          + setFixedDomainAxisSpace()
+          + setFixedDomainAxisSpace()
+          + setFixedLegendItems()
+          + setFixedRangeAxisSpace()
+          + setFixedRangeAxisSpace()
+          + setOrientation()
+          + setQuadrantOrigin()
+          + setQuadrantPaint()
+          + setRangeAxes()
+          + setRangeAxis()
+          + setRangeAxis()
+          + setRangeAxis()
+          + setRangeAxisLocation()
+          + setRangeAxisLocation()
+          + setRangeAxisLocation()
+          + setRangeAxisLocation()
+          + setRangeCrosshairLockedOnData()
+          + setRangeCrosshairPaint()
+          + setRangeCrosshairStroke()
+          + setRangeCrosshairValue()
+          + setRangeCrosshairValue()
+          + setRangeCrosshairVisible()
+          + setRangeGridlinePaint()
+          + setRangeGridlineStroke()
+          + setRangeGridlinesVisible()
+          + setRangeMinorGridlinePaint()
+          + setRangeMinorGridlineStroke()
+          + setRangeMinorGridlinesVisible()
+          + setRangePannable()
+          + setRangeTickBandPaint()
+          + setRangeZeroBaselinePaint()
+          + setRangeZeroBaselineStroke()
+          + setRangeZeroBaselineVisible()
+          + setRenderer()
+          + setRenderer()
+          + setRenderer()
+          + setRenderers()
+          + setSeriesRenderingOrder()
+          + setShadowGenerator()
+          + setWeight()
+          + zoomDomainAxes()
+          + zoomDomainAxes()
+          + zoomDomainAxes()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          + zoomRangeAxes()
+          # calculateAxisSpace()
+          # calculateDomainAxisSpace()
+          # calculateRangeAxisSpace()
+          # drawAxes()
+          # drawDomainCrosshair()
+          # drawDomainGridlines()
+          # drawDomainMarkers()
+          # drawHorizontalLine()
+          # drawQuadrants()
+          # drawRangeCrosshair()
+          # drawRangeGridlines()
+          # drawRangeMarkers()
+          # drawVerticalLine()
+          # drawZeroDomainBaseline()
+          # drawZeroRangeBaseline()
+          - checkAxisIndices()
+          - findDomainAxisIndex()
+          - findRangeAxisIndex()
+          - getDatasetIndices()
+          - getDatasetsMappedToDomainAxis()
+          - getDatasetsMappedToRangeAxis()
+          - getRendererIndices()
+          - integerise()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      interface org.jfree.chart.plot.Zoomable {
+          {abstract} + getOrientation()
+          {abstract} + isDomainZoomable()
+          {abstract} + isRangeZoomable()
+          {abstract} + zoomDomainAxes()
+          {abstract} + zoomDomainAxes()
+          {abstract} + zoomDomainAxes()
+          {abstract} + zoomRangeAxes()
+          {abstract} + zoomRangeAxes()
+          {abstract} + zoomRangeAxes()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.plot.AbstractPieLabelDistributor .up.|> Serializable
+  org.jfree.chart.plot.CategoryMarker .up.|> Cloneable
+  org.jfree.chart.plot.CategoryMarker .up.|> Serializable
+  org.jfree.chart.plot.CategoryPlot .up.|> AnnotationChangeListener
+  org.jfree.chart.plot.CategoryPlot .up.|> Cloneable
+  org.jfree.chart.plot.CategoryPlot .up.|> Pannable
+  org.jfree.chart.plot.CategoryPlot .up.|> PublicCloneable
+  org.jfree.chart.plot.CategoryPlot .up.|> RendererChangeListener
+  org.jfree.chart.plot.CategoryPlot .up.|> Serializable
+  org.jfree.chart.plot.CategoryPlot .up.|> ValueAxisPlot
+  org.jfree.chart.plot.CategoryPlot .up.|> Zoomable
+  org.jfree.chart.plot.ColorPalette .up.|> Cloneable
+  org.jfree.chart.plot.ColorPalette .up.|> Serializable
+  org.jfree.chart.plot.CombinedDomainCategoryPlot .up.|> PlotChangeListener
+  org.jfree.chart.plot.CombinedDomainXYPlot .up.|> PlotChangeListener
+  org.jfree.chart.plot.CombinedRangeCategoryPlot .up.|> PlotChangeListener
+  org.jfree.chart.plot.CombinedRangeXYPlot .up.|> PlotChangeListener
+  org.jfree.chart.plot.CompassPlot .up.|> Cloneable
+  org.jfree.chart.plot.CompassPlot .up.|> Serializable
+  org.jfree.chart.plot.ContourPlot .up.|> Cloneable
+  org.jfree.chart.plot.ContourPlot .up.|> ContourValuePlot
+  org.jfree.chart.plot.ContourPlot .up.|> PropertyChangeListener
+  org.jfree.chart.plot.ContourPlot .up.|> Serializable
+  org.jfree.chart.plot.ContourPlot .up.|> ValueAxisPlot
+  org.jfree.chart.plot.Crosshair .up.|> Cloneable
+  org.jfree.chart.plot.Crosshair .up.|> PublicCloneable
+  org.jfree.chart.plot.Crosshair .up.|> Serializable
+  org.jfree.chart.plot.DatasetRenderingOrder .up.|> Serializable
+  org.jfree.chart.plot.DefaultDrawingSupplier .up.|> Cloneable
+  org.jfree.chart.plot.DefaultDrawingSupplier .up.|> DrawingSupplier
+  org.jfree.chart.plot.DefaultDrawingSupplier .up.|> PublicCloneable
+  org.jfree.chart.plot.DefaultDrawingSupplier .up.|> Serializable
+  org.jfree.chart.plot.DialShape .up.|> Serializable
+  org.jfree.chart.plot.FastScatterPlot .up.|> Cloneable
+  org.jfree.chart.plot.FastScatterPlot .up.|> Pannable
+  org.jfree.chart.plot.FastScatterPlot .up.|> Serializable
+  org.jfree.chart.plot.FastScatterPlot .up.|> ValueAxisPlot
+  org.jfree.chart.plot.FastScatterPlot .up.|> Zoomable
+  org.jfree.chart.plot.GreyPalette .up.|> Serializable
+  org.jfree.chart.plot.IntervalMarker .up.|> Cloneable
+  org.jfree.chart.plot.IntervalMarker .up.|> Serializable
+  org.jfree.chart.plot.JThermometer .up.|> Serializable
+  org.jfree.chart.plot.Marker .up.|> Cloneable
+  org.jfree.chart.plot.Marker .up.|> Serializable
+  org.jfree.chart.plot.MeterInterval .up.|> Serializable
+  org.jfree.chart.plot.MeterPlot .up.|> Cloneable
+  org.jfree.chart.plot.MeterPlot .up.|> Serializable
+  org.jfree.chart.plot.MultiplePiePlot .up.|> Cloneable
+  org.jfree.chart.plot.MultiplePiePlot .up.|> Serializable
+  org.jfree.chart.plot.PieLabelLinkStyle .up.|> Serializable
+  org.jfree.chart.plot.PieLabelRecord .up.|> Comparable
+  org.jfree.chart.plot.PieLabelRecord .up.|> Serializable
+  org.jfree.chart.plot.PiePlot .up.|> Cloneable
+  org.jfree.chart.plot.PiePlot .up.|> Serializable
+  org.jfree.chart.plot.PiePlot3D .up.|> Serializable
+  org.jfree.chart.plot.Plot .up.|> AnnotationChangeListener
+  org.jfree.chart.plot.Plot .up.|> AxisChangeListener
+  org.jfree.chart.plot.Plot .up.|> Cloneable
+  org.jfree.chart.plot.Plot .up.|> DatasetChangeListener
+  org.jfree.chart.plot.Plot .up.|> LegendItemSource
+  org.jfree.chart.plot.Plot .up.|> MarkerChangeListener
+  org.jfree.chart.plot.Plot .up.|> PublicCloneable
+  org.jfree.chart.plot.Plot .up.|> Serializable
+  org.jfree.chart.plot.Plot o-- org.jfree.chart.plot.Plot : parent
+  org.jfree.chart.plot.PlotOrientation .up.|> Serializable
+  org.jfree.chart.plot.PlotRenderingInfo .up.|> Cloneable
+  org.jfree.chart.plot.PlotRenderingInfo .up.|> Serializable
+  org.jfree.chart.plot.PolarAxisLocation .up.|> Serializable
+  org.jfree.chart.plot.PolarPlot .up.|> Cloneable
+  org.jfree.chart.plot.PolarPlot .up.|> RendererChangeListener
+  org.jfree.chart.plot.PolarPlot .up.|> Serializable
+  org.jfree.chart.plot.PolarPlot .up.|> ValueAxisPlot
+  org.jfree.chart.plot.PolarPlot .up.|> Zoomable
+  org.jfree.chart.plot.RainbowPalette .up.|> Serializable
+  org.jfree.chart.plot.RingPlot .up.|> Cloneable
+  org.jfree.chart.plot.RingPlot .up.|> Serializable
+  org.jfree.chart.plot.SeriesRenderingOrder .up.|> Serializable
+  org.jfree.chart.plot.SpiderWebPlot .up.|> Cloneable
+  org.jfree.chart.plot.SpiderWebPlot .up.|> Serializable
+  org.jfree.chart.plot.ThermometerPlot .up.|> Cloneable
+  org.jfree.chart.plot.ThermometerPlot .up.|> Serializable
+  org.jfree.chart.plot.ThermometerPlot .up.|> ValueAxisPlot
+  org.jfree.chart.plot.ThermometerPlot .up.|> Zoomable
+  org.jfree.chart.plot.WaferMapPlot .up.|> Cloneable
+  org.jfree.chart.plot.WaferMapPlot .up.|> RendererChangeListener
+  org.jfree.chart.plot.WaferMapPlot .up.|> Serializable
+  org.jfree.chart.plot.XYPlot .up.|> Cloneable
+  org.jfree.chart.plot.XYPlot .up.|> Pannable
+  org.jfree.chart.plot.XYPlot .up.|> PublicCloneable
+  org.jfree.chart.plot.XYPlot .up.|> RendererChangeListener
+  org.jfree.chart.plot.XYPlot .up.|> Serializable
+  org.jfree.chart.plot.XYPlot .up.|> ValueAxisPlot
+  org.jfree.chart.plot.XYPlot .up.|> Zoomable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

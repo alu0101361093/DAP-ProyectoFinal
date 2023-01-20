@@ -1,0 +1,595 @@
+@startuml
+
+title __GENERAL's Class Diagram__\n
+
+  namespace org.jfree.data {
+    namespace general {
+      abstract class org.jfree.data.general.AbstractDataset {
+          - group : DatasetGroup
+          - listenerList : EventListenerList
+          - notify : boolean
+          {static} - serialVersionUID : long
+          + addChangeListener()
+          + clone()
+          + getGroup()
+          + getNotify()
+          + hasListener()
+          + removeChangeListener()
+          + setGroup()
+          + setNotify()
+          + validateObject()
+          # AbstractDataset()
+          # fireDatasetChanged()
+          # notifyListeners()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      abstract class org.jfree.data.general.AbstractSeriesDataset {
+          {static} - serialVersionUID : long
+          {abstract} + getSeriesCount()
+          {abstract} + getSeriesKey()
+          + indexOf()
+          + seriesChanged()
+          # AbstractSeriesDataset()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      interface org.jfree.data.general.CombinationDataset {
+          {abstract} + getMap()
+          {abstract} + getParent()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.CombinedDataset {
+          - datasetInfo : List
+          + CombinedDataset()
+          + CombinedDataset()
+          + add()
+          + add()
+          + add()
+          + getChildPosition()
+          + getClose()
+          + getCloseValue()
+          + getEndX()
+          + getEndY()
+          + getHigh()
+          + getHighValue()
+          + getItemCount()
+          + getLow()
+          + getLowValue()
+          + getMap()
+          + getOpen()
+          + getOpenValue()
+          + getParent()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartY()
+          + getVolume()
+          + getVolumeValue()
+          + getX()
+          + getY()
+          - fastAdd()
+          - getDatasetInfo()
+          - joinMap()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.CombinedDataset.DatasetInfo {
+          - data : SeriesDataset
+          - series : int
+          ~ DatasetInfo()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      interface org.jfree.data.general.Dataset {
+          {abstract} + addChangeListener()
+          {abstract} + getGroup()
+          {abstract} + removeChangeListener()
+          {abstract} + setGroup()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DatasetChangeEvent {
+          - dataset : Dataset
+          + DatasetChangeEvent()
+          + getDataset()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      interface org.jfree.data.general.DatasetChangeListener {
+          {abstract} + datasetChanged()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DatasetGroup {
+          - id : String
+          {static} - serialVersionUID : long
+          + DatasetGroup()
+          + DatasetGroup()
+          + clone()
+          + equals()
+          + getID()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DatasetUtilities {
+          {static} + calculatePieDatasetTotal()
+          {static} + calculateStackTotal()
+          {static} + createCategoryDataset()
+          {static} + createCategoryDataset()
+          {static} + createCategoryDataset()
+          {static} + createCategoryDataset()
+          {static} + createConsolidatedPieDataset()
+          {static} + createConsolidatedPieDataset()
+          {static} + createPieDatasetForColumn()
+          {static} + createPieDatasetForColumn()
+          {static} + createPieDatasetForRow()
+          {static} + createPieDatasetForRow()
+          {static} + findCumulativeRangeBounds()
+          {static} + findDomainBounds()
+          {static} + findDomainBounds()
+          {static} + findDomainBounds()
+          {static} + findItemIndicesForX()
+          {static} + findMaximumDomainValue()
+          {static} + findMaximumRangeValue()
+          {static} + findMaximumRangeValue()
+          {static} + findMaximumStackedRangeValue()
+          {static} + findMinimumDomainValue()
+          {static} + findMinimumRangeValue()
+          {static} + findMinimumRangeValue()
+          {static} + findMinimumStackedRangeValue()
+          {static} + findRangeBounds()
+          {static} + findRangeBounds()
+          {static} + findRangeBounds()
+          {static} + findRangeBounds()
+          {static} + findRangeBounds()
+          {static} + findRangeBounds()
+          {static} + findStackedRangeBounds()
+          {static} + findStackedRangeBounds()
+          {static} + findStackedRangeBounds()
+          {static} + findStackedRangeBounds()
+          {static} + findStackedRangeBounds()
+          {static} + findYValue()
+          {static} + findZBounds()
+          {static} + findZBounds()
+          {static} + findZBounds()
+          {static} + isEmptyOrNull()
+          {static} + isEmptyOrNull()
+          {static} + isEmptyOrNull()
+          {static} + iterateCategoryRangeBounds()
+          {static} + iterateDomainBounds()
+          {static} + iterateDomainBounds()
+          {static} + iterateRangeBounds()
+          {static} + iterateRangeBounds()
+          {static} + iterateRangeBounds()
+          {static} + iterateRangeBounds()
+          {static} + iterateToFindDomainBounds()
+          {static} + iterateToFindRangeBounds()
+          {static} + iterateToFindRangeBounds()
+          {static} + iterateToFindZBounds()
+          {static} + iterateXYRangeBounds()
+          {static} + iterateZBounds()
+          {static} + iterateZBounds()
+          {static} + sampleFunction2D()
+          {static} + sampleFunction2DToSeries()
+          - DatasetUtilities()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DefaultHeatMapDataset {
+          - maxX : double
+          - maxY : double
+          - minX : double
+          - minY : double
+          - xSamples : int
+          - ySamples : int
+          - zValues : double[][]
+          + DefaultHeatMapDataset()
+          + clone()
+          + equals()
+          + getMaximumXValue()
+          + getMaximumYValue()
+          + getMinimumXValue()
+          + getMinimumYValue()
+          + getXSampleCount()
+          + getXValue()
+          + getYSampleCount()
+          + getYValue()
+          + getZ()
+          + getZValue()
+          + setZValue()
+          + setZValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DefaultKeyedValueDataset {
+          - data : KeyedValue
+          {static} - serialVersionUID : long
+          + DefaultKeyedValueDataset()
+          + DefaultKeyedValueDataset()
+          + DefaultKeyedValueDataset()
+          + clone()
+          + equals()
+          + getKey()
+          + getValue()
+          + hashCode()
+          + setValue()
+          + updateValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DefaultKeyedValues2DDataset {
+          {static} - serialVersionUID : long
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DefaultKeyedValuesDataset {
+          {static} - serialVersionUID : long
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DefaultPieDataset {
+          - data : DefaultKeyedValues
+          {static} - serialVersionUID : long
+          + DefaultPieDataset()
+          + DefaultPieDataset()
+          + clear()
+          + clone()
+          + equals()
+          + getIndex()
+          + getItemCount()
+          + getKey()
+          + getKeys()
+          + getValue()
+          + getValue()
+          + hashCode()
+          + insertValue()
+          + insertValue()
+          + remove()
+          + setValue()
+          + setValue()
+          + sortByKeys()
+          + sortByValues()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DefaultValueDataset {
+          {static} - serialVersionUID : long
+          - value : Number
+          + DefaultValueDataset()
+          + DefaultValueDataset()
+          + DefaultValueDataset()
+          + equals()
+          + getValue()
+          + hashCode()
+          + setValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      interface org.jfree.data.general.HeatMapDataset {
+          {abstract} + getMaximumXValue()
+          {abstract} + getMaximumYValue()
+          {abstract} + getMinimumXValue()
+          {abstract} + getMinimumYValue()
+          {abstract} + getXSampleCount()
+          {abstract} + getXValue()
+          {abstract} + getYSampleCount()
+          {abstract} + getYValue()
+          {abstract} + getZ()
+          {abstract} + getZValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      abstract class org.jfree.data.general.HeatMapUtilities {
+          {static} + createHeatMapImage()
+          {static} + extractColumnFromHeatMapDataset()
+          {static} + extractRowFromHeatMapDataset()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      interface org.jfree.data.general.KeyedValueDataset {
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      interface org.jfree.data.general.KeyedValues2DDataset {
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      interface org.jfree.data.general.KeyedValuesDataset {
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      interface org.jfree.data.general.PieDataset {
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      abstract class org.jfree.data.general.Series {
+          - description : String
+          - key : Comparable
+          - listeners : EventListenerList
+          - notify : boolean
+          - propertyChangeSupport : PropertyChangeSupport
+          {static} - serialVersionUID : long
+          - vetoableChangeSupport : VetoableChangeSupport
+          + addChangeListener()
+          + addPropertyChangeListener()
+          + addVetoableChangeListener()
+          + clone()
+          + equals()
+          + fireSeriesChanged()
+          + getDescription()
+          {abstract} + getItemCount()
+          + getKey()
+          + getNotify()
+          + hashCode()
+          + isEmpty()
+          + removeChangeListener()
+          + removePropertyChangeListener()
+          + removeVetoableChangeListener()
+          + setDescription()
+          + setKey()
+          + setNotify()
+          # Series()
+          # Series()
+          # firePropertyChange()
+          # fireVetoableChange()
+          # notifyListeners()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.SeriesChangeEvent {
+          {static} - serialVersionUID : long
+          + SeriesChangeEvent()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      interface org.jfree.data.general.SeriesChangeListener {
+          {abstract} + seriesChanged()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      interface org.jfree.data.general.SeriesDataset {
+          {abstract} + getSeriesCount()
+          {abstract} + getSeriesKey()
+          {abstract} + indexOf()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.SeriesException {
+          {static} - serialVersionUID : long
+          + SeriesException()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.SubSeriesDataset {
+          - map : int[]
+          - parent : SeriesDataset
+          + SubSeriesDataset()
+          + SubSeriesDataset()
+          + getClose()
+          + getCloseValue()
+          + getEndX()
+          + getEndY()
+          + getHigh()
+          + getHighValue()
+          + getItemCount()
+          + getLow()
+          + getLowValue()
+          + getMap()
+          + getOpen()
+          + getOpenValue()
+          + getParent()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartY()
+          + getVolume()
+          + getVolumeValue()
+          + getX()
+          + getY()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      interface org.jfree.data.general.ValueDataset {
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.WaferMapDataset {
+          {static} - DEFAULT_CHIP_SPACE : double
+          - chipSpace : double
+          - data : DefaultKeyedValues2D
+          - maxChipX : int
+          - maxChipY : int
+          - maxValue : Double
+          - minValue : Double
+          + WaferMapDataset()
+          + WaferMapDataset()
+          + addValue()
+          + addValue()
+          + getChipSpace()
+          + getChipValue()
+          + getChipValue()
+          + getMaxChipX()
+          + getMaxChipY()
+          + getMaxValue()
+          + getMinValue()
+          + getUniqueValueCount()
+          + getUniqueValues()
+          + isMaxValue()
+          + isMinValue()
+          + setChipSpace()
+          + setMaxChipX()
+          + setMaxChipY()
+          + setValue()
+      }
+    }
+  }
+  
+
+  org.jfree.data.general.AbstractDataset .up.|> Cloneable
+  org.jfree.data.general.AbstractDataset .up.|> Dataset
+  org.jfree.data.general.AbstractDataset .up.|> ObjectInputValidation
+  org.jfree.data.general.AbstractDataset .up.|> Serializable
+  org.jfree.data.general.AbstractSeriesDataset .up.|> Serializable
+  org.jfree.data.general.AbstractSeriesDataset .up.|> SeriesChangeListener
+  org.jfree.data.general.AbstractSeriesDataset .up.|> SeriesDataset
+  org.jfree.data.general.CombinedDataset .up.|> CombinationDataset
+  org.jfree.data.general.CombinedDataset .up.|> IntervalXYDataset
+  org.jfree.data.general.CombinedDataset .up.|> OHLCDataset
+  org.jfree.data.general.CombinedDataset .up.|> XYDataset
+  org.jfree.data.general.CombinedDataset +-down- org.jfree.data.general.CombinedDataset.DatasetInfo
+  org.jfree.data.general.DatasetGroup .up.|> Cloneable
+  org.jfree.data.general.DatasetGroup .up.|> Serializable
+  org.jfree.data.general.DefaultHeatMapDataset .up.|> Cloneable
+  org.jfree.data.general.DefaultHeatMapDataset .up.|> HeatMapDataset
+  org.jfree.data.general.DefaultHeatMapDataset .up.|> PublicCloneable
+  org.jfree.data.general.DefaultHeatMapDataset .up.|> Serializable
+  org.jfree.data.general.DefaultKeyedValueDataset .up.|> KeyedValueDataset
+  org.jfree.data.general.DefaultKeyedValueDataset .up.|> Serializable
+  org.jfree.data.general.DefaultKeyedValues2DDataset .up.|> KeyedValues2DDataset
+  org.jfree.data.general.DefaultKeyedValues2DDataset .up.|> Serializable
+  org.jfree.data.general.DefaultKeyedValuesDataset .up.|> KeyedValuesDataset
+  org.jfree.data.general.DefaultPieDataset .up.|> Cloneable
+  org.jfree.data.general.DefaultPieDataset .up.|> PieDataset
+  org.jfree.data.general.DefaultPieDataset .up.|> PublicCloneable
+  org.jfree.data.general.DefaultPieDataset .up.|> Serializable
+  org.jfree.data.general.DefaultValueDataset .up.|> Cloneable
+  org.jfree.data.general.DefaultValueDataset .up.|> PublicCloneable
+  org.jfree.data.general.DefaultValueDataset .up.|> Serializable
+  org.jfree.data.general.DefaultValueDataset .up.|> ValueDataset
+  org.jfree.data.general.Series .up.|> Cloneable
+  org.jfree.data.general.Series .up.|> Serializable
+  org.jfree.data.general.SeriesChangeEvent .up.|> Serializable
+  org.jfree.data.general.SeriesException .up.|> Serializable
+  org.jfree.data.general.SubSeriesDataset .up.|> CombinationDataset
+  org.jfree.data.general.SubSeriesDataset .up.|> IntervalXYDataset
+  org.jfree.data.general.SubSeriesDataset .up.|> OHLCDataset
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

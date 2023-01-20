@@ -1,0 +1,529 @@
+@startuml
+
+title __PLOT's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CategoryMarkerTest {
+          ~ lastEvent : MarkerChangeEvent
+          + markerChanged()
+          + testCloning()
+          + testEquals()
+          + testGetSetDrawAsLine()
+          + testGetSetKey()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CategoryPlotTest {
+          + test1169972()
+          + test1654215()
+          + testAddDomainMarker()
+          + testAddRangeMarker()
+          + testAxisIndices()
+          + testAxisLocationIndices()
+          + testAxisRange()
+          + testBug2817504()
+          + testCloning()
+          + testCloning2()
+          + testCloning3()
+          + testConstructor()
+          + testDatasetIndices()
+          + testDomainMarkerIndices()
+          + testEquals()
+          + testEquals_ObjectList()
+          + testEquals_ObjectList2()
+          + testEquals_ObjectList3()
+          + testEquals_ObjectList4()
+          + testEquals_ObjectList5()
+          + testGetDomainAxisForDataset()
+          + testGetDomainAxisIndex()
+          + testGetRangeAxisForDataset()
+          + testGetRangeAxisIndex()
+          + testGetRendererForDataset2()
+          + testMapDatasetToDomainAxis()
+          + testMapDatasetToRangeAxis()
+          + testRangeMarkerIndices()
+          + testRemoveDomainMarker()
+          + testRemoveRangeMarker()
+          + testRendererIndices()
+          + testSerialization()
+          + testSerialization2()
+          + testSerialization3()
+          + testSerialization4()
+          + testSerialization5()
+          + testSetRenderer()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.ColorPaletteTest {
+          + testCloning()
+          + testEquals()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CombinedDomainCategoryPlotTest {
+          - events : List
+          + chartChanged()
+          + createDataset1()
+          + createDataset2()
+          + testCloning()
+          + testEquals()
+          + testNotification()
+          + testRemoveSubplot()
+          + testSerialization()
+          - createPlot()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CombinedDomainXYPlotTest {
+          - events : List
+          + chartChanged()
+          + testCloning()
+          + testConstructor1()
+          + testEquals()
+          + testNotification()
+          + testRemoveSubplot()
+          + testSerialization()
+          - createDataset1()
+          - createDataset2()
+          - createPlot()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CombinedRangeCategoryPlotTest {
+          - events : List
+          + chartChanged()
+          + createDataset1()
+          + createDataset2()
+          + testCloning()
+          + testEquals()
+          + testNotification()
+          + testRemoveSubplot()
+          + testSerialization()
+          - createPlot()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CombinedRangeXYPlotTest {
+          - events : List
+          + chartChanged()
+          + testCloning()
+          + testEquals()
+          + testNotification()
+          + testRemoveSubplot()
+          + testSerialization()
+          - createDataset1()
+          - createDataset2()
+          - createPlot()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CompassPlotTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.ContourPlotTest {
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.CrosshairTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.DefaultDrawingSupplierTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.FastScatterPlotTest {
+          + testCloning()
+          + testDrawWithNullInfo()
+          + testEquals()
+          + testEquals2()
+          + testSerialization()
+          - createData()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.IntervalMarkerTest {
+          ~ lastEvent : MarkerChangeEvent
+          {static} - EPSILON : double
+          + markerChanged()
+          + testCloning()
+          + testEquals()
+          + testGetSetEndValue()
+          + testGetSetStartValue()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.MarkerTest {
+          ~ lastEvent : MarkerChangeEvent
+          {static} - EPSILON : float
+          + markerChanged()
+          + testGetSetAlpha()
+          + testGetSetLabel()
+          + testGetSetLabelAnchor()
+          + testGetSetLabelFont()
+          + testGetSetLabelOffset()
+          + testGetSetLabelOffsetType()
+          + testGetSetLabelPaint()
+          + testGetSetLabelTextAnchor()
+          + testGetSetOutlinePaint()
+          + testGetSetOutlineStroke()
+          + testGetSetPaint()
+          + testGetSetStroke()
+          + testListenersWithCategoryPlot()
+          + testListenersWithXYPlot()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.MeterIntervalTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.MeterPlotTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization1()
+          + testSerialization2()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.MultiplePiePlotTest {
+          ~ lastEvent : PlotChangeEvent
+          + plotChanged()
+          + testCloning()
+          + testConstructor()
+          + testEquals()
+          + testGetLegendItems()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.MyPlotChangeListener {
+          - event : PlotChangeEvent
+          + MyPlotChangeListener()
+          + getEvent()
+          + plotChanged()
+          + setEvent()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PieLabelRecordTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PiePlot3DTest {
+          + testDrawWithNullDataset()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PiePlotTest {
+          {static} - EPSILON : double
+          + testBug1126()
+          + testBug1126_b()
+          + testBug1126_c()
+          + testBug1126_d()
+          + testBug1126_e()
+          + testCloning()
+          + testCloning_LegendItemShape()
+          + testCloning_LegendLabelGenerator()
+          + testCloning_LegendLabelToolTipGenerator()
+          + testCloning_LegendLabelURLGenerator()
+          + testCloning_URLGenerator()
+          + testDrawWithNullLegendLabels()
+          + testEquals()
+          + testGetBaseSectionPaint()
+          + testGetLegendItems()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PiePlotTest.NullLegendLabelGenerator {
+          + generateAttributedSectionLabel()
+          + generateSectionLabel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PlotOrientationTest {
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PlotRenderingInfoTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PlotTest {
+          + testEquals()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.PolarPlotTest {
+          + testCloning()
+          + testEquals()
+          + testGetLegendItems()
+          + testGetLegendItems2()
+          + testSerialization()
+          + testTranslateToJava2D_LogAxis()
+          + testTranslateToJava2D_NumberAxis()
+          + testTranslateToJava2D_NumberAxisAndMargin()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.RingPlotTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.SpiderWebPlotTest {
+          + testCloning()
+          + testDrawWithNullInfo()
+          + testEquals()
+          + testGetLegendItems()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.ThermometerPlotTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+          + testSerialization2()
+          + testSetUnits()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.ValueMarkerTest {
+          ~ lastEvent : MarkerChangeEvent
+          {static} - EPSILON : double
+          + markerChanged()
+          + test1802195()
+          + test1808376()
+          + testCloning()
+          + testEquals()
+          + testGetSetValue()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace plot {
+      class org.jfree.chart.plot.XYPlotTest {
+          + test1654215()
+          + testAddDomainMarker()
+          + testAddRangeMarker()
+          + testAxisIndices()
+          + testAxisLocationIndices()
+          + testBug2817504()
+          + testCloneIndependence()
+          + testCloning()
+          + testCloning2()
+          + testCloning3()
+          + testCloning4()
+          + testCloning_QuadrantOrigin()
+          + testCloning_QuadrantPaint()
+          + testDatasetIndices()
+          + testDomainMarkerIndices()
+          + testDrawRangeGridlines()
+          + testDrawSeriesWithZeroItems()
+          + testEquals()
+          + testEquals_ObjectList()
+          + testEquals_ObjectList2()
+          + testEquals_ObjectList3()
+          + testEquals_ObjectList4()
+          + testEquals_ObjectList5()
+          + testGetDatasetCount()
+          + testGetDomainAxisForDataset()
+          + testGetLegendItems()
+          + testGetRangeAxisForDataset()
+          + testGetRendererForDataset()
+          + testGetRendererForDataset2()
+          + testMapDatasetToDomainAxis()
+          + testMapDatasetToRangeAxis()
+          + testRangeMarkerIndices()
+          + testRemoveAnnotation()
+          + testRemoveDomainMarker()
+          + testRemoveRangeMarker()
+          + testRendererIndices()
+          + testSerialization1()
+          + testSerialization2()
+          + testSerialization3()
+          + testSerialization4()
+          + testSerialization5()
+          + testSetNullRenderer()
+          + testSetRenderer()
+          - createDataset1()
+          - createDataset2()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.plot.CategoryMarkerTest .up.|> MarkerChangeListener
+  org.jfree.chart.plot.CombinedDomainCategoryPlotTest .up.|> ChartChangeListener
+  org.jfree.chart.plot.CombinedDomainXYPlotTest .up.|> ChartChangeListener
+  org.jfree.chart.plot.CombinedRangeCategoryPlotTest .up.|> ChartChangeListener
+  org.jfree.chart.plot.CombinedRangeXYPlotTest .up.|> ChartChangeListener
+  org.jfree.chart.plot.IntervalMarkerTest .up.|> MarkerChangeListener
+  org.jfree.chart.plot.MarkerTest .up.|> MarkerChangeListener
+  org.jfree.chart.plot.MultiplePiePlotTest .up.|> PlotChangeListener
+  org.jfree.chart.plot.MyPlotChangeListener .up.|> PlotChangeListener
+  org.jfree.chart.plot.PiePlotTest +-down- org.jfree.chart.plot.PiePlotTest.NullLegendLabelGenerator
+  org.jfree.chart.plot.PiePlotTest.NullLegendLabelGenerator .up.|> PieSectionLabelGenerator
+  org.jfree.chart.plot.ValueMarkerTest .up.|> MarkerChangeListener
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,333 @@
+@startuml
+
+title __ENTITY's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.AxisEntity {
+          - axis : Axis
+          {static} - serialVersionUID : long
+          + AxisEntity()
+          + AxisEntity()
+          + AxisEntity()
+          + clone()
+          + equals()
+          + getAxis()
+          + hashCode()
+          + toString()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.CategoryItemEntity {
+          - category : Object
+          - categoryIndex : int
+          - columnKey : Comparable
+          - dataset : CategoryDataset
+          - rowKey : Comparable
+          {static} - serialVersionUID : long
+          - series : int
+          + CategoryItemEntity()
+          + CategoryItemEntity()
+          + equals()
+          + getCategory()
+          + getCategoryIndex()
+          + getColumnKey()
+          + getDataset()
+          + getRowKey()
+          + getSeries()
+          + setCategory()
+          + setCategoryIndex()
+          + setColumnKey()
+          + setDataset()
+          + setRowKey()
+          + setSeries()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.CategoryLabelEntity {
+          - key : Comparable
+          + CategoryLabelEntity()
+          + equals()
+          + getKey()
+          + hashCode()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.ChartEntity {
+          - area : Shape
+          {static} - serialVersionUID : long
+          - toolTipText : String
+          - urlText : String
+          + ChartEntity()
+          + ChartEntity()
+          + ChartEntity()
+          + clone()
+          + equals()
+          + getArea()
+          + getImageMapAreaTag()
+          + getShapeCoords()
+          + getShapeType()
+          + getToolTipText()
+          + getURLText()
+          + hashCode()
+          + setArea()
+          + setToolTipText()
+          + setURLText()
+          + toString()
+          - getPolyCoords()
+          - getRectCoords()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.ContourEntity {
+          - index : int
+          {static} - serialVersionUID : long
+          + ContourEntity()
+          + ContourEntity()
+          + clone()
+          + equals()
+          + getIndex()
+          + setIndex()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      interface org.jfree.chart.entity.EntityCollection {
+          {abstract} + add()
+          {abstract} + addAll()
+          {abstract} + clear()
+          {abstract} + getEntities()
+          {abstract} + getEntity()
+          {abstract} + getEntity()
+          {abstract} + getEntityCount()
+          {abstract} + iterator()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.JFreeChartEntity {
+          - chart : JFreeChart
+          {static} - serialVersionUID : long
+          + JFreeChartEntity()
+          + JFreeChartEntity()
+          + JFreeChartEntity()
+          + clone()
+          + equals()
+          + getChart()
+          + hashCode()
+          + toString()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.LegendItemEntity {
+          - dataset : Dataset
+          {static} - serialVersionUID : long
+          - seriesIndex : int
+          - seriesKey : Comparable
+          + LegendItemEntity()
+          + clone()
+          + equals()
+          + getDataset()
+          + getSeriesIndex()
+          + getSeriesKey()
+          + setDataset()
+          + setSeriesIndex()
+          + setSeriesKey()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.PieSectionEntity {
+          - dataset : PieDataset
+          - pieIndex : int
+          - sectionIndex : int
+          - sectionKey : Comparable
+          {static} - serialVersionUID : long
+          + PieSectionEntity()
+          + equals()
+          + getDataset()
+          + getPieIndex()
+          + getSectionIndex()
+          + getSectionKey()
+          + hashCode()
+          + setDataset()
+          + setPieIndex()
+          + setSectionIndex()
+          + setSectionKey()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.PlotEntity {
+          - plot : Plot
+          {static} - serialVersionUID : long
+          + PlotEntity()
+          + PlotEntity()
+          + PlotEntity()
+          + clone()
+          + equals()
+          + getPlot()
+          + hashCode()
+          + toString()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.StandardEntityCollection {
+          - entities : List
+          {static} - serialVersionUID : long
+          + StandardEntityCollection()
+          + add()
+          + addAll()
+          + clear()
+          + clone()
+          + equals()
+          + getEntities()
+          + getEntity()
+          + getEntity()
+          + getEntityCount()
+          + iterator()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.TickLabelEntity {
+          {static} - serialVersionUID : long
+          + TickLabelEntity()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.TitleEntity {
+          {static} - serialVersionUID : long
+          - title : Title
+          + TitleEntity()
+          + TitleEntity()
+          + TitleEntity()
+          + clone()
+          + equals()
+          + getTitle()
+          + hashCode()
+          + toString()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.XYAnnotationEntity {
+          - rendererIndex : int
+          {static} - serialVersionUID : long
+          + XYAnnotationEntity()
+          + equals()
+          + getRendererIndex()
+          + setRendererIndex()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace entity {
+      class org.jfree.chart.entity.XYItemEntity {
+          - dataset : XYDataset
+          - item : int
+          {static} - serialVersionUID : long
+          - series : int
+          + XYItemEntity()
+          + equals()
+          + getDataset()
+          + getItem()
+          + getSeriesIndex()
+          + setDataset()
+          + setItem()
+          + setSeriesIndex()
+          + toString()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.entity.CategoryItemEntity .up.|> Cloneable
+  org.jfree.chart.entity.CategoryItemEntity .up.|> Serializable
+  org.jfree.chart.entity.ChartEntity .up.|> Cloneable
+  org.jfree.chart.entity.ChartEntity .up.|> PublicCloneable
+  org.jfree.chart.entity.ChartEntity .up.|> Serializable
+  org.jfree.chart.entity.ContourEntity .up.|> Cloneable
+  org.jfree.chart.entity.ContourEntity .up.|> Serializable
+  org.jfree.chart.entity.LegendItemEntity .up.|> Cloneable
+  org.jfree.chart.entity.LegendItemEntity .up.|> Serializable
+  org.jfree.chart.entity.PieSectionEntity .up.|> Serializable
+  org.jfree.chart.entity.StandardEntityCollection .up.|> Cloneable
+  org.jfree.chart.entity.StandardEntityCollection .up.|> EntityCollection
+  org.jfree.chart.entity.StandardEntityCollection .up.|> PublicCloneable
+  org.jfree.chart.entity.StandardEntityCollection .up.|> Serializable
+  org.jfree.chart.entity.TickLabelEntity .up.|> Cloneable
+  org.jfree.chart.entity.TickLabelEntity .up.|> Serializable
+  org.jfree.chart.entity.XYAnnotationEntity .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

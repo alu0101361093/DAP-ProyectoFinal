@@ -1,0 +1,282 @@
+@startuml
+
+title __LABELS's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.BoxAndWhiskerToolTipGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.BoxAndWhiskerXYToolTipGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.BubbleXYItemLabelGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testGenerateLabel()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.CustomXYItemLabelGeneratorTest {
+          + testCloning()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.HighLowItemLabelGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.IntervalCategoryItemLabelGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.IntervalCategoryToolTipGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testEquals2()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.ItemLabelAnchorTest {
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.ItemLabelPositionTest {
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.MultipleXYSeriesLabelGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardCategoryItemLabelGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testEquals1481087()
+          + testGenerateLabel()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardCategorySeriesLabelGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testGenerateLabel()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardCategoryToolTipGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testEquals1481087()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardContourToolTipGeneratorTest {
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardPieSectionLabelGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardPieToolTipGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardXYItemLabelGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardXYSeriesLabelGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testGenerateLabel()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardXYToolTipGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardXYZToolTipGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.SymbolicXYItemLabelGeneratorTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,951 @@
+@startuml
+
+title __TIME's Class Diagram__\n
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.DateRange {
+          - lowerDate : long
+          {static} - serialVersionUID : long
+          - upperDate : long
+          + DateRange()
+          + DateRange()
+          + DateRange()
+          + DateRange()
+          + getLowerDate()
+          + getLowerMillis()
+          + getUpperDate()
+          + getUpperMillis()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.Day {
+          {static} # DATE_FORMAT : DateFormat
+          {static} # DATE_FORMAT_LONG : DateFormat
+          {static} # DATE_FORMAT_MEDIUM : DateFormat
+          {static} # DATE_FORMAT_SHORT : DateFormat
+          - firstMillisecond : long
+          - lastMillisecond : long
+          - serialDate : SerialDate
+          {static} - serialVersionUID : long
+          + Day()
+          + Day()
+          + Day()
+          + Day()
+          + Day()
+          + Day()
+          + compareTo()
+          + equals()
+          + getDayOfMonth()
+          + getFirstMillisecond()
+          + getFirstMillisecond()
+          + getLastMillisecond()
+          + getLastMillisecond()
+          + getMonth()
+          + getSerialDate()
+          + getSerialIndex()
+          + getYear()
+          + hashCode()
+          + next()
+          {static} + parseDay()
+          + peg()
+          + previous()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.DynamicTimeSeriesCollection {
+          {static} + END : int
+          {static} + MIDDLE : int
+          {static} + START : int
+          # historyCount : int
+          # pointsInTime : RegularTimePeriod[]
+          # valueHistory : ValueSequence[]
+          # workingCalendar : Calendar
+          - deltaTime : long
+          - domainEnd : Long
+          - domainIsPointsInTime : boolean
+          - domainRange : Range
+          - domainStart : Long
+          - maxValue : Float
+          - maximumItemCount : int
+          - minValue : Float
+          - newestAt : int
+          - oldestAt : int
+          - position : int
+          - seriesCount : int
+          - seriesKeys : Comparable[]
+          - timePeriodClass : Class
+          - valueRange : Range
+          + DynamicTimeSeriesCollection()
+          + DynamicTimeSeriesCollection()
+          + DynamicTimeSeriesCollection()
+          + DynamicTimeSeriesCollection()
+          + addSeries()
+          + addValue()
+          + advanceTime()
+          + appendData()
+          + appendData()
+          + getDomainBounds()
+          + getDomainLowerBound()
+          + getDomainUpperBound()
+          + getEndX()
+          + getEndY()
+          + getItemCount()
+          + getNewestIndex()
+          + getNewestTime()
+          + getOldestIndex()
+          + getOldestTime()
+          + getPosition()
+          + getRangeBounds()
+          + getRangeLowerBound()
+          + getRangeUpperBound()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartY()
+          + getX()
+          + getY()
+          + getYValue()
+          + invalidateRangeInfo()
+          + offsetFromNewest()
+          + offsetFromOldest()
+          + setPosition()
+          + setSeriesKey()
+          + setTimeBase()
+          # findDomainLimits()
+          # findMaxValue()
+          # fireSeriesChanged()
+          # translateGet()
+          # wrapOffset()
+          - getX()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.DynamicTimeSeriesCollection.ValueSequence {
+          ~ dataPoints : float[]
+          + ValueSequence()
+          + ValueSequence()
+          + enterData()
+          + getData()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.FixedMillisecond {
+          {static} - serialVersionUID : long
+          - time : long
+          + FixedMillisecond()
+          + FixedMillisecond()
+          + FixedMillisecond()
+          + compareTo()
+          + equals()
+          + getFirstMillisecond()
+          + getFirstMillisecond()
+          + getLastMillisecond()
+          + getLastMillisecond()
+          + getMiddleMillisecond()
+          + getMiddleMillisecond()
+          + getSerialIndex()
+          + getTime()
+          + hashCode()
+          + next()
+          + peg()
+          + previous()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.Hour {
+          {static} + FIRST_HOUR_IN_DAY : int
+          {static} + LAST_HOUR_IN_DAY : int
+          - day : Day
+          - firstMillisecond : long
+          - hour : byte
+          - lastMillisecond : long
+          {static} - serialVersionUID : long
+          + Hour()
+          + Hour()
+          + Hour()
+          + Hour()
+          + Hour()
+          + Hour()
+          + compareTo()
+          + equals()
+          + getDay()
+          + getDayOfMonth()
+          + getFirstMillisecond()
+          + getFirstMillisecond()
+          + getHour()
+          + getLastMillisecond()
+          + getLastMillisecond()
+          + getMonth()
+          + getSerialIndex()
+          + getYear()
+          + hashCode()
+          + next()
+          {static} + parseHour()
+          + peg()
+          + previous()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.Millisecond {
+          {static} + FIRST_MILLISECOND_IN_SECOND : int
+          {static} + LAST_MILLISECOND_IN_SECOND : int
+          {static} ~ serialVersionUID : long
+          - day : Day
+          - firstMillisecond : long
+          - hour : byte
+          - millisecond : int
+          - minute : byte
+          - second : byte
+          + Millisecond()
+          + Millisecond()
+          + Millisecond()
+          + Millisecond()
+          + Millisecond()
+          + Millisecond()
+          + compareTo()
+          + equals()
+          + getFirstMillisecond()
+          + getFirstMillisecond()
+          + getLastMillisecond()
+          + getLastMillisecond()
+          + getMillisecond()
+          + getSecond()
+          + getSerialIndex()
+          + hashCode()
+          + next()
+          + peg()
+          + previous()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.Minute {
+          {static} + FIRST_MINUTE_IN_HOUR : int
+          {static} + LAST_MINUTE_IN_HOUR : int
+          - day : Day
+          - firstMillisecond : long
+          - hour : byte
+          - lastMillisecond : long
+          - minute : byte
+          {static} - serialVersionUID : long
+          + Minute()
+          + Minute()
+          + Minute()
+          + Minute()
+          + Minute()
+          + Minute()
+          + compareTo()
+          + equals()
+          + getDay()
+          + getFirstMillisecond()
+          + getFirstMillisecond()
+          + getHour()
+          + getHourValue()
+          + getLastMillisecond()
+          + getLastMillisecond()
+          + getMinute()
+          + getSerialIndex()
+          + hashCode()
+          + next()
+          {static} + parseMinute()
+          + peg()
+          + previous()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.Month {
+          - firstMillisecond : long
+          - lastMillisecond : long
+          - month : int
+          {static} - serialVersionUID : long
+          - year : int
+          + Month()
+          + Month()
+          + Month()
+          + Month()
+          + Month()
+          + Month()
+          + compareTo()
+          + equals()
+          + getFirstMillisecond()
+          + getFirstMillisecond()
+          + getLastMillisecond()
+          + getLastMillisecond()
+          + getMonth()
+          + getSerialIndex()
+          + getYear()
+          + getYearValue()
+          + hashCode()
+          + next()
+          {static} + parseMonth()
+          + peg()
+          + previous()
+          + toString()
+          {static} - evaluateAsYear()
+          {static} - findSeparator()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.MovingAverage {
+          {static} + createMovingAverage()
+          {static} + createMovingAverage()
+          {static} + createMovingAverage()
+          {static} + createMovingAverage()
+          {static} + createMovingAverage()
+          {static} + createPointMovingAverage()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.Quarter {
+          {static} + FIRST_MONTH_IN_QUARTER : int[]
+          {static} + FIRST_QUARTER : int
+          {static} + LAST_MONTH_IN_QUARTER : int[]
+          {static} + LAST_QUARTER : int
+          - firstMillisecond : long
+          - lastMillisecond : long
+          - quarter : byte
+          {static} - serialVersionUID : long
+          - year : short
+          + Quarter()
+          + Quarter()
+          + Quarter()
+          + Quarter()
+          + Quarter()
+          + Quarter()
+          + compareTo()
+          + equals()
+          + getFirstMillisecond()
+          + getFirstMillisecond()
+          + getLastMillisecond()
+          + getLastMillisecond()
+          + getQuarter()
+          + getSerialIndex()
+          + getYear()
+          + getYearValue()
+          + hashCode()
+          + next()
+          {static} + parseQuarter()
+          + peg()
+          + previous()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      abstract class org.jfree.data.time.RegularTimePeriod {
+          {static} + DEFAULT_TIME_ZONE : TimeZone
+          {static} + WORKING_CALENDAR : Calendar
+          {static} + createInstance()
+          {static} + downsize()
+          + getEnd()
+          {abstract} + getFirstMillisecond()
+          + getFirstMillisecond()
+          {abstract} + getFirstMillisecond()
+          {abstract} + getLastMillisecond()
+          + getLastMillisecond()
+          {abstract} + getLastMillisecond()
+          + getMiddleMillisecond()
+          + getMiddleMillisecond()
+          + getMiddleMillisecond()
+          + getMillisecond()
+          {abstract} + getSerialIndex()
+          + getStart()
+          {abstract} + next()
+          {abstract} + peg()
+          {abstract} + previous()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.Second {
+          {static} + FIRST_SECOND_IN_MINUTE : int
+          {static} + LAST_SECOND_IN_MINUTE : int
+          - day : Day
+          - firstMillisecond : long
+          - hour : byte
+          - minute : byte
+          - second : byte
+          {static} - serialVersionUID : long
+          + Second()
+          + Second()
+          + Second()
+          + Second()
+          + Second()
+          + Second()
+          + compareTo()
+          + equals()
+          + getFirstMillisecond()
+          + getFirstMillisecond()
+          + getLastMillisecond()
+          + getLastMillisecond()
+          + getMinute()
+          + getSecond()
+          + getSerialIndex()
+          + hashCode()
+          + next()
+          {static} + parseSecond()
+          + peg()
+          + previous()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.SimpleTimePeriod {
+          - end : long
+          {static} - serialVersionUID : long
+          - start : long
+          + SimpleTimePeriod()
+          + SimpleTimePeriod()
+          + compareTo()
+          + equals()
+          + getEnd()
+          + getEndMillis()
+          + getStart()
+          + getStartMillis()
+          + hashCode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      interface org.jfree.data.time.TimePeriod {
+          {abstract} + getEnd()
+          {abstract} + getStart()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimePeriodAnchor {
+          {static} + END : TimePeriodAnchor
+          {static} + MIDDLE : TimePeriodAnchor
+          {static} + START : TimePeriodAnchor
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + hashCode()
+          + toString()
+          - TimePeriodAnchor()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimePeriodFormatException {
+          + TimePeriodFormatException()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimePeriodValue {
+          - period : TimePeriod
+          {static} - serialVersionUID : long
+          - value : Number
+          + TimePeriodValue()
+          + TimePeriodValue()
+          + clone()
+          + equals()
+          + getPeriod()
+          + getValue()
+          + hashCode()
+          + setValue()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimePeriodValues {
+          {static} # DEFAULT_DOMAIN_DESCRIPTION : String
+          {static} # DEFAULT_RANGE_DESCRIPTION : String
+          {static} ~ serialVersionUID : long
+          - data : List
+          - domain : String
+          - maxEndIndex : int
+          - maxMiddleIndex : int
+          - maxStartIndex : int
+          - minEndIndex : int
+          - minMiddleIndex : int
+          - minStartIndex : int
+          - range : String
+          + TimePeriodValues()
+          + TimePeriodValues()
+          + add()
+          + add()
+          + add()
+          + clone()
+          + createCopy()
+          + delete()
+          + equals()
+          + getDataItem()
+          + getDomainDescription()
+          + getItemCount()
+          + getMaxEndIndex()
+          + getMaxMiddleIndex()
+          + getMaxStartIndex()
+          + getMinEndIndex()
+          + getMinMiddleIndex()
+          + getMinStartIndex()
+          + getRangeDescription()
+          + getTimePeriod()
+          + getValue()
+          + hashCode()
+          + setDomainDescription()
+          + setRangeDescription()
+          + update()
+          - recalculateBounds()
+          - updateBounds()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimePeriodValuesCollection {
+          - data : List
+          - domainIsPointsInTime : boolean
+          {static} - serialVersionUID : long
+          - xPosition : TimePeriodAnchor
+          + TimePeriodValuesCollection()
+          + TimePeriodValuesCollection()
+          + addSeries()
+          + equals()
+          + getDomainBounds()
+          + getDomainIsPointsInTime()
+          + getDomainLowerBound()
+          + getDomainUpperBound()
+          + getEndX()
+          + getEndY()
+          + getItemCount()
+          + getSeries()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartY()
+          + getX()
+          + getXPosition()
+          + getY()
+          + removeSeries()
+          + removeSeries()
+          + setDomainIsPointsInTime()
+          + setXPosition()
+          - getX()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimeSeries {
+          {static} # DEFAULT_DOMAIN_DESCRIPTION : String
+          {static} # DEFAULT_RANGE_DESCRIPTION : String
+          # data : List
+          # timePeriodClass : Class
+          - domain : String
+          - maxY : double
+          - maximumItemAge : long
+          - maximumItemCount : int
+          - minY : double
+          - range : String
+          {static} - serialVersionUID : long
+          + TimeSeries()
+          + TimeSeries()
+          + TimeSeries()
+          + TimeSeries()
+          + add()
+          + add()
+          + add()
+          + add()
+          + add()
+          + add()
+          + addAndOrUpdate()
+          + addOrUpdate()
+          + addOrUpdate()
+          + addOrUpdate()
+          + clear()
+          + clone()
+          + createCopy()
+          + createCopy()
+          + delete()
+          + delete()
+          + delete()
+          + equals()
+          + findValueRange()
+          + findValueRange()
+          + findValueRange()
+          + getDataItem()
+          + getDataItem()
+          + getDomainDescription()
+          + getIndex()
+          + getItemCount()
+          + getItems()
+          + getMaxY()
+          + getMaximumItemAge()
+          + getMaximumItemCount()
+          + getMinY()
+          + getNextTimePeriod()
+          + getRangeDescription()
+          + getTimePeriod()
+          + getTimePeriodClass()
+          + getTimePeriods()
+          + getTimePeriodsUniqueToOtherSeries()
+          + getValue()
+          + getValue()
+          + hashCode()
+          + removeAgedItems()
+          + removeAgedItems()
+          + setDomainDescription()
+          + setMaximumItemAge()
+          + setMaximumItemCount()
+          + setRangeDescription()
+          + update()
+          + update()
+          + update()
+          ~ getRawDataItem()
+          ~ getRawDataItem()
+          - maxIgnoreNaN()
+          - minIgnoreNaN()
+          - updateBoundsForAddedItem()
+          - updateBoundsForRemovedItem()
+          - updateMinMaxYByIteration()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimeSeriesCollection {
+          - data : List
+          - domainIsPointsInTime : boolean
+          {static} - serialVersionUID : long
+          - workingCalendar : Calendar
+          - xPosition : TimePeriodAnchor
+          + TimeSeriesCollection()
+          + TimeSeriesCollection()
+          + TimeSeriesCollection()
+          + TimeSeriesCollection()
+          + addSeries()
+          + clone()
+          + equals()
+          + getDomainBounds()
+          + getDomainBounds()
+          + getDomainIsPointsInTime()
+          + getDomainLowerBound()
+          + getDomainOrder()
+          + getDomainUpperBound()
+          + getEndX()
+          + getEndY()
+          + getItemCount()
+          + getRangeBounds()
+          + getRangeBounds()
+          + getSeries()
+          + getSeries()
+          + getSeries()
+          + getSeriesCount()
+          + getSeriesIndex()
+          + getSeriesKey()
+          + getStartX()
+          + getStartY()
+          + getSurroundingItems()
+          + getX()
+          + getXPosition()
+          + getXValue()
+          + getY()
+          + hashCode()
+          + indexOf()
+          + removeAllSeries()
+          + removeSeries()
+          + removeSeries()
+          + setDomainIsPointsInTime()
+          + setXPosition()
+          + vetoableChange()
+          # getX()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimeSeriesDataItem {
+          - period : RegularTimePeriod
+          {static} - serialVersionUID : long
+          - value : Number
+          + TimeSeriesDataItem()
+          + TimeSeriesDataItem()
+          + clone()
+          + compareTo()
+          + equals()
+          + getPeriod()
+          + getValue()
+          + hashCode()
+          + setValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimeSeriesTableModel {
+          - editable : boolean
+          - newTimePeriod : RegularTimePeriod
+          - newValue : Number
+          - series : TimeSeries
+          + TimeSeriesTableModel()
+          + TimeSeriesTableModel()
+          + TimeSeriesTableModel()
+          + getColumnClass()
+          + getColumnCount()
+          + getColumnName()
+          + getRowCount()
+          + getValueAt()
+          + isCellEditable()
+          + seriesChanged()
+          + setValueAt()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimeTableXYDataset {
+          - domainIsPointsInTime : boolean
+          - values : DefaultKeyedValues2D
+          - workingCalendar : Calendar
+          - xPosition : TimePeriodAnchor
+          + TimeTableXYDataset()
+          + TimeTableXYDataset()
+          + TimeTableXYDataset()
+          + add()
+          + add()
+          + clear()
+          + clone()
+          + equals()
+          + getDomainBounds()
+          + getDomainIsPointsInTime()
+          + getDomainLowerBound()
+          + getDomainUpperBound()
+          + getEndX()
+          + getEndXValue()
+          + getEndY()
+          + getItemCount()
+          + getItemCount()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartXValue()
+          + getStartY()
+          + getTimePeriod()
+          + getX()
+          + getXPosition()
+          + getXValue()
+          + getY()
+          + remove()
+          + remove()
+          + setDomainIsPointsInTime()
+          + setXPosition()
+          - getXValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.Week {
+          {static} + FIRST_WEEK_IN_YEAR : int
+          {static} + LAST_WEEK_IN_YEAR : int
+          - firstMillisecond : long
+          - lastMillisecond : long
+          {static} - serialVersionUID : long
+          - week : byte
+          - year : short
+          + Week()
+          + Week()
+          + Week()
+          + Week()
+          + Week()
+          + Week()
+          + compareTo()
+          + equals()
+          + getFirstMillisecond()
+          + getFirstMillisecond()
+          + getLastMillisecond()
+          + getLastMillisecond()
+          + getSerialIndex()
+          + getWeek()
+          + getYear()
+          + getYearValue()
+          + hashCode()
+          + next()
+          {static} + parseWeek()
+          + peg()
+          + previous()
+          + toString()
+          {static} - evaluateAsYear()
+          {static} - findSeparator()
+          {static} - stringToWeek()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.Year {
+          {static} + MAXIMUM_YEAR : int
+          {static} + MINIMUM_YEAR : int
+          - firstMillisecond : long
+          - lastMillisecond : long
+          {static} - serialVersionUID : long
+          - year : short
+          + Year()
+          + Year()
+          + Year()
+          + Year()
+          + Year()
+          + compareTo()
+          + equals()
+          + getFirstMillisecond()
+          + getFirstMillisecond()
+          + getLastMillisecond()
+          + getLastMillisecond()
+          + getSerialIndex()
+          + getYear()
+          + hashCode()
+          + next()
+          {static} + parseYear()
+          + peg()
+          + previous()
+          + toString()
+      }
+    }
+  }
+  
+
+  org.jfree.data.time.DateRange .up.|> Serializable
+  org.jfree.data.time.Day .up.|> Serializable
+  org.jfree.data.time.DynamicTimeSeriesCollection .up.|> DomainInfo
+  org.jfree.data.time.DynamicTimeSeriesCollection .up.|> IntervalXYDataset
+  org.jfree.data.time.DynamicTimeSeriesCollection .up.|> RangeInfo
+  org.jfree.data.time.DynamicTimeSeriesCollection +-down- org.jfree.data.time.DynamicTimeSeriesCollection.ValueSequence
+  org.jfree.data.time.FixedMillisecond .up.|> Serializable
+  org.jfree.data.time.Hour .up.|> Serializable
+  org.jfree.data.time.Millisecond .up.|> Serializable
+  org.jfree.data.time.Minute .up.|> Serializable
+  org.jfree.data.time.Month .up.|> Serializable
+  org.jfree.data.time.Quarter .up.|> Serializable
+  org.jfree.data.time.RegularTimePeriod .up.|> Comparable
+  org.jfree.data.time.RegularTimePeriod .up.|> MonthConstants
+  org.jfree.data.time.RegularTimePeriod .up.|> TimePeriod
+  org.jfree.data.time.Second .up.|> Serializable
+  org.jfree.data.time.SimpleTimePeriod .up.|> Comparable
+  org.jfree.data.time.SimpleTimePeriod .up.|> Serializable
+  org.jfree.data.time.SimpleTimePeriod .up.|> TimePeriod
+  org.jfree.data.time.TimePeriodAnchor .up.|> Serializable
+  org.jfree.data.time.TimePeriodValue .up.|> Cloneable
+  org.jfree.data.time.TimePeriodValue .up.|> Serializable
+  org.jfree.data.time.TimePeriodValues .up.|> Serializable
+  org.jfree.data.time.TimePeriodValuesCollection .up.|> DomainInfo
+  org.jfree.data.time.TimePeriodValuesCollection .up.|> IntervalXYDataset
+  org.jfree.data.time.TimePeriodValuesCollection .up.|> Serializable
+  org.jfree.data.time.TimeSeries .up.|> Cloneable
+  org.jfree.data.time.TimeSeries .up.|> Serializable
+  org.jfree.data.time.TimeSeriesCollection .up.|> DomainInfo
+  org.jfree.data.time.TimeSeriesCollection .up.|> IntervalXYDataset
+  org.jfree.data.time.TimeSeriesCollection .up.|> Serializable
+  org.jfree.data.time.TimeSeriesCollection .up.|> VetoableChangeListener
+  org.jfree.data.time.TimeSeriesCollection .up.|> XYDataset
+  org.jfree.data.time.TimeSeriesCollection .up.|> XYDomainInfo
+  org.jfree.data.time.TimeSeriesCollection .up.|> XYRangeInfo
+  org.jfree.data.time.TimeSeriesDataItem .up.|> Cloneable
+  org.jfree.data.time.TimeSeriesDataItem .up.|> Comparable
+  org.jfree.data.time.TimeSeriesDataItem .up.|> Serializable
+  org.jfree.data.time.TimeSeriesTableModel .up.|> SeriesChangeListener
+  org.jfree.data.time.TimeTableXYDataset .up.|> Cloneable
+  org.jfree.data.time.TimeTableXYDataset .up.|> DomainInfo
+  org.jfree.data.time.TimeTableXYDataset .up.|> IntervalXYDataset
+  org.jfree.data.time.TimeTableXYDataset .up.|> PublicCloneable
+  org.jfree.data.time.TimeTableXYDataset .up.|> TableXYDataset
+  org.jfree.data.time.Week .up.|> Serializable
+  org.jfree.data.time.Year .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,1014 @@
+@startuml
+
+title __CHART's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.ChartColor {
+        {static} + DARK_BLUE : Color
+        {static} + DARK_CYAN : Color
+        {static} + DARK_GREEN : Color
+        {static} + DARK_MAGENTA : Color
+        {static} + DARK_RED : Color
+        {static} + DARK_YELLOW : Color
+        {static} + LIGHT_BLUE : Color
+        {static} + LIGHT_CYAN : Color
+        {static} + LIGHT_GREEN : Color
+        {static} + LIGHT_MAGENTA : Color
+        {static} + LIGHT_RED : Color
+        {static} + LIGHT_YELLOW : Color
+        {static} + VERY_DARK_BLUE : Color
+        {static} + VERY_DARK_CYAN : Color
+        {static} + VERY_DARK_GREEN : Color
+        {static} + VERY_DARK_MAGENTA : Color
+        {static} + VERY_DARK_RED : Color
+        {static} + VERY_DARK_YELLOW : Color
+        {static} + VERY_LIGHT_BLUE : Color
+        {static} + VERY_LIGHT_CYAN : Color
+        {static} + VERY_LIGHT_GREEN : Color
+        {static} + VERY_LIGHT_MAGENTA : Color
+        {static} + VERY_LIGHT_RED : Color
+        {static} + VERY_LIGHT_YELLOW : Color
+        + ChartColor()
+        {static} + createDefaultPaintArray()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    abstract class org.jfree.chart.ChartFactory {
+        {static} - currentTheme : ChartTheme
+        {static} + createAreaChart()
+        {static} + createAreaChart()
+        {static} + createBarChart()
+        {static} + createBarChart()
+        {static} + createBarChart3D()
+        {static} + createBarChart3D()
+        {static} + createBoxAndWhiskerChart()
+        {static} + createBoxAndWhiskerChart()
+        {static} + createBubbleChart()
+        {static} + createBubbleChart()
+        {static} + createCandlestickChart()
+        {static} + createGanttChart()
+        {static} + createGanttChart()
+        {static} + createHighLowChart()
+        {static} + createHighLowChart()
+        {static} + createHistogram()
+        {static} + createLineChart()
+        {static} + createLineChart()
+        {static} + createLineChart3D()
+        {static} + createLineChart3D()
+        {static} + createMultiplePieChart()
+        {static} + createMultiplePieChart3D()
+        {static} + createPieChart()
+        {static} + createPieChart()
+        {static} + createPieChart()
+        {static} + createPieChart()
+        {static} + createPieChart()
+        {static} + createPieChart3D()
+        {static} + createPieChart3D()
+        {static} + createPieChart3D()
+        {static} + createPolarChart()
+        {static} + createRingChart()
+        {static} + createRingChart()
+        {static} + createScatterPlot()
+        {static} + createScatterPlot()
+        {static} + createStackedAreaChart()
+        {static} + createStackedAreaChart()
+        {static} + createStackedBarChart()
+        {static} + createStackedBarChart()
+        {static} + createStackedBarChart3D()
+        {static} + createStackedBarChart3D()
+        {static} + createStackedXYAreaChart()
+        {static} + createStackedXYAreaChart()
+        {static} + createTimeSeriesChart()
+        {static} + createTimeSeriesChart()
+        {static} + createWaferMapChart()
+        {static} + createWaterfallChart()
+        {static} + createWindPlot()
+        {static} + createXYAreaChart()
+        {static} + createXYAreaChart()
+        {static} + createXYBarChart()
+        {static} + createXYBarChart()
+        {static} + createXYLineChart()
+        {static} + createXYLineChart()
+        {static} + createXYStepAreaChart()
+        {static} + createXYStepAreaChart()
+        {static} + createXYStepChart()
+        {static} + createXYStepChart()
+        {static} + getChartTheme()
+        {static} + setChartTheme()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.ChartFrame {
+        - chartPanel : ChartPanel
+        + ChartFrame()
+        + ChartFrame()
+        + getChartPanel()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.ChartHints {
+        {static} + KEY_BEGIN_ELEMENT : Key
+        {static} + KEY_END_ELEMENT : Key
+        - ChartHints()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.ChartHints.Key {
+        + Key()
+        + isCompatibleValue()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.ChartMouseEvent {
+        - chart : JFreeChart
+        - entity : ChartEntity
+        {static} - serialVersionUID : long
+        - trigger : MouseEvent
+        + ChartMouseEvent()
+        + getChart()
+        + getEntity()
+        + getTrigger()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    interface org.jfree.chart.ChartMouseListener {
+        {abstract} + chartMouseClicked()
+        {abstract} + chartMouseMoved()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.ChartPanel {
+        {static} + COPY_COMMAND : String
+        {static} + DEFAULT_BUFFER_USED : boolean
+        {static} + DEFAULT_HEIGHT : int
+        {static} + DEFAULT_MAXIMUM_DRAW_HEIGHT : int
+        {static} + DEFAULT_MAXIMUM_DRAW_WIDTH : int
+        {static} + DEFAULT_MINIMUM_DRAW_HEIGHT : int
+        {static} + DEFAULT_MINIMUM_DRAW_WIDTH : int
+        {static} + DEFAULT_WIDTH : int
+        {static} + DEFAULT_ZOOM_TRIGGER_DISTANCE : int
+        {static} + PRINT_COMMAND : String
+        {static} + PROPERTIES_COMMAND : String
+        {static} + SAVE_COMMAND : String
+        {static} + ZOOM_IN_BOTH_COMMAND : String
+        {static} + ZOOM_IN_DOMAIN_COMMAND : String
+        {static} + ZOOM_IN_RANGE_COMMAND : String
+        {static} + ZOOM_OUT_BOTH_COMMAND : String
+        {static} + ZOOM_OUT_DOMAIN_COMMAND : String
+        {static} + ZOOM_OUT_RANGE_COMMAND : String
+        {static} + ZOOM_RESET_BOTH_COMMAND : String
+        {static} + ZOOM_RESET_DOMAIN_COMMAND : String
+        {static} + ZOOM_RESET_RANGE_COMMAND : String
+        {static} # localizationResources : ResourceBundle
+        {static} - SAVE_AS_PDF_COMMAND : String
+        {static} - SAVE_AS_PNG_COMMAND : String
+        {static} - SAVE_AS_SVG_COMMAND : String
+        - anchor : Point2D
+        - chart : JFreeChart
+        - chartBuffer : Image
+        - chartBufferHeight : int
+        - chartBufferWidth : int
+        - chartMouseListeners : EventListenerList
+        - defaultDirectoryForSaveAs : File
+        - domainZoomable : boolean
+        - enforceFileExtensions : boolean
+        - fillZoomRectangle : boolean
+        - horizontalAxisTrace : boolean
+        - horizontalTraceLine : Line2D
+        - info : ChartRenderingInfo
+        - maximumDrawHeight : int
+        - maximumDrawWidth : int
+        - minimumDrawHeight : int
+        - minimumDrawWidth : int
+        - mouseWheelHandler : MouseWheelHandler
+        - orientation : PlotOrientation
+        - originalToolTipDismissDelay : int
+        - originalToolTipInitialDelay : int
+        - originalToolTipReshowDelay : int
+        - overlays : List
+        - ownToolTipDelaysActive : boolean
+        - ownToolTipDismissDelay : int
+        - ownToolTipInitialDelay : int
+        - ownToolTipReshowDelay : int
+        - panH : double
+        - panLast : Point
+        - panMask : int
+        - panW : double
+        - popup : JPopupMenu
+        - rangeZoomable : boolean
+        - refreshBuffer : boolean
+        - scaleX : double
+        - scaleY : double
+        {static} - serialVersionUID : long
+        - useBuffer : boolean
+        - verticalAxisTrace : boolean
+        - verticalTraceLine : Line2D
+        - zoomAroundAnchor : boolean
+        - zoomFillPaint : Paint
+        - zoomInBothMenuItem : JMenuItem
+        - zoomInDomainMenuItem : JMenuItem
+        - zoomInFactor : double
+        - zoomInRangeMenuItem : JMenuItem
+        - zoomOutBothMenuItem : JMenuItem
+        - zoomOutDomainMenuItem : JMenuItem
+        - zoomOutFactor : double
+        - zoomOutRangeMenuItem : JMenuItem
+        - zoomOutlinePaint : Paint
+        - zoomPoint : Point2D
+        - zoomRectangle : Rectangle2D
+        - zoomResetBothMenuItem : JMenuItem
+        - zoomResetDomainMenuItem : JMenuItem
+        - zoomResetRangeMenuItem : JMenuItem
+        - zoomTriggerDistance : int
+        + ChartPanel()
+        + ChartPanel()
+        + ChartPanel()
+        + ChartPanel()
+        + ChartPanel()
+        + actionPerformed()
+        + addChartMouseListener()
+        + addOverlay()
+        + chartChanged()
+        + chartProgress()
+        + createChartPrintJob()
+        + doCopy()
+        + doEditChartProperties()
+        + doSaveAs()
+        + getAnchor()
+        + getChart()
+        + getChartRenderingInfo()
+        + getDefaultDirectoryForSaveAs()
+        + getDismissDelay()
+        + getEntityForPoint()
+        + getFillZoomRectangle()
+        + getHorizontalAxisTrace()
+        + getInitialDelay()
+        + getListeners()
+        + getMaximumDrawHeight()
+        + getMaximumDrawWidth()
+        + getMinimumDrawHeight()
+        + getMinimumDrawWidth()
+        + getPopupMenu()
+        + getRefreshBuffer()
+        + getReshowDelay()
+        + getScaleX()
+        + getScaleY()
+        + getScreenDataArea()
+        + getScreenDataArea()
+        + getToolTipText()
+        + getVerticalAxisTrace()
+        + getZoomAroundAnchor()
+        + getZoomFillPaint()
+        + getZoomInFactor()
+        + getZoomOutFactor()
+        + getZoomOutlinePaint()
+        + getZoomTriggerDistance()
+        + isDomainZoomable()
+        + isEnforceFileExtensions()
+        + isMouseWheelEnabled()
+        + isRangeZoomable()
+        + mouseClicked()
+        + mouseDragged()
+        + mouseEntered()
+        + mouseExited()
+        + mouseMoved()
+        + mousePressed()
+        + mouseReleased()
+        + overlayChanged()
+        + paintComponent()
+        + print()
+        + removeChartMouseListener()
+        + removeOverlay()
+        + restoreAutoBounds()
+        + restoreAutoDomainBounds()
+        + restoreAutoRangeBounds()
+        + scale()
+        + setChart()
+        + setDefaultDirectoryForSaveAs()
+        + setDismissDelay()
+        + setDisplayToolTips()
+        + setDomainZoomable()
+        + setEnforceFileExtensions()
+        + setFillZoomRectangle()
+        + setHorizontalAxisTrace()
+        + setInitialDelay()
+        + setMaximumDrawHeight()
+        + setMaximumDrawWidth()
+        + setMinimumDrawHeight()
+        + setMinimumDrawWidth()
+        + setMouseWheelEnabled()
+        + setMouseZoomable()
+        + setMouseZoomable()
+        + setPopupMenu()
+        + setRangeZoomable()
+        + setRefreshBuffer()
+        + setReshowDelay()
+        + setVerticalAxisTrace()
+        + setZoomAroundAnchor()
+        + setZoomFillPaint()
+        + setZoomInFactor()
+        + setZoomOutFactor()
+        + setZoomOutlinePaint()
+        + setZoomTriggerDistance()
+        + translateJava2DToScreen()
+        + translateScreenToJava2D()
+        + updateUI()
+        + zoom()
+        + zoomInBoth()
+        + zoomInDomain()
+        + zoomInRange()
+        + zoomOutBoth()
+        + zoomOutDomain()
+        + zoomOutRange()
+        # createPopupMenu()
+        # createPopupMenu()
+        # displayPopupMenu()
+        # getHorizontalTraceLine()
+        # getVerticalTraceLine()
+        # setAnchor()
+        # setHorizontalTraceLine()
+        # setVerticalTraceLine()
+        - createSVGGraphics2D()
+        - drawHorizontalAxisTrace()
+        - drawVerticalAxisTrace()
+        - drawZoomRectangle()
+        - generateSVG()
+        - getPointInRectangle()
+        - isOrsonPDFAvailable()
+        - readObject()
+        - saveAsPDF()
+        - saveAsSVG()
+        - writeAsPDF()
+        - writeObject()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.ChartRenderingInfo {
+        - chartArea : Rectangle2D
+        - entities : EntityCollection
+        - plotInfo : PlotRenderingInfo
+        {static} - serialVersionUID : long
+        + ChartRenderingInfo()
+        + ChartRenderingInfo()
+        + clear()
+        + clone()
+        + equals()
+        + getChartArea()
+        + getEntityCollection()
+        + getPlotInfo()
+        + setChartArea()
+        + setEntityCollection()
+        - readObject()
+        - writeObject()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    interface org.jfree.chart.ChartTheme {
+        {abstract} + apply()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.ChartTransferable {
+        ~ imageFlavor : DataFlavor
+        - chart : JFreeChart
+        - height : int
+        - maxDrawHeight : int
+        - maxDrawWidth : int
+        - minDrawHeight : int
+        - minDrawWidth : int
+        - width : int
+        + ChartTransferable()
+        + ChartTransferable()
+        + ChartTransferable()
+        + getTransferData()
+        + getTransferDataFlavors()
+        + isDataFlavorSupported()
+        - createBufferedImage()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    abstract class org.jfree.chart.ChartUtilities {
+        {static} + applyCurrentTheme()
+        {static} + encodeAsPNG()
+        {static} + encodeAsPNG()
+        {static} + getImageMap()
+        {static} + getImageMap()
+        {static} + saveChartAsJPEG()
+        {static} + saveChartAsJPEG()
+        {static} + saveChartAsJPEG()
+        {static} + saveChartAsJPEG()
+        {static} + saveChartAsPNG()
+        {static} + saveChartAsPNG()
+        {static} + saveChartAsPNG()
+        {static} + writeBufferedImageAsJPEG()
+        {static} + writeBufferedImageAsJPEG()
+        {static} + writeBufferedImageAsPNG()
+        {static} + writeBufferedImageAsPNG()
+        {static} + writeChartAsJPEG()
+        {static} + writeChartAsJPEG()
+        {static} + writeChartAsJPEG()
+        {static} + writeChartAsJPEG()
+        {static} + writeChartAsPNG()
+        {static} + writeChartAsPNG()
+        {static} + writeChartAsPNG()
+        {static} + writeChartAsPNG()
+        {static} + writeImageMap()
+        {static} + writeImageMap()
+        {static} + writeScaledChartAsPNG()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.ClipPath {
+        - clip : boolean
+        - composite : Composite
+        - drawPaint : Paint
+        - drawPath : boolean
+        - drawStroke : Stroke
+        - fillPaint : Paint
+        - fillPath : boolean
+        - xValue : double[]
+        - yValue : double[]
+        + ClipPath()
+        + ClipPath()
+        + ClipPath()
+        + ClipPath()
+        + clone()
+        + draw()
+        + generateClipPath()
+        + getComposite()
+        + getDrawPaint()
+        + getDrawStroke()
+        + getFillPaint()
+        + getXValue()
+        + getYValue()
+        + isClip()
+        + isDrawPath()
+        + isFillPath()
+        + setClip()
+        + setComposite()
+        + setDrawPaint()
+        + setDrawPath()
+        + setDrawStroke()
+        + setFillPaint()
+        + setFillPath()
+        + setXValue()
+        + setYValue()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.DrawableLegendItem {
+        - height : double
+        - item : LegendItem
+        - labelPosition : Point2D
+        - line : Line2D
+        - marker : Shape
+        - width : double
+        - x : double
+        - y : double
+        + DrawableLegendItem()
+        + getHeight()
+        + getItem()
+        + getLabelPosition()
+        + getLine()
+        + getMarker()
+        + getMaxX()
+        + getMaxY()
+        + getWidth()
+        + getX()
+        + getY()
+        + setBounds()
+        + setLabelPosition()
+        + setLine()
+        + setMarker()
+        + setX()
+        + setY()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    interface org.jfree.chart.Effect3D {
+        {abstract} + getXOffset()
+        {abstract} + getYOffset()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.HashUtilities {
+        {static} + hashCode()
+        {static} + hashCode()
+        {static} + hashCode()
+        {static} + hashCode()
+        {static} + hashCode()
+        {static} + hashCode()
+        {static} + hashCode()
+        {static} + hashCode()
+        {static} + hashCode()
+        {static} + hashCode()
+        {static} + hashCode()
+        {static} + hashCodeForDoubleArray()
+        {static} + hashCodeForPaint()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.JFreeChart {
+        {static} + DEFAULT_BACKGROUND_IMAGE : Image
+        {static} + DEFAULT_BACKGROUND_IMAGE_ALIGNMENT : int
+        {static} + DEFAULT_BACKGROUND_IMAGE_ALPHA : float
+        {static} + DEFAULT_BACKGROUND_PAINT : Paint
+        {static} + DEFAULT_TITLE_FONT : Font
+        {static} + INFO : ProjectInfo
+        {static} + KEY_SUPPRESS_SHADOW_GENERATION : Key
+        - backgroundImage : Image
+        - backgroundImageAlignment : int
+        - backgroundImageAlpha : float
+        - backgroundPaint : Paint
+        - borderPaint : Paint
+        - borderStroke : Stroke
+        - borderVisible : boolean
+        - changeListeners : EventListenerList
+        - notify : boolean
+        - padding : RectangleInsets
+        - plot : Plot
+        - progressListeners : EventListenerList
+        - renderingHints : RenderingHints
+        {static} - serialVersionUID : long
+        - subtitles : List
+        - title : TextTitle
+        + JFreeChart()
+        + JFreeChart()
+        + JFreeChart()
+        + addChangeListener()
+        + addLegend()
+        + addProgressListener()
+        + addSubtitle()
+        + addSubtitle()
+        + clearSubtitles()
+        + clone()
+        + createBufferedImage()
+        + createBufferedImage()
+        + createBufferedImage()
+        + createBufferedImage()
+        + draw()
+        + draw()
+        + draw()
+        + equals()
+        + fireChartChanged()
+        + getAntiAlias()
+        + getBackgroundImage()
+        + getBackgroundImageAlignment()
+        + getBackgroundImageAlpha()
+        + getBackgroundPaint()
+        + getBorderPaint()
+        + getBorderStroke()
+        + getCategoryPlot()
+        + getLegend()
+        + getLegend()
+        + getPadding()
+        + getPlot()
+        + getRenderingHints()
+        + getSubtitle()
+        + getSubtitleCount()
+        + getSubtitles()
+        + getTextAntiAlias()
+        + getTitle()
+        + getXYPlot()
+        + handleClick()
+        + isBorderVisible()
+        + isNotify()
+        {static} + main()
+        + plotChanged()
+        + removeChangeListener()
+        + removeLegend()
+        + removeProgressListener()
+        + removeSubtitle()
+        + setAntiAlias()
+        + setBackgroundImage()
+        + setBackgroundImageAlignment()
+        + setBackgroundImageAlpha()
+        + setBackgroundPaint()
+        + setBorderPaint()
+        + setBorderStroke()
+        + setBorderVisible()
+        + setNotify()
+        + setPadding()
+        + setRenderingHints()
+        + setSubtitles()
+        + setTextAntiAlias()
+        + setTextAntiAlias()
+        + setTitle()
+        + setTitle()
+        + titleChanged()
+        # drawTitle()
+        # notifyListeners()
+        # notifyListeners()
+        - createAlignedRectangle2D()
+        - readObject()
+        - writeObject()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.JFreeChartInfo {
+        + JFreeChartInfo()
+        + getLogo()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.LegendItem {
+        {static} - UNUSED_SHAPE : Shape
+        {static} - UNUSED_STROKE : Stroke
+        - attributedLabel : AttributedString
+        - dataset : Dataset
+        - datasetIndex : int
+        - description : String
+        - fillPaint : Paint
+        - fillPaintTransformer : GradientPaintTransformer
+        - label : String
+        - labelFont : Font
+        - labelPaint : Paint
+        - line : Shape
+        - linePaint : Paint
+        - lineStroke : Stroke
+        - lineVisible : boolean
+        - outlinePaint : Paint
+        - outlineStroke : Stroke
+        {static} - serialVersionUID : long
+        - series : int
+        - seriesKey : Comparable
+        - shape : Shape
+        - shapeFilled : boolean
+        - shapeOutlineVisible : boolean
+        - shapeVisible : boolean
+        - toolTipText : String
+        - urlText : String
+        + LegendItem()
+        + LegendItem()
+        + LegendItem()
+        + LegendItem()
+        + LegendItem()
+        + LegendItem()
+        + LegendItem()
+        + LegendItem()
+        + LegendItem()
+        + LegendItem()
+        + clone()
+        + equals()
+        + getAttributedLabel()
+        + getDataset()
+        + getDatasetIndex()
+        + getDescription()
+        + getFillPaint()
+        + getFillPaintTransformer()
+        + getLabel()
+        + getLabelFont()
+        + getLabelPaint()
+        + getLine()
+        + getLinePaint()
+        + getLineStroke()
+        + getOutlinePaint()
+        + getOutlineStroke()
+        + getSeriesIndex()
+        + getSeriesKey()
+        + getShape()
+        + getToolTipText()
+        + getURLText()
+        + isLineVisible()
+        + isShapeFilled()
+        + isShapeOutlineVisible()
+        + isShapeVisible()
+        + setDataset()
+        + setDatasetIndex()
+        + setDescription()
+        + setFillPaint()
+        + setFillPaintTransformer()
+        + setLabelFont()
+        + setLabelPaint()
+        + setLine()
+        + setLinePaint()
+        + setLineStroke()
+        + setLineVisible()
+        + setOutlinePaint()
+        + setOutlineStroke()
+        + setSeriesIndex()
+        + setSeriesKey()
+        + setShape()
+        + setShapeVisible()
+        + setToolTipText()
+        + setURLText()
+        - characterIteratorToString()
+        - readObject()
+        - writeObject()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.LegendItemCollection {
+        - items : List
+        {static} - serialVersionUID : long
+        + LegendItemCollection()
+        + add()
+        + addAll()
+        + clone()
+        + equals()
+        + get()
+        + getItemCount()
+        + iterator()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    interface org.jfree.chart.LegendItemSource {
+        {abstract} + getLegendItems()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.LegendRenderingOrder {
+        {static} + REVERSE : LegendRenderingOrder
+        {static} + STANDARD : LegendRenderingOrder
+        - name : String
+        {static} - serialVersionUID : long
+        + equals()
+        + toString()
+        - LegendRenderingOrder()
+        - readResolve()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.MouseWheelHandler {
+        ~ zoomFactor : double
+        - chartPanel : ChartPanel
+        + MouseWheelHandler()
+        + getZoomFactor()
+        + mouseWheelMoved()
+        + setZoomFactor()
+        - handleZoomable()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.PaintMap {
+        {static} ~ serialVersionUID : long
+        - store : Map
+        + PaintMap()
+        + clear()
+        + clone()
+        + containsKey()
+        + equals()
+        + getPaint()
+        + put()
+        - readObject()
+        - writeObject()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.PolarChartPanel {
+        {static} - POLAR_AUTO_RANGE_ACTION_COMMAND : String
+        {static} - POLAR_ZOOM_IN_ACTION_COMMAND : String
+        {static} - POLAR_ZOOM_OUT_ACTION_COMMAND : String
+        + PolarChartPanel()
+        + PolarChartPanel()
+        + actionPerformed()
+        + setChart()
+        # createPopupMenu()
+        - checkChart()
+        - getPopupMenuItem()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.StandardChartTheme {
+        - axisLabelPaint : Paint
+        - axisOffset : RectangleInsets
+        - barPainter : BarPainter
+        - baselinePaint : Paint
+        - chartBackgroundPaint : Paint
+        - crosshairPaint : Paint
+        - domainGridlinePaint : Paint
+        - drawingSupplier : DrawingSupplier
+        - errorIndicatorPaint : Paint
+        - extraLargeFont : Font
+        - gridBandAlternatePaint : Paint
+        - gridBandPaint : Paint
+        - itemLabelPaint : Paint
+        - labelLinkPaint : Paint
+        - labelLinkStyle : PieLabelLinkStyle
+        - largeFont : Font
+        - legendBackgroundPaint : Paint
+        - legendItemPaint : Paint
+        - name : String
+        - plotBackgroundPaint : Paint
+        - plotOutlinePaint : Paint
+        - rangeGridlinePaint : Paint
+        - regularFont : Font
+        - shadowGenerator : ShadowGenerator
+        - shadowPaint : Paint
+        - shadowVisible : boolean
+        - smallFont : Font
+        - subtitlePaint : Paint
+        - thermometerPaint : Paint
+        - tickLabelPaint : Paint
+        - titlePaint : Paint
+        - wallPaint : Paint
+        - xyBarPainter : XYBarPainter
+        + StandardChartTheme()
+        + StandardChartTheme()
+        + apply()
+        + clone()
+        {static} + createDarknessTheme()
+        {static} + createJFreeTheme()
+        {static} + createLegacyTheme()
+        + equals()
+        + getAxisLabelPaint()
+        + getAxisOffset()
+        + getBarPainter()
+        + getBaselinePaint()
+        + getChartBackgroundPaint()
+        + getCrosshairPaint()
+        + getDomainGridlinePaint()
+        + getDrawingSupplier()
+        + getErrorIndicatorPaint()
+        + getExtraLargeFont()
+        + getGridBandAlternatePaint()
+        + getGridBandPaint()
+        + getItemLabelPaint()
+        + getLabelLinkPaint()
+        + getLabelLinkStyle()
+        + getLargeFont()
+        + getLegendBackgroundPaint()
+        + getLegendItemPaint()
+        + getName()
+        + getPlotBackgroundPaint()
+        + getPlotOutlinePaint()
+        + getRangeGridlinePaint()
+        + getRegularFont()
+        + getShadowPaint()
+        + getSmallFont()
+        + getSubtitlePaint()
+        + getThermometerPaint()
+        + getTickLabelPaint()
+        + getTitlePaint()
+        + getWallPaint()
+        + getXYBarPainter()
+        + isShadowVisible()
+        + setAxisLabelPaint()
+        + setAxisOffset()
+        + setBarPainter()
+        + setBaselinePaint()
+        + setChartBackgroundPaint()
+        + setCrosshairPaint()
+        + setDomainGridlinePaint()
+        + setDrawingSupplier()
+        + setErrorIndicatorPaint()
+        + setExtraLargeFont()
+        + setGridBandAlternatePaint()
+        + setGridBandPaint()
+        + setItemLabelPaint()
+        + setLabelLinkPaint()
+        + setLabelLinkStyle()
+        + setLargeFont()
+        + setLegendBackgroundPaint()
+        + setLegendItemPaint()
+        + setPlotBackgroundPaint()
+        + setPlotOutlinePaint()
+        + setRangeGridlinePaint()
+        + setRegularFont()
+        + setShadowPaint()
+        + setShadowVisible()
+        + setSmallFont()
+        + setSubtitlePaint()
+        + setThermometerPaint()
+        + setTickLabelPaint()
+        + setTitlePaint()
+        + setWallPaint()
+        + setXYBarPainter()
+        # applyToAbstractRenderer()
+        # applyToBlock()
+        # applyToBlockContainer()
+        # applyToCategoryAxis()
+        # applyToCategoryItemRenderer()
+        # applyToCategoryPlot()
+        # applyToFastScatterPlot()
+        # applyToMeterPlot()
+        # applyToMultiplePiePlot()
+        # applyToPeriodAxis()
+        # applyToPiePlot()
+        # applyToPlot()
+        # applyToPolarPlot()
+        # applyToSpiderWebPlot()
+        # applyToSymbolAxis()
+        # applyToThermometerPlot()
+        # applyToTitle()
+        # applyToValueAxis()
+        # applyToXYAnnotation()
+        # applyToXYItemRenderer()
+        # applyToXYPlot()
+        - readObject()
+        - writeObject()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.StrokeMap {
+        {static} ~ serialVersionUID : long
+        - store : Map
+        + StrokeMap()
+        + clear()
+        + clone()
+        + containsKey()
+        + equals()
+        + getStroke()
+        + put()
+        - readObject()
+        - writeObject()
+    }
+  }
+  
+
+  org.jfree.chart.ChartHints +-down- org.jfree.chart.ChartHints.Key
+  org.jfree.chart.ChartMouseEvent .up.|> Serializable
+  org.jfree.chart.ChartPanel .up.|> ActionListener
+  org.jfree.chart.ChartPanel .up.|> ChartChangeListener
+  org.jfree.chart.ChartPanel .up.|> ChartProgressListener
+  org.jfree.chart.ChartPanel .up.|> MouseListener
+  org.jfree.chart.ChartPanel .up.|> MouseMotionListener
+  org.jfree.chart.ChartPanel .up.|> OverlayChangeListener
+  org.jfree.chart.ChartPanel .up.|> Printable
+  org.jfree.chart.ChartPanel .up.|> Serializable
+  org.jfree.chart.ChartRenderingInfo .up.|> Cloneable
+  org.jfree.chart.ChartRenderingInfo .up.|> Serializable
+  org.jfree.chart.ChartTransferable .up.|> Transferable
+  org.jfree.chart.ClipPath .up.|> Cloneable
+  org.jfree.chart.JFreeChart .up.|> Cloneable
+  org.jfree.chart.JFreeChart .up.|> Drawable
+  org.jfree.chart.JFreeChart .up.|> PlotChangeListener
+  org.jfree.chart.JFreeChart .up.|> Serializable
+  org.jfree.chart.JFreeChart .up.|> TitleChangeListener
+  org.jfree.chart.LegendItem .up.|> Cloneable
+  org.jfree.chart.LegendItem .up.|> Serializable
+  org.jfree.chart.LegendItemCollection .up.|> Cloneable
+  org.jfree.chart.LegendItemCollection .up.|> Serializable
+  org.jfree.chart.LegendRenderingOrder .up.|> Serializable
+  org.jfree.chart.MouseWheelHandler .up.|> MouseWheelListener
+  org.jfree.chart.MouseWheelHandler .up.|> Serializable
+  org.jfree.chart.PaintMap .up.|> Cloneable
+  org.jfree.chart.PaintMap .up.|> Serializable
+  org.jfree.chart.StandardChartTheme .up.|> ChartTheme
+  org.jfree.chart.StandardChartTheme .up.|> Cloneable
+  org.jfree.chart.StandardChartTheme .up.|> PublicCloneable
+  org.jfree.chart.StandardChartTheme .up.|> Serializable
+  org.jfree.chart.StrokeMap .up.|> Cloneable
+  org.jfree.chart.StrokeMap .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,213 @@
+@startuml
+
+title __GENERAL's Class Diagram__\n
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DatasetGroupTest {
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DatasetUtilitiesTest {
+          {static} - EPSILON : double
+          + test803660()
+          + testBug2849731()
+          + testBug2849731_2()
+          + testBug2849731_3()
+          + testCalculatePieDatasetTotal()
+          + testCreateCategoryDataset1()
+          + testCreateCategoryDataset2()
+          + testCumulativeRange1()
+          + testCumulativeRange2()
+          + testCumulativeRange3()
+          + testCumulativeRange_NaN()
+          + testFindDomainBounds()
+          + testFindDomainBounds2()
+          + testFindDomainBounds3()
+          + testFindDomainBounds_NaN()
+          + testFindMaximumDomainValue()
+          + testFindMaximumRangeValue()
+          + testFindMaximumStackedRangeValue()
+          + testFindMaximumStackedRangeValue2()
+          + testFindMinimumDomainValue()
+          + testFindMinimumRangeValue()
+          + testFindMinimumStackedRangeValue()
+          + testFindMinimumStackedRangeValue2()
+          + testFindRangeBounds()
+          + testFindRangeBounds2()
+          + testFindRangeBounds_CategoryDataset()
+          + testFindStackedRangeBoundsForTableXYDataset1()
+          + testFindStackedRangeBoundsForTableXYDataset2()
+          + testFindStackedRangeBounds_CategoryDataset1()
+          + testFindStackedRangeBounds_CategoryDataset2()
+          + testFindStackedRangeBounds_CategoryDataset3()
+          + testFindYValue()
+          + testFindYValueNonSorted()
+          + testFindYValueWithDuplicates()
+          + testIsEmptyOrNullXYDataset()
+          + testIterateDomainBounds()
+          + testIterateDomainBounds_NaN()
+          + testIterateDomainBounds_NaN2()
+          + testIterateRangeBounds()
+          + testIterateRangeBounds2()
+          + testIterateRangeBounds2_CategoryDataset()
+          + testIterateRangeBounds3()
+          + testIterateRangeBounds3_CategoryDataset()
+          + testIterateRangeBounds4()
+          + testIterateRangeBounds_CategoryDataset()
+          + testIterateRangeBounds_IntervalCategoryDataset()
+          + testIterateToFindRangeBounds1_XYDataset()
+          + testIterateToFindRangeBounds2_XYDataset()
+          + testIterateToFindRangeBounds_BoxAndWhiskerXYDataset()
+          + testIterateToFindRangeBounds_MultiValueCategoryDataset()
+          + testIterateToFindRangeBounds_StatisticalCategoryDataset()
+          + testJava()
+          + testLimitPieDataset()
+          + testMaximumStackedRangeValue()
+          + testMinMaxRange()
+          + testSampleFunction2D()
+          + testStackedRangeWithMap()
+          - createCategoryDataset1()
+          - createCategoryDataset2()
+          - createTableXYDataset1()
+          - createXYDataset1()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DefaultHeatMapDatasetTest {
+          {static} - EPSILON : double
+          - lastEvent : DatasetChangeEvent
+          + datasetChanged()
+          + testCloning()
+          + testEquals()
+          + testGeneral()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DefaultKeyedValueDatasetTest {
+          + testCloneIndependence()
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DefaultKeyedValues2DDatasetTest {
+          + testCloning()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DefaultKeyedValuesDatasetTest {
+          + testCloning()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.DefaultPieDatasetTest {
+          - lastEvent : DatasetChangeEvent
+          + datasetChanged()
+          + testClear()
+          + testCloning()
+          + testGetIndex()
+          + testGetKey()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.IntervalDataItem {
+          - lowerBound : Number
+          - upperBound : Number
+          - value : Number
+          + IntervalDataItem()
+          + getLowerBound()
+          + getUpperBound()
+          + getValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace general {
+      class org.jfree.data.general.TestIntervalCategoryDataset {
+          - data : KeyedObjects2D
+          {static} - serialVersionUID : long
+          + TestIntervalCategoryDataset()
+          + addItem()
+          + addItem()
+          + clear()
+          + clone()
+          + equals()
+          + getColumnCount()
+          + getColumnIndex()
+          + getColumnKey()
+          + getColumnKeys()
+          + getEndValue()
+          + getEndValue()
+          + getRowCount()
+          + getRowIndex()
+          + getRowKey()
+          + getRowKeys()
+          + getStartValue()
+          + getStartValue()
+          + getValue()
+          + getValue()
+          + hashCode()
+          + removeColumn()
+          + removeColumn()
+          + removeItem()
+          + removeRow()
+          + removeRow()
+          + setItem()
+          + setItem()
+      }
+    }
+  }
+  
+
+  org.jfree.data.general.DefaultHeatMapDatasetTest .up.|> DatasetChangeListener
+  org.jfree.data.general.DefaultPieDatasetTest .up.|> DatasetChangeListener
+  org.jfree.data.general.TestIntervalCategoryDataset .up.|> IntervalCategoryDataset
+  org.jfree.data.general.TestIntervalCategoryDataset .up.|> PublicCloneable
+  org.jfree.data.general.TestIntervalCategoryDataset .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

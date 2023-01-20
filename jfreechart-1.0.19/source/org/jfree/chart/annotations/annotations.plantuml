@@ -1,0 +1,583 @@
+@startuml
+
+title __ANNOTATIONS's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      abstract class org.jfree.chart.annotations.AbstractAnnotation {
+          - listenerList : EventListenerList
+          - notify : boolean
+          + addChangeListener()
+          + clone()
+          + getNotify()
+          + hasListener()
+          + removeChangeListener()
+          + setNotify()
+          # AbstractAnnotation()
+          # fireAnnotationChanged()
+          # notifyListeners()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      abstract class org.jfree.chart.annotations.AbstractXYAnnotation {
+          - toolTipText : String
+          - url : String
+          {abstract} + draw()
+          + equals()
+          + getToolTipText()
+          + getURL()
+          + hashCode()
+          + setToolTipText()
+          + setURL()
+          # AbstractXYAnnotation()
+          # addEntity()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      interface org.jfree.chart.annotations.Annotation {
+          {abstract} + addChangeListener()
+          {abstract} + removeChangeListener()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      interface org.jfree.chart.annotations.CategoryAnnotation {
+          {abstract} + draw()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.CategoryLineAnnotation {
+          {static} ~ serialVersionUID : long
+          - category1 : Comparable
+          - category2 : Comparable
+          - paint : Paint
+          - stroke : Stroke
+          - value1 : double
+          - value2 : double
+          + CategoryLineAnnotation()
+          + clone()
+          + draw()
+          + equals()
+          + getCategory1()
+          + getCategory2()
+          + getPaint()
+          + getStroke()
+          + getValue1()
+          + getValue2()
+          + hashCode()
+          + setCategory1()
+          + setCategory2()
+          + setPaint()
+          + setStroke()
+          + setValue1()
+          + setValue2()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.CategoryPointerAnnotation {
+          {static} + DEFAULT_ARROW_LENGTH : double
+          {static} + DEFAULT_ARROW_WIDTH : double
+          {static} + DEFAULT_BASE_RADIUS : double
+          {static} + DEFAULT_LABEL_OFFSET : double
+          {static} + DEFAULT_TIP_RADIUS : double
+          - angle : double
+          - arrowLength : double
+          - arrowPaint : Paint
+          - arrowStroke : Stroke
+          - arrowWidth : double
+          - baseRadius : double
+          - labelOffset : double
+          {static} - serialVersionUID : long
+          - tipRadius : double
+          + CategoryPointerAnnotation()
+          + clone()
+          + draw()
+          + equals()
+          + getAngle()
+          + getArrowLength()
+          + getArrowPaint()
+          + getArrowStroke()
+          + getArrowWidth()
+          + getBaseRadius()
+          + getLabelOffset()
+          + getTipRadius()
+          + hashCode()
+          + setAngle()
+          + setArrowLength()
+          + setArrowPaint()
+          + setArrowStroke()
+          + setArrowWidth()
+          + setBaseRadius()
+          + setLabelOffset()
+          + setTipRadius()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.CategoryTextAnnotation {
+          - category : Comparable
+          - categoryAnchor : CategoryAnchor
+          {static} - serialVersionUID : long
+          - value : double
+          + CategoryTextAnnotation()
+          + clone()
+          + draw()
+          + equals()
+          + getCategory()
+          + getCategoryAnchor()
+          + getValue()
+          + hashCode()
+          + setCategory()
+          + setCategoryAnchor()
+          + setValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.TextAnnotation {
+          {static} + DEFAULT_FONT : Font
+          {static} + DEFAULT_PAINT : Paint
+          {static} + DEFAULT_ROTATION_ANCHOR : TextAnchor
+          {static} + DEFAULT_ROTATION_ANGLE : double
+          {static} + DEFAULT_TEXT_ANCHOR : TextAnchor
+          - font : Font
+          - paint : Paint
+          - rotationAnchor : TextAnchor
+          - rotationAngle : double
+          {static} - serialVersionUID : long
+          - text : String
+          - textAnchor : TextAnchor
+          + equals()
+          + getFont()
+          + getPaint()
+          + getRotationAnchor()
+          + getRotationAngle()
+          + getText()
+          + getTextAnchor()
+          + hashCode()
+          + setFont()
+          + setPaint()
+          + setRotationAnchor()
+          + setRotationAngle()
+          + setText()
+          + setTextAnchor()
+          # TextAnnotation()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      interface org.jfree.chart.annotations.XYAnnotation {
+          {abstract} + draw()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      interface org.jfree.chart.annotations.XYAnnotationBoundsInfo {
+          {abstract} + getIncludeInDataBounds()
+          {abstract} + getXRange()
+          {abstract} + getYRange()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.XYBoxAnnotation {
+          - fillPaint : Paint
+          - outlinePaint : Paint
+          {static} - serialVersionUID : long
+          - stroke : Stroke
+          - x0 : double
+          - x1 : double
+          - y0 : double
+          - y1 : double
+          + XYBoxAnnotation()
+          + XYBoxAnnotation()
+          + XYBoxAnnotation()
+          + clone()
+          + draw()
+          + equals()
+          + hashCode()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.XYDataImageAnnotation {
+          - h : double
+          - image : Image
+          - includeInDataBounds : boolean
+          - w : double
+          - x : double
+          - y : double
+          + XYDataImageAnnotation()
+          + XYDataImageAnnotation()
+          + clone()
+          + draw()
+          + equals()
+          + getHeight()
+          + getImage()
+          + getIncludeInDataBounds()
+          + getWidth()
+          + getX()
+          + getXRange()
+          + getY()
+          + getYRange()
+          + hashCode()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.XYDrawableAnnotation {
+          - displayHeight : double
+          - displayWidth : double
+          - drawScaleFactor : double
+          - drawable : Drawable
+          {static} - serialVersionUID : long
+          - x : double
+          - y : double
+          + XYDrawableAnnotation()
+          + XYDrawableAnnotation()
+          + clone()
+          + draw()
+          + equals()
+          + hashCode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.XYImageAnnotation {
+          - anchor : RectangleAnchor
+          - image : Image
+          {static} - serialVersionUID : long
+          - x : double
+          - y : double
+          + XYImageAnnotation()
+          + XYImageAnnotation()
+          + clone()
+          + draw()
+          + equals()
+          + getImage()
+          + getImageAnchor()
+          + getX()
+          + getY()
+          + hashCode()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.XYLineAnnotation {
+          - paint : Paint
+          {static} - serialVersionUID : long
+          - stroke : Stroke
+          - x1 : double
+          - x2 : double
+          - y1 : double
+          - y2 : double
+          + XYLineAnnotation()
+          + XYLineAnnotation()
+          + clone()
+          + draw()
+          + equals()
+          + hashCode()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.XYPointerAnnotation {
+          {static} + DEFAULT_ARROW_LENGTH : double
+          {static} + DEFAULT_ARROW_WIDTH : double
+          {static} + DEFAULT_BASE_RADIUS : double
+          {static} + DEFAULT_LABEL_OFFSET : double
+          {static} + DEFAULT_TIP_RADIUS : double
+          - angle : double
+          - arrowLength : double
+          - arrowPaint : Paint
+          - arrowStroke : Stroke
+          - arrowWidth : double
+          - baseRadius : double
+          - labelOffset : double
+          {static} - serialVersionUID : long
+          - tipRadius : double
+          + XYPointerAnnotation()
+          + clone()
+          + draw()
+          + equals()
+          + getAngle()
+          + getArrowLength()
+          + getArrowPaint()
+          + getArrowStroke()
+          + getArrowWidth()
+          + getBaseRadius()
+          + getLabelOffset()
+          + getTipRadius()
+          + hashCode()
+          + setAngle()
+          + setArrowLength()
+          + setArrowPaint()
+          + setArrowStroke()
+          + setArrowWidth()
+          + setBaseRadius()
+          + setLabelOffset()
+          + setTipRadius()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.XYPolygonAnnotation {
+          - fillPaint : Paint
+          - outlinePaint : Paint
+          - polygon : double[]
+          {static} - serialVersionUID : long
+          - stroke : Stroke
+          + XYPolygonAnnotation()
+          + XYPolygonAnnotation()
+          + XYPolygonAnnotation()
+          + clone()
+          + draw()
+          + equals()
+          + getFillPaint()
+          + getOutlinePaint()
+          + getOutlineStroke()
+          + getPolygonCoordinates()
+          + hashCode()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.XYShapeAnnotation {
+          - fillPaint : Paint
+          - outlinePaint : Paint
+          {static} - serialVersionUID : long
+          - shape : Shape
+          - stroke : Stroke
+          + XYShapeAnnotation()
+          + XYShapeAnnotation()
+          + XYShapeAnnotation()
+          + clone()
+          + draw()
+          + equals()
+          + hashCode()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.XYTextAnnotation {
+          {static} + DEFAULT_FONT : Font
+          {static} + DEFAULT_PAINT : Paint
+          {static} + DEFAULT_ROTATION_ANCHOR : TextAnchor
+          {static} + DEFAULT_ROTATION_ANGLE : double
+          {static} + DEFAULT_TEXT_ANCHOR : TextAnchor
+          - backgroundPaint : Paint
+          - font : Font
+          - outlinePaint : Paint
+          - outlineStroke : Stroke
+          - outlineVisible : boolean
+          - paint : Paint
+          - rotationAnchor : TextAnchor
+          - rotationAngle : double
+          {static} - serialVersionUID : long
+          - text : String
+          - textAnchor : TextAnchor
+          - x : double
+          - y : double
+          + XYTextAnnotation()
+          + clone()
+          + draw()
+          + equals()
+          + getBackgroundPaint()
+          + getFont()
+          + getOutlinePaint()
+          + getOutlineStroke()
+          + getPaint()
+          + getRotationAnchor()
+          + getRotationAngle()
+          + getText()
+          + getTextAnchor()
+          + getX()
+          + getY()
+          + hashCode()
+          + isOutlineVisible()
+          + setBackgroundPaint()
+          + setFont()
+          + setOutlinePaint()
+          + setOutlineStroke()
+          + setOutlineVisible()
+          + setPaint()
+          + setRotationAnchor()
+          + setRotationAngle()
+          + setText()
+          + setTextAnchor()
+          + setX()
+          + setY()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace annotations {
+      class org.jfree.chart.annotations.XYTitleAnnotation {
+          - anchor : RectangleAnchor
+          - coordinateType : XYCoordinateType
+          - maxHeight : double
+          - maxWidth : double
+          {static} - serialVersionUID : long
+          - title : Title
+          - x : double
+          - y : double
+          + XYTitleAnnotation()
+          + XYTitleAnnotation()
+          + clone()
+          + draw()
+          + equals()
+          + getCoordinateType()
+          + getMaxHeight()
+          + getMaxWidth()
+          + getTitle()
+          + getTitleAnchor()
+          + getX()
+          + getY()
+          + hashCode()
+          + setMaxHeight()
+          + setMaxWidth()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.annotations.AbstractAnnotation .up.|> Annotation
+  org.jfree.chart.annotations.AbstractAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.AbstractAnnotation .up.|> Serializable
+  org.jfree.chart.annotations.AbstractXYAnnotation .up.|> XYAnnotation
+  org.jfree.chart.annotations.CategoryLineAnnotation .up.|> CategoryAnnotation
+  org.jfree.chart.annotations.CategoryLineAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.CategoryLineAnnotation .up.|> PublicCloneable
+  org.jfree.chart.annotations.CategoryLineAnnotation .up.|> Serializable
+  org.jfree.chart.annotations.CategoryPointerAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.CategoryPointerAnnotation .up.|> PublicCloneable
+  org.jfree.chart.annotations.CategoryPointerAnnotation .up.|> Serializable
+  org.jfree.chart.annotations.CategoryTextAnnotation .up.|> CategoryAnnotation
+  org.jfree.chart.annotations.CategoryTextAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.CategoryTextAnnotation .up.|> PublicCloneable
+  org.jfree.chart.annotations.CategoryTextAnnotation .up.|> Serializable
+  org.jfree.chart.annotations.TextAnnotation .up.|> Serializable
+  org.jfree.chart.annotations.XYBoxAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.XYBoxAnnotation .up.|> PublicCloneable
+  org.jfree.chart.annotations.XYBoxAnnotation .up.|> Serializable
+  org.jfree.chart.annotations.XYDataImageAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.XYDataImageAnnotation .up.|> PublicCloneable
+  org.jfree.chart.annotations.XYDataImageAnnotation .up.|> XYAnnotationBoundsInfo
+  org.jfree.chart.annotations.XYDrawableAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.XYDrawableAnnotation .up.|> PublicCloneable
+  org.jfree.chart.annotations.XYDrawableAnnotation .up.|> Serializable
+  org.jfree.chart.annotations.XYImageAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.XYImageAnnotation .up.|> PublicCloneable
+  org.jfree.chart.annotations.XYImageAnnotation .up.|> Serializable
+  org.jfree.chart.annotations.XYLineAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.XYLineAnnotation .up.|> PublicCloneable
+  org.jfree.chart.annotations.XYLineAnnotation .up.|> Serializable
+  org.jfree.chart.annotations.XYPointerAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.XYPointerAnnotation .up.|> PublicCloneable
+  org.jfree.chart.annotations.XYPointerAnnotation .up.|> Serializable
+  org.jfree.chart.annotations.XYPolygonAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.XYPolygonAnnotation .up.|> PublicCloneable
+  org.jfree.chart.annotations.XYPolygonAnnotation .up.|> Serializable
+  org.jfree.chart.annotations.XYShapeAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.XYShapeAnnotation .up.|> PublicCloneable
+  org.jfree.chart.annotations.XYShapeAnnotation .up.|> Serializable
+  org.jfree.chart.annotations.XYTextAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.XYTextAnnotation .up.|> PublicCloneable
+  org.jfree.chart.annotations.XYTextAnnotation .up.|> Serializable
+  org.jfree.chart.annotations.XYTitleAnnotation .up.|> Cloneable
+  org.jfree.chart.annotations.XYTitleAnnotation .up.|> PublicCloneable
+  org.jfree.chart.annotations.XYTitleAnnotation .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,222 @@
+@startuml
+
+title __URLS's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace urls {
+      interface org.jfree.chart.urls.CategoryURLGenerator {
+          {abstract} + generateURL()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace urls {
+      class org.jfree.chart.urls.CustomCategoryURLGenerator {
+          - urlSeries : ArrayList
+          + CustomCategoryURLGenerator()
+          + addURLSeries()
+          + clone()
+          + equals()
+          + generateURL()
+          + getListCount()
+          + getURL()
+          + getURLCount()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace urls {
+      class org.jfree.chart.urls.CustomPieURLGenerator {
+          {static} - serialVersionUID : long
+          - urls : ArrayList
+          + CustomPieURLGenerator()
+          + addURLs()
+          + clone()
+          + equals()
+          + generateURL()
+          + getListCount()
+          + getURL()
+          + getURLCount()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace urls {
+      class org.jfree.chart.urls.CustomXYURLGenerator {
+          {static} - serialVersionUID : long
+          - urlSeries : ArrayList
+          + CustomXYURLGenerator()
+          + addURLSeries()
+          + clone()
+          + equals()
+          + generateURL()
+          + getListCount()
+          + getURL()
+          + getURLCount()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace urls {
+      interface org.jfree.chart.urls.PieURLGenerator {
+          {abstract} + generateURL()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace urls {
+      class org.jfree.chart.urls.StandardCategoryURLGenerator {
+          - categoryParameterName : String
+          - prefix : String
+          {static} - serialVersionUID : long
+          - seriesParameterName : String
+          + StandardCategoryURLGenerator()
+          + StandardCategoryURLGenerator()
+          + StandardCategoryURLGenerator()
+          + clone()
+          + equals()
+          + generateURL()
+          + hashCode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace urls {
+      class org.jfree.chart.urls.StandardPieURLGenerator {
+          - categoryParamName : String
+          - indexParamName : String
+          - prefix : String
+          {static} - serialVersionUID : long
+          + StandardPieURLGenerator()
+          + StandardPieURLGenerator()
+          + StandardPieURLGenerator()
+          + StandardPieURLGenerator()
+          + equals()
+          + generateURL()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace urls {
+      class org.jfree.chart.urls.StandardXYURLGenerator {
+          {static} + DEFAULT_ITEM_PARAMETER : String
+          {static} + DEFAULT_PREFIX : String
+          {static} + DEFAULT_SERIES_PARAMETER : String
+          - itemParameterName : String
+          - prefix : String
+          {static} - serialVersionUID : long
+          - seriesParameterName : String
+          + StandardXYURLGenerator()
+          + StandardXYURLGenerator()
+          + StandardXYURLGenerator()
+          + equals()
+          + generateURL()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace urls {
+      class org.jfree.chart.urls.StandardXYZURLGenerator {
+          + generateURL()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace urls {
+      class org.jfree.chart.urls.TimeSeriesURLGenerator {
+          - dateFormat : DateFormat
+          - itemParameterName : String
+          - prefix : String
+          {static} - serialVersionUID : long
+          - seriesParameterName : String
+          + TimeSeriesURLGenerator()
+          + TimeSeriesURLGenerator()
+          + equals()
+          + generateURL()
+          + getDateFormat()
+          + getItemParameterName()
+          + getPrefix()
+          + getSeriesParameterName()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace urls {
+      class org.jfree.chart.urls.URLUtilities {
+          {static} - STRING_ARGS_2 : Class[]
+          {static} + encode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace urls {
+      interface org.jfree.chart.urls.XYURLGenerator {
+          {abstract} + generateURL()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace urls {
+      interface org.jfree.chart.urls.XYZURLGenerator {
+          {abstract} + generateURL()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.urls.CustomCategoryURLGenerator .up.|> CategoryURLGenerator
+  org.jfree.chart.urls.CustomCategoryURLGenerator .up.|> Cloneable
+  org.jfree.chart.urls.CustomCategoryURLGenerator .up.|> PublicCloneable
+  org.jfree.chart.urls.CustomCategoryURLGenerator .up.|> Serializable
+  org.jfree.chart.urls.CustomPieURLGenerator .up.|> Cloneable
+  org.jfree.chart.urls.CustomPieURLGenerator .up.|> PieURLGenerator
+  org.jfree.chart.urls.CustomPieURLGenerator .up.|> PublicCloneable
+  org.jfree.chart.urls.CustomPieURLGenerator .up.|> Serializable
+  org.jfree.chart.urls.CustomXYURLGenerator .up.|> Cloneable
+  org.jfree.chart.urls.CustomXYURLGenerator .up.|> PublicCloneable
+  org.jfree.chart.urls.CustomXYURLGenerator .up.|> Serializable
+  org.jfree.chart.urls.CustomXYURLGenerator .up.|> XYURLGenerator
+  org.jfree.chart.urls.StandardCategoryURLGenerator .up.|> CategoryURLGenerator
+  org.jfree.chart.urls.StandardCategoryURLGenerator .up.|> Cloneable
+  org.jfree.chart.urls.StandardCategoryURLGenerator .up.|> Serializable
+  org.jfree.chart.urls.StandardPieURLGenerator .up.|> PieURLGenerator
+  org.jfree.chart.urls.StandardPieURLGenerator .up.|> Serializable
+  org.jfree.chart.urls.StandardXYURLGenerator .up.|> Serializable
+  org.jfree.chart.urls.StandardXYURLGenerator .up.|> XYURLGenerator
+  org.jfree.chart.urls.StandardXYZURLGenerator .up.|> XYZURLGenerator
+  org.jfree.chart.urls.TimeSeriesURLGenerator .up.|> Serializable
+  org.jfree.chart.urls.TimeSeriesURLGenerator .up.|> XYURLGenerator
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

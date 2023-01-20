@@ -1,0 +1,594 @@
+@startuml
+
+title __RENDERER's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      abstract class org.jfree.chart.renderer.AbstractRenderer {
+          {static} + DEFAULT_OUTLINE_PAINT : Paint
+          {static} + DEFAULT_OUTLINE_STROKE : Stroke
+          {static} + DEFAULT_PAINT : Paint
+          {static} + DEFAULT_SHAPE : Shape
+          {static} + DEFAULT_STROKE : Stroke
+          {static} + DEFAULT_VALUE_LABEL_FONT : Font
+          {static} + DEFAULT_VALUE_LABEL_PAINT : Paint
+          {static} + ZERO : Double
+          {static} - ADJ : double
+          {static} - OPP : double
+          - autoPopulateSeriesFillPaint : boolean
+          - autoPopulateSeriesOutlinePaint : boolean
+          - autoPopulateSeriesOutlineStroke : boolean
+          - autoPopulateSeriesPaint : boolean
+          - autoPopulateSeriesShape : boolean
+          - autoPopulateSeriesStroke : boolean
+          - baseCreateEntities : boolean
+          - baseFillPaint : Paint
+          - baseItemLabelFont : Font
+          - baseItemLabelPaint : Paint
+          - baseItemLabelsVisible : Boolean
+          - baseLegendShape : Shape
+          - baseLegendTextFont : Font
+          - baseLegendTextPaint : Paint
+          - baseNegativeItemLabelPosition : ItemLabelPosition
+          - baseOutlinePaint : Paint
+          - baseOutlineStroke : Stroke
+          - basePaint : Paint
+          - basePositiveItemLabelPosition : ItemLabelPosition
+          - baseSeriesVisible : boolean
+          - baseSeriesVisibleInLegend : boolean
+          - baseShape : Shape
+          - baseStroke : Stroke
+          - createEntities : Boolean
+          - createEntitiesList : BooleanList
+          - dataBoundsIncludesVisibleSeriesOnly : boolean
+          - defaultEntityRadius : int
+          - event : RendererChangeEvent
+          - fillPaint : Paint
+          - fillPaintList : PaintList
+          - itemLabelAnchorOffset : double
+          - itemLabelFont : Font
+          - itemLabelFontMap : Map<Integer, Font>
+          - itemLabelPaint : Paint
+          - itemLabelPaintList : PaintList
+          - itemLabelsVisible : Boolean
+          - itemLabelsVisibleList : BooleanList
+          - legendShapeList : ShapeList
+          - legendTextFontMap : Map<Integer, Font>
+          - legendTextPaint : PaintList
+          - listenerList : EventListenerList
+          - negativeItemLabelPosition : ItemLabelPosition
+          - negativeItemLabelPositionMap : Map<Integer, ItemLabelPosition>
+          - outlinePaint : Paint
+          - outlinePaintList : PaintList
+          - outlineStroke : Stroke
+          - outlineStrokeList : StrokeList
+          - paint : Paint
+          - paintList : PaintList
+          - positiveItemLabelPosition : ItemLabelPosition
+          - positiveItemLabelPositionMap : Map<Integer, ItemLabelPosition>
+          {static} - serialVersionUID : long
+          - seriesVisible : Boolean
+          - seriesVisibleInLegend : Boolean
+          - seriesVisibleInLegendList : BooleanList
+          - seriesVisibleList : BooleanList
+          - shape : Shape
+          - shapeList : ShapeList
+          - stroke : Stroke
+          - strokeList : StrokeList
+          - treatLegendShapeAsLine : boolean
+          + AbstractRenderer()
+          + addChangeListener()
+          + clearSeriesPaints()
+          + clearSeriesStrokes()
+          + equals()
+          + getAutoPopulateSeriesFillPaint()
+          + getAutoPopulateSeriesOutlinePaint()
+          + getAutoPopulateSeriesOutlineStroke()
+          + getAutoPopulateSeriesPaint()
+          + getAutoPopulateSeriesShape()
+          + getAutoPopulateSeriesStroke()
+          + getBaseCreateEntities()
+          + getBaseFillPaint()
+          + getBaseItemLabelFont()
+          + getBaseItemLabelPaint()
+          + getBaseItemLabelsVisible()
+          + getBaseLegendShape()
+          + getBaseLegendTextFont()
+          + getBaseLegendTextPaint()
+          + getBaseNegativeItemLabelPosition()
+          + getBaseOutlinePaint()
+          + getBaseOutlineStroke()
+          + getBasePaint()
+          + getBasePositiveItemLabelPosition()
+          + getBaseSeriesVisible()
+          + getBaseSeriesVisibleInLegend()
+          + getBaseShape()
+          + getBaseStroke()
+          + getCreateEntities()
+          + getDataBoundsIncludesVisibleSeriesOnly()
+          + getDefaultEntityRadius()
+          {abstract} + getDrawingSupplier()
+          + getItemCreateEntity()
+          + getItemFillPaint()
+          + getItemLabelAnchorOffset()
+          + getItemLabelFont()
+          + getItemLabelFont()
+          + getItemLabelPaint()
+          + getItemLabelPaint()
+          + getItemOutlinePaint()
+          + getItemOutlineStroke()
+          + getItemPaint()
+          + getItemShape()
+          + getItemStroke()
+          + getItemVisible()
+          + getLegendShape()
+          + getLegendTextFont()
+          + getLegendTextPaint()
+          + getNegativeItemLabelPosition()
+          + getNegativeItemLabelPosition()
+          + getPositiveItemLabelPosition()
+          + getPositiveItemLabelPosition()
+          + getSeriesCreateEntities()
+          + getSeriesFillPaint()
+          + getSeriesItemLabelFont()
+          + getSeriesItemLabelPaint()
+          + getSeriesNegativeItemLabelPosition()
+          + getSeriesOutlinePaint()
+          + getSeriesOutlineStroke()
+          + getSeriesPaint()
+          + getSeriesPositiveItemLabelPosition()
+          + getSeriesShape()
+          + getSeriesStroke()
+          + getSeriesVisible()
+          + getSeriesVisible()
+          + getSeriesVisibleInLegend()
+          + getSeriesVisibleInLegend()
+          + hasListener()
+          + hashCode()
+          + isItemLabelVisible()
+          + isSeriesItemLabelsVisible()
+          + isSeriesVisible()
+          + isSeriesVisibleInLegend()
+          + lookupLegendShape()
+          + lookupLegendTextFont()
+          + lookupLegendTextPaint()
+          + lookupSeriesFillPaint()
+          + lookupSeriesOutlinePaint()
+          + lookupSeriesOutlineStroke()
+          + lookupSeriesPaint()
+          + lookupSeriesShape()
+          + lookupSeriesStroke()
+          + notifyListeners()
+          + removeChangeListener()
+          + setAutoPopulateSeriesFillPaint()
+          + setAutoPopulateSeriesOutlinePaint()
+          + setAutoPopulateSeriesOutlineStroke()
+          + setAutoPopulateSeriesPaint()
+          + setAutoPopulateSeriesShape()
+          + setAutoPopulateSeriesStroke()
+          + setBaseCreateEntities()
+          + setBaseCreateEntities()
+          + setBaseFillPaint()
+          + setBaseFillPaint()
+          + setBaseItemLabelFont()
+          + setBaseItemLabelFont()
+          + setBaseItemLabelPaint()
+          + setBaseItemLabelPaint()
+          + setBaseItemLabelsVisible()
+          + setBaseItemLabelsVisible()
+          + setBaseItemLabelsVisible()
+          + setBaseLegendShape()
+          + setBaseLegendTextFont()
+          + setBaseLegendTextPaint()
+          + setBaseNegativeItemLabelPosition()
+          + setBaseNegativeItemLabelPosition()
+          + setBaseOutlinePaint()
+          + setBaseOutlinePaint()
+          + setBaseOutlineStroke()
+          + setBaseOutlineStroke()
+          + setBasePaint()
+          + setBasePaint()
+          + setBasePositiveItemLabelPosition()
+          + setBasePositiveItemLabelPosition()
+          + setBaseSeriesVisible()
+          + setBaseSeriesVisible()
+          + setBaseSeriesVisibleInLegend()
+          + setBaseSeriesVisibleInLegend()
+          + setBaseShape()
+          + setBaseShape()
+          + setBaseStroke()
+          + setBaseStroke()
+          + setCreateEntities()
+          + setCreateEntities()
+          + setDataBoundsIncludesVisibleSeriesOnly()
+          + setDefaultEntityRadius()
+          + setFillPaint()
+          + setFillPaint()
+          + setItemLabelAnchorOffset()
+          + setItemLabelFont()
+          + setItemLabelFont()
+          + setItemLabelPaint()
+          + setItemLabelPaint()
+          + setItemLabelsVisible()
+          + setItemLabelsVisible()
+          + setItemLabelsVisible()
+          + setLegendShape()
+          + setLegendTextFont()
+          + setLegendTextPaint()
+          + setNegativeItemLabelPosition()
+          + setNegativeItemLabelPosition()
+          + setOutlinePaint()
+          + setOutlinePaint()
+          + setOutlineStroke()
+          + setOutlineStroke()
+          + setPaint()
+          + setPaint()
+          + setPositiveItemLabelPosition()
+          + setPositiveItemLabelPosition()
+          + setSeriesCreateEntities()
+          + setSeriesCreateEntities()
+          + setSeriesFillPaint()
+          + setSeriesFillPaint()
+          + setSeriesItemLabelFont()
+          + setSeriesItemLabelFont()
+          + setSeriesItemLabelPaint()
+          + setSeriesItemLabelPaint()
+          + setSeriesItemLabelsVisible()
+          + setSeriesItemLabelsVisible()
+          + setSeriesItemLabelsVisible()
+          + setSeriesNegativeItemLabelPosition()
+          + setSeriesNegativeItemLabelPosition()
+          + setSeriesOutlinePaint()
+          + setSeriesOutlinePaint()
+          + setSeriesOutlineStroke()
+          + setSeriesOutlineStroke()
+          + setSeriesPaint()
+          + setSeriesPaint()
+          + setSeriesPositiveItemLabelPosition()
+          + setSeriesPositiveItemLabelPosition()
+          + setSeriesShape()
+          + setSeriesShape()
+          + setSeriesStroke()
+          + setSeriesStroke()
+          + setSeriesVisible()
+          + setSeriesVisible()
+          + setSeriesVisible()
+          + setSeriesVisible()
+          + setSeriesVisibleInLegend()
+          + setSeriesVisibleInLegend()
+          + setSeriesVisibleInLegend()
+          + setSeriesVisibleInLegend()
+          + setShape()
+          + setShape()
+          + setStroke()
+          + setStroke()
+          # calculateLabelAnchorPoint()
+          # clone()
+          # fireChangeEvent()
+          # getTreatLegendShapeAsLine()
+          # setTreatLegendShapeAsLine()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      class org.jfree.chart.renderer.AreaRendererEndType {
+          {static} + LEVEL : AreaRendererEndType
+          {static} + TAPER : AreaRendererEndType
+          {static} + TRUNCATE : AreaRendererEndType
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + toString()
+          - AreaRendererEndType()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      class org.jfree.chart.renderer.DefaultPolarItemRenderer {
+          - baseToolTipGenerator : XYToolTipGenerator
+          - connectFirstAndLastPoint : boolean
+          - drawOutlineWhenFilled : boolean
+          - fillComposite : Composite
+          - legendItemToolTipGenerator : XYSeriesLabelGenerator
+          - legendItemURLGenerator : XYSeriesLabelGenerator
+          - legendLine : Shape
+          - plot : PolarPlot
+          - seriesFilled : BooleanList
+          - shapesVisible : boolean
+          - toolTipGeneratorList : ObjectList
+          - urlGenerator : XYURLGenerator
+          - useFillPaint : boolean
+          + DefaultPolarItemRenderer()
+          + clone()
+          + drawAngularGridLines()
+          + drawRadialGridLines()
+          + drawSeries()
+          + equals()
+          + getBaseToolTipGenerator()
+          + getConnectFirstAndLastPoint()
+          + getDrawOutlineWhenFilled()
+          + getDrawingSupplier()
+          + getFillComposite()
+          + getLegendItem()
+          + getLegendItemToolTipGenerator()
+          + getLegendItemURLGenerator()
+          + getLegendLine()
+          + getPlot()
+          + getSeriesToolTipGenerator()
+          + getShapesVisible()
+          + getToolTipGenerator()
+          + getURLGenerator()
+          + getUseFillPaint()
+          + isSeriesFilled()
+          + setBaseToolTipGenerator()
+          + setConnectFirstAndLastPoint()
+          + setDrawOutlineWhenFilled()
+          + setFillComposite()
+          + setLegendItemToolTipGenerator()
+          + setLegendItemURLGenerator()
+          + setLegendLine()
+          + setPlot()
+          + setSeriesFilled()
+          + setSeriesToolTipGenerator()
+          + setShapesVisible()
+          + setURLGenerator()
+          + setUseFillPaint()
+          # addEntity()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      class org.jfree.chart.renderer.GrayPaintScale {
+          - alpha : int
+          - lowerBound : double
+          - upperBound : double
+          + GrayPaintScale()
+          + GrayPaintScale()
+          + GrayPaintScale()
+          + clone()
+          + equals()
+          + getAlpha()
+          + getLowerBound()
+          + getPaint()
+          + getUpperBound()
+          + hashCode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      class org.jfree.chart.renderer.LookupPaintScale {
+          {static} ~ serialVersionUID : long
+          - defaultPaint : Paint
+          - lookupTable : List
+          - lowerBound : double
+          - upperBound : double
+          + LookupPaintScale()
+          + LookupPaintScale()
+          + add()
+          + add()
+          + clone()
+          + equals()
+          + getDefaultPaint()
+          + getLowerBound()
+          + getPaint()
+          + getUpperBound()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      class org.jfree.chart.renderer.LookupPaintScale.PaintItem {
+          ~ paint : Paint
+          {static} ~ serialVersionUID : long
+          ~ value : double
+          + PaintItem()
+          + compareTo()
+          + equals()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      class org.jfree.chart.renderer.NotOutlierException {
+          + NotOutlierException()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      class org.jfree.chart.renderer.Outlier {
+          - point : Point2D
+          - radius : double
+          + Outlier()
+          + compareTo()
+          + equals()
+          + getPoint()
+          + getRadius()
+          + getX()
+          + getY()
+          + overlaps()
+          + setPoint()
+          + setRadius()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      class org.jfree.chart.renderer.OutlierList {
+          - averagedOutlier : Outlier
+          - multiple : boolean
+          - outliers : List
+          + OutlierList()
+          + add()
+          + getAveragedOutlier()
+          + getItemCount()
+          + isMultiple()
+          + isOverlapped()
+          + setAveragedOutlier()
+          + setMultiple()
+          + updateAveragedOutlier()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      class org.jfree.chart.renderer.OutlierListCollection {
+          - highFarOut : boolean
+          - lowFarOut : boolean
+          - outlierLists : List
+          + OutlierListCollection()
+          + add()
+          + isHighFarOut()
+          + isLowFarOut()
+          + iterator()
+          + setHighFarOut()
+          + setLowFarOut()
+          - updateOutlierList()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      interface org.jfree.chart.renderer.PaintScale {
+          {abstract} + getLowerBound()
+          {abstract} + getPaint()
+          {abstract} + getUpperBound()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      interface org.jfree.chart.renderer.PolarItemRenderer {
+          {abstract} + addChangeListener()
+          {abstract} + drawAngularGridLines()
+          {abstract} + drawRadialGridLines()
+          {abstract} + drawSeries()
+          {abstract} + getBaseToolTipGenerator()
+          {abstract} + getLegendItem()
+          {abstract} + getPlot()
+          {abstract} + getSeriesToolTipGenerator()
+          {abstract} + getToolTipGenerator()
+          {abstract} + getURLGenerator()
+          {abstract} + removeChangeListener()
+          {abstract} + setBaseToolTipGenerator()
+          {abstract} + setPlot()
+          {abstract} + setSeriesToolTipGenerator()
+          {abstract} + setURLGenerator()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      class org.jfree.chart.renderer.RendererState {
+          - info : PlotRenderingInfo
+          + RendererState()
+          + getEntityCollection()
+          + getInfo()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      class org.jfree.chart.renderer.RendererUtilities {
+          {static} + findLiveItems()
+          {static} + findLiveItemsLowerBound()
+          {static} + findLiveItemsUpperBound()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      class org.jfree.chart.renderer.WaferMapRenderer {
+          {static} + POSITION_INDEX : int
+          {static} + VALUE_INDEX : int
+          {static} - DEFAULT_PAINT_LIMIT : int
+          - paintIndex : Map
+          - paintIndexMethod : int
+          - paintLimit : int
+          - plot : WaferMapPlot
+          + WaferMapRenderer()
+          + WaferMapRenderer()
+          + WaferMapRenderer()
+          + getChipColor()
+          + getDrawingSupplier()
+          + getLegendCollection()
+          + getPlot()
+          + setPlot()
+          - getMaxPaintValue()
+          - getMinPaintValue()
+          - getPaintIndex()
+          - isMethodValid()
+          - makePaintIndex()
+          - makePositionIndex()
+          - makeValueIndex()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.renderer.AbstractRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.AbstractRenderer .up.|> Serializable
+  org.jfree.chart.renderer.AreaRendererEndType .up.|> Serializable
+  org.jfree.chart.renderer.DefaultPolarItemRenderer .up.|> PolarItemRenderer
+  org.jfree.chart.renderer.GrayPaintScale .up.|> PaintScale
+  org.jfree.chart.renderer.GrayPaintScale .up.|> PublicCloneable
+  org.jfree.chart.renderer.GrayPaintScale .up.|> Serializable
+  org.jfree.chart.renderer.LookupPaintScale .up.|> PaintScale
+  org.jfree.chart.renderer.LookupPaintScale .up.|> PublicCloneable
+  org.jfree.chart.renderer.LookupPaintScale .up.|> Serializable
+  org.jfree.chart.renderer.LookupPaintScale +-down- org.jfree.chart.renderer.LookupPaintScale.PaintItem
+  org.jfree.chart.renderer.LookupPaintScale.PaintItem .up.|> Comparable
+  org.jfree.chart.renderer.LookupPaintScale.PaintItem .up.|> Serializable
+  org.jfree.chart.renderer.Outlier .up.|> Comparable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

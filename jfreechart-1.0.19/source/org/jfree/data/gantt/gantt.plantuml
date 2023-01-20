@@ -1,0 +1,222 @@
+@startuml
+
+title __GANTT's Class Diagram__\n
+
+  namespace org.jfree.data {
+    namespace gantt {
+      interface org.jfree.data.gantt.GanttCategoryDataset {
+          {abstract} + getEndValue()
+          {abstract} + getEndValue()
+          {abstract} + getPercentComplete()
+          {abstract} + getPercentComplete()
+          {abstract} + getPercentComplete()
+          {abstract} + getPercentComplete()
+          {abstract} + getStartValue()
+          {abstract} + getStartValue()
+          {abstract} + getSubIntervalCount()
+          {abstract} + getSubIntervalCount()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace gantt {
+      class org.jfree.data.gantt.SlidingGanttCategoryDataset {
+          - firstCategoryIndex : int
+          - maximumCategoryCount : int
+          - underlying : GanttCategoryDataset
+          + SlidingGanttCategoryDataset()
+          + clone()
+          + equals()
+          + getColumnCount()
+          + getColumnIndex()
+          + getColumnKey()
+          + getColumnKeys()
+          + getEndValue()
+          + getEndValue()
+          + getEndValue()
+          + getEndValue()
+          + getFirstCategoryIndex()
+          + getMaximumCategoryCount()
+          + getPercentComplete()
+          + getPercentComplete()
+          + getPercentComplete()
+          + getPercentComplete()
+          + getRowCount()
+          + getRowIndex()
+          + getRowKey()
+          + getRowKeys()
+          + getStartValue()
+          + getStartValue()
+          + getStartValue()
+          + getStartValue()
+          + getSubIntervalCount()
+          + getSubIntervalCount()
+          + getUnderlyingDataset()
+          + getValue()
+          + getValue()
+          + setFirstCategoryIndex()
+          + setMaximumCategoryCount()
+          - lastCategoryIndex()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace gantt {
+      class org.jfree.data.gantt.Task {
+          - description : String
+          - duration : TimePeriod
+          - percentComplete : Double
+          {static} - serialVersionUID : long
+          - subtasks : List
+          + Task()
+          + Task()
+          + addSubtask()
+          + clone()
+          + equals()
+          + getDescription()
+          + getDuration()
+          + getPercentComplete()
+          + getSubtask()
+          + getSubtaskCount()
+          + removeSubtask()
+          + setDescription()
+          + setDuration()
+          + setPercentComplete()
+          + setPercentComplete()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace gantt {
+      class org.jfree.data.gantt.TaskSeries {
+          - tasks : List
+          + TaskSeries()
+          + add()
+          + clone()
+          + equals()
+          + get()
+          + get()
+          + getItemCount()
+          + getTasks()
+          + remove()
+          + removeAll()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace gantt {
+      class org.jfree.data.gantt.TaskSeriesCollection {
+          - data : List
+          - keys : List
+          {static} - serialVersionUID : long
+          + TaskSeriesCollection()
+          + add()
+          + clone()
+          + equals()
+          + getColumnCount()
+          + getColumnIndex()
+          + getColumnKey()
+          + getColumnKeys()
+          + getEndValue()
+          + getEndValue()
+          + getEndValue()
+          + getEndValue()
+          + getPercentComplete()
+          + getPercentComplete()
+          + getPercentComplete()
+          + getPercentComplete()
+          + getRowCount()
+          + getRowIndex()
+          + getRowKey()
+          + getRowKeys()
+          + getSeries()
+          + getSeries()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartValue()
+          + getStartValue()
+          + getStartValue()
+          + getStartValue()
+          + getSubIntervalCount()
+          + getSubIntervalCount()
+          + getValue()
+          + getValue()
+          + remove()
+          + remove()
+          + removeAll()
+          + seriesChanged()
+          - refreshKeys()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace gantt {
+      class org.jfree.data.gantt.XYTaskDataset {
+          - seriesWidth : double
+          - transposed : boolean
+          - underlying : TaskSeriesCollection
+          + XYTaskDataset()
+          + clone()
+          + datasetChanged()
+          + equals()
+          + getEndX()
+          + getEndXValue()
+          + getEndY()
+          + getEndYValue()
+          + getItemCount()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getSeriesWidth()
+          + getStartX()
+          + getStartXValue()
+          + getStartY()
+          + getStartYValue()
+          + getTasks()
+          + getX()
+          + getXValue()
+          + getY()
+          + getYValue()
+          + isTransposed()
+          + setSeriesWidth()
+          + setTransposed()
+          - getItemEndValue()
+          - getItemStartValue()
+          - getItemValue()
+          - getSeriesEndValue()
+          - getSeriesStartValue()
+          - getSeriesValue()
+      }
+    }
+  }
+  
+
+  org.jfree.data.gantt.SlidingGanttCategoryDataset .up.|> GanttCategoryDataset
+  org.jfree.data.gantt.Task .up.|> Cloneable
+  org.jfree.data.gantt.Task .up.|> PublicCloneable
+  org.jfree.data.gantt.Task .up.|> Serializable
+  org.jfree.data.gantt.TaskSeriesCollection .up.|> Cloneable
+  org.jfree.data.gantt.TaskSeriesCollection .up.|> GanttCategoryDataset
+  org.jfree.data.gantt.TaskSeriesCollection .up.|> PublicCloneable
+  org.jfree.data.gantt.TaskSeriesCollection .up.|> Serializable
+  org.jfree.data.gantt.XYTaskDataset .up.|> DatasetChangeListener
+  org.jfree.data.gantt.XYTaskDataset .up.|> IntervalXYDataset
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

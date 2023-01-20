@@ -1,0 +1,304 @@
+@startuml
+
+title __UTIL's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.AttrStringUtils {
+          {static} + drawRotatedString()
+          {static} + drawRotatedString()
+          {static} + drawRotatedString()
+          {static} + drawRotatedString()
+          {static} + getTextBounds()
+          - AttrStringUtils()
+          {static} - deriveRotationAnchorOffsets()
+          {static} - deriveTextBoundsAnchorOffsets()
+          {static} - isBaseline()
+          {static} - isBottom()
+          {static} - isHalfAscent()
+          {static} - isHalfHeight()
+          {static} - isHorizontalCenter()
+          {static} - isHorizontalLeft()
+          {static} - isHorizontalRight()
+          {static} - isTop()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.CloneUtils {
+          {static} + cloneList()
+          {static} + cloneMapValues()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.DefaultShadowGenerator {
+          - angle : double
+          - distance : int
+          {static} - serialVersionUID : long
+          - shadowColor : Color
+          - shadowOpacity : float
+          - shadowSize : int
+          + DefaultShadowGenerator()
+          + DefaultShadowGenerator()
+          + calculateOffsetX()
+          + calculateOffsetY()
+          + createDropShadow()
+          + equals()
+          + getAngle()
+          + getDistance()
+          + getShadowColor()
+          + getShadowOpacity()
+          + getShadowSize()
+          + hashCode()
+          # applyShadow()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.DirectionalGradientPaintTransformer {
+          + DirectionalGradientPaintTransformer()
+          + transform()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.ExportUtils {
+          {static} + isJFreeSVGAvailable()
+          {static} + isOrsonPDFAvailable()
+          {static} + writeAsJPEG()
+          {static} + writeAsPDF()
+          {static} + writeAsPNG()
+          {static} + writeAsSVG()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.HMSNumberFormat {
+          - formatter : NumberFormat
+          + HMSNumberFormat()
+          + format()
+          + format()
+          + parse()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.HexNumberFormat {
+          {static} + BYTE : int
+          {static} + DWORD : int
+          {static} + QWORD : int
+          {static} + WORD : int
+          - m_numDigits : int
+          + HexNumberFormat()
+          + HexNumberFormat()
+          + format()
+          + format()
+          + getNumberOfDigits()
+          + parse()
+          + setNumberOfDigits()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.LineUtilities {
+          {static} + clipLine()
+          {static} + extendLine()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.LogFormat {
+          - base : double
+          - baseLabel : String
+          - baseLog : double
+          - formatter : NumberFormat
+          - powerLabel : String
+          - showBase : boolean
+          + LogFormat()
+          + LogFormat()
+          + LogFormat()
+          + clone()
+          + equals()
+          + format()
+          + format()
+          + getExponentFormat()
+          + parse()
+          + setExponentFormat()
+          - calculateLog()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.PaintAlpha {
+          {static} - FACTOR : double
+          {static} - legacyAlpha : boolean
+          {static} + cloneImage()
+          {static} + darker()
+          {static} + setLegacyAlpha()
+          {static} - darker()
+          {static} - darker()
+          {static} - darkerLinearGradientPaint()
+          {static} - darkerRadialGradientPaint()
+          {static} - darkerTexturePaint()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.ParamChecks {
+          {static} + nullNotPermitted()
+          {static} + requireNonNegative()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.RelativeDateFormat {
+          {static} - MILLISECONDS_IN_ONE_DAY : long
+          {static} - MILLISECONDS_IN_ONE_HOUR : long
+          - baseMillis : long
+          - dayFormatter : NumberFormat
+          - daySuffix : String
+          - hourFormatter : NumberFormat
+          - hourSuffix : String
+          - minuteFormatter : NumberFormat
+          - minuteSuffix : String
+          - positivePrefix : String
+          - secondFormatter : NumberFormat
+          - secondSuffix : String
+          - showZeroDays : boolean
+          - showZeroHours : boolean
+          + RelativeDateFormat()
+          + RelativeDateFormat()
+          + RelativeDateFormat()
+          + clone()
+          + equals()
+          + format()
+          + getBaseMillis()
+          + getDaySuffix()
+          + getHourSuffix()
+          + getMinuteSuffix()
+          + getPositivePrefix()
+          + getSecondSuffix()
+          + getShowZeroDays()
+          + getShowZeroHours()
+          + hashCode()
+          + parse()
+          + setBaseMillis()
+          + setDayFormatter()
+          + setDaySuffix()
+          + setHourFormatter()
+          + setHourSuffix()
+          + setMinuteFormatter()
+          + setMinuteSuffix()
+          + setPositivePrefix()
+          + setSecondFormatter()
+          + setSecondSuffix()
+          + setShowZeroDays()
+          + setShowZeroHours()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.ResourceBundleWrapper {
+          {static} - noCodeBaseClassLoader : URLClassLoader
+          {static} + getBundle()
+          {static} + getBundle()
+          {static} + getBundle()
+          {static} + removeCodeBase()
+          - ResourceBundleWrapper()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      interface org.jfree.chart.util.ShadowGenerator {
+          {abstract} + calculateOffsetX()
+          {abstract} + calculateOffsetY()
+          {abstract} + createDropShadow()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.TextUtils {
+          {static} + calcAlignedStringBounds()
+          {static} + drawAlignedString()
+          {static} + getTextBounds()
+          {static} + getTextBounds()
+          {static} - deriveTextBoundsAnchorOffsets()
+          {static} - deriveTextBoundsAnchorOffsets()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace util {
+      class org.jfree.chart.util.XYCoordinateType {
+          {static} + DATA : XYCoordinateType
+          {static} + INDEX : XYCoordinateType
+          {static} + RELATIVE : XYCoordinateType
+          - name : String
+          + equals()
+          + toString()
+          - XYCoordinateType()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.util.DefaultShadowGenerator .up.|> Serializable
+  org.jfree.chart.util.DefaultShadowGenerator .up.|> ShadowGenerator
+  org.jfree.chart.util.DirectionalGradientPaintTransformer .up.|> GradientPaintTransformer
+  org.jfree.chart.util.XYCoordinateType .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

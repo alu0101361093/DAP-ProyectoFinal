@@ -1,0 +1,512 @@
+@startuml
+
+title __XY's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.AbstractXYItemRendererTest {
+            {static} - EPSILON : double
+            + testCloning_LegendItemLabelGenerator()
+            + testCloning_LegendItemToolTipGenerator()
+            + testCloning_LegendItemURLGenerator()
+            + testEquals_ObjectList()
+            + testEquals_ObjectList2()
+            + testFindDomainBounds()
+            + testFindRangeBounds()
+            - createDataset1()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.CandlestickRendererTest {
+            {static} - EPSILON : double
+            + testCloning()
+            + testConstructor()
+            + testEquals()
+            + testFindRangeBounds()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.ClusteredXYBarRendererTest {
+            {static} - EPSILON : double
+            + createSampleDataset1()
+            + testCloning()
+            + testEquals()
+            + testFindDomainBounds()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.DeviationRendererTest {
+            + testCloning()
+            + testEquals()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.GradientXYBarPainterTest {
+            + testCloning()
+            + testEquals()
+            + testHashcode()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.HighLowRendererTest {
+            + testCloning()
+            + testEquals()
+            + testFindRangeBounds()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.RendererXYPackageUtils {
+            {static} + createTestTableXYDataset()
+            {static} + createTestXYSeriesCollection()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.StackedXYAreaRenderer2Test {
+            + testCloning()
+            + testDrawWithEmptyDataset()
+            + testEquals()
+            + testFindRangeBounds()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.StackedXYAreaRendererTest {
+            + testBug1593156()
+            + testCloning()
+            + testDrawWithNullInfo()
+            + testEquals()
+            + testFindRangeBounds()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.StackedXYBarRendererTest {
+            + testCloning()
+            + testEquals()
+            + testFindDomainBounds()
+            + testFindRangeBounds()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.StandardXYBarPainterTest {
+            + testCloning()
+            + testEquals()
+            + testHashcode()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.StandardXYItemRendererTest {
+            + testCloning()
+            + testEquals()
+            + testGetLegendItemSeriesIndex()
+            + testHashcode()
+            + testNoDisplayedItem()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.VectorRendererTest {
+            + testCloning()
+            + testEquals()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.WindItemRendererTest {
+            + testCloning()
+            + testEquals()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYAreaRenderer2Test {
+            + testCloning()
+            + testDrawWithNullInfo()
+            + testEquals()
+            + testGetLegendItemSeriesIndex()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYAreaRendererTest {
+            + testCloning()
+            + testDrawWithNullInfo()
+            + testEquals()
+            + testGetLegendItemSeriesIndex()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYBarRendererTest {
+            {static} - EPSILON : double
+            + testCloning()
+            + testEquals()
+            + testFindDomainBounds()
+            + testFindDomainBounds2()
+            + testFindRangeBounds()
+            + testFindRangeBounds2()
+            + testGetLegendItemSeriesIndex()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+            + testSerialization2()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYBlockRendererTest {
+            {static} - EPSILON : double
+            + testBug1766646A()
+            + testBug1766646B()
+            + testCloning()
+            + testEquals()
+            + testFindDomainBounds()
+            + testFindRangeBounds()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYBoxAndWhiskerRendererTest {
+            + test2909215()
+            + testCloning()
+            + testEquals()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYBubbleRendererTest {
+            + testCloning()
+            + testEquals()
+            + testGetLegendItemSeriesIndex()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYDifferenceRendererTest {
+            + testCloning()
+            + testEquals()
+            + testGetLegendItemSeriesIndex()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYDotRendererTest {
+            + testCloning()
+            + testEquals()
+            + testGetLegendItemSeriesIndex()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYErrorRendererTest {
+            + testCloning()
+            + testCloning2()
+            + testEquals()
+            + testFindDomainBounds()
+            + testFindRangeBounds()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+            + testSerialization2()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYLine3DRendererTest {
+            + testCloning()
+            + testEquals()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYLineAndShapeRendererTest {
+            + testCloning()
+            + testEquals()
+            + testEquals2()
+            + testFindDomainBounds()
+            + testFindRangeBounds()
+            + testGetLegendItemSeriesIndex()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYShapeRendererTest {
+            {static} - EPSILON : double
+            + test3026341()
+            + testCloning()
+            + testEquals()
+            + testFindZBounds()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYSplineRendererTest {
+            + testCloning()
+            + testEquals()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYStepAreaRendererTest {
+            + testCloning()
+            + testDrawWithNullInfo()
+            + testEquals()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.XYStepRendererTest {
+            + testCloning()
+            + testDrawWithNullInfo()
+            + testDrawWithNullValue()
+            + testEquals()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace xy {
+        class org.jfree.chart.renderer.xy.YIntervalRendererTest {
+            + testCloning()
+            + testEquals()
+            + testGetLegendItemSeriesIndex()
+            + testHashcode()
+            + testPublicCloneable()
+            + testSerialization()
+        }
+      }
+    }
+  }
+  
+
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

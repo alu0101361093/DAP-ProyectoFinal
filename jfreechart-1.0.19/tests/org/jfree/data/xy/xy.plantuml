@@ -1,0 +1,570 @@
+@startuml
+
+title __XY's Class Diagram__\n
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.CategoryTableXYDatasetTest {
+          {static} - EPSILON : double
+          + testAddSeries()
+          + testCloning()
+          + testCloning2()
+          + testEquals()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultHighLowDatasetTest {
+          + testCloning()
+          + testEquals()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultIntervalXYDatasetTest {
+          {static} - EPSILON : double
+          + createSampleDataset1()
+          + testAddSeries()
+          + testCloning()
+          + testCloning2()
+          + testEquals()
+          + testGetEndXValue()
+          + testGetEndYValue()
+          + testGetItemCount()
+          + testGetSeriesCount()
+          + testGetSeriesKey()
+          + testGetStartXValue()
+          + testGetStartYValue()
+          + testGetXValue()
+          + testGetYValue()
+          + testIndexOf()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultOHLCDatasetTest {
+          {static} - EPSILON : double
+          + testCloning()
+          + testCloning2()
+          + testDataRange()
+          + testEquals()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultTableXYDatasetTest {
+          {static} - EPSILON : double
+          + testAddSeries()
+          + testCloning()
+          + testEquals()
+          + testGetSeries()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultWindDatasetTest {
+          + createSampleDataset1()
+          + testCloning()
+          + testEquals()
+          + testGetSeriesKey()
+          + testIndexOf()
+          + testPublicCloneable()
+          + testSerialization()
+          - createItem()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultXYDatasetTest {
+          {static} ~ EPSILON : double
+          + createSampleDataset1()
+          + testAddSeries()
+          + testCloning()
+          + testEquals()
+          + testGetSeriesKey()
+          + testIndexOf()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultXYZDatasetTest {
+          {static} ~ EPSILON : double
+          + createSampleDataset1()
+          + testAddSeries()
+          + testCloning()
+          + testEquals()
+          + testGetSeriesKey()
+          + testIndexOf()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.IntervalXYDelegateTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.MatrixSeriesCollectionTest {
+          + testCloning()
+          + testEquals()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.MatrixSeriesTest {
+          + testCloning()
+          + testEquals()
+          + testGetItem()
+          + testGetItemColumn()
+          + testGetItemRow()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.OHLCDataItemTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.TableXYDatasetTest {
+          + test788597()
+          + testAutoPrune()
+          + testCloning()
+          + testEquals()
+          + testPrune()
+          + testPublicCloneable()
+          + testRemoveAllValuesForX()
+          + testSerialization()
+          + testTableXYDataset()
+          - createSeries1()
+          - createSeries2()
+          - createSeriesA()
+          - createSeriesB()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.VectorDataItemTest {
+          + testCloning()
+          + testEquals()
+          + testHashcode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.VectorSeriesCollectionTest {
+          + testCloning()
+          + testEquals()
+          + testPublicCloneable()
+          + testRemoveSeries()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.VectorSeriesTest {
+          ~ lastEvent : SeriesChangeEvent
+          {static} - EPSILON : double
+          + seriesChanged()
+          + testAdd()
+          + testAdditionOfDuplicateXValues()
+          + testClear()
+          + testCloning()
+          + testEquals()
+          + testIndexOf()
+          + testIndexOf2()
+          + testRemove()
+          + testSerialization()
+          + testSetMaximumItemCount()
+          + testSetMaximumItemCount2()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.VectorTest {
+          + testCloning()
+          + testEquals()
+          + testHashcode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XIntervalDataItemTest {
+          {static} - EPSILON : double
+          + testCloning()
+          + testConstructor1()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XIntervalSeriesCollectionTest {
+          + test1170825()
+          + testCloning()
+          + testEquals()
+          + testPublicCloneable()
+          + testRemoveSeries()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XIntervalSeriesTest {
+          ~ lastEvent : SeriesChangeEvent
+          {static} - EPSILON : double
+          + seriesChanged()
+          + testAdd()
+          + testAdditionOfDuplicateXValues()
+          + testClear()
+          + testCloning()
+          + testEquals()
+          + testGetXHighValue()
+          + testGetXLowValue()
+          + testIndexOf()
+          + testIndexOf2()
+          + testRemove()
+          + testSerialization()
+          + testSetMaximumItemCount()
+          + testSetMaximumItemCount2()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYBarDatasetTest {
+          + testCloning()
+          + testEquals()
+          + testPublicCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYCoordinateTest {
+          + testCloning()
+          + testEquals()
+          + testHashcode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYDataItemTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYIntervalDataItemTest {
+          {static} - EPSILON : double
+          + testCloning()
+          + testConstructor1()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYIntervalSeriesCollectionTest {
+          + test1170825()
+          + testCloning()
+          + testEquals()
+          + testPublicCloneable()
+          + testRemoveSeries()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYIntervalSeriesTest {
+          ~ lastEvent : SeriesChangeEvent
+          {static} - EPSILON : double
+          + seriesChanged()
+          + testAdd()
+          + testAdditionOfDuplicateXValues()
+          + testClear()
+          + testCloning()
+          + testEquals()
+          + testIndexOf()
+          + testIndexOf2()
+          + testRemove()
+          + testSerialization()
+          + testSetMaximumItemCount()
+          + testSetMaximumItemCount2()
+          + testValues()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYIntervalTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYSeriesCollectionTest {
+          {static} - EPSILON : double
+          + test1170825()
+          + testAddSeries()
+          + testBug3445507()
+          + testCloning()
+          + testConstructor()
+          + testEquals()
+          + testGetDomainBounds()
+          + testGetRangeBounds()
+          + testGetRangeLowerBound()
+          + testGetRangeUpperBound()
+          + testGetSeries()
+          + testGetSeriesByKey()
+          + testIndexOf()
+          + testPublicCloneable()
+          + testRemoveSeries()
+          + testRenameSeries()
+          + testSerialization()
+          + testSeriesRename()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYSeriesTest {
+          {static} - EPSILON : double
+          + testAdd()
+          + testAddOrUpdate()
+          + testAddOrUpdate2()
+          + testAddOrUpdate3()
+          + testAdditionOfDuplicateXValues()
+          + testBug1955483()
+          + testClear()
+          + testCloning()
+          + testCloning2()
+          + testCloning3()
+          + testDelete()
+          + testEquals()
+          + testGetMaxX()
+          + testGetMaxY()
+          + testGetMaxY2()
+          + testGetMinX()
+          + testGetMinY()
+          + testHashCode()
+          + testIndexOf()
+          + testIndexOf2()
+          + testIndexOf3()
+          + testRemove()
+          + testRemove2()
+          + testSerialization()
+          + testSetKey()
+          + testSetMaximumItemCount()
+          + testSetMaximumItemCount2()
+          + testSetMaximumItemCount3()
+          + testSetMaximumItemCount4()
+          + testToArray()
+          + testToArrayExample()
+          + testUpdate()
+          + testUpdate2()
+          + testUpdateByIndex()
+          + testUpdateByIndex2()
+          + testUpdateByIndex3()
+          + testUpdateXY()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.YIntervalDataItemTest {
+          {static} - EPSILON : double
+          + testCloning()
+          + testConstructor1()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.YIntervalSeriesCollectionTest {
+          + test1170825()
+          + testCloning()
+          + testEquals()
+          + testPublicCloneable()
+          + testRemoveSeries()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.YIntervalSeriesTest {
+          ~ lastEvent : SeriesChangeEvent
+          {static} - EPSILON : double
+          + seriesChanged()
+          + testAdd()
+          + testAdditionOfDuplicateXValues()
+          + testClear()
+          + testCloning()
+          + testEquals()
+          + testIndexOf()
+          + testIndexOf2()
+          + testRemove()
+          + testSerialization()
+          + testSetMaximumItemCount()
+          + testSetMaximumItemCount2()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.YIntervalTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.YWithXIntervalTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  org.jfree.data.xy.VectorSeriesTest .up.|> SeriesChangeListener
+  org.jfree.data.xy.XIntervalSeriesTest .up.|> SeriesChangeListener
+  org.jfree.data.xy.XYIntervalSeriesTest .up.|> SeriesChangeListener
+  org.jfree.data.xy.YIntervalSeriesTest .up.|> SeriesChangeListener
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,498 @@
+@startuml
+
+title __BLOCK's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.AbstractBlock {
+          - bounds : Rectangle2D
+          - frame : BlockFrame
+          - height : double
+          - id : String
+          - margin : RectangleInsets
+          - padding : RectangleInsets
+          {static} - serialVersionUID : long
+          - width : double
+          + arrange()
+          + arrange()
+          + clone()
+          + equals()
+          + getBorder()
+          + getBounds()
+          + getContentXOffset()
+          + getContentYOffset()
+          + getFrame()
+          + getHeight()
+          + getID()
+          + getMargin()
+          + getPadding()
+          + getWidth()
+          + setBorder()
+          + setBorder()
+          + setBounds()
+          + setFrame()
+          + setHeight()
+          + setID()
+          + setMargin()
+          + setMargin()
+          + setPadding()
+          + setPadding()
+          + setWidth()
+          # AbstractBlock()
+          # calculateTotalHeight()
+          # calculateTotalWidth()
+          # drawBorder()
+          # toContentConstraint()
+          # trimBorder()
+          # trimMargin()
+          # trimPadding()
+          # trimToContentHeight()
+          # trimToContentWidth()
+          - readObject()
+          - trimToContentHeight()
+          - trimToContentWidth()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      interface org.jfree.chart.block.Arrangement {
+          {abstract} + add()
+          {abstract} + arrange()
+          {abstract} + clear()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      interface org.jfree.chart.block.Block {
+          {abstract} + arrange()
+          {abstract} + arrange()
+          {abstract} + draw()
+          {abstract} + getBounds()
+          {abstract} + getID()
+          {abstract} + setBounds()
+          {abstract} + setID()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.BlockBorder {
+          {static} + NONE : BlockBorder
+          - insets : RectangleInsets
+          - paint : Paint
+          {static} - serialVersionUID : long
+          + BlockBorder()
+          + BlockBorder()
+          + BlockBorder()
+          + BlockBorder()
+          + BlockBorder()
+          + draw()
+          + equals()
+          + getInsets()
+          + getPaint()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.BlockContainer {
+          - arrangement : Arrangement
+          - blocks : List
+          {static} - serialVersionUID : long
+          + BlockContainer()
+          + BlockContainer()
+          + add()
+          + add()
+          + arrange()
+          + clear()
+          + clone()
+          + draw()
+          + draw()
+          + equals()
+          + getArrangement()
+          + getBlocks()
+          + isEmpty()
+          + setArrangement()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      interface org.jfree.chart.block.BlockFrame {
+          {abstract} + draw()
+          {abstract} + getInsets()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.BlockParams {
+          - generateEntities : boolean
+          - translateX : double
+          - translateY : double
+          + BlockParams()
+          + getGenerateEntities()
+          + getTranslateX()
+          + getTranslateY()
+          + setGenerateEntities()
+          + setTranslateX()
+          + setTranslateY()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.BlockResult {
+          - entities : EntityCollection
+          + BlockResult()
+          + getEntityCollection()
+          + setEntityCollection()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.BorderArrangement {
+          - bottomBlock : Block
+          - centerBlock : Block
+          - leftBlock : Block
+          - rightBlock : Block
+          {static} - serialVersionUID : long
+          - topBlock : Block
+          + BorderArrangement()
+          + add()
+          + arrange()
+          + clear()
+          + equals()
+          # arrangeFF()
+          # arrangeFN()
+          # arrangeFR()
+          # arrangeNN()
+          # arrangeRR()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.CenterArrangement {
+          {static} - serialVersionUID : long
+          + CenterArrangement()
+          + add()
+          + arrange()
+          + clear()
+          + equals()
+          # arrangeFF()
+          # arrangeFN()
+          # arrangeFR()
+          # arrangeNF()
+          # arrangeNN()
+          # arrangeRF()
+          # arrangeRN()
+          # arrangeRR()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.ColorBlock {
+          {static} ~ serialVersionUID : long
+          - paint : Paint
+          + ColorBlock()
+          + arrange()
+          + draw()
+          + draw()
+          + equals()
+          + getPaint()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.ColumnArrangement {
+          - horizontalAlignment : HorizontalAlignment
+          - horizontalGap : double
+          {static} - serialVersionUID : long
+          - verticalAlignment : VerticalAlignment
+          - verticalGap : double
+          + ColumnArrangement()
+          + ColumnArrangement()
+          + add()
+          + arrange()
+          + clear()
+          + equals()
+          # arrangeFF()
+          # arrangeNF()
+          # arrangeNN()
+          # arrangeRF()
+          # arrangeRR()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.EmptyBlock {
+          {static} - serialVersionUID : long
+          + EmptyBlock()
+          + arrange()
+          + clone()
+          + draw()
+          + draw()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      interface org.jfree.chart.block.EntityBlockParams {
+          {abstract} + getGenerateEntities()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      interface org.jfree.chart.block.EntityBlockResult {
+          {abstract} + getEntityCollection()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.FlowArrangement {
+          - horizontalAlignment : HorizontalAlignment
+          - horizontalGap : double
+          {static} - serialVersionUID : long
+          - verticalAlignment : VerticalAlignment
+          - verticalGap : double
+          + FlowArrangement()
+          + FlowArrangement()
+          + add()
+          + arrange()
+          + clear()
+          + equals()
+          # arrangeFF()
+          # arrangeFN()
+          # arrangeFR()
+          # arrangeNF()
+          # arrangeNN()
+          # arrangeRF()
+          # arrangeRN()
+          # arrangeRR()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.GridArrangement {
+          - columns : int
+          - rows : int
+          {static} - serialVersionUID : long
+          + GridArrangement()
+          + add()
+          + arrange()
+          + clear()
+          + equals()
+          # arrangeFF()
+          # arrangeFN()
+          # arrangeFR()
+          # arrangeNF()
+          # arrangeNN()
+          # arrangeNR()
+          # arrangeRF()
+          # arrangeRN()
+          # arrangeRR()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.LabelBlock {
+          {static} + DEFAULT_PAINT : Paint
+          {static} ~ serialVersionUID : long
+          - contentAlignmentPoint : TextBlockAnchor
+          - font : Font
+          - label : TextBlock
+          - paint : Paint
+          - text : String
+          - textAnchor : RectangleAnchor
+          - toolTipText : String
+          - urlText : String
+          + LabelBlock()
+          + LabelBlock()
+          + LabelBlock()
+          + arrange()
+          + clone()
+          + draw()
+          + draw()
+          + equals()
+          + getContentAlignmentPoint()
+          + getFont()
+          + getPaint()
+          + getTextAnchor()
+          + getToolTipText()
+          + getURLText()
+          + setContentAlignmentPoint()
+          + setFont()
+          + setPaint()
+          + setTextAnchor()
+          + setToolTipText()
+          + setURLText()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.LengthConstraintType {
+          {static} + FIXED : LengthConstraintType
+          {static} + NONE : LengthConstraintType
+          {static} + RANGE : LengthConstraintType
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + hashCode()
+          + toString()
+          - LengthConstraintType()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.LineBorder {
+          {static} ~ serialVersionUID : long
+          - insets : RectangleInsets
+          - paint : Paint
+          - stroke : Stroke
+          + LineBorder()
+          + LineBorder()
+          + draw()
+          + equals()
+          + getInsets()
+          + getPaint()
+          + getStroke()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace block {
+      class org.jfree.chart.block.RectangleConstraint {
+          {static} + NONE : RectangleConstraint
+          - height : double
+          - heightConstraintType : LengthConstraintType
+          - heightRange : Range
+          - width : double
+          - widthConstraintType : LengthConstraintType
+          - widthRange : Range
+          + RectangleConstraint()
+          + RectangleConstraint()
+          + RectangleConstraint()
+          + RectangleConstraint()
+          + RectangleConstraint()
+          + calculateConstrainedSize()
+          + getHeight()
+          + getHeightConstraintType()
+          + getHeightRange()
+          + getWidth()
+          + getWidthConstraintType()
+          + getWidthRange()
+          + toFixedHeight()
+          + toFixedWidth()
+          + toRangeHeight()
+          + toRangeWidth()
+          + toString()
+          + toUnconstrainedHeight()
+          + toUnconstrainedWidth()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.block.AbstractBlock .up.|> Cloneable
+  org.jfree.chart.block.AbstractBlock .up.|> Serializable
+  org.jfree.chart.block.BlockBorder .up.|> BlockFrame
+  org.jfree.chart.block.BlockBorder .up.|> Serializable
+  org.jfree.chart.block.BlockContainer .up.|> Block
+  org.jfree.chart.block.BlockContainer .up.|> Cloneable
+  org.jfree.chart.block.BlockContainer .up.|> PublicCloneable
+  org.jfree.chart.block.BlockContainer .up.|> Serializable
+  org.jfree.chart.block.BlockParams .up.|> EntityBlockParams
+  org.jfree.chart.block.BlockResult .up.|> EntityBlockResult
+  org.jfree.chart.block.BorderArrangement .up.|> Arrangement
+  org.jfree.chart.block.BorderArrangement .up.|> Serializable
+  org.jfree.chart.block.CenterArrangement .up.|> Arrangement
+  org.jfree.chart.block.CenterArrangement .up.|> Serializable
+  org.jfree.chart.block.ColorBlock .up.|> Block
+  org.jfree.chart.block.ColumnArrangement .up.|> Arrangement
+  org.jfree.chart.block.ColumnArrangement .up.|> Serializable
+  org.jfree.chart.block.EmptyBlock .up.|> Block
+  org.jfree.chart.block.EmptyBlock .up.|> Cloneable
+  org.jfree.chart.block.EmptyBlock .up.|> PublicCloneable
+  org.jfree.chart.block.EmptyBlock .up.|> Serializable
+  org.jfree.chart.block.FlowArrangement .up.|> Arrangement
+  org.jfree.chart.block.FlowArrangement .up.|> Serializable
+  org.jfree.chart.block.GridArrangement .up.|> Arrangement
+  org.jfree.chart.block.GridArrangement .up.|> Serializable
+  org.jfree.chart.block.LabelBlock .up.|> Block
+  org.jfree.chart.block.LabelBlock .up.|> PublicCloneable
+  org.jfree.chart.block.LengthConstraintType .up.|> Serializable
+  org.jfree.chart.block.LineBorder .up.|> BlockFrame
+  org.jfree.chart.block.LineBorder .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,700 @@
+@startuml
+
+title __LABELS's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace labels {
+      abstract class org.jfree.chart.labels.AbstractCategoryItemLabelGenerator {
+          - dateFormat : DateFormat
+          - labelFormat : String
+          - nullValueString : String
+          - numberFormat : NumberFormat
+          - percentFormat : NumberFormat
+          {static} - serialVersionUID : long
+          + clone()
+          + equals()
+          + generateColumnLabel()
+          + generateRowLabel()
+          + getDateFormat()
+          + getLabelFormat()
+          + getNumberFormat()
+          + hashCode()
+          # AbstractCategoryItemLabelGenerator()
+          # AbstractCategoryItemLabelGenerator()
+          # AbstractCategoryItemLabelGenerator()
+          # createItemArray()
+          # generateLabelString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.AbstractPieItemLabelGenerator {
+          - labelFormat : String
+          - numberFormat : NumberFormat
+          - percentFormat : NumberFormat
+          {static} - serialVersionUID : long
+          + clone()
+          + equals()
+          + getLabelFormat()
+          + getNumberFormat()
+          + getPercentFormat()
+          + hashCode()
+          # AbstractPieItemLabelGenerator()
+          # createItemArray()
+          # generateSectionLabel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.AbstractXYItemLabelGenerator {
+          - formatString : String
+          - nullYString : String
+          {static} - serialVersionUID : long
+          - xDateFormat : DateFormat
+          - xFormat : NumberFormat
+          - yDateFormat : DateFormat
+          - yFormat : NumberFormat
+          + clone()
+          + equals()
+          + generateLabelString()
+          + getFormatString()
+          + getNullYString()
+          + getXDateFormat()
+          + getXFormat()
+          + getYDateFormat()
+          + getYFormat()
+          + hashCode()
+          # AbstractXYItemLabelGenerator()
+          # AbstractXYItemLabelGenerator()
+          # AbstractXYItemLabelGenerator()
+          # AbstractXYItemLabelGenerator()
+          # AbstractXYItemLabelGenerator()
+          # createItemArray()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.BoxAndWhiskerToolTipGenerator {
+          {static} + DEFAULT_TOOL_TIP_FORMAT : String
+          {static} - serialVersionUID : long
+          + BoxAndWhiskerToolTipGenerator()
+          + BoxAndWhiskerToolTipGenerator()
+          + equals()
+          # createItemArray()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.BoxAndWhiskerXYToolTipGenerator {
+          {static} + DEFAULT_TOOL_TIP_FORMAT : String
+          {static} - serialVersionUID : long
+          + BoxAndWhiskerXYToolTipGenerator()
+          + BoxAndWhiskerXYToolTipGenerator()
+          + equals()
+          # createItemArray()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.BubbleXYItemLabelGenerator {
+          {static} + DEFAULT_FORMAT_STRING : String
+          {static} ~ serialVersionUID : long
+          - zDateFormat : DateFormat
+          - zFormat : NumberFormat
+          + BubbleXYItemLabelGenerator()
+          + BubbleXYItemLabelGenerator()
+          + BubbleXYItemLabelGenerator()
+          + equals()
+          + generateLabel()
+          + generateLabelString()
+          + getZDateFormat()
+          + getZFormat()
+          + hashCode()
+          # createItemArray()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      interface org.jfree.chart.labels.CategoryItemLabelGenerator {
+          {abstract} + generateColumnLabel()
+          {abstract} + generateLabel()
+          {abstract} + generateRowLabel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      interface org.jfree.chart.labels.CategorySeriesLabelGenerator {
+          {abstract} + generateLabel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      interface org.jfree.chart.labels.CategoryToolTipGenerator {
+          {abstract} + generateToolTip()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      interface org.jfree.chart.labels.ContourToolTipGenerator {
+          {abstract} + generateToolTip()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      interface org.jfree.chart.labels.CrosshairLabelGenerator {
+          {abstract} + generateLabel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.CustomXYToolTipGenerator {
+          {static} - serialVersionUID : long
+          - toolTipSeries : List
+          + CustomXYToolTipGenerator()
+          + addToolTipSeries()
+          + clone()
+          + equals()
+          + generateToolTip()
+          + getListCount()
+          + getToolTipCount()
+          + getToolTipText()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.HighLowItemLabelGenerator {
+          - dateFormatter : DateFormat
+          - numberFormatter : NumberFormat
+          {static} - serialVersionUID : long
+          + HighLowItemLabelGenerator()
+          + HighLowItemLabelGenerator()
+          + clone()
+          + equals()
+          + generateLabel()
+          + generateToolTip()
+          + hashCode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.IntervalCategoryItemLabelGenerator {
+          {static} + DEFAULT_LABEL_FORMAT_STRING : String
+          {static} - serialVersionUID : long
+          + IntervalCategoryItemLabelGenerator()
+          + IntervalCategoryItemLabelGenerator()
+          + IntervalCategoryItemLabelGenerator()
+          # createItemArray()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.IntervalCategoryToolTipGenerator {
+          {static} + DEFAULT_TOOL_TIP_FORMAT_STRING : String
+          {static} - serialVersionUID : long
+          + IntervalCategoryToolTipGenerator()
+          + IntervalCategoryToolTipGenerator()
+          + IntervalCategoryToolTipGenerator()
+          + equals()
+          # createItemArray()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.IntervalXYItemLabelGenerator {
+          {static} + DEFAULT_ITEM_LABEL_FORMAT : String
+          + IntervalXYItemLabelGenerator()
+          + IntervalXYItemLabelGenerator()
+          + IntervalXYItemLabelGenerator()
+          + IntervalXYItemLabelGenerator()
+          + IntervalXYItemLabelGenerator()
+          + clone()
+          + equals()
+          + generateLabel()
+          # createItemArray()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.ItemLabelAnchor {
+          {static} + CENTER : ItemLabelAnchor
+          {static} + INSIDE1 : ItemLabelAnchor
+          {static} + INSIDE10 : ItemLabelAnchor
+          {static} + INSIDE11 : ItemLabelAnchor
+          {static} + INSIDE12 : ItemLabelAnchor
+          {static} + INSIDE2 : ItemLabelAnchor
+          {static} + INSIDE3 : ItemLabelAnchor
+          {static} + INSIDE4 : ItemLabelAnchor
+          {static} + INSIDE5 : ItemLabelAnchor
+          {static} + INSIDE6 : ItemLabelAnchor
+          {static} + INSIDE7 : ItemLabelAnchor
+          {static} + INSIDE8 : ItemLabelAnchor
+          {static} + INSIDE9 : ItemLabelAnchor
+          {static} + OUTSIDE1 : ItemLabelAnchor
+          {static} + OUTSIDE10 : ItemLabelAnchor
+          {static} + OUTSIDE11 : ItemLabelAnchor
+          {static} + OUTSIDE12 : ItemLabelAnchor
+          {static} + OUTSIDE2 : ItemLabelAnchor
+          {static} + OUTSIDE3 : ItemLabelAnchor
+          {static} + OUTSIDE4 : ItemLabelAnchor
+          {static} + OUTSIDE5 : ItemLabelAnchor
+          {static} + OUTSIDE6 : ItemLabelAnchor
+          {static} + OUTSIDE7 : ItemLabelAnchor
+          {static} + OUTSIDE8 : ItemLabelAnchor
+          {static} + OUTSIDE9 : ItemLabelAnchor
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + toString()
+          - ItemLabelAnchor()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.ItemLabelPosition {
+          - angle : double
+          - itemLabelAnchor : ItemLabelAnchor
+          - rotationAnchor : TextAnchor
+          {static} - serialVersionUID : long
+          - textAnchor : TextAnchor
+          + ItemLabelPosition()
+          + ItemLabelPosition()
+          + ItemLabelPosition()
+          + equals()
+          + getAngle()
+          + getItemLabelAnchor()
+          + getRotationAnchor()
+          + getTextAnchor()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.MultipleXYSeriesLabelGenerator {
+          {static} + DEFAULT_LABEL_FORMAT : String
+          - additionalFormatPattern : String
+          - formatPattern : String
+          {static} - serialVersionUID : long
+          - seriesLabelLists : Map
+          + MultipleXYSeriesLabelGenerator()
+          + MultipleXYSeriesLabelGenerator()
+          + addSeriesLabel()
+          + clearSeriesLabels()
+          + clone()
+          + equals()
+          + generateLabel()
+          + hashCode()
+          # createItemArray()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      interface org.jfree.chart.labels.PieSectionLabelGenerator {
+          {abstract} + generateAttributedSectionLabel()
+          {abstract} + generateSectionLabel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      interface org.jfree.chart.labels.PieToolTipGenerator {
+          {abstract} + generateToolTip()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardCategoryItemLabelGenerator {
+          {static} + DEFAULT_LABEL_FORMAT_STRING : String
+          {static} - serialVersionUID : long
+          + StandardCategoryItemLabelGenerator()
+          + StandardCategoryItemLabelGenerator()
+          + StandardCategoryItemLabelGenerator()
+          + StandardCategoryItemLabelGenerator()
+          + equals()
+          + generateLabel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardCategorySeriesLabelGenerator {
+          {static} + DEFAULT_LABEL_FORMAT : String
+          - formatPattern : String
+          {static} - serialVersionUID : long
+          + StandardCategorySeriesLabelGenerator()
+          + StandardCategorySeriesLabelGenerator()
+          + clone()
+          + equals()
+          + generateLabel()
+          + hashCode()
+          # createItemArray()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardCategoryToolTipGenerator {
+          {static} + DEFAULT_TOOL_TIP_FORMAT_STRING : String
+          {static} - serialVersionUID : long
+          + StandardCategoryToolTipGenerator()
+          + StandardCategoryToolTipGenerator()
+          + StandardCategoryToolTipGenerator()
+          + equals()
+          + generateToolTip()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardContourToolTipGenerator {
+          {static} - serialVersionUID : long
+          - valueForm : DecimalFormat
+          + equals()
+          + generateToolTip()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardCrosshairLabelGenerator {
+          - labelTemplate : String
+          - numberFormat : NumberFormat
+          + StandardCrosshairLabelGenerator()
+          + StandardCrosshairLabelGenerator()
+          + equals()
+          + generateLabel()
+          + getLabelTemplate()
+          + getNumberFormat()
+          + hashCode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardPieSectionLabelGenerator {
+          {static} + DEFAULT_SECTION_LABEL_FORMAT : String
+          - attributedLabels : Map
+          {static} - serialVersionUID : long
+          + StandardPieSectionLabelGenerator()
+          + StandardPieSectionLabelGenerator()
+          + StandardPieSectionLabelGenerator()
+          + StandardPieSectionLabelGenerator()
+          + StandardPieSectionLabelGenerator()
+          + clone()
+          + equals()
+          + generateAttributedSectionLabel()
+          + generateSectionLabel()
+          + getAttributedLabel()
+          + setAttributedLabel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardPieToolTipGenerator {
+          {static} + DEFAULT_SECTION_LABEL_FORMAT : String
+          {static} + DEFAULT_TOOLTIP_FORMAT : String
+          {static} - serialVersionUID : long
+          + StandardPieToolTipGenerator()
+          + StandardPieToolTipGenerator()
+          + StandardPieToolTipGenerator()
+          + StandardPieToolTipGenerator()
+          + StandardPieToolTipGenerator()
+          + clone()
+          + generateToolTip()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardXYItemLabelGenerator {
+          {static} + DEFAULT_ITEM_LABEL_FORMAT : String
+          {static} - serialVersionUID : long
+          + StandardXYItemLabelGenerator()
+          + StandardXYItemLabelGenerator()
+          + StandardXYItemLabelGenerator()
+          + StandardXYItemLabelGenerator()
+          + StandardXYItemLabelGenerator()
+          + StandardXYItemLabelGenerator()
+          + clone()
+          + equals()
+          + generateLabel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardXYSeriesLabelGenerator {
+          {static} + DEFAULT_LABEL_FORMAT : String
+          - formatPattern : String
+          {static} - serialVersionUID : long
+          + StandardXYSeriesLabelGenerator()
+          + StandardXYSeriesLabelGenerator()
+          + clone()
+          + equals()
+          + generateLabel()
+          + hashCode()
+          # createItemArray()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardXYToolTipGenerator {
+          {static} + DEFAULT_TOOL_TIP_FORMAT : String
+          {static} - serialVersionUID : long
+          + StandardXYToolTipGenerator()
+          + StandardXYToolTipGenerator()
+          + StandardXYToolTipGenerator()
+          + StandardXYToolTipGenerator()
+          + StandardXYToolTipGenerator()
+          + clone()
+          + equals()
+          + generateToolTip()
+          {static} + getTimeSeriesInstance()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.StandardXYZToolTipGenerator {
+          {static} + DEFAULT_TOOL_TIP_FORMAT : String
+          {static} - serialVersionUID : long
+          - zDateFormat : DateFormat
+          - zFormat : NumberFormat
+          + StandardXYZToolTipGenerator()
+          + StandardXYZToolTipGenerator()
+          + StandardXYZToolTipGenerator()
+          + equals()
+          + generateLabelString()
+          + generateToolTip()
+          + getZDateFormat()
+          + getZFormat()
+          # createItemArray()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      class org.jfree.chart.labels.SymbolicXYItemLabelGenerator {
+          {static} - serialVersionUID : long
+          + clone()
+          + equals()
+          + generateLabel()
+          + generateToolTip()
+          + hashCode()
+          {static} - round()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      interface org.jfree.chart.labels.XYItemLabelGenerator {
+          {abstract} + generateLabel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      interface org.jfree.chart.labels.XYSeriesLabelGenerator {
+          {abstract} + generateLabel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      interface org.jfree.chart.labels.XYToolTipGenerator {
+          {abstract} + generateToolTip()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace labels {
+      interface org.jfree.chart.labels.XYZToolTipGenerator {
+          {abstract} + generateToolTip()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.labels.AbstractCategoryItemLabelGenerator .up.|> Cloneable
+  org.jfree.chart.labels.AbstractCategoryItemLabelGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.AbstractCategoryItemLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.AbstractPieItemLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.AbstractXYItemLabelGenerator .up.|> Cloneable
+  org.jfree.chart.labels.AbstractXYItemLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.BoxAndWhiskerToolTipGenerator .up.|> CategoryToolTipGenerator
+  org.jfree.chart.labels.BoxAndWhiskerToolTipGenerator .up.|> Cloneable
+  org.jfree.chart.labels.BoxAndWhiskerToolTipGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.BoxAndWhiskerToolTipGenerator .up.|> Serializable
+  org.jfree.chart.labels.BoxAndWhiskerXYToolTipGenerator .up.|> Cloneable
+  org.jfree.chart.labels.BoxAndWhiskerXYToolTipGenerator .up.|> Serializable
+  org.jfree.chart.labels.BoxAndWhiskerXYToolTipGenerator .up.|> XYToolTipGenerator
+  org.jfree.chart.labels.BubbleXYItemLabelGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.BubbleXYItemLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.BubbleXYItemLabelGenerator .up.|> XYItemLabelGenerator
+  org.jfree.chart.labels.CustomXYToolTipGenerator .up.|> Cloneable
+  org.jfree.chart.labels.CustomXYToolTipGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.CustomXYToolTipGenerator .up.|> Serializable
+  org.jfree.chart.labels.CustomXYToolTipGenerator .up.|> XYToolTipGenerator
+  org.jfree.chart.labels.HighLowItemLabelGenerator .up.|> Cloneable
+  org.jfree.chart.labels.HighLowItemLabelGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.HighLowItemLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.HighLowItemLabelGenerator .up.|> XYItemLabelGenerator
+  org.jfree.chart.labels.HighLowItemLabelGenerator .up.|> XYToolTipGenerator
+  org.jfree.chart.labels.IntervalCategoryItemLabelGenerator .up.|> CategoryItemLabelGenerator
+  org.jfree.chart.labels.IntervalCategoryItemLabelGenerator .up.|> Cloneable
+  org.jfree.chart.labels.IntervalCategoryItemLabelGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.IntervalCategoryItemLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.IntervalXYItemLabelGenerator .up.|> Cloneable
+  org.jfree.chart.labels.IntervalXYItemLabelGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.IntervalXYItemLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.IntervalXYItemLabelGenerator .up.|> XYItemLabelGenerator
+  org.jfree.chart.labels.ItemLabelAnchor .up.|> Serializable
+  org.jfree.chart.labels.ItemLabelPosition .up.|> Serializable
+  org.jfree.chart.labels.MultipleXYSeriesLabelGenerator .up.|> Cloneable
+  org.jfree.chart.labels.MultipleXYSeriesLabelGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.MultipleXYSeriesLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.MultipleXYSeriesLabelGenerator .up.|> XYSeriesLabelGenerator
+  org.jfree.chart.labels.StandardCategoryItemLabelGenerator .up.|> CategoryItemLabelGenerator
+  org.jfree.chart.labels.StandardCategoryItemLabelGenerator .up.|> Cloneable
+  org.jfree.chart.labels.StandardCategoryItemLabelGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.StandardCategoryItemLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.StandardCategorySeriesLabelGenerator .up.|> CategorySeriesLabelGenerator
+  org.jfree.chart.labels.StandardCategorySeriesLabelGenerator .up.|> Cloneable
+  org.jfree.chart.labels.StandardCategorySeriesLabelGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.StandardCategorySeriesLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.StandardCategoryToolTipGenerator .up.|> CategoryToolTipGenerator
+  org.jfree.chart.labels.StandardCategoryToolTipGenerator .up.|> Serializable
+  org.jfree.chart.labels.StandardContourToolTipGenerator .up.|> ContourToolTipGenerator
+  org.jfree.chart.labels.StandardContourToolTipGenerator .up.|> Serializable
+  org.jfree.chart.labels.StandardCrosshairLabelGenerator .up.|> CrosshairLabelGenerator
+  org.jfree.chart.labels.StandardCrosshairLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.StandardPieSectionLabelGenerator .up.|> Cloneable
+  org.jfree.chart.labels.StandardPieSectionLabelGenerator .up.|> PieSectionLabelGenerator
+  org.jfree.chart.labels.StandardPieSectionLabelGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.StandardPieSectionLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.StandardPieToolTipGenerator .up.|> Cloneable
+  org.jfree.chart.labels.StandardPieToolTipGenerator .up.|> PieToolTipGenerator
+  org.jfree.chart.labels.StandardPieToolTipGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.StandardPieToolTipGenerator .up.|> Serializable
+  org.jfree.chart.labels.StandardXYItemLabelGenerator .up.|> Cloneable
+  org.jfree.chart.labels.StandardXYItemLabelGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.StandardXYItemLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.StandardXYItemLabelGenerator .up.|> XYItemLabelGenerator
+  org.jfree.chart.labels.StandardXYSeriesLabelGenerator .up.|> Cloneable
+  org.jfree.chart.labels.StandardXYSeriesLabelGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.StandardXYSeriesLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.StandardXYSeriesLabelGenerator .up.|> XYSeriesLabelGenerator
+  org.jfree.chart.labels.StandardXYToolTipGenerator .up.|> Cloneable
+  org.jfree.chart.labels.StandardXYToolTipGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.StandardXYToolTipGenerator .up.|> Serializable
+  org.jfree.chart.labels.StandardXYToolTipGenerator .up.|> XYToolTipGenerator
+  org.jfree.chart.labels.StandardXYZToolTipGenerator .up.|> Serializable
+  org.jfree.chart.labels.StandardXYZToolTipGenerator .up.|> XYZToolTipGenerator
+  org.jfree.chart.labels.SymbolicXYItemLabelGenerator .up.|> Cloneable
+  org.jfree.chart.labels.SymbolicXYItemLabelGenerator .up.|> PublicCloneable
+  org.jfree.chart.labels.SymbolicXYItemLabelGenerator .up.|> Serializable
+  org.jfree.chart.labels.SymbolicXYItemLabelGenerator .up.|> XYItemLabelGenerator
+  org.jfree.chart.labels.SymbolicXYItemLabelGenerator .up.|> XYToolTipGenerator
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

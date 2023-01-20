@@ -1,0 +1,1732 @@
+@startuml
+
+title __AXIS's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace axis {
+      abstract class org.jfree.chart.axis.Axis {
+          {static} + DEFAULT_AXIS_LABEL_FONT : Font
+          {static} + DEFAULT_AXIS_LABEL_INSETS : RectangleInsets
+          {static} + DEFAULT_AXIS_LABEL_PAINT : Paint
+          {static} + DEFAULT_AXIS_LINE_PAINT : Paint
+          {static} + DEFAULT_AXIS_LINE_STROKE : Stroke
+          {static} + DEFAULT_AXIS_VISIBLE : boolean
+          {static} + DEFAULT_TICK_LABELS_VISIBLE : boolean
+          {static} + DEFAULT_TICK_LABEL_FONT : Font
+          {static} + DEFAULT_TICK_LABEL_INSETS : RectangleInsets
+          {static} + DEFAULT_TICK_LABEL_PAINT : Paint
+          {static} + DEFAULT_TICK_MARKS_VISIBLE : boolean
+          {static} + DEFAULT_TICK_MARK_INSIDE_LENGTH : float
+          {static} + DEFAULT_TICK_MARK_OUTSIDE_LENGTH : float
+          {static} + DEFAULT_TICK_MARK_PAINT : Paint
+          {static} + DEFAULT_TICK_MARK_STROKE : Stroke
+          - attributedLabel : AttributedString
+          - axisLinePaint : Paint
+          - axisLineStroke : Stroke
+          - axisLineVisible : boolean
+          - fixedDimension : double
+          - label : String
+          - labelAngle : double
+          - labelFont : Font
+          - labelInsets : RectangleInsets
+          - labelLocation : AxisLabelLocation
+          - labelPaint : Paint
+          - listenerList : EventListenerList
+          - minorTickMarkInsideLength : float
+          - minorTickMarkOutsideLength : float
+          - minorTickMarksVisible : boolean
+          - plot : Plot
+          {static} - serialVersionUID : long
+          - tickLabelFont : Font
+          - tickLabelInsets : RectangleInsets
+          - tickLabelPaint : Paint
+          - tickLabelsVisible : boolean
+          - tickMarkInsideLength : float
+          - tickMarkOutsideLength : float
+          - tickMarkPaint : Paint
+          - tickMarkStroke : Stroke
+          - tickMarksVisible : boolean
+          - visible : boolean
+          + addChangeListener()
+          + clone()
+          {abstract} + configure()
+          + createAttributedLabel()
+          {abstract} + draw()
+          + equals()
+          + getAttributedLabel()
+          + getAxisLinePaint()
+          + getAxisLineStroke()
+          + getFixedDimension()
+          + getLabel()
+          + getLabelAngle()
+          + getLabelFont()
+          + getLabelInsets()
+          + getLabelLocation()
+          + getLabelPaint()
+          + getMinorTickMarkInsideLength()
+          + getMinorTickMarkOutsideLength()
+          + getPlot()
+          + getTickLabelFont()
+          + getTickLabelInsets()
+          + getTickLabelPaint()
+          + getTickMarkInsideLength()
+          + getTickMarkOutsideLength()
+          + getTickMarkPaint()
+          + getTickMarkStroke()
+          + hasListener()
+          + hashCode()
+          + isAxisLineVisible()
+          + isMinorTickMarksVisible()
+          + isTickLabelsVisible()
+          + isTickMarksVisible()
+          + isVisible()
+          {abstract} + refreshTicks()
+          + removeChangeListener()
+          {abstract} + reserveSpace()
+          + setAttributedLabel()
+          + setAttributedLabel()
+          + setAxisLinePaint()
+          + setAxisLineStroke()
+          + setAxisLineVisible()
+          + setFixedDimension()
+          + setLabel()
+          + setLabelAngle()
+          + setLabelFont()
+          + setLabelInsets()
+          + setLabelInsets()
+          + setLabelLocation()
+          + setLabelPaint()
+          + setMinorTickMarkInsideLength()
+          + setMinorTickMarkOutsideLength()
+          + setMinorTickMarksVisible()
+          + setPlot()
+          + setTickLabelFont()
+          + setTickLabelInsets()
+          + setTickLabelPaint()
+          + setTickLabelsVisible()
+          + setTickMarkInsideLength()
+          + setTickMarkOutsideLength()
+          + setTickMarkPaint()
+          + setTickMarkStroke()
+          + setTickMarksVisible()
+          + setVisible()
+          # Axis()
+          # createAndAddEntity()
+          # drawAttributedLabel()
+          # drawAxisLine()
+          # drawLabel()
+          # fireChangeEvent()
+          # getLabelEnclosure()
+          # labelAnchorH()
+          # labelAnchorV()
+          # labelLocationX()
+          # labelLocationY()
+          # notifyListeners()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.AxisCollection {
+          - axesAtBottom : List
+          - axesAtLeft : List
+          - axesAtRight : List
+          - axesAtTop : List
+          + AxisCollection()
+          + add()
+          + getAxesAtBottom()
+          + getAxesAtLeft()
+          + getAxesAtRight()
+          + getAxesAtTop()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.AxisLabelLocation {
+          {static} + HIGH_END : AxisLabelLocation
+          {static} + LOW_END : AxisLabelLocation
+          {static} + MIDDLE : AxisLabelLocation
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + hashCode()
+          + toString()
+          - AxisLabelLocation()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.AxisLocation {
+          {static} + BOTTOM_OR_LEFT : AxisLocation
+          {static} + BOTTOM_OR_RIGHT : AxisLocation
+          {static} + TOP_OR_LEFT : AxisLocation
+          {static} + TOP_OR_RIGHT : AxisLocation
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + getOpposite()
+          {static} + getOpposite()
+          + hashCode()
+          + toString()
+          - AxisLocation()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.AxisSpace {
+          - bottom : double
+          - left : double
+          - right : double
+          {static} - serialVersionUID : long
+          - top : double
+          + AxisSpace()
+          + add()
+          + clone()
+          + ensureAtLeast()
+          + ensureAtLeast()
+          + equals()
+          + expand()
+          + getBottom()
+          + getLeft()
+          + getRight()
+          + getTop()
+          + hashCode()
+          + reserved()
+          + setBottom()
+          + setLeft()
+          + setRight()
+          + setTop()
+          + shrink()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.AxisState {
+          - cursor : double
+          - max : double
+          - ticks : List
+          + AxisState()
+          + AxisState()
+          + cursorDown()
+          + cursorLeft()
+          + cursorRight()
+          + cursorUp()
+          + getCursor()
+          + getMax()
+          + getTicks()
+          + moveCursor()
+          + setCursor()
+          + setMax()
+          + setTicks()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryAnchor {
+          {static} + END : CategoryAnchor
+          {static} + MIDDLE : CategoryAnchor
+          {static} + START : CategoryAnchor
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + toString()
+          - CategoryAnchor()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryAxis {
+          {static} + DEFAULT_AXIS_MARGIN : double
+          {static} + DEFAULT_CATEGORY_MARGIN : double
+          - categoryLabelPositionOffset : int
+          - categoryLabelPositions : CategoryLabelPositions
+          - categoryLabelToolTips : Map
+          - categoryLabelURLs : Map
+          - categoryMargin : double
+          - lowerMargin : double
+          - maximumCategoryLabelLines : int
+          - maximumCategoryLabelWidthRatio : float
+          {static} - serialVersionUID : long
+          - tickLabelFontMap : Map
+          - tickLabelPaintMap : Map
+          - upperMargin : double
+          + CategoryAxis()
+          + CategoryAxis()
+          + addCategoryLabelToolTip()
+          + addCategoryLabelURL()
+          + clearCategoryLabelToolTips()
+          + clearCategoryLabelURLs()
+          + clone()
+          + configure()
+          + draw()
+          + drawTickMarks()
+          + equals()
+          + getCategoryEnd()
+          + getCategoryJava2DCoordinate()
+          + getCategoryLabelPositionOffset()
+          + getCategoryLabelPositions()
+          + getCategoryLabelToolTip()
+          + getCategoryLabelURL()
+          + getCategoryMargin()
+          + getCategoryMiddle()
+          + getCategoryMiddle()
+          + getCategorySeriesMiddle()
+          + getCategorySeriesMiddle()
+          + getCategoryStart()
+          + getLowerMargin()
+          + getMaximumCategoryLabelLines()
+          + getMaximumCategoryLabelWidthRatio()
+          + getTickLabelFont()
+          + getTickLabelPaint()
+          + getUpperMargin()
+          + hashCode()
+          + refreshTicks()
+          + removeCategoryLabelToolTip()
+          + removeCategoryLabelURL()
+          + reserveSpace()
+          + setCategoryLabelPositionOffset()
+          + setCategoryLabelPositions()
+          + setCategoryMargin()
+          + setLowerMargin()
+          + setMaximumCategoryLabelLines()
+          + setMaximumCategoryLabelWidthRatio()
+          + setTickLabelFont()
+          + setTickLabelPaint()
+          + setUpperMargin()
+          # calculateCategoryGapSize()
+          # calculateCategorySize()
+          # calculateTextBlockHeight()
+          # calculateTextBlockWidth()
+          # createLabel()
+          # drawCategoryLabels()
+          # drawCategoryLabels()
+          - equalPaintMaps()
+          - readObject()
+          - readPaintMap()
+          - writeObject()
+          - writePaintMap()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryAxis3D {
+          {static} - serialVersionUID : long
+          + CategoryAxis3D()
+          + CategoryAxis3D()
+          + clone()
+          + draw()
+          + getCategoryJava2DCoordinate()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryLabelPosition {
+          - angle : double
+          - categoryAnchor : RectangleAnchor
+          - labelAnchor : TextBlockAnchor
+          - rotationAnchor : TextAnchor
+          {static} - serialVersionUID : long
+          - widthRatio : float
+          - widthType : CategoryLabelWidthType
+          + CategoryLabelPosition()
+          + CategoryLabelPosition()
+          + CategoryLabelPosition()
+          + CategoryLabelPosition()
+          + equals()
+          + getAngle()
+          + getCategoryAnchor()
+          + getLabelAnchor()
+          + getRotationAnchor()
+          + getWidthRatio()
+          + getWidthType()
+          + hashCode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryLabelPositions {
+          {static} + DOWN_45 : CategoryLabelPositions
+          {static} + DOWN_90 : CategoryLabelPositions
+          {static} + STANDARD : CategoryLabelPositions
+          {static} + UP_45 : CategoryLabelPositions
+          {static} + UP_90 : CategoryLabelPositions
+          - positionForAxisAtBottom : CategoryLabelPosition
+          - positionForAxisAtLeft : CategoryLabelPosition
+          - positionForAxisAtRight : CategoryLabelPosition
+          - positionForAxisAtTop : CategoryLabelPosition
+          {static} - serialVersionUID : long
+          + CategoryLabelPositions()
+          + CategoryLabelPositions()
+          {static} + createDownRotationLabelPositions()
+          {static} + createUpRotationLabelPositions()
+          + equals()
+          + getLabelPosition()
+          + hashCode()
+          {static} + replaceBottomPosition()
+          {static} + replaceLeftPosition()
+          {static} + replaceRightPosition()
+          {static} + replaceTopPosition()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryLabelWidthType {
+          {static} + CATEGORY : CategoryLabelWidthType
+          {static} + RANGE : CategoryLabelWidthType
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + toString()
+          - CategoryLabelWidthType()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryTick {
+          - category : Comparable
+          - label : TextBlock
+          - labelAnchor : TextBlockAnchor
+          + CategoryTick()
+          + equals()
+          + getCategory()
+          + getLabel()
+          + getLabelAnchor()
+          + hashCode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.ColorBar {
+          {static} + DEFAULT_COLORBAR_THICKNESS : int
+          {static} + DEFAULT_COLORBAR_THICKNESS_PERCENT : double
+          {static} + DEFAULT_OUTERGAP : int
+          - axis : ValueAxis
+          - colorBarLength : int
+          - colorBarThickness : int
+          - colorBarThicknessPercent : double
+          - colorPalette : ColorPalette
+          - outerGap : int
+          {static} - serialVersionUID : long
+          + ColorBar()
+          + autoAdjustRange()
+          + clone()
+          + configure()
+          + draw()
+          + drawColorBar()
+          + equals()
+          + getAxis()
+          + getColorPalette()
+          + getPaint()
+          + hashCode()
+          + reserveSpace()
+          + setAxis()
+          + setColorPalette()
+          + setMaximumValue()
+          + setMinimumValue()
+          - calculateBarThickness()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CompassFormat {
+          + directions : String[]
+          + CompassFormat()
+          + CompassFormat()
+          + CompassFormat()
+          + format()
+          + format()
+          + getDirectionCode()
+          + parse()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CyclicNumberAxis {
+          {static} + DEFAULT_ADVANCE_LINE_PAINT : Paint
+          {static} + DEFAULT_ADVANCE_LINE_STROKE : Stroke
+          # advanceLinePaint : Paint
+          # advanceLineStroke : Stroke
+          # advanceLineVisible : boolean
+          # boundMappedToLastCycle : boolean
+          # offset : double
+          # period : double
+          {static} ~ serialVersionUID : long
+          - internalMarkerCycleBoundTick : Tick
+          - internalMarkerWhenTicksOverlap : boolean
+          + CyclicNumberAxis()
+          + CyclicNumberAxis()
+          + CyclicNumberAxis()
+          + CyclicNumberAxis()
+          + centerRange()
+          + draw()
+          + equals()
+          + getAdvanceLinePaint()
+          + getAdvanceLineStroke()
+          + getCycleBound()
+          + getOffset()
+          + getPeriod()
+          + isAdvanceLineVisible()
+          + isBoundMappedToLastCycle()
+          + java2DToValue()
+          + reserveSpace()
+          + setAdvanceLinePaint()
+          + setAdvanceLineStroke()
+          + setAdvanceLineVisible()
+          + setAutoRangeMinimumSize()
+          + setBoundMappedToLastCycle()
+          + setFixedAutoRange()
+          + setOffset()
+          + setPeriod()
+          + setRange()
+          + valueToJava2D()
+          # calculateAnchorPoint()
+          # drawTickMarksAndLabels()
+          # refreshTicksHorizontal()
+          # refreshVerticalTicks()
+          # selectHorizontalAutoTickUnit()
+          # selectVerticalAutoTickUnit()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CyclicNumberAxis.CycleBoundTick {
+          + mapToLastCycle : boolean
+          + CycleBoundTick()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.DateAxis {
+          {static} + DEFAULT_ANCHOR_DATE : Date
+          {static} + DEFAULT_AUTO_RANGE_MINIMUM_SIZE_IN_MILLISECONDS : double
+          {static} + DEFAULT_DATE_RANGE : DateRange
+          {static} + DEFAULT_DATE_TICK_UNIT : DateTickUnit
+          {static} - DEFAULT_TIMELINE : Timeline
+          - dateFormatOverride : DateFormat
+          - locale : Locale
+          {static} - serialVersionUID : long
+          - tickMarkPosition : DateTickMarkPosition
+          - tickUnit : DateTickUnit
+          - timeZone : TimeZone
+          - timeline : Timeline
+          + DateAxis()
+          + DateAxis()
+          + DateAxis()
+          + DateAxis()
+          + calculateHighestVisibleTickValue()
+          + calculateLowestVisibleTickValue()
+          + clone()
+          + configure()
+          {static} + createStandardDateTickUnits()
+          {static} + createStandardDateTickUnits()
+          {static} + createStandardDateTickUnits()
+          + dateToJava2D()
+          + draw()
+          + equals()
+          + getDateFormatOverride()
+          + getLocale()
+          + getMaximumDate()
+          + getMinimumDate()
+          + getTickMarkPosition()
+          + getTickUnit()
+          + getTimeZone()
+          + getTimeline()
+          + hashCode()
+          + isHiddenValue()
+          + java2DToValue()
+          + refreshTicks()
+          + setDateFormatOverride()
+          + setLocale()
+          + setMaximumDate()
+          + setMinimumDate()
+          + setRange()
+          + setRange()
+          + setRange()
+          + setRange()
+          + setTickMarkPosition()
+          + setTickUnit()
+          + setTickUnit()
+          + setTimeZone()
+          + setTimeline()
+          + valueToJava2D()
+          + zoomRange()
+          # autoAdjustRange()
+          # nextStandardDate()
+          # previousStandardDate()
+          # refreshTicksHorizontal()
+          # refreshTicksVertical()
+          # selectAutoTickUnit()
+          # selectHorizontalAutoTickUnit()
+          # selectVerticalAutoTickUnit()
+          - calculateDateForPosition()
+          - correctTickDateForPosition()
+          - estimateMaximumTickLabelHeight()
+          - estimateMaximumTickLabelWidth()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.DateAxis.DefaultTimeline {
+          + containsDomainRange()
+          + containsDomainRange()
+          + containsDomainValue()
+          + containsDomainValue()
+          + equals()
+          + toMillisecond()
+          + toTimelineValue()
+          + toTimelineValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.DateTick {
+          - date : Date
+          + DateTick()
+          + DateTick()
+          + equals()
+          + getDate()
+          + hashCode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.DateTickMarkPosition {
+          {static} + END : DateTickMarkPosition
+          {static} + MIDDLE : DateTickMarkPosition
+          {static} + START : DateTickMarkPosition
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + toString()
+          - DateTickMarkPosition()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.DateTickUnit {
+          {static} + DAY : int
+          {static} + HOUR : int
+          {static} + MILLISECOND : int
+          {static} + MINUTE : int
+          {static} + MONTH : int
+          {static} + SECOND : int
+          {static} + YEAR : int
+          - count : int
+          - formatter : DateFormat
+          - rollCount : int
+          - rollUnit : int
+          - rollUnitType : DateTickUnitType
+          {static} - serialVersionUID : long
+          - unit : int
+          - unitType : DateTickUnitType
+          + DateTickUnit()
+          + DateTickUnit()
+          + DateTickUnit()
+          + DateTickUnit()
+          + DateTickUnit()
+          + DateTickUnit()
+          + addToDate()
+          + addToDate()
+          + dateToString()
+          + equals()
+          + getCalendarField()
+          + getCount()
+          + getMultiple()
+          + getRollCount()
+          + getRollMultiple()
+          + getRollUnit()
+          + getRollUnitType()
+          + getUnit()
+          + getUnitType()
+          + hashCode()
+          + rollDate()
+          + rollDate()
+          + toString()
+          + valueToString()
+          {static} - getMillisecondCount()
+          {static} - intToUnitType()
+          {static} - notNull()
+          {static} - unitTypeToInt()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.DateTickUnitType {
+          {static} + DAY : DateTickUnitType
+          {static} + HOUR : DateTickUnitType
+          {static} + MILLISECOND : DateTickUnitType
+          {static} + MINUTE : DateTickUnitType
+          {static} + MONTH : DateTickUnitType
+          {static} + SECOND : DateTickUnitType
+          {static} + YEAR : DateTickUnitType
+          - calendarField : int
+          - name : String
+          + equals()
+          + getCalendarField()
+          + toString()
+          - DateTickUnitType()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.ExtendedCategoryAxis {
+          {static} ~ serialVersionUID : long
+          - sublabelFont : Font
+          - sublabelPaint : Paint
+          - sublabels : Map
+          + ExtendedCategoryAxis()
+          + addSubLabel()
+          + clone()
+          + equals()
+          + getSubLabelFont()
+          + getSubLabelPaint()
+          + setSubLabelFont()
+          + setSubLabelPaint()
+          # createLabel()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.LogAxis {
+          - base : double
+          - baseFormatter : Format
+          - baseLog : double
+          - baseSymbol : String
+          - numberFormatOverride : NumberFormat
+          - smallestValue : double
+          - tickUnit : NumberTickUnit
+          + LogAxis()
+          + LogAxis()
+          + calculateLog()
+          + calculateValue()
+          + configure()
+          {static} + createLogTickUnits()
+          + draw()
+          + equals()
+          + exponentLengthToJava2D()
+          + getBase()
+          + getBaseFormatter()
+          + getBaseSymbol()
+          + getNumberFormatOverride()
+          + getSmallestValue()
+          + getTickUnit()
+          + hashCode()
+          + java2DToValue()
+          + pan()
+          + refreshTicks()
+          + resizeRange()
+          + resizeRange()
+          + resizeRange2()
+          + setBase()
+          + setBaseFormatter()
+          + setBaseSymbol()
+          + setNumberFormatOverride()
+          + setSmallestValue()
+          + setTickUnit()
+          + setTickUnit()
+          + valueToJava2D()
+          + zoomRange()
+          # autoAdjustRange()
+          # createTickLabel()
+          # estimateMaximumTickLabelHeight()
+          # estimateMaximumTickLabelWidth()
+          # refreshTicksHorizontal()
+          # refreshTicksVertical()
+          # selectAutoTickUnit()
+          # selectHorizontalAutoTickUnit()
+          # selectVerticalAutoTickUnit()
+          - calculateValueNoINF()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.LogTick {
+          ~ attributedLabel : AttributedString
+          + LogTick()
+          + getAttributedLabel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.LogarithmicAxis {
+          {static} + LOG10_VALUE : double
+          {static} + SMALL_LOG_VALUE : double
+          # allowNegativesFlag : boolean
+          # autoRangeNextLogFlag : boolean
+          # expTickLabelsFlag : boolean
+          # log10TickLabelsFlag : boolean
+          # numberFormatterObj : NumberFormat
+          # smallLogFlag : boolean
+          # strictValuesFlag : boolean
+          {static} - serialVersionUID : long
+          + LogarithmicAxis()
+          + adjustedLog10()
+          + adjustedPow10()
+          + autoAdjustRange()
+          + getAllowNegativesFlag()
+          + getAutoRangeNextLogFlag()
+          + getExpTickLabelsFlag()
+          + getLog10TickLabelsFlag()
+          + getStrictValuesFlag()
+          + java2DToValue()
+          + setAllowNegativesFlag()
+          + setAutoRangeNextLogFlag()
+          + setExpTickLabelsFlag()
+          + setLog10TickLabelsFlag()
+          + setRange()
+          + setStrictValuesFlag()
+          + switchedPow10()
+          + valueToJava2D()
+          + zoomRange()
+          # computeLogCeil()
+          # computeLogFloor()
+          # makeTickLabel()
+          # makeTickLabel()
+          # refreshTicksHorizontal()
+          # refreshTicksVertical()
+          # setupNumberFmtObj()
+          # setupSmallLogFlag()
+          # switchedLog10()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.MarkerAxisBand {
+          - axis : NumberAxis
+          - bottomInnerGap : double
+          - bottomOuterGap : double
+          - font : Font
+          - markers : List
+          {static} - serialVersionUID : long
+          - topInnerGap : double
+          - topOuterGap : double
+          + MarkerAxisBand()
+          + addMarker()
+          + draw()
+          + equals()
+          + getHeight()
+          + hashCode()
+          - drawStringInRect()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.ModuloAxis {
+          - displayEnd : double
+          - displayStart : double
+          - fixedRange : Range
+          + ModuloAxis()
+          + equals()
+          + getDisplayEnd()
+          + getDisplayStart()
+          + java2DToValue()
+          + lengthToJava2D()
+          + resizeRange()
+          + resizeRange()
+          + setDisplayRange()
+          + valueToJava2D()
+          # autoAdjustRange()
+          - getDisplayCentralValue()
+          - getDisplayLength()
+          - mapValueToFixedRange()
+          - trans()
+          - transEnd()
+          - transStart()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.MonthDateFormat {
+          - months : String[]
+          - showYear : boolean[]
+          - yearFormatter : DateFormat
+          + MonthDateFormat()
+          + MonthDateFormat()
+          + MonthDateFormat()
+          + MonthDateFormat()
+          + MonthDateFormat()
+          + MonthDateFormat()
+          + MonthDateFormat()
+          + equals()
+          + format()
+          + parse()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.NumberAxis {
+          {static} + DEFAULT_AUTO_RANGE_INCLUDES_ZERO : boolean
+          {static} + DEFAULT_AUTO_RANGE_STICKY_ZERO : boolean
+          {static} + DEFAULT_TICK_UNIT : NumberTickUnit
+          {static} + DEFAULT_VERTICAL_TICK_LABELS : boolean
+          - autoRangeIncludesZero : boolean
+          - autoRangeStickyZero : boolean
+          - markerBand : MarkerAxisBand
+          - numberFormatOverride : NumberFormat
+          - rangeType : RangeType
+          {static} - serialVersionUID : long
+          - tickUnit : NumberTickUnit
+          + NumberAxis()
+          + NumberAxis()
+          + clone()
+          + configure()
+          {static} + createIntegerTickUnits()
+          {static} + createIntegerTickUnits()
+          {static} + createStandardTickUnits()
+          {static} + createStandardTickUnits()
+          + draw()
+          + equals()
+          + getAutoRangeIncludesZero()
+          + getAutoRangeStickyZero()
+          + getMarkerBand()
+          + getNumberFormatOverride()
+          + getRangeType()
+          + getTickUnit()
+          + hashCode()
+          + java2DToValue()
+          + refreshTicks()
+          + setAutoRangeIncludesZero()
+          + setAutoRangeStickyZero()
+          + setMarkerBand()
+          + setNumberFormatOverride()
+          + setRangeType()
+          + setTickUnit()
+          + setTickUnit()
+          + valueToJava2D()
+          # autoAdjustRange()
+          # calculateHighestVisibleTickValue()
+          # calculateLowestVisibleTickValue()
+          # calculateVisibleTickCount()
+          # estimateMaximumTickLabelHeight()
+          # estimateMaximumTickLabelWidth()
+          # refreshTicksHorizontal()
+          # refreshTicksVertical()
+          # selectAutoTickUnit()
+          # selectHorizontalAutoTickUnit()
+          # selectVerticalAutoTickUnit()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.NumberAxis3D {
+          {static} - serialVersionUID : long
+          + NumberAxis3D()
+          + NumberAxis3D()
+          + draw()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.NumberTick {
+          - number : Number
+          + NumberTick()
+          + NumberTick()
+          + getNumber()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.NumberTickUnit {
+          - formatter : NumberFormat
+          {static} - serialVersionUID : long
+          + NumberTickUnit()
+          + NumberTickUnit()
+          + NumberTickUnit()
+          + equals()
+          + hashCode()
+          + toString()
+          + valueToString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.NumberTickUnitSource {
+          - df : DecimalFormat
+          - df0 : DecimalFormat
+          - dfNeg1 : DecimalFormat
+          - dfNeg2 : DecimalFormat
+          - dfNeg3 : DecimalFormat
+          - dfNeg4 : DecimalFormat
+          - factor : int
+          - formatter : NumberFormat
+          - integers : boolean
+          - power : int
+          + NumberTickUnitSource()
+          + NumberTickUnitSource()
+          + NumberTickUnitSource()
+          + equals()
+          + getCeilingTickUnit()
+          + getCeilingTickUnit()
+          + getLargerTickUnit()
+          - getMinorTickCount()
+          - getTickLabelFormat()
+          - getTickSize()
+          - next()
+          - previous()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.PeriodAxis {
+          - autoRangeTimePeriodClass : Class
+          - calendar : Calendar
+          - first : RegularTimePeriod
+          - labelInfo : PeriodAxisLabelInfo[]
+          - last : RegularTimePeriod
+          - locale : Locale
+          - majorTickTimePeriodClass : Class
+          - minorTickMarkInsideLength : float
+          - minorTickMarkOutsideLength : float
+          - minorTickMarkPaint : Paint
+          - minorTickMarkStroke : Stroke
+          - minorTickMarksVisible : boolean
+          - minorTickTimePeriodClass : Class
+          {static} - serialVersionUID : long
+          - timeZone : TimeZone
+          + PeriodAxis()
+          + PeriodAxis()
+          + PeriodAxis()
+          + PeriodAxis()
+          + clone()
+          + configure()
+          + draw()
+          + equals()
+          + getAutoRangeTimePeriodClass()
+          + getFirst()
+          + getLabelInfo()
+          + getLast()
+          + getLocale()
+          + getMajorTickTimePeriodClass()
+          + getMinorTickMarkInsideLength()
+          + getMinorTickMarkOutsideLength()
+          + getMinorTickMarkPaint()
+          + getMinorTickMarkStroke()
+          + getMinorTickTimePeriodClass()
+          + getTimeZone()
+          + hashCode()
+          + isMinorTickMarksVisible()
+          + java2DToValue()
+          + refreshTicks()
+          + reserveSpace()
+          + setAutoRangeTimePeriodClass()
+          + setFirst()
+          + setLabelInfo()
+          + setLast()
+          + setMajorTickTimePeriodClass()
+          + setMinorTickMarkInsideLength()
+          + setMinorTickMarkOutsideLength()
+          + setMinorTickMarkPaint()
+          + setMinorTickMarkStroke()
+          + setMinorTickMarksVisible()
+          + setMinorTickTimePeriodClass()
+          + setRange()
+          + setTimeZone()
+          + valueToJava2D()
+          # autoAdjustRange()
+          # drawTickLabels()
+          # drawTickMarks()
+          # drawTickMarksHorizontal()
+          # drawTickMarksVertical()
+          - createInstance()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.PeriodAxisLabelInfo {
+          {static} + DEFAULT_DIVIDER_PAINT : Paint
+          {static} + DEFAULT_DIVIDER_STROKE : Stroke
+          {static} + DEFAULT_FONT : Font
+          {static} + DEFAULT_INSETS : RectangleInsets
+          {static} + DEFAULT_LABEL_PAINT : Paint
+          - dateFormat : DateFormat
+          - dividerPaint : Paint
+          - dividerStroke : Stroke
+          - drawDividers : boolean
+          - labelFont : Font
+          - labelPaint : Paint
+          - padding : RectangleInsets
+          - periodClass : Class
+          {static} - serialVersionUID : long
+          + PeriodAxisLabelInfo()
+          + PeriodAxisLabelInfo()
+          + clone()
+          + createInstance()
+          + createInstance()
+          + equals()
+          + getDateFormat()
+          + getDividerPaint()
+          + getDividerStroke()
+          + getDrawDividers()
+          + getLabelFont()
+          + getLabelPaint()
+          + getPadding()
+          + getPeriodClass()
+          + hashCode()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.QuarterDateFormat {
+          {static} + GREEK_QUARTERS : String[]
+          {static} + REGULAR_QUARTERS : String[]
+          {static} + ROMAN_QUARTERS : String[]
+          - quarterFirst : boolean
+          - quarters : String[]
+          {static} - serialVersionUID : long
+          + QuarterDateFormat()
+          + QuarterDateFormat()
+          + QuarterDateFormat()
+          + QuarterDateFormat()
+          + equals()
+          + format()
+          + parse()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.SegmentedTimeline {
+          {static} + DAY_SEGMENT_SIZE : long
+          {static} + DEFAULT_TIME_ZONE : TimeZone
+          {static} + FIFTEEN_MINUTE_SEGMENT_SIZE : long
+          {static} + FIRST_MONDAY_AFTER_1900 : long
+          {static} + HOUR_SEGMENT_SIZE : long
+          {static} + MINUTE_SEGMENT_SIZE : long
+          {static} + NO_DST_TIME_ZONE : TimeZone
+          - adjustForDaylightSaving : boolean
+          - exceptionSegments : List
+          - groupSegmentCount : int
+          - segmentSize : long
+          - segmentsExcluded : int
+          - segmentsExcludedSize : long
+          - segmentsGroupSize : long
+          - segmentsIncluded : int
+          - segmentsIncludedSize : long
+          {static} - serialVersionUID : long
+          - startTime : long
+          - workingCalendar : Calendar
+          - workingCalendarNoDST : Calendar
+          + SegmentedTimeline()
+          + addBaseTimelineException()
+          + addBaseTimelineException()
+          + addBaseTimelineExclusions()
+          + addException()
+          + addException()
+          + addException()
+          + addExceptions()
+          + clone()
+          + containsDomainRange()
+          + containsDomainRange()
+          + containsDomainValue()
+          + containsDomainValue()
+          + equals()
+          {static} + firstMondayAfter1900()
+          + getAdjustForDaylightSaving()
+          + getBaseTimeline()
+          + getDate()
+          + getExceptionSegmentCount()
+          + getExceptionSegments()
+          + getGroupSegmentCount()
+          + getSegment()
+          + getSegment()
+          + getSegmentSize()
+          + getSegmentsExcluded()
+          + getSegmentsExcludedSize()
+          + getSegmentsGroupSize()
+          + getSegmentsIncluded()
+          + getSegmentsIncludedSize()
+          + getStartTime()
+          + getTime()
+          + getTimeFromLong()
+          + hashCode()
+          {static} + newFifteenMinuteTimeline()
+          {static} + newMondayThroughFridayTimeline()
+          + setAdjustForDaylightSaving()
+          + setBaseTimeline()
+          + setExceptionSegments()
+          + setStartTime()
+          + toMillisecond()
+          + toTimelineValue()
+          + toTimelineValue()
+          - addException()
+          - binarySearchExceptionSegments()
+          - equals()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.SegmentedTimeline.BaseTimelineSegmentRange {
+          + BaseTimelineSegmentRange()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.SegmentedTimeline.Segment {
+          # millisecond : long
+          # segmentEnd : long
+          # segmentNumber : long
+          # segmentStart : long
+          + after()
+          + before()
+          + calculateSegmentNumber()
+          + compareTo()
+          + contained()
+          + contains()
+          + contains()
+          + contains()
+          + copy()
+          + dec()
+          + dec()
+          + equals()
+          + getDate()
+          + getMillisecond()
+          + getSegmentCount()
+          + getSegmentEnd()
+          + getSegmentNumber()
+          + getSegmentStart()
+          + inExceptionSegments()
+          + inExcludeSegments()
+          + inIncludeSegments()
+          + inc()
+          + inc()
+          + intersect()
+          + moveIndexToEnd()
+          + moveIndexToStart()
+          # Segment()
+          # Segment()
+          - getSegmentNumberRelativeToGroup()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.SegmentedTimeline.SegmentRange {
+          - segmentCount : long
+          + SegmentRange()
+          + getSegmentCount()
+          + inExcludeSegments()
+          + inIncludeSegments()
+          + inc()
+          + intersect()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.StandardTickUnitSource {
+          {static} - LOG_10_VALUE : double
+          + StandardTickUnitSource()
+          + equals()
+          + getCeilingTickUnit()
+          + getCeilingTickUnit()
+          + getLargerTickUnit()
+          + hashCode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.SubCategoryAxis {
+          {static} - serialVersionUID : long
+          - subCategories : List
+          - subLabelFont : Font
+          - subLabelPaint : Paint
+          + SubCategoryAxis()
+          + addSubCategory()
+          + draw()
+          + equals()
+          + getSubLabelFont()
+          + getSubLabelPaint()
+          + hashCode()
+          + reserveSpace()
+          + setSubLabelFont()
+          + setSubLabelPaint()
+          # drawSubCategoryLabels()
+          - getMaxDim()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.SymbolAxis {
+          {static} + DEFAULT_GRID_BAND_ALTERNATE_PAINT : Paint
+          {static} + DEFAULT_GRID_BAND_PAINT : Paint
+          - gridBandAlternatePaint : Paint
+          - gridBandPaint : Paint
+          - gridBandsVisible : boolean
+          {static} - serialVersionUID : long
+          - symbols : List
+          + SymbolAxis()
+          + draw()
+          + equals()
+          + getGridBandAlternatePaint()
+          + getGridBandPaint()
+          + getSymbols()
+          + isGridBandsVisible()
+          + refreshTicks()
+          + setGridBandAlternatePaint()
+          + setGridBandPaint()
+          + setGridBandsVisible()
+          + valueToString()
+          # autoAdjustRange()
+          # drawGridBands()
+          # drawGridBandsHorizontal()
+          # drawGridBandsVertical()
+          # refreshTicksHorizontal()
+          # refreshTicksVertical()
+          # selectAutoTickUnit()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      abstract class org.jfree.chart.axis.Tick {
+          - angle : double
+          - rotationAnchor : TextAnchor
+          {static} - serialVersionUID : long
+          - text : String
+          - textAnchor : TextAnchor
+          + Tick()
+          + clone()
+          + equals()
+          + getAngle()
+          + getRotationAnchor()
+          + getText()
+          + getTextAnchor()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.TickType {
+          {static} + MAJOR : TickType
+          {static} + MINOR : TickType
+          - name : String
+          + equals()
+          + toString()
+          - TickType()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      abstract class org.jfree.chart.axis.TickUnit {
+          - minorTickCount : int
+          {static} - serialVersionUID : long
+          - size : double
+          + TickUnit()
+          + TickUnit()
+          + compareTo()
+          + equals()
+          + getMinorTickCount()
+          + getSize()
+          + hashCode()
+          + valueToString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      interface org.jfree.chart.axis.TickUnitSource {
+          {abstract} + getCeilingTickUnit()
+          {abstract} + getCeilingTickUnit()
+          {abstract} + getLargerTickUnit()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.TickUnits {
+          {static} - serialVersionUID : long
+          - tickUnits : List
+          + TickUnits()
+          + add()
+          + clone()
+          + equals()
+          + get()
+          + getCeilingTickUnit()
+          + getCeilingTickUnit()
+          + getLargerTickUnit()
+          + size()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      interface org.jfree.chart.axis.Timeline {
+          {abstract} + containsDomainRange()
+          {abstract} + containsDomainRange()
+          {abstract} + containsDomainValue()
+          {abstract} + containsDomainValue()
+          {abstract} + toMillisecond()
+          {abstract} + toTimelineValue()
+          {abstract} + toTimelineValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      abstract class org.jfree.chart.axis.ValueAxis {
+          {static} + DEFAULT_AUTO_RANGE : boolean
+          {static} + DEFAULT_AUTO_RANGE_MINIMUM_SIZE : double
+          {static} + DEFAULT_AUTO_TICK_UNIT_SELECTION : boolean
+          {static} + DEFAULT_INVERTED : boolean
+          {static} + DEFAULT_LOWER_BOUND : double
+          {static} + DEFAULT_LOWER_MARGIN : double
+          {static} + DEFAULT_RANGE : Range
+          {static} + DEFAULT_UPPER_BOUND : double
+          {static} + DEFAULT_UPPER_MARGIN : double
+          {static} + MAXIMUM_TICK_COUNT : int
+          - autoRange : boolean
+          - autoRangeMinimumSize : double
+          - autoTickIndex : int
+          - autoTickUnitSelection : boolean
+          - defaultAutoRange : Range
+          - downArrow : Shape
+          - fixedAutoRange : double
+          - inverted : boolean
+          - leftArrow : Shape
+          - lowerMargin : double
+          - minorTickCount : int
+          - negativeArrowVisible : boolean
+          - positiveArrowVisible : boolean
+          - range : Range
+          - rightArrow : Shape
+          {static} - serialVersionUID : long
+          - standardTickUnits : TickUnitSource
+          - upArrow : Shape
+          - upperMargin : double
+          - verticalTickLabels : boolean
+          + centerRange()
+          + clone()
+          + equals()
+          + getAutoRangeMinimumSize()
+          + getDefaultAutoRange()
+          + getDownArrow()
+          + getFixedAutoRange()
+          + getLeftArrow()
+          + getLowerBound()
+          + getLowerMargin()
+          + getMinorTickCount()
+          + getRange()
+          + getRightArrow()
+          + getStandardTickUnits()
+          + getUpArrow()
+          + getUpperBound()
+          + getUpperMargin()
+          + isAutoRange()
+          + isAutoTickUnitSelection()
+          + isInverted()
+          + isNegativeArrowVisible()
+          + isPositiveArrowVisible()
+          + isVerticalTickLabels()
+          {abstract} + java2DToValue()
+          + lengthToJava2D()
+          + pan()
+          + reserveSpace()
+          + resizeRange()
+          + resizeRange()
+          + resizeRange2()
+          + setAutoRange()
+          + setAutoRangeMinimumSize()
+          + setAutoRangeMinimumSize()
+          + setAutoTickUnitSelection()
+          + setAutoTickUnitSelection()
+          + setDefaultAutoRange()
+          + setDownArrow()
+          + setFixedAutoRange()
+          + setInverted()
+          + setLeftArrow()
+          + setLowerBound()
+          + setLowerMargin()
+          + setMinorTickCount()
+          + setNegativeArrowVisible()
+          + setPositiveArrowVisible()
+          + setRange()
+          + setRange()
+          + setRange()
+          + setRangeAboutValue()
+          + setRangeWithMargins()
+          + setRangeWithMargins()
+          + setRangeWithMargins()
+          + setRightArrow()
+          + setStandardTickUnits()
+          + setUpArrow()
+          + setUpperBound()
+          + setUpperMargin()
+          + setVerticalTickLabels()
+          {abstract} + valueToJava2D()
+          + zoomRange()
+          # ValueAxis()
+          {abstract} # autoAdjustRange()
+          # calculateAnchorPoint()
+          # drawAxisLine()
+          # drawTickMarksAndLabels()
+          # findMaximumTickLabelHeight()
+          # findMaximumTickLabelWidth()
+          # getAutoTickIndex()
+          # setAutoRange()
+          # setAutoTickIndex()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      abstract class org.jfree.chart.axis.ValueTick {
+          - tickType : TickType
+          - value : double
+          + ValueTick()
+          + ValueTick()
+          + equals()
+          + getTickType()
+          + getValue()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.axis.Axis .up.|> Cloneable
+  org.jfree.chart.axis.Axis .up.|> Serializable
+  org.jfree.chart.axis.AxisLabelLocation .up.|> Serializable
+  org.jfree.chart.axis.AxisLocation .up.|> Serializable
+  org.jfree.chart.axis.AxisSpace .up.|> Cloneable
+  org.jfree.chart.axis.AxisSpace .up.|> PublicCloneable
+  org.jfree.chart.axis.AxisSpace .up.|> Serializable
+  org.jfree.chart.axis.CategoryAnchor .up.|> Serializable
+  org.jfree.chart.axis.CategoryAxis .up.|> Cloneable
+  org.jfree.chart.axis.CategoryAxis .up.|> Serializable
+  org.jfree.chart.axis.CategoryAxis3D .up.|> Cloneable
+  org.jfree.chart.axis.CategoryAxis3D .up.|> Serializable
+  org.jfree.chart.axis.CategoryLabelPosition .up.|> Serializable
+  org.jfree.chart.axis.CategoryLabelPositions .up.|> Serializable
+  org.jfree.chart.axis.CategoryLabelWidthType .up.|> Serializable
+  org.jfree.chart.axis.ColorBar .up.|> Cloneable
+  org.jfree.chart.axis.ColorBar .up.|> Serializable
+  org.jfree.chart.axis.CyclicNumberAxis +-down- org.jfree.chart.axis.CyclicNumberAxis.CycleBoundTick
+  org.jfree.chart.axis.DateAxis .up.|> Cloneable
+  org.jfree.chart.axis.DateAxis .up.|> Serializable
+  org.jfree.chart.axis.DateAxis +-down- org.jfree.chart.axis.DateAxis.DefaultTimeline
+  org.jfree.chart.axis.DateAxis.DefaultTimeline .up.|> Serializable
+  org.jfree.chart.axis.DateAxis.DefaultTimeline .up.|> Timeline
+  org.jfree.chart.axis.DateTickMarkPosition .up.|> Serializable
+  org.jfree.chart.axis.DateTickUnit .up.|> Serializable
+  org.jfree.chart.axis.DateTickUnitType .up.|> Serializable
+  org.jfree.chart.axis.MarkerAxisBand .up.|> Serializable
+  org.jfree.chart.axis.NumberAxis .up.|> Cloneable
+  org.jfree.chart.axis.NumberAxis .up.|> Serializable
+  org.jfree.chart.axis.NumberAxis3D .up.|> Serializable
+  org.jfree.chart.axis.NumberTickUnit .up.|> Serializable
+  org.jfree.chart.axis.NumberTickUnitSource .up.|> Serializable
+  org.jfree.chart.axis.NumberTickUnitSource .up.|> TickUnitSource
+  org.jfree.chart.axis.PeriodAxis .up.|> Cloneable
+  org.jfree.chart.axis.PeriodAxis .up.|> PublicCloneable
+  org.jfree.chart.axis.PeriodAxis .up.|> Serializable
+  org.jfree.chart.axis.PeriodAxisLabelInfo .up.|> Cloneable
+  org.jfree.chart.axis.PeriodAxisLabelInfo .up.|> Serializable
+  org.jfree.chart.axis.QuarterDateFormat .up.|> Cloneable
+  org.jfree.chart.axis.QuarterDateFormat .up.|> Serializable
+  org.jfree.chart.axis.SegmentedTimeline .up.|> Cloneable
+  org.jfree.chart.axis.SegmentedTimeline .up.|> Serializable
+  org.jfree.chart.axis.SegmentedTimeline .up.|> Timeline
+  org.jfree.chart.axis.SegmentedTimeline o-- org.jfree.chart.axis.SegmentedTimeline : baseTimeline
+  org.jfree.chart.axis.SegmentedTimeline +-down- org.jfree.chart.axis.SegmentedTimeline.BaseTimelineSegmentRange
+  org.jfree.chart.axis.SegmentedTimeline +-down- org.jfree.chart.axis.SegmentedTimeline.Segment
+  org.jfree.chart.axis.SegmentedTimeline +-down- org.jfree.chart.axis.SegmentedTimeline.SegmentRange
+  org.jfree.chart.axis.SegmentedTimeline.BaseTimelineSegmentRange -up-|> org.jfree.chart.axis.SegmentedTimeline.SegmentRange
+  org.jfree.chart.axis.SegmentedTimeline.Segment .up.|> Cloneable
+  org.jfree.chart.axis.SegmentedTimeline.Segment .up.|> Comparable
+  org.jfree.chart.axis.SegmentedTimeline.Segment .up.|> Serializable
+  org.jfree.chart.axis.SegmentedTimeline.SegmentRange -up-|> org.jfree.chart.axis.SegmentedTimeline.Segment
+  org.jfree.chart.axis.StandardTickUnitSource .up.|> Serializable
+  org.jfree.chart.axis.StandardTickUnitSource .up.|> TickUnitSource
+  org.jfree.chart.axis.SubCategoryAxis .up.|> Cloneable
+  org.jfree.chart.axis.SubCategoryAxis .up.|> Serializable
+  org.jfree.chart.axis.SymbolAxis .up.|> Serializable
+  org.jfree.chart.axis.Tick .up.|> Cloneable
+  org.jfree.chart.axis.Tick .up.|> Serializable
+  org.jfree.chart.axis.TickType .up.|> Serializable
+  org.jfree.chart.axis.TickUnit .up.|> Comparable
+  org.jfree.chart.axis.TickUnit .up.|> Serializable
+  org.jfree.chart.axis.TickUnits .up.|> Cloneable
+  org.jfree.chart.axis.TickUnits .up.|> Serializable
+  org.jfree.chart.axis.TickUnits .up.|> TickUnitSource
+  org.jfree.chart.axis.ValueAxis .up.|> Cloneable
+  org.jfree.chart.axis.ValueAxis .up.|> PublicCloneable
+  org.jfree.chart.axis.ValueAxis .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

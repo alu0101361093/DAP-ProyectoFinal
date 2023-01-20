@@ -1,0 +1,337 @@
+@startuml
+
+title __EDITOR's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace editor {
+      interface org.jfree.chart.editor.ChartEditor {
+          {abstract} + updateChart()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      interface org.jfree.chart.editor.ChartEditorFactory {
+          {abstract} + createEditor()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      class org.jfree.chart.editor.ChartEditorManager {
+          {static} ~ factory : ChartEditorFactory
+          {static} + getChartEditor()
+          {static} + getChartEditorFactory()
+          {static} + setChartEditorFactory()
+          - ChartEditorManager()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      class org.jfree.chart.editor.DefaultAxisEditor {
+          {static} # localizationResources : ResourceBundle
+          - label : JTextField
+          - labelFont : Font
+          - labelFontField : JTextField
+          - labelInsets : RectangleInsets
+          - labelPaintSample : PaintSample
+          - otherTabs : JTabbedPane
+          - showTickLabelsCheckBox : JCheckBox
+          - showTickMarksCheckBox : JCheckBox
+          - slot1 : JPanel
+          - slot2 : JPanel
+          - tickLabelFont : Font
+          - tickLabelFontField : JTextField
+          - tickLabelInsets : RectangleInsets
+          - tickLabelPaintSample : PaintSample
+          + DefaultAxisEditor()
+          + actionPerformed()
+          + attemptTickLabelFontSelection()
+          {static} + getInstance()
+          + getLabel()
+          + getLabelFont()
+          + getLabelInsets()
+          + getLabelPaint()
+          + getOtherTabs()
+          + getTickLabelFont()
+          + getTickLabelInsets()
+          + getTickLabelPaint()
+          + isTickLabelsVisible()
+          + isTickMarksVisible()
+          + setAxisProperties()
+          - attemptLabelFontSelection()
+          - attemptModifyLabelPaint()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      class org.jfree.chart.editor.DefaultChartEditor {
+          {static} # localizationResources : ResourceBundle
+          - antialias : JCheckBox
+          - background : PaintSample
+          - plotEditor : DefaultPlotEditor
+          - titleEditor : DefaultTitleEditor
+          + DefaultChartEditor()
+          + actionPerformed()
+          + getAntiAlias()
+          + getBackgroundPaint()
+          + getPlotEditor()
+          + getTitleEditor()
+          + updateChart()
+          - attemptModifyBackgroundPaint()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      class org.jfree.chart.editor.DefaultChartEditorFactory {
+          + DefaultChartEditorFactory()
+          + createEditor()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      class org.jfree.chart.editor.DefaultColorBarEditor {
+          {static} # localizationResources : ResourceBundle
+          - availablePaletteSamples : PaletteSample[]
+          - currentPalette : PaletteSample
+          - invertPalette : boolean
+          - invertPaletteCheckBox : JCheckBox
+          - stepPalette : boolean
+          - stepPaletteCheckBox : JCheckBox
+          + DefaultColorBarEditor()
+          + actionPerformed()
+          {static} + getInstance()
+          + setAxisProperties()
+          - attemptPaletteSelection()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      class org.jfree.chart.editor.DefaultLogAxisEditor {
+          - manualTickUnit : JTextField
+          - manualTickUnitValue : double
+          + DefaultLogAxisEditor()
+          + actionPerformed()
+          + focusLost()
+          + setAxisProperties()
+          + toggleAutoTick()
+          + validateTickUnit()
+          # createTickUnitPanel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      class org.jfree.chart.editor.DefaultNumberAxisEditor {
+          - manualTickUnit : JTextField
+          - manualTickUnitValue : double
+          + DefaultNumberAxisEditor()
+          + actionPerformed()
+          + focusLost()
+          + setAxisProperties()
+          + toggleAutoTick()
+          + validateTickUnit()
+          # createTickUnitPanel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      class org.jfree.chart.editor.DefaultPlotEditor {
+          {static} # localizationResources : ResourceBundle
+          {static} - ORIENTATION_HORIZONTAL : int
+          {static} - ORIENTATION_VERTICAL : int
+          - availableStrokeSamples : StrokeSample[]
+          - backgroundPaintSample : PaintSample
+          - colorBarAxisPropertyPanel : DefaultColorBarEditor
+          - domainAxisPropertyPanel : DefaultAxisEditor
+          - drawLines : Boolean
+          - drawLinesCheckBox : JCheckBox
+          - drawShapes : Boolean
+          - drawShapesCheckBox : JCheckBox
+          - orientationCombo : JComboBox
+          {static} - orientationNames : String[]
+          - outlinePaintSample : PaintSample
+          - outlineStrokeSample : StrokeSample
+          - plotInsets : RectangleInsets
+          - plotOrientation : PlotOrientation
+          - rangeAxisPropertyPanel : DefaultAxisEditor
+          + DefaultPlotEditor()
+          + actionPerformed()
+          + getBackgroundPaint()
+          + getDomainAxisPropertyEditPanel()
+          + getOutlinePaint()
+          + getOutlineStroke()
+          + getPlotInsets()
+          + getRangeAxisPropertyEditPanel()
+          + updatePlotProperties()
+          # createPlotPanel()
+          # createPlotTabs()
+          - attemptBackgroundPaintSelection()
+          - attemptDrawLinesSelection()
+          - attemptDrawShapesSelection()
+          - attemptOrientationSelection()
+          - attemptOutlinePaintSelection()
+          - attemptOutlineStrokeSelection()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      class org.jfree.chart.editor.DefaultPolarPlotEditor {
+          - angleOffset : JTextField
+          - angleOffsetValue : double
+          - manualTickUnit : JTextField
+          - manualTickUnitValue : double
+          + DefaultPolarPlotEditor()
+          + actionPerformed()
+          + focusGained()
+          + focusLost()
+          + updatePlotProperties()
+          + validateAngleOffset()
+          + validateTickUnit()
+          # createPlotTabs()
+          - createPlotPanel()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      class org.jfree.chart.editor.DefaultTitleEditor {
+          {static} # localizationResources : ResourceBundle
+          - fontfield : JTextField
+          - selectFontButton : JButton
+          - selectPaintButton : JButton
+          - showTitle : boolean
+          - showTitleCheckBox : JCheckBox
+          - titleField : JTextField
+          - titleFont : Font
+          - titlePaint : PaintSample
+          + DefaultTitleEditor()
+          + actionPerformed()
+          + attemptFontSelection()
+          + attemptPaintSelection()
+          + getTitleFont()
+          + getTitlePaint()
+          + getTitleText()
+          + setTitleProperties()
+          - attemptModifyShowTitle()
+          - enableOrDisableControls()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      class org.jfree.chart.editor.DefaultValueAxisEditor {
+          {static} # localizationResources : ResourceBundle
+          - autoRange : boolean
+          - autoRangeCheckBox : JCheckBox
+          - autoTickUnitSelection : boolean
+          - autoTickUnitSelectionCheckBox : JCheckBox
+          - availableStrokeSamples : StrokeSample[]
+          - gridPaintSample : PaintSample
+          - gridStrokeSample : StrokeSample
+          - maximumRangeValue : JTextField
+          - maximumValue : double
+          - minimumRangeValue : JTextField
+          - minimumValue : double
+          + DefaultValueAxisEditor()
+          + actionPerformed()
+          + focusGained()
+          + focusLost()
+          + getMaximumValue()
+          + getMinimumValue()
+          + isAutoRange()
+          + setAxisProperties()
+          + toggleAutoRange()
+          + toggleAutoTick()
+          + validateMaximum()
+          + validateMinimum()
+          # attemptGridPaintSelection()
+          # attemptGridStrokeSelection()
+          # createTickUnitPanel()
+          # getAutoTickUnitSelectionCheckBox()
+          # isAutoTickUnitSelection()
+          # setAutoTickUnitSelection()
+          # setAutoTickUnitSelectionCheckBox()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      class org.jfree.chart.editor.PaletteChooserPanel {
+          - selector : JComboBox
+          + PaletteChooserPanel()
+          + getSelectedPalette()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace editor {
+      class org.jfree.chart.editor.PaletteSample {
+          - palette : ColorPalette
+          - preferredSize : Dimension
+          + PaletteSample()
+          + getListCellRendererComponent()
+          + getPalette()
+          + getPreferredSize()
+          + paintComponent()
+          + setPalette()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.editor.DefaultAxisEditor .up.|> ActionListener
+  org.jfree.chart.editor.DefaultChartEditor .up.|> ActionListener
+  org.jfree.chart.editor.DefaultChartEditor .up.|> ChartEditor
+  org.jfree.chart.editor.DefaultChartEditorFactory .up.|> ChartEditorFactory
+  org.jfree.chart.editor.DefaultNumberAxisEditor .up.|> FocusListener
+  org.jfree.chart.editor.DefaultPlotEditor .up.|> ActionListener
+  org.jfree.chart.editor.DefaultPolarPlotEditor .up.|> FocusListener
+  org.jfree.chart.editor.DefaultTitleEditor .up.|> ActionListener
+  org.jfree.chart.editor.DefaultValueAxisEditor .up.|> FocusListener
+  org.jfree.chart.editor.PaletteSample .up.|> ListCellRenderer
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

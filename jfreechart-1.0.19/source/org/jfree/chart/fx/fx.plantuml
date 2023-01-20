@@ -1,0 +1,229 @@
+@startuml
+
+title __FX's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace fx {
+      class org.jfree.chart.fx.ChartCanvas {
+          - anchor : Point2D
+          - auxiliaryMouseHandlers : List<MouseHandlerFX>
+          - availableMouseHandlers : List<MouseHandlerFX>
+          - chart : JFreeChart
+          - chartMouseListeners : List<ChartMouseListenerFX>
+          - g2 : Graphics2D
+          - info : ChartRenderingInfo
+          - liveHandler : MouseHandlerFX
+          - tooltip : Tooltip
+          - tooltipEnabled : boolean
+          + ChartCanvas()
+          + addChartMouseListener()
+          + addMouseHandler()
+          + chartChanged()
+          + clearLiveHandler()
+          + dispatchMouseClickedEvent()
+          + dispatchMouseMovedEvent()
+          + draw()
+          + findDataArea()
+          + getChart()
+          + getMouseHandler()
+          + getRenderingInfo()
+          + isResizable()
+          + isTooltipEnabled()
+          + removeChartMouseListener()
+          + removeMouseHandler()
+          + setAnchor()
+          + setChart()
+          + setTooltip()
+          + setTooltipEnabled()
+          # handleScroll()
+          - handleMouseClicked()
+          - handleMouseDragged()
+          - handleMouseMoved()
+          - handleMousePressed()
+          - handleMouseReleased()
+          - hasUniqueID()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace fx {
+      class org.jfree.chart.fx.ChartViewer {
+          - chart : JFreeChart
+          - chartMouseListeners : List<ChartMouseListenerFX>
+          - contextMenu : ContextMenu
+          - tooltipEnabled : boolean
+          + ChartViewer()
+          + ChartViewer()
+          + addChartMouseListener()
+          + chartMouseClicked()
+          + chartMouseMoved()
+          + getChart()
+          + getRenderingInfo()
+          + hideZoomRectangle()
+          + isTooltipEnabled()
+          + removeChartMouseListener()
+          + setChart()
+          + setTooltipEnabled()
+          + showZoomRectangle()
+          # getUserAgentStylesheet()
+          - createContextMenu()
+          - handleExportToJPEG()
+          - handleExportToPDF()
+          - handleExportToPNG()
+          - handleExportToSVG()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace fx {
+      class org.jfree.chart.fx.ChartViewerSkin {
+          - canvas : ChartCanvas
+          - zoomRectangle : Rectangle
+          + ChartViewerSkin()
+          + addChartMouseListener()
+          + getRenderingInfo()
+          + getZoomFillPaint()
+          + removeChartMouseListener()
+          + setChart()
+          + setTooltipEnabled()
+          + setZoomFillPaint()
+          + setZoomRectangleVisible()
+          + showZoomRectangle()
+          - createNode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace fx {
+      class org.jfree.chart.fx.FXGraphics2D {
+          ~ rect : Rectangle2D
+          - arc : Arc2D
+          - awtColor : Color
+          - background : Color
+          - clip : Shape
+          - clippingDisabled : boolean
+          - composite : Composite
+          - fmImage : BufferedImage
+          - font : Font
+          - gc : GraphicsContext
+          - hints : RenderingHints
+          - line : Line2D
+          - oval : Ellipse2D
+          - paint : Paint
+          - roundRect : RoundRectangle2D
+          - saveCount : int
+          - stroke : Stroke
+          - transform : AffineTransform
+          - zeroStrokeWidth : double
+          + FXGraphics2D()
+          + addRenderingHints()
+          + clearRect()
+          + clip()
+          + clipRect()
+          + copyArea()
+          + create()
+          + createPolygon()
+          + dispose()
+          + draw()
+          + drawArc()
+          + drawGlyphVector()
+          + drawImage()
+          + drawImage()
+          + drawImage()
+          + drawImage()
+          + drawImage()
+          + drawImage()
+          + drawImage()
+          + drawImage()
+          + drawLine()
+          + drawOval()
+          + drawPolygon()
+          + drawPolyline()
+          + drawRenderableImage()
+          + drawRenderedImage()
+          + drawRoundRect()
+          + drawString()
+          + drawString()
+          + drawString()
+          + drawString()
+          + fill()
+          + fillArc()
+          + fillOval()
+          + fillPolygon()
+          + fillRect()
+          + fillRoundRect()
+          + getBackground()
+          + getClip()
+          + getClipBounds()
+          + getColor()
+          + getComposite()
+          + getDeviceConfiguration()
+          + getFont()
+          + getFontMetrics()
+          + getFontRenderContext()
+          + getPaint()
+          + getRenderingHint()
+          + getRenderingHints()
+          + getStroke()
+          + getTransform()
+          + getZeroStrokeWidth()
+          + hit()
+          + isClippingDisabled()
+          + rotate()
+          + rotate()
+          + scale()
+          + setBackground()
+          + setClip()
+          + setClip()
+          + setClippingDisabled()
+          + setColor()
+          + setComposite()
+          + setFont()
+          + setPaint()
+          + setPaintMode()
+          + setRenderingHint()
+          + setRenderingHints()
+          + setStroke()
+          + setTransform()
+          + setXORMode()
+          + setZeroStrokeWidth()
+          + shear()
+          + transform()
+          + translate()
+          + translate()
+          - awtColorToJavaFX()
+          - awtToJavaFXLineCap()
+          - awtToJavaFXLineJoin()
+          {static} - convertRenderedImage()
+          - intToArcType()
+          {static} - nullNotPermitted()
+          - reapplyAttributes()
+          - setArc()
+          - setOval()
+          - setRect()
+          - setRoundRect()
+          - shapeToPath()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.fx.ChartCanvas .up.|> ChartChangeListener
+  org.jfree.chart.fx.ChartViewer .up.|> ChartMouseListenerFX
+  org.jfree.chart.fx.ChartViewer .up.|> Skinnable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

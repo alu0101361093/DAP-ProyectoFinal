@@ -1,0 +1,393 @@
+@startuml
+
+title __TITLE's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace title {
+      class org.jfree.chart.title.CompositeTitle {
+          - backgroundPaint : Paint
+          - container : BlockContainer
+          {static} - serialVersionUID : long
+          + CompositeTitle()
+          + CompositeTitle()
+          + arrange()
+          + draw()
+          + draw()
+          + equals()
+          + getBackgroundPaint()
+          + getContainer()
+          + setBackgroundPaint()
+          + setTitleContainer()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace title {
+      class org.jfree.chart.title.DateTitle {
+          {static} - serialVersionUID : long
+          + DateTitle()
+          + DateTitle()
+          + DateTitle()
+          + DateTitle()
+          + setDateFormat()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace title {
+      class org.jfree.chart.title.ImageTitle {
+          - image : Image
+          + ImageTitle()
+          + ImageTitle()
+          + ImageTitle()
+          + arrange()
+          + draw()
+          + draw()
+          + equals()
+          + getImage()
+          + setImage()
+          # drawHorizontal()
+          # drawVertical()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace title {
+      class org.jfree.chart.title.LegendGraphic {
+          {static} ~ serialVersionUID : long
+          - fillPaint : Paint
+          - fillPaintTransformer : GradientPaintTransformer
+          - line : Shape
+          - linePaint : Paint
+          - lineStroke : Stroke
+          - lineVisible : boolean
+          - outlinePaint : Paint
+          - outlineStroke : Stroke
+          - shape : Shape
+          - shapeAnchor : RectangleAnchor
+          - shapeFilled : boolean
+          - shapeLocation : RectangleAnchor
+          - shapeOutlineVisible : boolean
+          - shapeVisible : boolean
+          + LegendGraphic()
+          + arrange()
+          + clone()
+          + draw()
+          + draw()
+          + equals()
+          + getFillPaint()
+          + getFillPaintTransformer()
+          + getLine()
+          + getLinePaint()
+          + getLineStroke()
+          + getOutlinePaint()
+          + getOutlineStroke()
+          + getShape()
+          + getShapeAnchor()
+          + getShapeLocation()
+          + hashCode()
+          + isLineVisible()
+          + isShapeFilled()
+          + isShapeOutlineVisible()
+          + isShapeVisible()
+          + setFillPaint()
+          + setFillPaintTransformer()
+          + setLine()
+          + setLinePaint()
+          + setLineStroke()
+          + setLineVisible()
+          + setOutlinePaint()
+          + setOutlineStroke()
+          + setShape()
+          + setShapeAnchor()
+          + setShapeFilled()
+          + setShapeLocation()
+          + setShapeOutlineVisible()
+          + setShapeVisible()
+          # arrangeNN()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace title {
+      class org.jfree.chart.title.LegendItemBlockContainer {
+          - dataset : Dataset
+          - datasetIndex : int
+          - series : int
+          - seriesKey : Comparable
+          - toolTipText : String
+          - urlText : String
+          + LegendItemBlockContainer()
+          + LegendItemBlockContainer()
+          + draw()
+          + getDataset()
+          + getDatasetIndex()
+          + getSeriesIndex()
+          + getSeriesKey()
+          + getToolTipText()
+          + getURLText()
+          + setToolTipText()
+          + setURLText()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace title {
+      class org.jfree.chart.title.LegendTitle {
+          {static} + DEFAULT_ITEM_FONT : Font
+          {static} + DEFAULT_ITEM_PAINT : Paint
+          - backgroundPaint : Paint
+          - hLayout : Arrangement
+          - itemFont : Font
+          - itemLabelPadding : RectangleInsets
+          - itemPaint : Paint
+          - items : BlockContainer
+          - legendItemGraphicAnchor : RectangleAnchor
+          - legendItemGraphicEdge : RectangleEdge
+          - legendItemGraphicLocation : RectangleAnchor
+          - legendItemGraphicPadding : RectangleInsets
+          {static} - serialVersionUID : long
+          - sortOrder : SortOrder
+          - sources : LegendItemSource[]
+          - vLayout : Arrangement
+          - wrapper : BlockContainer
+          + LegendTitle()
+          + LegendTitle()
+          + arrange()
+          + draw()
+          + draw()
+          + equals()
+          + getBackgroundPaint()
+          + getItemContainer()
+          + getItemFont()
+          + getItemLabelPadding()
+          + getItemPaint()
+          + getLegendItemGraphicAnchor()
+          + getLegendItemGraphicEdge()
+          + getLegendItemGraphicLocation()
+          + getLegendItemGraphicPadding()
+          + getSortOrder()
+          + getSources()
+          + getWrapper()
+          + setBackgroundPaint()
+          + setItemFont()
+          + setItemLabelPadding()
+          + setItemPaint()
+          + setLegendItemGraphicAnchor()
+          + setLegendItemGraphicEdge()
+          + setLegendItemGraphicLocation()
+          + setLegendItemGraphicPadding()
+          + setSortOrder()
+          + setSources()
+          + setWrapper()
+          # createLegendItemBlock()
+          # fetchLegendItems()
+          - addItemBlock()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace title {
+      class org.jfree.chart.title.PaintScaleLegend {
+          {static} ~ serialVersionUID : long
+          - axis : ValueAxis
+          - axisLocation : AxisLocation
+          - axisOffset : double
+          - backgroundPaint : Paint
+          - scale : PaintScale
+          - stripOutlinePaint : Paint
+          - stripOutlineStroke : Stroke
+          - stripOutlineVisible : boolean
+          - stripWidth : double
+          - subdivisions : int
+          + PaintScaleLegend()
+          + arrange()
+          + axisChanged()
+          + draw()
+          + draw()
+          + equals()
+          + getAxis()
+          + getAxisLocation()
+          + getAxisOffset()
+          + getBackgroundPaint()
+          + getScale()
+          + getStripOutlinePaint()
+          + getStripOutlineStroke()
+          + getStripWidth()
+          + getSubdivisionCount()
+          + isStripOutlineVisible()
+          + setAxis()
+          + setAxisLocation()
+          + setAxisOffset()
+          + setBackgroundPaint()
+          + setScale()
+          + setStripOutlinePaint()
+          + setStripOutlineStroke()
+          + setStripOutlineVisible()
+          + setStripWidth()
+          + setSubdivisionCount()
+          # arrangeRR()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace title {
+      class org.jfree.chart.title.ShortTextTitle {
+          + ShortTextTitle()
+          + arrange()
+          + draw()
+          # arrangeFN()
+          # arrangeNN()
+          # arrangeRN()
+          # arrangeRR()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace title {
+      class org.jfree.chart.title.TextTitle {
+          {static} + DEFAULT_FONT : Font
+          {static} + DEFAULT_TEXT_PAINT : Paint
+          - backgroundPaint : Paint
+          - content : TextBlock
+          - expandToFitSpace : boolean
+          - font : Font
+          - maximumLinesToDisplay : int
+          - paint : Paint
+          {static} - serialVersionUID : long
+          - text : String
+          - textAlignment : HorizontalAlignment
+          - toolTipText : String
+          - urlText : String
+          + TextTitle()
+          + TextTitle()
+          + TextTitle()
+          + TextTitle()
+          + arrange()
+          + clone()
+          + draw()
+          + draw()
+          + equals()
+          + getBackgroundPaint()
+          + getExpandToFitSpace()
+          + getFont()
+          + getMaximumLinesToDisplay()
+          + getPaint()
+          + getText()
+          + getTextAlignment()
+          + getToolTipText()
+          + getURLText()
+          + hashCode()
+          + setBackgroundPaint()
+          + setExpandToFitSpace()
+          + setFont()
+          + setMaximumLinesToDisplay()
+          + setPaint()
+          + setText()
+          + setTextAlignment()
+          + setToolTipText()
+          + setURLText()
+          # arrangeFN()
+          # arrangeNN()
+          # arrangeRN()
+          # arrangeRR()
+          # drawHorizontal()
+          # drawVertical()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace title {
+      abstract class org.jfree.chart.title.Title {
+          {static} + DEFAULT_HORIZONTAL_ALIGNMENT : HorizontalAlignment
+          {static} + DEFAULT_PADDING : RectangleInsets
+          {static} + DEFAULT_POSITION : RectangleEdge
+          {static} + DEFAULT_VERTICAL_ALIGNMENT : VerticalAlignment
+          + visible : boolean
+          - horizontalAlignment : HorizontalAlignment
+          - listenerList : EventListenerList
+          - notify : boolean
+          - position : RectangleEdge
+          {static} - serialVersionUID : long
+          - verticalAlignment : VerticalAlignment
+          + addChangeListener()
+          + clone()
+          {abstract} + draw()
+          + equals()
+          + getHorizontalAlignment()
+          + getNotify()
+          + getPosition()
+          + getVerticalAlignment()
+          + hashCode()
+          + isVisible()
+          + removeChangeListener()
+          + setHorizontalAlignment()
+          + setNotify()
+          + setPosition()
+          + setVerticalAlignment()
+          + setVisible()
+          # Title()
+          # Title()
+          # Title()
+          # notifyListeners()
+          - readObject()
+          - writeObject()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.title.CompositeTitle .up.|> Cloneable
+  org.jfree.chart.title.CompositeTitle .up.|> Serializable
+  org.jfree.chart.title.DateTitle .up.|> Serializable
+  org.jfree.chart.title.LegendGraphic .up.|> Block
+  org.jfree.chart.title.LegendGraphic .up.|> PublicCloneable
+  org.jfree.chart.title.LegendTitle .up.|> Cloneable
+  org.jfree.chart.title.LegendTitle .up.|> PublicCloneable
+  org.jfree.chart.title.LegendTitle .up.|> Serializable
+  org.jfree.chart.title.PaintScaleLegend .up.|> AxisChangeListener
+  org.jfree.chart.title.PaintScaleLegend .up.|> PublicCloneable
+  org.jfree.chart.title.TextTitle .up.|> Cloneable
+  org.jfree.chart.title.TextTitle .up.|> PublicCloneable
+  org.jfree.chart.title.TextTitle .up.|> Serializable
+  org.jfree.chart.title.Title .up.|> Block
+  org.jfree.chart.title.Title .up.|> Cloneable
+  org.jfree.chart.title.Title .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

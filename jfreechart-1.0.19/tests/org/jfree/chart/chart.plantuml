@@ -1,0 +1,566 @@
+@startuml
+
+title __CHART's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.AreaChartTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        + testSetSeriesURLGenerator()
+        {static} - createAreaChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.AreaChartTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.BarChart3DTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        + testSetSeriesURLGenerator()
+        {static} - createBarChart3D()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.BarChart3DTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.BarChartTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        + testSetSeriesURLGenerator()
+        {static} - createBarChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.BarChartTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.ChartPanelTest {
+        - chartChangeEvents : List
+        + chartChanged()
+        + chartMouseClicked()
+        + chartMouseMoved()
+        + test2502355_restoreAutoBounds()
+        + test2502355_restoreAutoDomainBounds()
+        + test2502355_restoreAutoRangeBounds()
+        + test2502355_zoom()
+        + test2502355_zoomInBoth()
+        + test2502355_zoomInDomain()
+        + test2502355_zoomInRange()
+        + test2502355_zoomOutBoth()
+        + test2502355_zoomOutDomain()
+        + test2502355_zoomOutRange()
+        + testConstructor1()
+        + testGetListeners()
+        + testSetChart()
+        + testSetMouseWheelEnabled()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.ChartRenderingInfoTest {
+        + testCloning()
+        + testEquals()
+        + testSerialization()
+        + testSerialization2()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.GanttChartTest {
+        - chart : JFreeChart
+        {static} + createDataset()
+        + setUp()
+        + testDrawWithNullInfo()
+        + testDrawWithNullInfo2()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        + testSetSeriesURLGenerator()
+        {static} - createGanttChart()
+        {static} - date()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.GanttChartTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.HashUtilitiesTest {
+        + testHashCodeForDoubleArray()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.JFreeChartTest {
+        - lastChartChangeEvent : ChartChangeEvent
+        - pieChart : JFreeChart
+        + chartChanged()
+        + setUp()
+        + testAddSubtitle()
+        + testBug942()
+        + testEquals()
+        + testEquals2()
+        + testGetSubtitle()
+        + testGetSubtitles()
+        + testLegendEvents()
+        + testSerialization1()
+        + testSerialization2()
+        + testSerialization3()
+        + testSerialization4()
+        + testSubtitleCount()
+        + testTitleChangeEvent()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.LegendItemCollectionTest {
+        + testCloning()
+        + testEquals()
+        + testSerialization()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.LegendItemTest {
+        + testCloning()
+        + testEquals()
+        + testSerialization()
+        + testSerialization2()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.LineChart3DTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        + testSetSeriesURLGenerator()
+        {static} - createLineChart3D()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.LineChart3DTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.LineChartTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        + testSetSeriesURLGenerator()
+        {static} - createLineChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.LineChartTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.MeterChartTest {
+        + testDrawWithNullInfo()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.PaintMapTest {
+        + testCloning()
+        + testEquals()
+        + testGetPaint()
+        + testKeysOfDifferentClasses()
+        + testPut()
+        + testSerialization1()
+        + testSerialization2()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.PieChart3DTest {
+        - pieChart : JFreeChart
+        + setUp()
+        + testNullValueInDataset()
+        + testReplaceDatasetOnPieChart()
+        {static} - createPieChart3D()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.PieChart3DTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.PieChartTest {
+        - pieChart : JFreeChart
+        + setUp()
+        + testReplaceDatasetOnPieChart()
+        {static} - createPieChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.PieChartTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.ScatterPlotTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        {static} - createChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.ScatterPlotTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.StackedAreaChartTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        + testSetSeriesURLGenerator()
+        {static} - createChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.StackedAreaChartTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.StackedBarChart3DTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        + testSetSeriesURLGenerator()
+        {static} - createChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.StackedBarChart3DTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.StackedBarChartTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        + testSetSeriesURLGenerator()
+        {static} - createChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.StackedBarChartTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.StandardChartThemeTest {
+        + testCloning()
+        + testEquals()
+        + testSerialization()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.StrokeMapTest {
+        + testCloning()
+        + testEquals()
+        + testGetStroke()
+        + testPut()
+        + testSerialization1()
+        + testSerialization2()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.TestUtilities {
+        {static} + containsInstanceOf()
+        {static} + serialised()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.TimeSeriesChartTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        {static} - createChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.TimeSeriesChartTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.WaterfallChartTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testSetSeriesToolTipGenerator()
+        + testSetSeriesURLGenerator()
+        {static} - createWaterfallChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.XYAreaChartTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        {static} - createChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.XYAreaChartTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.XYBarChartTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        {static} - createChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.XYBarChartTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.XYLineChartTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        {static} - createChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.XYLineChartTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.XYStepAreaChartTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        {static} - createChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.XYStepAreaChartTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.XYStepChartTest {
+        - chart : JFreeChart
+        + setUp()
+        + testDrawWithNullInfo()
+        + testReplaceDataset()
+        + testSetSeriesToolTipGenerator()
+        {static} - createChart()
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    class org.jfree.chart.XYStepChartTest.LocalListener {
+        - flag : boolean
+        + chartChanged()
+    }
+  }
+  
+
+  org.jfree.chart.AreaChartTest +-down- org.jfree.chart.AreaChartTest.LocalListener
+  org.jfree.chart.AreaChartTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.BarChart3DTest +-down- org.jfree.chart.BarChart3DTest.LocalListener
+  org.jfree.chart.BarChart3DTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.BarChartTest +-down- org.jfree.chart.BarChartTest.LocalListener
+  org.jfree.chart.BarChartTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.ChartPanelTest .up.|> ChartChangeListener
+  org.jfree.chart.ChartPanelTest .up.|> ChartMouseListener
+  org.jfree.chart.GanttChartTest +-down- org.jfree.chart.GanttChartTest.LocalListener
+  org.jfree.chart.GanttChartTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.JFreeChartTest .up.|> ChartChangeListener
+  org.jfree.chart.LineChart3DTest +-down- org.jfree.chart.LineChart3DTest.LocalListener
+  org.jfree.chart.LineChart3DTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.LineChartTest +-down- org.jfree.chart.LineChartTest.LocalListener
+  org.jfree.chart.LineChartTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.PieChart3DTest +-down- org.jfree.chart.PieChart3DTest.LocalListener
+  org.jfree.chart.PieChart3DTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.PieChartTest +-down- org.jfree.chart.PieChartTest.LocalListener
+  org.jfree.chart.PieChartTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.ScatterPlotTest +-down- org.jfree.chart.ScatterPlotTest.LocalListener
+  org.jfree.chart.ScatterPlotTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.StackedAreaChartTest +-down- org.jfree.chart.StackedAreaChartTest.LocalListener
+  org.jfree.chart.StackedAreaChartTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.StackedBarChart3DTest +-down- org.jfree.chart.StackedBarChart3DTest.LocalListener
+  org.jfree.chart.StackedBarChart3DTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.StackedBarChartTest +-down- org.jfree.chart.StackedBarChartTest.LocalListener
+  org.jfree.chart.StackedBarChartTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.TimeSeriesChartTest +-down- org.jfree.chart.TimeSeriesChartTest.LocalListener
+  org.jfree.chart.TimeSeriesChartTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.XYAreaChartTest +-down- org.jfree.chart.XYAreaChartTest.LocalListener
+  org.jfree.chart.XYAreaChartTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.XYBarChartTest +-down- org.jfree.chart.XYBarChartTest.LocalListener
+  org.jfree.chart.XYBarChartTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.XYLineChartTest +-down- org.jfree.chart.XYLineChartTest.LocalListener
+  org.jfree.chart.XYLineChartTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.XYStepAreaChartTest +-down- org.jfree.chart.XYStepAreaChartTest.LocalListener
+  org.jfree.chart.XYStepAreaChartTest.LocalListener .up.|> ChartChangeListener
+  org.jfree.chart.XYStepChartTest +-down- org.jfree.chart.XYStepChartTest.LocalListener
+  org.jfree.chart.XYStepChartTest.LocalListener .up.|> ChartChangeListener
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

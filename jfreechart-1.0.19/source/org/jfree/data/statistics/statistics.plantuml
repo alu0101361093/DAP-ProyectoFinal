@@ -1,0 +1,523 @@
+@startuml
+
+title __STATISTICS's Class Diagram__\n
+
+  namespace org.jfree.data {
+    namespace statistics {
+      abstract class org.jfree.data.statistics.BoxAndWhiskerCalculator {
+          {static} + calculateBoxAndWhiskerStatistics()
+          {static} + calculateBoxAndWhiskerStatistics()
+          {static} + calculateQ1()
+          {static} + calculateQ3()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      interface org.jfree.data.statistics.BoxAndWhiskerCategoryDataset {
+          {abstract} + getMaxOutlier()
+          {abstract} + getMaxOutlier()
+          {abstract} + getMaxRegularValue()
+          {abstract} + getMaxRegularValue()
+          {abstract} + getMeanValue()
+          {abstract} + getMeanValue()
+          {abstract} + getMedianValue()
+          {abstract} + getMedianValue()
+          {abstract} + getMinOutlier()
+          {abstract} + getMinOutlier()
+          {abstract} + getMinRegularValue()
+          {abstract} + getMinRegularValue()
+          {abstract} + getOutliers()
+          {abstract} + getOutliers()
+          {abstract} + getQ1Value()
+          {abstract} + getQ1Value()
+          {abstract} + getQ3Value()
+          {abstract} + getQ3Value()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      class org.jfree.data.statistics.BoxAndWhiskerItem {
+          - maxOutlier : Number
+          - maxRegularValue : Number
+          - mean : Number
+          - median : Number
+          - minOutlier : Number
+          - minRegularValue : Number
+          - outliers : List
+          - q1 : Number
+          - q3 : Number
+          {static} - serialVersionUID : long
+          + BoxAndWhiskerItem()
+          + BoxAndWhiskerItem()
+          + equals()
+          + getMaxOutlier()
+          + getMaxRegularValue()
+          + getMean()
+          + getMedian()
+          + getMinOutlier()
+          + getMinRegularValue()
+          + getOutliers()
+          + getQ1()
+          + getQ3()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      interface org.jfree.data.statistics.BoxAndWhiskerXYDataset {
+          {abstract} + getFaroutCoefficient()
+          {abstract} + getMaxOutlier()
+          {abstract} + getMaxRegularValue()
+          {abstract} + getMeanValue()
+          {abstract} + getMedianValue()
+          {abstract} + getMinOutlier()
+          {abstract} + getMinRegularValue()
+          {abstract} + getOutlierCoefficient()
+          {abstract} + getOutliers()
+          {abstract} + getQ1Value()
+          {abstract} + getQ3Value()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      class org.jfree.data.statistics.DefaultBoxAndWhiskerCategoryDataset {
+          # data : KeyedObjects2D
+          - maximumRangeValue : double
+          - maximumRangeValueColumn : int
+          - maximumRangeValueRow : int
+          - minimumRangeValue : double
+          - minimumRangeValueColumn : int
+          - minimumRangeValueRow : int
+          + DefaultBoxAndWhiskerCategoryDataset()
+          + add()
+          + add()
+          + clear()
+          + clone()
+          + equals()
+          + getColumnCount()
+          + getColumnIndex()
+          + getColumnKey()
+          + getColumnKeys()
+          + getItem()
+          + getMaxOutlier()
+          + getMaxOutlier()
+          + getMaxRegularValue()
+          + getMaxRegularValue()
+          + getMeanValue()
+          + getMeanValue()
+          + getMedianValue()
+          + getMedianValue()
+          + getMinOutlier()
+          + getMinOutlier()
+          + getMinRegularValue()
+          + getMinRegularValue()
+          + getOutliers()
+          + getOutliers()
+          + getQ1Value()
+          + getQ1Value()
+          + getQ3Value()
+          + getQ3Value()
+          + getRangeBounds()
+          + getRangeLowerBound()
+          + getRangeUpperBound()
+          + getRowCount()
+          + getRowIndex()
+          + getRowKey()
+          + getRowKeys()
+          + getValue()
+          + getValue()
+          + remove()
+          + removeColumn()
+          + removeColumn()
+          + removeRow()
+          + removeRow()
+          - updateBounds()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      class org.jfree.data.statistics.DefaultBoxAndWhiskerXYDataset {
+          - dates : List
+          - faroutCoefficient : double
+          - items : List
+          - maximumRangeValue : Number
+          - minimumRangeValue : Number
+          - outlierCoefficient : double
+          - rangeBounds : Range
+          - seriesKey : Comparable
+          + DefaultBoxAndWhiskerXYDataset()
+          + add()
+          + clone()
+          + equals()
+          + getFaroutCoefficient()
+          + getItem()
+          + getItemCount()
+          + getMaxOutlier()
+          + getMaxRegularValue()
+          + getMeanValue()
+          + getMedianValue()
+          + getMinOutlier()
+          + getMinRegularValue()
+          + getOutlierCoefficient()
+          + getOutliers()
+          + getQ1Value()
+          + getQ3Value()
+          + getRangeBounds()
+          + getRangeLowerBound()
+          + getRangeUpperBound()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getX()
+          + getXDate()
+          + getY()
+          + setFaroutCoefficient()
+          + setOutlierCoefficient()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      class org.jfree.data.statistics.DefaultMultiValueCategoryDataset {
+          # data : KeyedObjects2D
+          - maximumRangeValue : Number
+          - minimumRangeValue : Number
+          - rangeBounds : Range
+          + DefaultMultiValueCategoryDataset()
+          + add()
+          + clone()
+          + equals()
+          + getColumnCount()
+          + getColumnIndex()
+          + getColumnKey()
+          + getColumnKeys()
+          + getRangeBounds()
+          + getRangeLowerBound()
+          + getRangeUpperBound()
+          + getRowCount()
+          + getRowIndex()
+          + getRowKey()
+          + getRowKeys()
+          + getValue()
+          + getValue()
+          + getValues()
+          + getValues()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      class org.jfree.data.statistics.DefaultStatisticalCategoryDataset {
+          - data : KeyedObjects2D
+          - maximumRangeValue : double
+          - maximumRangeValueColumn : int
+          - maximumRangeValueIncStdDev : double
+          - maximumRangeValueIncStdDevColumn : int
+          - maximumRangeValueIncStdDevRow : int
+          - maximumRangeValueRow : int
+          - minimumRangeValue : double
+          - minimumRangeValueColumn : int
+          - minimumRangeValueIncStdDev : double
+          - minimumRangeValueIncStdDevColumn : int
+          - minimumRangeValueIncStdDevRow : int
+          - minimumRangeValueRow : int
+          + DefaultStatisticalCategoryDataset()
+          + add()
+          + add()
+          + clear()
+          + clone()
+          + equals()
+          + getColumnCount()
+          + getColumnIndex()
+          + getColumnKey()
+          + getColumnKeys()
+          + getMeanValue()
+          + getMeanValue()
+          + getRangeBounds()
+          + getRangeLowerBound()
+          + getRangeUpperBound()
+          + getRowCount()
+          + getRowIndex()
+          + getRowKey()
+          + getRowKeys()
+          + getStdDevValue()
+          + getStdDevValue()
+          + getValue()
+          + getValue()
+          + remove()
+          + removeColumn()
+          + removeColumn()
+          + removeRow()
+          + removeRow()
+          - updateBounds()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      class org.jfree.data.statistics.HistogramBin {
+          - count : int
+          - endBoundary : double
+          {static} - serialVersionUID : long
+          - startBoundary : double
+          + HistogramBin()
+          + clone()
+          + equals()
+          + getBinWidth()
+          + getCount()
+          + getEndBoundary()
+          + getStartBoundary()
+          + incrementCount()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      class org.jfree.data.statistics.HistogramDataset {
+          - list : List
+          {static} - serialVersionUID : long
+          - type : HistogramType
+          + HistogramDataset()
+          + addSeries()
+          + addSeries()
+          + clone()
+          + equals()
+          + getEndX()
+          + getEndY()
+          + getItemCount()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartY()
+          + getType()
+          + getX()
+          + getY()
+          + setType()
+          ~ getBins()
+          - getBinWidth()
+          - getMaximum()
+          - getMinimum()
+          - getTotal()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      class org.jfree.data.statistics.HistogramType {
+          {static} + FREQUENCY : HistogramType
+          {static} + RELATIVE_FREQUENCY : HistogramType
+          {static} + SCALE_AREA_TO_1 : HistogramType
+          - name : String
+          {static} - serialVersionUID : long
+          + equals()
+          + hashCode()
+          + toString()
+          - HistogramType()
+          - readResolve()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      class org.jfree.data.statistics.MeanAndStandardDeviation {
+          - mean : Number
+          {static} - serialVersionUID : long
+          - standardDeviation : Number
+          + MeanAndStandardDeviation()
+          + MeanAndStandardDeviation()
+          + equals()
+          + getMean()
+          + getMeanValue()
+          + getStandardDeviation()
+          + getStandardDeviationValue()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      interface org.jfree.data.statistics.MultiValueCategoryDataset {
+          {abstract} + getValues()
+          {abstract} + getValues()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      abstract class org.jfree.data.statistics.Regression {
+          {static} + getOLSRegression()
+          {static} + getOLSRegression()
+          {static} + getPolynomialRegression()
+          {static} + getPowerRegression()
+          {static} + getPowerRegression()
+          {static} - calculateSubMatrix()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      class org.jfree.data.statistics.SimpleHistogramBin {
+          - includeLowerBound : boolean
+          - includeUpperBound : boolean
+          - itemCount : int
+          - lowerBound : double
+          {static} - serialVersionUID : long
+          - upperBound : double
+          + SimpleHistogramBin()
+          + SimpleHistogramBin()
+          + accepts()
+          + clone()
+          + compareTo()
+          + equals()
+          + getItemCount()
+          + getLowerBound()
+          + getUpperBound()
+          + overlapsWith()
+          + setItemCount()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      class org.jfree.data.statistics.SimpleHistogramDataset {
+          - adjustForBinSize : boolean
+          - bins : List
+          - key : Comparable
+          {static} - serialVersionUID : long
+          + SimpleHistogramDataset()
+          + addBin()
+          + addObservation()
+          + addObservation()
+          + addObservations()
+          + clearObservations()
+          + clone()
+          + equals()
+          + getAdjustForBinSize()
+          + getDomainOrder()
+          + getEndX()
+          + getEndXValue()
+          + getEndY()
+          + getEndYValue()
+          + getItemCount()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartXValue()
+          + getStartY()
+          + getStartYValue()
+          + getX()
+          + getXValue()
+          + getY()
+          + getYValue()
+          + removeAllBins()
+          + setAdjustForBinSize()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      interface org.jfree.data.statistics.StatisticalCategoryDataset {
+          {abstract} + getMeanValue()
+          {abstract} + getMeanValue()
+          {abstract} + getStdDevValue()
+          {abstract} + getStdDevValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace statistics {
+      abstract class org.jfree.data.statistics.Statistics {
+          {static} + calculateMean()
+          {static} + calculateMean()
+          {static} + calculateMean()
+          {static} + calculateMean()
+          {static} + calculateMedian()
+          {static} + calculateMedian()
+          {static} + calculateMedian()
+          {static} + calculateMedian()
+          {static} + getCorrelation()
+          {static} + getLinearFit()
+          {static} + getMovingAverage()
+          {static} + getSlope()
+          {static} + getStdDev()
+      }
+    }
+  }
+  
+
+  org.jfree.data.statistics.BoxAndWhiskerItem .up.|> Serializable
+  org.jfree.data.statistics.DefaultBoxAndWhiskerCategoryDataset .up.|> BoxAndWhiskerCategoryDataset
+  org.jfree.data.statistics.DefaultBoxAndWhiskerCategoryDataset .up.|> PublicCloneable
+  org.jfree.data.statistics.DefaultBoxAndWhiskerCategoryDataset .up.|> RangeInfo
+  org.jfree.data.statistics.DefaultBoxAndWhiskerXYDataset .up.|> BoxAndWhiskerXYDataset
+  org.jfree.data.statistics.DefaultBoxAndWhiskerXYDataset .up.|> RangeInfo
+  org.jfree.data.statistics.DefaultMultiValueCategoryDataset .up.|> MultiValueCategoryDataset
+  org.jfree.data.statistics.DefaultMultiValueCategoryDataset .up.|> PublicCloneable
+  org.jfree.data.statistics.DefaultMultiValueCategoryDataset .up.|> RangeInfo
+  org.jfree.data.statistics.DefaultStatisticalCategoryDataset .up.|> PublicCloneable
+  org.jfree.data.statistics.DefaultStatisticalCategoryDataset .up.|> RangeInfo
+  org.jfree.data.statistics.DefaultStatisticalCategoryDataset .up.|> StatisticalCategoryDataset
+  org.jfree.data.statistics.HistogramBin .up.|> Cloneable
+  org.jfree.data.statistics.HistogramBin .up.|> Serializable
+  org.jfree.data.statistics.HistogramDataset .up.|> Cloneable
+  org.jfree.data.statistics.HistogramDataset .up.|> IntervalXYDataset
+  org.jfree.data.statistics.HistogramDataset .up.|> PublicCloneable
+  org.jfree.data.statistics.HistogramDataset .up.|> Serializable
+  org.jfree.data.statistics.HistogramType .up.|> Serializable
+  org.jfree.data.statistics.MeanAndStandardDeviation .up.|> Serializable
+  org.jfree.data.statistics.SimpleHistogramBin .up.|> Cloneable
+  org.jfree.data.statistics.SimpleHistogramBin .up.|> Comparable
+  org.jfree.data.statistics.SimpleHistogramBin .up.|> PublicCloneable
+  org.jfree.data.statistics.SimpleHistogramBin .up.|> Serializable
+  org.jfree.data.statistics.SimpleHistogramDataset .up.|> Cloneable
+  org.jfree.data.statistics.SimpleHistogramDataset .up.|> IntervalXYDataset
+  org.jfree.data.statistics.SimpleHistogramDataset .up.|> PublicCloneable
+  org.jfree.data.statistics.SimpleHistogramDataset .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,522 @@
+@startuml
+
+title __TIME's Class Diagram__\n
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.DateRangeTest {
+          + testClone()
+          + testEquals()
+          + testImmutable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.DayTest {
+          + test1Jan1900Next()
+          + test1Jan1900Previous()
+          + test31Dec9999Next()
+          + test31Dec9999Previous()
+          + testDateConstructor1()
+          + testDateConstructor2()
+          + testEquals()
+          + testEqualsSelf()
+          + testGetEnd()
+          + testGetFirstMillisecond()
+          + testGetFirstMillisecondWithCalendar()
+          + testGetFirstMillisecondWithTimeZone()
+          + testGetLastMillisecond()
+          + testGetLastMillisecondWithCalendar()
+          + testGetLastMillisecondWithTimeZone()
+          + testGetSerialIndex()
+          + testGetStart()
+          + testHashcode()
+          + testNext()
+          + testNotCloneable()
+          + testParseDay()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.FixedMillisecondTest {
+          + testHashcode()
+          + testImmutability()
+          + testNotCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.HourTest {
+          + testDateConstructor1()
+          + testDateConstructor2()
+          + testEquals()
+          + testEqualsSelf()
+          + testFirstHourNext()
+          + testFirstHourPrevious()
+          + testGetEnd()
+          + testGetFirstMillisecond()
+          + testGetFirstMillisecondWithCalendar()
+          + testGetFirstMillisecondWithTimeZone()
+          + testGetLastMillisecond()
+          + testGetLastMillisecondWithCalendar()
+          + testGetLastMillisecondWithTimeZone()
+          + testGetSerialIndex()
+          + testGetStart()
+          + testHashcode()
+          + testLastHourNext()
+          + testLastHourPrevious()
+          + testNext()
+          + testNotCloneable()
+          + testParseHour()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.MillisecondTest {
+          + test943985()
+          + testDateConstructor1()
+          + testDateConstructor2()
+          + testEquals()
+          + testEqualsSelf()
+          + testGetEnd()
+          + testGetFirstMillisecond()
+          + testGetFirstMillisecondWithCalendar()
+          + testGetFirstMillisecondWithTimeZone()
+          + testGetLastMillisecond()
+          + testGetLastMillisecondWithCalendar()
+          + testGetLastMillisecondWithTimeZone()
+          + testGetSerialIndex()
+          + testGetStart()
+          + testHashcode()
+          + testNext()
+          + testNotCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.MinuteTest {
+          + test1611872()
+          + testDateConstructor1()
+          + testDateConstructor2()
+          + testEquals()
+          + testEqualsSelf()
+          + testGetEnd()
+          + testGetFirstMillisecond()
+          + testGetFirstMillisecondWithCalendar()
+          + testGetFirstMillisecondWithTimeZone()
+          + testGetLastMillisecond()
+          + testGetLastMillisecondWithCalendar()
+          + testGetLastMillisecondWithTimeZone()
+          + testGetSerialIndex()
+          + testGetStart()
+          + testHashcode()
+          + testNext()
+          + testNotCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.MonthTest {
+          - dec9999 : Month
+          - feb1900 : Month
+          - jan1900 : Month
+          - nov9999 : Month
+          + setUp()
+          + testDateConstructor1()
+          + testDateConstructor2()
+          + testDec9999Next()
+          + testDec9999Previous()
+          + testEquals()
+          + testEqualsSelf()
+          + testGetEnd()
+          + testGetFirstMillisecond()
+          + testGetFirstMillisecondWithCalendar()
+          + testGetFirstMillisecondWithTimeZone()
+          + testGetLastMillisecond()
+          + testGetLastMillisecondWithCalendar()
+          + testGetLastMillisecondWithTimeZone()
+          + testGetSerialIndex()
+          + testGetStart()
+          + testHashcode()
+          + testJan1900Next()
+          + testJan1900Previous()
+          + testNext()
+          + testNotCloneable()
+          + testParseMonth()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.MovingAverageTest {
+          {static} - EPSILON : double
+          + test1()
+          - createDailyTimeSeries1()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.QuarterTest {
+          - q1Y1900 : Quarter
+          - q2Y1900 : Quarter
+          - q3Y9999 : Quarter
+          - q4Y9999 : Quarter
+          + setUp()
+          + testConstructor()
+          + testDateConstructor1()
+          + testDateConstructor2()
+          + testEquals()
+          + testEqualsSelf()
+          + testGetEnd()
+          + testGetFirstMillisecond()
+          + testGetFirstMillisecondWithCalendar()
+          + testGetFirstMillisecondWithTimeZone()
+          + testGetLastMillisecond()
+          + testGetLastMillisecondWithCalendar()
+          + testGetLastMillisecondWithTimeZone()
+          + testGetSerialIndex()
+          + testGetStart()
+          + testHashcode()
+          + testNext()
+          + testNotCloneable()
+          + testParseQuarter()
+          + testQ1Y1900Next()
+          + testQ1Y1900Previous()
+          + testQ4Y9999Next()
+          + testQ4Y9999Previous()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.SecondTest {
+          + testDateConstructor1()
+          + testDateConstructor2()
+          + testEquals()
+          + testEqualsSelf()
+          + testGetEnd()
+          + testGetFirstMillisecond()
+          + testGetFirstMillisecondWithCalendar()
+          + testGetFirstMillisecondWithTimeZone()
+          + testGetLastMillisecond()
+          + testGetLastMillisecondWithCalendar()
+          + testGetLastMillisecondWithTimeZone()
+          + testGetSerialIndex()
+          + testGetStart()
+          + testHashcode()
+          + testNext()
+          + testNotCloneable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.SimpleTimePeriodTest {
+          + testClone()
+          + testCompareTo()
+          + testEquals()
+          + testEqualsSelf()
+          + testHashcode()
+          + testImmutable()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimePeriodAnchorTest {
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimePeriodValueTest {
+          + testEquals()
+          + testEqualsSelf()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimePeriodValuesCollectionTest {
+          {static} - EPSILON : double
+          + test1161340()
+          + testEquals()
+          + testGetDomainBoundsWithInterval()
+          + testGetDomainBoundsWithoutInterval()
+          + testGetSeries()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimePeriodValuesTest {
+          {static} ~ EPSILON : double
+          - seriesA : TimePeriodValues
+          - seriesB : TimePeriodValues
+          - seriesC : TimePeriodValues
+          + getMaxEndIndex()
+          + getMinEndIndex()
+          + setUp()
+          + test1161329()
+          + testAdd()
+          + testAddValue()
+          + testClone()
+          + testEquals()
+          + testGetMaxMiddleIndex()
+          + testGetMaxStartIndex()
+          + testGetMinMiddleIndex()
+          + testGetMinStartIndex()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimePeriodValuesTest.MySeriesChangeListener {
+          ~ lastEvent : SeriesChangeEvent
+          + MySeriesChangeListener()
+          + clearLastEvent()
+          + getLastEvent()
+          + seriesChanged()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimeSeriesCollectionTest {
+          {static} - EPSILON : double
+          + test1170825()
+          + testBug3445507()
+          + testCloning()
+          + testEquals()
+          + testFindDomainBounds()
+          + testGetRangeBounds()
+          + testGetRangeBounds2()
+          + testGetSurroundingItems()
+          + testIndexOf()
+          + testRemoveSeries()
+          + testRemoveSeries_int()
+          + testSerialization()
+          - createSeries()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimeSeriesDataItemTest {
+          + testEquals()
+          + testEqualsSelf()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimeSeriesTest {
+          {static} - EPSILON : double
+          - gotSeriesChangeEvent : boolean
+          - seriesA : TimeSeries
+          - seriesB : TimeSeries
+          - seriesC : TimeSeries
+          + seriesChanged()
+          + setUp()
+          + testAdd()
+          + testAddOrUpdate()
+          + testAddOrUpdate2()
+          + testAddOrUpdate3()
+          + testAddOrUpdate4()
+          + testAddValue()
+          + testAdd_TimeSeriesDataItem()
+          + testBug1075255()
+          + testBug1832432()
+          + testBug1864222()
+          + testBug3446965()
+          + testClear()
+          + testClone()
+          + testClone2()
+          + testCreateCopy1()
+          + testCreateCopy2()
+          + testCreateCopy3()
+          + testDelete()
+          + testDelete2()
+          + testDelete3()
+          + testDelete_RegularTimePeriod()
+          + testEquals()
+          + testEquals2()
+          + testEquals3()
+          + testFindValueRange()
+          + testFindValueRange2()
+          + testGetDataItem1()
+          + testGetDataItem2()
+          + testGetIndex()
+          + testGetMaxY()
+          + testGetMaxY2()
+          + testGetMinY()
+          + testGetMinY2()
+          + testGetValue()
+          + testHashCode()
+          + testRemoveAgedItems()
+          + testRemoveAgedItems2()
+          + testRemoveAgedItems3()
+          + testRemoveAgedItems4()
+          + testRemoveAgedItems5()
+          + testSerialization()
+          + testSetKey()
+          + testSetMaximumItemCount()
+          + testUpdate_RegularTimePeriod()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.TimeTableXYDatasetTest {
+          {static} - DELTA : double
+          + testClear()
+          + testClone()
+          + testEquals()
+          + testGetTimePeriod()
+          + testSerialization()
+          + testStandard()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.WeekTest {
+          - w1Y1900 : Week
+          - w2Y1900 : Week
+          - w51Y9999 : Week
+          - w52Y9999 : Week
+          + setUp()
+          + testBug1448828()
+          + testBug1498805()
+          + testConstructor()
+          + testEquals()
+          + testGetEnd()
+          + testGetFirstMillisecond()
+          + testGetFirstMillisecondWithCalendar()
+          + testGetFirstMillisecondWithTimeZone()
+          + testGetLastMillisecond()
+          + testGetLastMillisecondWithCalendar()
+          + testGetLastMillisecondWithTimeZone()
+          + testGetSerialIndex()
+          + testGetStart()
+          + testHashcode()
+          + testNext()
+          + testNotCloneable()
+          + testSerialization()
+          + testW1Y1900Next()
+          + testW1Y1900Previous()
+          + testW52Y9999Next()
+          + testW52Y9999Previous()
+          + testWeek12005()
+          + testWeek532005()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace time {
+      class org.jfree.data.time.YearTest {
+          + test1900Next()
+          + test9999Next()
+          + test9999Previous()
+          + testDateConstructor1()
+          + testDateConstructor2()
+          + testEquals()
+          + testEqualsSelf()
+          + testGetEnd()
+          + testGetFirstMillisecond()
+          + testGetFirstMillisecondWithCalendar()
+          + testGetFirstMillisecondWithTimeZone()
+          + testGetLastMillisecond()
+          + testGetLastMillisecondWithCalendar()
+          + testGetLastMillisecondWithTimeZone()
+          + testGetSerialIndex()
+          + testGetStart()
+          + testHashcode()
+          + testMinuss9999Previous()
+          + testNext()
+          + testNotCloneable()
+          + testParseYear()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  org.jfree.data.time.TimePeriodValuesTest +-down- org.jfree.data.time.TimePeriodValuesTest.MySeriesChangeListener
+  org.jfree.data.time.TimePeriodValuesTest.MySeriesChangeListener .up.|> SeriesChangeListener
+  org.jfree.data.time.TimeSeriesTest .up.|> SeriesChangeListener
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

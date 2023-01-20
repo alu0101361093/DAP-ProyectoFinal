@@ -1,0 +1,561 @@
+@startuml
+
+title __AXIS's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.AxisLocationTest {
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.AxisSpaceTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.AxisTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryAnchorTest {
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryAxis3DTest {
+          + testCloning()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryAxisTest {
+          + testCloning()
+          + testCloning2()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryLabelPositionTest {
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryLabelPositionsTest {
+          {static} - RA_BOTTOM : RectangleAnchor
+          {static} - RA_TOP : RectangleAnchor
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryLabelWidthTypeTest {
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CategoryTickTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.ColorBarTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.CyclicNumberAxisTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.DateAxisTest {
+          + test1472942()
+          + testBug2201869()
+          + testBug3484403()
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testJava2DToValue()
+          + testPreviousStandardDateDayA()
+          + testPreviousStandardDateDayB()
+          + testPreviousStandardDateHourA()
+          + testPreviousStandardDateHourB()
+          + testPreviousStandardDateMillisecondA()
+          + testPreviousStandardDateMillisecondB()
+          + testPreviousStandardDateMonthA()
+          + testPreviousStandardDateMonthB()
+          + testPreviousStandardDateSecondA()
+          + testPreviousStandardDateSecondB()
+          + testPreviousStandardDateYearA()
+          + testPreviousStandardDateYearB()
+          + testSerialization()
+          + testSetMaximumDate()
+          + testSetMinimumDate()
+          + testSetRange()
+          - same()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.DateAxisTest.MyDateAxis {
+          + MyDateAxis()
+          + previousStandardDate()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.DateTickMarkPositionTest {
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.DateTickTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.DateTickUnitTest {
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.ExtendedCategoryAxisTest {
+          + testCloning()
+          + testCloning2()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.LogAxisTest {
+          {static} - EPSILON : double
+          + testAutoRange1()
+          + testAutoRange3()
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testRefreshTicksWithZeroTickUnit()
+          + testSerialization()
+          + testSetLowerBound()
+          + testTickMarksVisibleDefault()
+          + testTranslateJava2DToValue()
+          + testXYAutoRange1()
+          + testXYAutoRange2()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.LogarithmicAxisTest {
+          {static} + EPSILON : double
+          + setUp()
+          + testAdjustedLog10()
+          + testJava2DToValue()
+          + testSerialization()
+          + testSwitchedLog10()
+          + testValueToJava2D()
+          - checkLogPowRoundTrip()
+          - checkPointsToJava2D()
+          - checkPointsToValue()
+          - checkSwitchedLogPowRoundTrip()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.LogarithmicAxisTest.MyLogarithmicAxis {
+          + MyLogarithmicAxis()
+          # switchedLog10()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.MarkerAxisBandTest {
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.ModuloAxisTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.MonthDateFormatTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.NumberAxis3DTest {
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.NumberAxisTest {
+          {static} - EPSILON : double
+          + testAutoRange1()
+          + testAutoRange2()
+          + testAutoRange3()
+          + testAutoRange4()
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+          + testSetLowerBound()
+          + testTranslateJava2DToValue()
+          + testXYAutoRange1()
+          + testXYAutoRange2()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.NumberTickUnitTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.PeriodAxisLabelInfoTest {
+          + testCloning()
+          + testCreateInstance()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.PeriodAxisTest {
+          {static} - EPSILON : double
+          - lastEvent : AxisChangeEvent
+          + axisChanged()
+          + test1932146()
+          + test2490803()
+          + testCloning()
+          + testEquals()
+          + testEqualsWithLocale()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.QuarterDateFormatTest {
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.SegmentedTimelineAdditionalTest {
+          + SegmentedTimelineAdditionalTest()
+          + test1()
+          + test2()
+          + test3()
+          + test4()
+          + test5()
+          + test6()
+          + test7()
+          + test8()
+          - getTimeline()
+          - getTimeline()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.SegmentedTimelineTest {
+          {static} - DATE_FORMAT : SimpleDateFormat
+          {static} - DATE_TIME_FORMAT : SimpleDateFormat
+          {static} - FIFTEEN_MIN_EXCEPTIONS : String[]
+          {static} - FIVE_YEARS : long
+          {static} - MS2_BASE_TIMELINE_EXCEPTIONS : String[]
+          {static} - MS_EXCEPTIONS : String[]
+          {static} - NUMBER_FORMAT : NumberFormat
+          {static} - TEST_CYCLE_END : int
+          {static} - TEST_CYCLE_INC : int
+          {static} - TEST_CYCLE_START : int
+          {static} - US_HOLIDAYS : String[]
+          - fifteenMinTimeline : SegmentedTimeline
+          - monday : Calendar
+          - monday9am : Calendar
+          - mondayFridayTimeline : SegmentedTimeline
+          - ms2BaseTimeline : SegmentedTimeline
+          - ms2Timeline : SegmentedTimeline
+          - msTimeline : SegmentedTimeline
+          + setUp()
+          + testBasicSegmentedTimeline()
+          + testCloning()
+          + testEquals()
+          + testFifteenMinExceptionSegments()
+          + testFifteenMinInc()
+          + testFifteenMinIncludedAndExcludedSegments()
+          + testFifteenMinSegment()
+          + testFifteenMinSegmentedTimeline()
+          + testFifteenMinTranslations()
+          + testHashCode()
+          + testMondayThoughFridayExceptionSegments()
+          + testMondayThroughFridayInc()
+          + testMondayThroughFridayIncludedAndExcludedSegments()
+          + testMondayThroughFridaySegment()
+          + testMondayThroughFridaySegmentedTimeline()
+          + testMondayThroughFridayTranslations()
+          + testMs2BaseTimelineExceptionSegments()
+          + testMs2BaseTimelineTranslations()
+          + testMs2Inc()
+          + testMs2IncludedAndExcludedSegments()
+          + testMs2Segment()
+          + testMs2SegmentedTimeline()
+          + testMs2Translations()
+          + testMsExceptionSegments()
+          + testMsInc()
+          + testMsIncludedAndExcludedSegments()
+          + testMsSegment()
+          + testMsSegmentedTimeline()
+          + testMsTranslations()
+          + testSegmentedTimelineWithException1()
+          + testSerialization()
+          + testSerialization2()
+          + verifyExceptionSegments()
+          + verifyInc()
+          + verifyIncludedAndExcludedSegments()
+          + verifyOneSegment()
+          + verifyTranslations()
+          - fillInBaseTimelineExceptions()
+          - fillInBaseTimelineExclusionsAsExceptions()
+          - verifyFillInExceptions()
+          - verifySerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.StandardTickUnitSourceTest {
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.SubCategoryAxisTest {
+          + test2275695()
+          + testCloning()
+          + testEquals()
+          + testHashCode()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.SymbolAxisTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.TickUnitsTest {
+          + testCloning()
+          + testEquals()
+          + testSerialization()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace axis {
+      class org.jfree.chart.axis.ValueAxisTest {
+          {static} - EPSILON : double
+          + test3555275()
+          + testAxisMargins()
+          + testCloning()
+          + testEquals()
+      }
+    }
+  }
+  
+
+  org.jfree.chart.axis.DateAxisTest +-down- org.jfree.chart.axis.DateAxisTest.MyDateAxis
+  org.jfree.chart.axis.LogarithmicAxisTest o-- org.jfree.chart.axis.LogarithmicAxisTest.MyLogarithmicAxis : axis
+  org.jfree.chart.axis.LogarithmicAxisTest +-down- org.jfree.chart.axis.LogarithmicAxisTest.MyLogarithmicAxis
+  org.jfree.chart.axis.PeriodAxisTest .up.|> AxisChangeListener
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

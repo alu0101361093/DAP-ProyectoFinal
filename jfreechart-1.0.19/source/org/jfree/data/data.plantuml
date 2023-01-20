@@ -1,0 +1,454 @@
+@startuml
+
+title __DATA's Class Diagram__\n
+
+  namespace org.jfree.data {
+    class org.jfree.data.ComparableObjectItem {
+        - obj : Object
+        {static} - serialVersionUID : long
+        - x : Comparable
+        + ComparableObjectItem()
+        + clone()
+        + compareTo()
+        + equals()
+        + hashCode()
+        # getComparable()
+        # getObject()
+        # setObject()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.ComparableObjectSeries {
+        # data : List
+        - allowDuplicateXValues : boolean
+        - autoSort : boolean
+        - maximumItemCount : int
+        + ComparableObjectSeries()
+        + ComparableObjectSeries()
+        + clear()
+        + equals()
+        + getAllowDuplicateXValues()
+        + getAutoSort()
+        + getItemCount()
+        + getMaximumItemCount()
+        + hashCode()
+        + indexOf()
+        + remove()
+        + setMaximumItemCount()
+        # add()
+        # add()
+        # add()
+        # delete()
+        # getDataItem()
+        # remove()
+        # update()
+        # updateByIndex()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    abstract class org.jfree.data.DataUtilities {
+        {static} + calculateColumnTotal()
+        {static} + calculateColumnTotal()
+        {static} + calculateRowTotal()
+        {static} + calculateRowTotal()
+        {static} + clone()
+        {static} + createNumberArray()
+        {static} + createNumberArray2D()
+        {static} + equal()
+        {static} + getCumulativePercentages()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.DefaultKeyedValue {
+        - key : Comparable
+        {static} - serialVersionUID : long
+        - value : Number
+        + DefaultKeyedValue()
+        + clone()
+        + equals()
+        + getKey()
+        + getValue()
+        + hashCode()
+        + setValue()
+        + toString()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.DefaultKeyedValues {
+        - indexMap : HashMap
+        - keys : ArrayList
+        {static} - serialVersionUID : long
+        - values : ArrayList
+        + DefaultKeyedValues()
+        + addValue()
+        + addValue()
+        + clear()
+        + clone()
+        + equals()
+        + getIndex()
+        + getItemCount()
+        + getKey()
+        + getKeys()
+        + getValue()
+        + getValue()
+        + hashCode()
+        + insertValue()
+        + insertValue()
+        + removeValue()
+        + removeValue()
+        + setValue()
+        + setValue()
+        + sortByKeys()
+        + sortByValues()
+        - rebuildIndex()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.DefaultKeyedValues2D {
+        - columnKeys : List
+        - rowKeys : List
+        - rows : List
+        {static} - serialVersionUID : long
+        - sortRowKeys : boolean
+        + DefaultKeyedValues2D()
+        + DefaultKeyedValues2D()
+        + addValue()
+        + clear()
+        + clone()
+        + equals()
+        + getColumnCount()
+        + getColumnIndex()
+        + getColumnKey()
+        + getColumnKeys()
+        + getRowCount()
+        + getRowIndex()
+        + getRowKey()
+        + getRowKeys()
+        + getValue()
+        + getValue()
+        + hashCode()
+        + removeColumn()
+        + removeColumn()
+        + removeRow()
+        + removeRow()
+        + removeValue()
+        + setValue()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    interface org.jfree.data.DomainInfo {
+        {abstract} + getDomainBounds()
+        {abstract} + getDomainLowerBound()
+        {abstract} + getDomainUpperBound()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.DomainOrder {
+        {static} + ASCENDING : DomainOrder
+        {static} + DESCENDING : DomainOrder
+        {static} + NONE : DomainOrder
+        - name : String
+        {static} - serialVersionUID : long
+        + equals()
+        + hashCode()
+        + toString()
+        - DomainOrder()
+        - readResolve()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.KeyToGroupMap {
+        - defaultGroup : Comparable
+        - groups : List
+        - keyToGroupMap : Map
+        {static} - serialVersionUID : long
+        + KeyToGroupMap()
+        + KeyToGroupMap()
+        + clone()
+        + equals()
+        + getGroup()
+        + getGroupCount()
+        + getGroupIndex()
+        + getGroups()
+        + getKeyCount()
+        + mapKeyToGroup()
+        {static} - clone()
+        {static} - clone()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.KeyedObject {
+        - key : Comparable
+        - object : Object
+        {static} - serialVersionUID : long
+        + KeyedObject()
+        + clone()
+        + equals()
+        + getKey()
+        + getObject()
+        + setObject()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.KeyedObjects {
+        - data : List
+        {static} - serialVersionUID : long
+        + KeyedObjects()
+        + addObject()
+        + clear()
+        + clone()
+        + equals()
+        + getIndex()
+        + getItemCount()
+        + getKey()
+        + getKeys()
+        + getObject()
+        + getObject()
+        + hashCode()
+        + insertValue()
+        + removeValue()
+        + removeValue()
+        + setObject()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.KeyedObjects2D {
+        - columnKeys : List
+        - rowKeys : List
+        - rows : List
+        {static} - serialVersionUID : long
+        + KeyedObjects2D()
+        + addObject()
+        + clear()
+        + clone()
+        + equals()
+        + getColumnCount()
+        + getColumnIndex()
+        + getColumnKey()
+        + getColumnKeys()
+        + getObject()
+        + getObject()
+        + getRowCount()
+        + getRowIndex()
+        + getRowKey()
+        + getRowKeys()
+        + hashCode()
+        + removeColumn()
+        + removeColumn()
+        + removeObject()
+        + removeRow()
+        + removeRow()
+        + setObject()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    interface org.jfree.data.KeyedValue {
+        {abstract} + getKey()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.KeyedValueComparator {
+        - order : SortOrder
+        - type : KeyedValueComparatorType
+        + KeyedValueComparator()
+        + compare()
+        + getOrder()
+        + getType()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.KeyedValueComparatorType {
+        {static} + BY_KEY : KeyedValueComparatorType
+        {static} + BY_VALUE : KeyedValueComparatorType
+        - name : String
+        + equals()
+        + hashCode()
+        + toString()
+        - KeyedValueComparatorType()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    interface org.jfree.data.KeyedValues {
+        {abstract} + getIndex()
+        {abstract} + getKey()
+        {abstract} + getKeys()
+        {abstract} + getValue()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    interface org.jfree.data.KeyedValues2D {
+        {abstract} + getColumnIndex()
+        {abstract} + getColumnKey()
+        {abstract} + getColumnKeys()
+        {abstract} + getRowIndex()
+        {abstract} + getRowKey()
+        {abstract} + getRowKeys()
+        {abstract} + getValue()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.Range {
+        - lower : double
+        {static} - serialVersionUID : long
+        - upper : double
+        + Range()
+        {static} + combine()
+        {static} + combineIgnoringNaN()
+        + constrain()
+        + contains()
+        + equals()
+        {static} + expand()
+        {static} + expandToInclude()
+        + getCentralValue()
+        + getLength()
+        + getLowerBound()
+        + getUpperBound()
+        + hashCode()
+        + intersects()
+        + intersects()
+        + isNaNRange()
+        {static} + scale()
+        {static} + shift()
+        {static} + shift()
+        + toString()
+        {static} - max()
+        {static} - min()
+        {static} - shiftWithNoZeroCrossing()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    interface org.jfree.data.RangeInfo {
+        {abstract} + getRangeBounds()
+        {abstract} + getRangeLowerBound()
+        {abstract} + getRangeUpperBound()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.RangeType {
+        {static} + FULL : RangeType
+        {static} + NEGATIVE : RangeType
+        {static} + POSITIVE : RangeType
+        - name : String
+        {static} - serialVersionUID : long
+        + equals()
+        + hashCode()
+        + toString()
+        - RangeType()
+        - readResolve()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    class org.jfree.data.UnknownKeyException {
+        + UnknownKeyException()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    interface org.jfree.data.Value {
+        {abstract} + getValue()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    interface org.jfree.data.Values {
+        {abstract} + getItemCount()
+        {abstract} + getValue()
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    interface org.jfree.data.Values2D {
+        {abstract} + getColumnCount()
+        {abstract} + getRowCount()
+        {abstract} + getValue()
+    }
+  }
+  
+
+  org.jfree.data.ComparableObjectItem .up.|> Cloneable
+  org.jfree.data.ComparableObjectItem .up.|> Comparable
+  org.jfree.data.ComparableObjectItem .up.|> Serializable
+  org.jfree.data.ComparableObjectSeries .up.|> Cloneable
+  org.jfree.data.ComparableObjectSeries .up.|> Serializable
+  org.jfree.data.DefaultKeyedValue .up.|> Cloneable
+  org.jfree.data.DefaultKeyedValue .up.|> KeyedValue
+  org.jfree.data.DefaultKeyedValue .up.|> PublicCloneable
+  org.jfree.data.DefaultKeyedValue .up.|> Serializable
+  org.jfree.data.DefaultKeyedValues .up.|> Cloneable
+  org.jfree.data.DefaultKeyedValues .up.|> KeyedValues
+  org.jfree.data.DefaultKeyedValues .up.|> PublicCloneable
+  org.jfree.data.DefaultKeyedValues .up.|> Serializable
+  org.jfree.data.DefaultKeyedValues2D .up.|> Cloneable
+  org.jfree.data.DefaultKeyedValues2D .up.|> KeyedValues2D
+  org.jfree.data.DefaultKeyedValues2D .up.|> PublicCloneable
+  org.jfree.data.DefaultKeyedValues2D .up.|> Serializable
+  org.jfree.data.DomainOrder .up.|> Serializable
+  org.jfree.data.KeyToGroupMap .up.|> Cloneable
+  org.jfree.data.KeyToGroupMap .up.|> PublicCloneable
+  org.jfree.data.KeyToGroupMap .up.|> Serializable
+  org.jfree.data.KeyedObject .up.|> Cloneable
+  org.jfree.data.KeyedObject .up.|> PublicCloneable
+  org.jfree.data.KeyedObject .up.|> Serializable
+  org.jfree.data.KeyedObjects .up.|> Cloneable
+  org.jfree.data.KeyedObjects .up.|> PublicCloneable
+  org.jfree.data.KeyedObjects .up.|> Serializable
+  org.jfree.data.KeyedObjects2D .up.|> Cloneable
+  org.jfree.data.KeyedObjects2D .up.|> Serializable
+  org.jfree.data.KeyedValueComparator .up.|> Comparator
+  org.jfree.data.KeyedValueComparator .up.|> Serializable
+  org.jfree.data.KeyedValueComparatorType .up.|> Serializable
+  org.jfree.data.Range .up.|> Serializable
+  org.jfree.data.RangeType .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

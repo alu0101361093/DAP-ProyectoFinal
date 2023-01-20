@@ -1,0 +1,1052 @@
+@startuml
+
+title __CATEGORY's Class Diagram__\n
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        abstract class org.jfree.chart.renderer.category.AbstractCategoryItemRenderer {
+            - baseItemLabelGenerator : CategoryItemLabelGenerator
+            - baseItemURLGenerator : CategoryURLGenerator
+            - baseToolTipGenerator : CategoryToolTipGenerator
+            - columnCount : int
+            - itemLabelGenerator : CategoryItemLabelGenerator
+            - itemLabelGeneratorMap : Map<Integer, CategoryItemLabelGenerator>
+            - itemURLGenerator : CategoryURLGenerator
+            - itemURLGeneratorMap : Map<Integer, CategoryURLGenerator>
+            - legendItemLabelGenerator : CategorySeriesLabelGenerator
+            - legendItemToolTipGenerator : CategorySeriesLabelGenerator
+            - legendItemURLGenerator : CategorySeriesLabelGenerator
+            - plot : CategoryPlot
+            - rowCount : int
+            {static} - serialVersionUID : long
+            - toolTipGenerator : CategoryToolTipGenerator
+            - toolTipGeneratorMap : Map<Integer, CategoryToolTipGenerator>
+            + clone()
+            + drawBackground()
+            + drawDomainGridline()
+            + drawDomainMarker()
+            + drawOutline()
+            + drawRangeGridline()
+            + drawRangeLine()
+            + drawRangeMarker()
+            + equals()
+            + findRangeBounds()
+            + getBaseItemLabelGenerator()
+            + getBaseItemURLGenerator()
+            + getBaseToolTipGenerator()
+            + getColumnCount()
+            + getDrawingSupplier()
+            + getItemLabelGenerator()
+            + getItemMiddle()
+            + getItemURLGenerator()
+            + getLegendItem()
+            + getLegendItemLabelGenerator()
+            + getLegendItemToolTipGenerator()
+            + getLegendItemURLGenerator()
+            + getLegendItems()
+            + getPassCount()
+            + getPlot()
+            + getRowCount()
+            + getSeriesItemLabelGenerator()
+            + getSeriesItemURLGenerator()
+            + getSeriesToolTipGenerator()
+            + getToolTipGenerator()
+            + getToolTipGenerator()
+            + hashCode()
+            + initialise()
+            + setBaseItemLabelGenerator()
+            + setBaseItemURLGenerator()
+            + setBaseToolTipGenerator()
+            + setItemLabelGenerator()
+            + setItemURLGenerator()
+            + setLegendItemLabelGenerator()
+            + setLegendItemToolTipGenerator()
+            + setLegendItemURLGenerator()
+            + setPlot()
+            + setSeriesItemLabelGenerator()
+            + setSeriesItemURLGenerator()
+            + setSeriesToolTipGenerator()
+            + setToolTipGenerator()
+            # AbstractCategoryItemRenderer()
+            # addEntity()
+            # addItemEntity()
+            # calculateDomainMarkerTextAnchorPoint()
+            # calculateRangeMarkerTextAnchorPoint()
+            # createState()
+            # drawItemLabel()
+            # findRangeBounds()
+            # getDomainAxis()
+            # getRangeAxis()
+            # updateCrosshairValues()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.AreaRenderer {
+            - endType : AreaRendererEndType
+            {static} - serialVersionUID : long
+            + AreaRenderer()
+            + clone()
+            + drawItem()
+            + equals()
+            + getEndType()
+            + getLegendItem()
+            + setEndType()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        interface org.jfree.chart.renderer.category.BarPainter {
+            {abstract} + paintBar()
+            {abstract} + paintBarShadow()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.BarRenderer {
+            {static} + BAR_OUTLINE_WIDTH_THRESHOLD : double
+            {static} + DEFAULT_ITEM_MARGIN : double
+            - barPainter : BarPainter
+            - base : double
+            {static} - defaultBarPainter : BarPainter
+            {static} - defaultShadowsVisible : boolean
+            - drawBarOutline : boolean
+            - gradientPaintTransformer : GradientPaintTransformer
+            - includeBaseInRange : boolean
+            - itemMargin : double
+            - lowerClip : double
+            - maximumBarWidth : double
+            - minimumBarLength : double
+            - negativeItemLabelPositionFallback : ItemLabelPosition
+            - positiveItemLabelPositionFallback : ItemLabelPosition
+            {static} - serialVersionUID : long
+            - shadowPaint : Paint
+            - shadowXOffset : double
+            - shadowYOffset : double
+            - shadowsVisible : boolean
+            - upperClip : double
+            + BarRenderer()
+            + drawItem()
+            + equals()
+            + findRangeBounds()
+            + getBarPainter()
+            + getBase()
+            {static} + getDefaultBarPainter()
+            {static} + getDefaultShadowsVisible()
+            + getGradientPaintTransformer()
+            + getIncludeBaseInRange()
+            + getItemMargin()
+            + getLegendItem()
+            + getLowerClip()
+            + getMaximumBarWidth()
+            + getMinimumBarLength()
+            + getNegativeItemLabelPositionFallback()
+            + getPositiveItemLabelPositionFallback()
+            + getShadowPaint()
+            + getShadowXOffset()
+            + getShadowYOffset()
+            + getShadowsVisible()
+            + getUpperClip()
+            + initialise()
+            + isDrawBarOutline()
+            + setBarPainter()
+            + setBase()
+            {static} + setDefaultBarPainter()
+            {static} + setDefaultShadowsVisible()
+            + setDrawBarOutline()
+            + setGradientPaintTransformer()
+            + setIncludeBaseInRange()
+            + setItemMargin()
+            + setMaximumBarWidth()
+            + setMinimumBarLength()
+            + setNegativeItemLabelPositionFallback()
+            + setPositiveItemLabelPositionFallback()
+            + setShadowPaint()
+            + setShadowVisible()
+            + setShadowXOffset()
+            + setShadowYOffset()
+            # calculateBarL0L1()
+            # calculateBarW0()
+            # calculateBarWidth()
+            # calculateSeriesWidth()
+            # drawItemLabel()
+            - calculateLabelAnchorPoint()
+            - isInternalAnchor()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.BarRenderer3D {
+            {static} + DEFAULT_WALL_PAINT : Paint
+            {static} + DEFAULT_X_OFFSET : double
+            {static} + DEFAULT_Y_OFFSET : double
+            {static} - serialVersionUID : long
+            - wallPaint : Paint
+            - xOffset : double
+            - yOffset : double
+            + BarRenderer3D()
+            + BarRenderer3D()
+            + drawBackground()
+            + drawDomainGridline()
+            + drawItem()
+            + drawOutline()
+            + drawRangeGridline()
+            + drawRangeLine()
+            + drawRangeMarker()
+            + equals()
+            + getWallPaint()
+            + getXOffset()
+            + getYOffset()
+            + initialise()
+            + setWallPaint()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.BoxAndWhiskerRenderer {
+            - artifactPaint : Paint
+            - fillBox : boolean
+            - itemMargin : double
+            - maximumBarWidth : double
+            - meanVisible : boolean
+            - medianVisible : boolean
+            {static} - serialVersionUID : long
+            - useOutlinePaintForWhiskers : boolean
+            - whiskerWidth : double
+            + BoxAndWhiskerRenderer()
+            + drawHorizontalItem()
+            + drawItem()
+            + drawVerticalItem()
+            + equals()
+            + findRangeBounds()
+            + getArtifactPaint()
+            + getFillBox()
+            + getItemMargin()
+            + getLegendItem()
+            + getMaximumBarWidth()
+            + getUseOutlinePaintForWhiskers()
+            + getWhiskerWidth()
+            + initialise()
+            + isMeanVisible()
+            + isMedianVisible()
+            + setArtifactPaint()
+            + setFillBox()
+            + setItemMargin()
+            + setMaximumBarWidth()
+            + setMeanVisible()
+            + setMedianVisible()
+            + setUseOutlinePaintForWhiskers()
+            + setWhiskerWidth()
+            - drawEllipse()
+            - drawHighFarOut()
+            - drawLowFarOut()
+            - drawMultipleEllipse()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        interface org.jfree.chart.renderer.category.CategoryItemRenderer {
+            {abstract} + addChangeListener()
+            {abstract} + drawBackground()
+            {abstract} + drawDomainGridline()
+            {abstract} + drawDomainMarker()
+            {abstract} + drawItem()
+            {abstract} + drawOutline()
+            {abstract} + drawRangeGridline()
+            {abstract} + drawRangeMarker()
+            {abstract} + findRangeBounds()
+            {abstract} + getBaseItemLabelFont()
+            {abstract} + getBaseItemLabelGenerator()
+            {abstract} + getBaseItemLabelPaint()
+            {abstract} + getBaseItemLabelsVisible()
+            {abstract} + getBaseItemURLGenerator()
+            {abstract} + getBaseNegativeItemLabelPosition()
+            {abstract} + getBaseOutlinePaint()
+            {abstract} + getBaseOutlineStroke()
+            {abstract} + getBasePaint()
+            {abstract} + getBasePositiveItemLabelPosition()
+            {abstract} + getBaseSeriesVisible()
+            {abstract} + getBaseSeriesVisibleInLegend()
+            {abstract} + getBaseShape()
+            {abstract} + getBaseStroke()
+            {abstract} + getBaseToolTipGenerator()
+            {abstract} + getItemLabelFont()
+            {abstract} + getItemLabelFont()
+            {abstract} + getItemLabelGenerator()
+            {abstract} + getItemLabelPaint()
+            {abstract} + getItemLabelPaint()
+            {abstract} + getItemMiddle()
+            {abstract} + getItemOutlinePaint()
+            {abstract} + getItemOutlineStroke()
+            {abstract} + getItemPaint()
+            {abstract} + getItemShape()
+            {abstract} + getItemStroke()
+            {abstract} + getItemURLGenerator()
+            {abstract} + getItemVisible()
+            {abstract} + getLegendItem()
+            {abstract} + getNegativeItemLabelPosition()
+            {abstract} + getNegativeItemLabelPosition()
+            {abstract} + getPassCount()
+            {abstract} + getPlot()
+            {abstract} + getPositiveItemLabelPosition()
+            {abstract} + getPositiveItemLabelPosition()
+            {abstract} + getSeriesItemLabelFont()
+            {abstract} + getSeriesItemLabelGenerator()
+            {abstract} + getSeriesItemLabelPaint()
+            {abstract} + getSeriesItemURLGenerator()
+            {abstract} + getSeriesNegativeItemLabelPosition()
+            {abstract} + getSeriesOutlinePaint()
+            {abstract} + getSeriesOutlineStroke()
+            {abstract} + getSeriesPaint()
+            {abstract} + getSeriesPositiveItemLabelPosition()
+            {abstract} + getSeriesShape()
+            {abstract} + getSeriesStroke()
+            {abstract} + getSeriesToolTipGenerator()
+            {abstract} + getSeriesVisible()
+            {abstract} + getSeriesVisible()
+            {abstract} + getSeriesVisibleInLegend()
+            {abstract} + getSeriesVisibleInLegend()
+            {abstract} + getToolTipGenerator()
+            {abstract} + getToolTipGenerator()
+            {abstract} + initialise()
+            {abstract} + isItemLabelVisible()
+            {abstract} + isSeriesItemLabelsVisible()
+            {abstract} + isSeriesVisible()
+            {abstract} + isSeriesVisibleInLegend()
+            {abstract} + removeChangeListener()
+            {abstract} + setBaseItemLabelFont()
+            {abstract} + setBaseItemLabelGenerator()
+            {abstract} + setBaseItemLabelPaint()
+            {abstract} + setBaseItemLabelsVisible()
+            {abstract} + setBaseItemLabelsVisible()
+            {abstract} + setBaseItemLabelsVisible()
+            {abstract} + setBaseItemURLGenerator()
+            {abstract} + setBaseNegativeItemLabelPosition()
+            {abstract} + setBaseNegativeItemLabelPosition()
+            {abstract} + setBaseOutlinePaint()
+            {abstract} + setBaseOutlineStroke()
+            {abstract} + setBasePaint()
+            {abstract} + setBasePositiveItemLabelPosition()
+            {abstract} + setBasePositiveItemLabelPosition()
+            {abstract} + setBaseSeriesVisible()
+            {abstract} + setBaseSeriesVisible()
+            {abstract} + setBaseSeriesVisibleInLegend()
+            {abstract} + setBaseSeriesVisibleInLegend()
+            {abstract} + setBaseShape()
+            {abstract} + setBaseStroke()
+            {abstract} + setBaseToolTipGenerator()
+            {abstract} + setItemLabelFont()
+            {abstract} + setItemLabelGenerator()
+            {abstract} + setItemLabelPaint()
+            {abstract} + setItemLabelsVisible()
+            {abstract} + setItemLabelsVisible()
+            {abstract} + setItemLabelsVisible()
+            {abstract} + setItemURLGenerator()
+            {abstract} + setNegativeItemLabelPosition()
+            {abstract} + setNegativeItemLabelPosition()
+            {abstract} + setOutlinePaint()
+            {abstract} + setOutlineStroke()
+            {abstract} + setPaint()
+            {abstract} + setPlot()
+            {abstract} + setPositiveItemLabelPosition()
+            {abstract} + setPositiveItemLabelPosition()
+            {abstract} + setSeriesItemLabelFont()
+            {abstract} + setSeriesItemLabelGenerator()
+            {abstract} + setSeriesItemLabelPaint()
+            {abstract} + setSeriesItemLabelsVisible()
+            {abstract} + setSeriesItemLabelsVisible()
+            {abstract} + setSeriesItemLabelsVisible()
+            {abstract} + setSeriesItemURLGenerator()
+            {abstract} + setSeriesNegativeItemLabelPosition()
+            {abstract} + setSeriesNegativeItemLabelPosition()
+            {abstract} + setSeriesOutlinePaint()
+            {abstract} + setSeriesOutlineStroke()
+            {abstract} + setSeriesPaint()
+            {abstract} + setSeriesPositiveItemLabelPosition()
+            {abstract} + setSeriesPositiveItemLabelPosition()
+            {abstract} + setSeriesShape()
+            {abstract} + setSeriesStroke()
+            {abstract} + setSeriesToolTipGenerator()
+            {abstract} + setSeriesVisible()
+            {abstract} + setSeriesVisible()
+            {abstract} + setSeriesVisible()
+            {abstract} + setSeriesVisible()
+            {abstract} + setSeriesVisibleInLegend()
+            {abstract} + setSeriesVisibleInLegend()
+            {abstract} + setSeriesVisibleInLegend()
+            {abstract} + setSeriesVisibleInLegend()
+            {abstract} + setShape()
+            {abstract} + setStroke()
+            {abstract} + setToolTipGenerator()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.CategoryItemRendererState {
+            - barWidth : double
+            - crosshairState : CategoryCrosshairState
+            - seriesRunningTotal : double
+            - visibleSeries : int[]
+            + CategoryItemRendererState()
+            + getBarWidth()
+            + getCrosshairState()
+            + getSeriesRunningTotal()
+            + getVisibleSeriesArray()
+            + getVisibleSeriesCount()
+            + getVisibleSeriesIndex()
+            + setBarWidth()
+            + setCrosshairState()
+            + setVisibleSeriesArray()
+            ~ setSeriesRunningTotal()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.CategoryStepRenderer {
+            {static} + STAGGER_WIDTH : int
+            {static} - serialVersionUID : long
+            - stagger : boolean
+            + CategoryStepRenderer()
+            + CategoryStepRenderer()
+            + drawItem()
+            + equals()
+            + getLegendItem()
+            + getStagger()
+            + setStagger()
+            # createState()
+            # drawLine()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.CategoryStepRenderer.State {
+            + line : Line2D
+            + State()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.DefaultCategoryItemRenderer {
+            {static} - serialVersionUID : long
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.GanttRenderer {
+            - completePaint : Paint
+            - endPercent : double
+            - incompletePaint : Paint
+            {static} - serialVersionUID : long
+            - startPercent : double
+            + GanttRenderer()
+            + drawItem()
+            + equals()
+            + getCompletePaint()
+            + getEndPercent()
+            + getIncompletePaint()
+            + getItemMiddle()
+            + getStartPercent()
+            + setCompletePaint()
+            + setEndPercent()
+            + setIncompletePaint()
+            + setStartPercent()
+            # drawTask()
+            # drawTasks()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.GradientBarPainter {
+            - g1 : double
+            - g2 : double
+            - g3 : double
+            + GradientBarPainter()
+            + GradientBarPainter()
+            + equals()
+            + hashCode()
+            + paintBar()
+            + paintBarShadow()
+            - createShadow()
+            - splitHorizontalBar()
+            - splitVerticalBar()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.GroupedStackedBarRenderer {
+            {static} - serialVersionUID : long
+            - seriesToGroupMap : KeyToGroupMap
+            + GroupedStackedBarRenderer()
+            + drawItem()
+            + equals()
+            + findRangeBounds()
+            + setSeriesToGroupMap()
+            # calculateBarW0()
+            # calculateBarWidth()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.IntervalBarRenderer {
+            {static} - serialVersionUID : long
+            + IntervalBarRenderer()
+            + drawItem()
+            + equals()
+            + findRangeBounds()
+            # drawInterval()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.LayeredBarRenderer {
+            # seriesBarWidthList : ObjectList
+            {static} - serialVersionUID : long
+            + LayeredBarRenderer()
+            + drawItem()
+            + getSeriesBarWidth()
+            + setSeriesBarWidth()
+            # calculateBarWidth()
+            # drawHorizontalItem()
+            # drawVerticalItem()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.LevelRenderer {
+            {static} + DEFAULT_ITEM_MARGIN : double
+            - itemMargin : double
+            - maxItemWidth : double
+            {static} - serialVersionUID : long
+            + LevelRenderer()
+            + drawItem()
+            + equals()
+            + getItemMargin()
+            + getItemMiddle()
+            + getMaxItemWidth()
+            + getMaximumItemWidth()
+            + hashCode()
+            + initialise()
+            + setItemMargin()
+            + setMaxItemWidth()
+            + setMaximumItemWidth()
+            # calculateBarW0()
+            # calculateItemWidth()
+            # calculateSeriesWidth()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.LineAndShapeRenderer {
+            - baseLinesVisible : boolean
+            - baseShapesFilled : boolean
+            - baseShapesVisible : boolean
+            - drawOutlines : boolean
+            - itemMargin : double
+            - linesVisible : Boolean
+            {static} - serialVersionUID : long
+            - seriesLinesVisible : BooleanList
+            - seriesShapesFilled : BooleanList
+            - seriesShapesVisible : BooleanList
+            - shapesFilled : Boolean
+            - shapesVisible : Boolean
+            - useFillPaint : boolean
+            - useOutlinePaint : boolean
+            - useSeriesOffset : boolean
+            + LineAndShapeRenderer()
+            + LineAndShapeRenderer()
+            + clone()
+            + drawItem()
+            + equals()
+            + getBaseLinesVisible()
+            + getBaseShapesFilled()
+            + getBaseShapesVisible()
+            + getDrawOutlines()
+            + getItemLineVisible()
+            + getItemMargin()
+            + getItemShapeFilled()
+            + getItemShapeVisible()
+            + getLegendItem()
+            + getLinesVisible()
+            + getPassCount()
+            + getSeriesLinesVisible()
+            + getSeriesShapesFilled()
+            + getSeriesShapesVisible()
+            + getShapesFilled()
+            + getShapesVisible()
+            + getUseFillPaint()
+            + getUseOutlinePaint()
+            + getUseSeriesOffset()
+            + setBaseLinesVisible()
+            + setBaseShapesFilled()
+            + setBaseShapesVisible()
+            + setDrawOutlines()
+            + setItemMargin()
+            + setLinesVisible()
+            + setLinesVisible()
+            + setSeriesLinesVisible()
+            + setSeriesLinesVisible()
+            + setSeriesShapesFilled()
+            + setSeriesShapesFilled()
+            + setSeriesShapesVisible()
+            + setSeriesShapesVisible()
+            + setShapesFilled()
+            + setShapesFilled()
+            + setShapesVisible()
+            + setShapesVisible()
+            + setUseFillPaint()
+            + setUseOutlinePaint()
+            + setUseSeriesOffset()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.LineRenderer3D {
+            {static} + DEFAULT_WALL_PAINT : Paint
+            {static} + DEFAULT_X_OFFSET : double
+            {static} + DEFAULT_Y_OFFSET : double
+            {static} - serialVersionUID : long
+            - wallPaint : Paint
+            - xOffset : double
+            - yOffset : double
+            + LineRenderer3D()
+            + drawBackground()
+            + drawDomainGridline()
+            + drawItem()
+            + drawOutline()
+            + drawRangeGridline()
+            + drawRangeMarker()
+            + equals()
+            + getWallPaint()
+            + getXOffset()
+            + getYOffset()
+            + setWallPaint()
+            + setXOffset()
+            + setYOffset()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.MinMaxCategoryRenderer {
+            - groupPaint : Paint
+            - groupStroke : Stroke
+            - lastCategory : int
+            - max : double
+            - maxIcon : Icon
+            - min : double
+            - minIcon : Icon
+            - objectIcon : Icon
+            - plotLines : boolean
+            {static} - serialVersionUID : long
+            + MinMaxCategoryRenderer()
+            + drawItem()
+            + equals()
+            + getGroupPaint()
+            + getGroupStroke()
+            + getMaxIcon()
+            + getMinIcon()
+            + getObjectIcon()
+            + isDrawLines()
+            + setDrawLines()
+            + setGroupPaint()
+            + setGroupStroke()
+            + setMaxIcon()
+            + setMinIcon()
+            + setObjectIcon()
+            - getIcon()
+            - getIcon()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.ScatterRenderer {
+            - baseShapesFilled : boolean
+            - drawOutlines : boolean
+            - itemMargin : double
+            - seriesShapesFilled : BooleanList
+            - useFillPaint : boolean
+            - useOutlinePaint : boolean
+            - useSeriesOffset : boolean
+            + ScatterRenderer()
+            + clone()
+            + drawItem()
+            + equals()
+            + findRangeBounds()
+            + getBaseShapesFilled()
+            + getDrawOutlines()
+            + getItemMargin()
+            + getItemShapeFilled()
+            + getLegendItem()
+            + getSeriesShapesFilled()
+            + getUseFillPaint()
+            + getUseOutlinePaint()
+            + getUseSeriesOffset()
+            + setBaseShapesFilled()
+            + setDrawOutlines()
+            + setItemMargin()
+            + setSeriesShapesFilled()
+            + setSeriesShapesFilled()
+            + setUseFillPaint()
+            + setUseOutlinePaint()
+            + setUseSeriesOffset()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.StackedAreaRenderer {
+            - renderAsPercentages : boolean
+            {static} - serialVersionUID : long
+            + StackedAreaRenderer()
+            + StackedAreaRenderer()
+            + drawItem()
+            + equals()
+            + findRangeBounds()
+            + getPassCount()
+            + getRenderAsPercentages()
+            + setRenderAsPercentages()
+            # getPreviousHeight()
+            # getStackValues()
+            - adjustedStackValues()
+            - averageStackValues()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.StackedBarRenderer {
+            {static} ~ serialVersionUID : long
+            - renderAsPercentages : boolean
+            + StackedBarRenderer()
+            + StackedBarRenderer()
+            + drawItem()
+            + equals()
+            + findRangeBounds()
+            + getPassCount()
+            + getRenderAsPercentages()
+            + setRenderAsPercentages()
+            # calculateBarWidth()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.StackedBarRenderer3D {
+            - ignoreZeroValues : boolean
+            - renderAsPercentages : boolean
+            {static} - serialVersionUID : long
+            + StackedBarRenderer3D()
+            + StackedBarRenderer3D()
+            + StackedBarRenderer3D()
+            + StackedBarRenderer3D()
+            + drawItem()
+            + equals()
+            + findRangeBounds()
+            + getIgnoreZeroValues()
+            + getRenderAsPercentages()
+            + hashCode()
+            + setIgnoreZeroValues()
+            + setRenderAsPercentages()
+            # calculateBarWidth()
+            # createStackedValueList()
+            # createStackedValueList()
+            # drawStackHorizontal()
+            # drawStackVertical()
+            - createHorizontalBlock()
+            - createVerticalBlock()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.StandardBarPainter {
+            + StandardBarPainter()
+            + equals()
+            + hashCode()
+            + paintBar()
+            + paintBarShadow()
+            - createShadow()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.StatisticalBarRenderer {
+            - errorIndicatorPaint : Paint
+            - errorIndicatorStroke : Stroke
+            {static} - serialVersionUID : long
+            + StatisticalBarRenderer()
+            + drawItem()
+            + equals()
+            + findRangeBounds()
+            + getErrorIndicatorPaint()
+            + getErrorIndicatorStroke()
+            + setErrorIndicatorPaint()
+            + setErrorIndicatorStroke()
+            # drawHorizontalItem()
+            # drawVerticalItem()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.StatisticalLineAndShapeRenderer {
+            - errorIndicatorPaint : Paint
+            - errorIndicatorStroke : Stroke
+            {static} - serialVersionUID : long
+            + StatisticalLineAndShapeRenderer()
+            + StatisticalLineAndShapeRenderer()
+            + drawItem()
+            + equals()
+            + findRangeBounds()
+            + getErrorIndicatorPaint()
+            + getErrorIndicatorStroke()
+            + hashCode()
+            + setErrorIndicatorPaint()
+            + setErrorIndicatorStroke()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  namespace org.jfree.chart {
+    namespace renderer {
+      namespace category {
+        class org.jfree.chart.renderer.category.WaterfallBarRenderer {
+            - firstBarPaint : Paint
+            - lastBarPaint : Paint
+            - negativeBarPaint : Paint
+            - positiveBarPaint : Paint
+            {static} - serialVersionUID : long
+            + WaterfallBarRenderer()
+            + WaterfallBarRenderer()
+            + drawItem()
+            + equals()
+            + findRangeBounds()
+            + getFirstBarPaint()
+            + getLastBarPaint()
+            + getNegativeBarPaint()
+            + getPositiveBarPaint()
+            + setFirstBarPaint()
+            + setLastBarPaint()
+            + setNegativeBarPaint()
+            + setPositiveBarPaint()
+            - readObject()
+            - writeObject()
+        }
+      }
+    }
+  }
+  
+
+  org.jfree.chart.renderer.category.AbstractCategoryItemRenderer .up.|> CategoryItemRenderer
+  org.jfree.chart.renderer.category.AbstractCategoryItemRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.category.AbstractCategoryItemRenderer .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.AbstractCategoryItemRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.AreaRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.category.AreaRenderer .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.AreaRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.BarRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.category.BarRenderer .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.BarRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.BarRenderer3D .up.|> Cloneable
+  org.jfree.chart.renderer.category.BarRenderer3D .up.|> Effect3D
+  org.jfree.chart.renderer.category.BarRenderer3D .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.BarRenderer3D .up.|> Serializable
+  org.jfree.chart.renderer.category.BoxAndWhiskerRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.category.BoxAndWhiskerRenderer .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.BoxAndWhiskerRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.CategoryStepRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.category.CategoryStepRenderer .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.CategoryStepRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.CategoryStepRenderer +-down- org.jfree.chart.renderer.category.CategoryStepRenderer.State
+  org.jfree.chart.renderer.category.DefaultCategoryItemRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.GanttRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.GradientBarPainter .up.|> BarPainter
+  org.jfree.chart.renderer.category.GradientBarPainter .up.|> Serializable
+  org.jfree.chart.renderer.category.GroupedStackedBarRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.category.GroupedStackedBarRenderer .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.GroupedStackedBarRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.LayeredBarRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.LevelRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.category.LevelRenderer .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.LevelRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.LineAndShapeRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.category.LineAndShapeRenderer .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.LineAndShapeRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.LineRenderer3D .up.|> Effect3D
+  org.jfree.chart.renderer.category.LineRenderer3D .up.|> Serializable
+  org.jfree.chart.renderer.category.ScatterRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.category.ScatterRenderer .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.ScatterRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.StackedAreaRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.category.StackedAreaRenderer .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.StackedAreaRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.StackedBarRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.category.StackedBarRenderer .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.StackedBarRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.StackedBarRenderer3D .up.|> Cloneable
+  org.jfree.chart.renderer.category.StackedBarRenderer3D .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.StackedBarRenderer3D .up.|> Serializable
+  org.jfree.chart.renderer.category.StandardBarPainter .up.|> BarPainter
+  org.jfree.chart.renderer.category.StandardBarPainter .up.|> Serializable
+  org.jfree.chart.renderer.category.StatisticalBarRenderer .up.|> CategoryItemRenderer
+  org.jfree.chart.renderer.category.StatisticalBarRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.category.StatisticalBarRenderer .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.StatisticalBarRenderer .up.|> Serializable
+  org.jfree.chart.renderer.category.StatisticalLineAndShapeRenderer .up.|> Cloneable
+  org.jfree.chart.renderer.category.StatisticalLineAndShapeRenderer .up.|> PublicCloneable
+  org.jfree.chart.renderer.category.StatisticalLineAndShapeRenderer .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

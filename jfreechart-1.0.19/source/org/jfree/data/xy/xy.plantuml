@@ -1,0 +1,1168 @@
+@startuml
+
+title __XY's Class Diagram__\n
+
+  namespace org.jfree.data {
+    namespace xy {
+      abstract class org.jfree.data.xy.AbstractIntervalXYDataset {
+          + getEndXValue()
+          + getEndYValue()
+          + getStartXValue()
+          + getStartYValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      abstract class org.jfree.data.xy.AbstractXYDataset {
+          + getDomainOrder()
+          + getXValue()
+          + getYValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      abstract class org.jfree.data.xy.AbstractXYZDataset {
+          + getZValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.CategoryTableXYDataset {
+          - intervalDelegate : IntervalXYDelegate
+          - values : DefaultKeyedValues2D
+          + CategoryTableXYDataset()
+          + add()
+          + add()
+          + clear()
+          + clone()
+          + equals()
+          + getDomainBounds()
+          + getDomainLowerBound()
+          + getDomainUpperBound()
+          + getEndX()
+          + getEndY()
+          + getIntervalPositionFactor()
+          + getIntervalWidth()
+          + getItemCount()
+          + getItemCount()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartY()
+          + getX()
+          + getY()
+          + isAutoWidth()
+          + remove()
+          + remove()
+          + setAutoWidth()
+          + setIntervalPositionFactor()
+          + setIntervalWidth()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultHighLowDataset {
+          - close : Number[]
+          - date : Date[]
+          - high : Number[]
+          - low : Number[]
+          - open : Number[]
+          - seriesKey : Comparable
+          - volume : Number[]
+          + DefaultHighLowDataset()
+          {static} + createNumberArray()
+          + equals()
+          + getClose()
+          + getCloseValue()
+          + getHigh()
+          + getHighValue()
+          + getItemCount()
+          + getLow()
+          + getLowValue()
+          + getOpen()
+          + getOpenValue()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getVolume()
+          + getVolumeValue()
+          + getX()
+          + getXDate()
+          + getY()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultIntervalXYDataset {
+          - seriesKeys : List
+          - seriesList : List
+          + DefaultIntervalXYDataset()
+          + addSeries()
+          + clone()
+          + equals()
+          + getEndX()
+          + getEndXValue()
+          + getEndY()
+          + getEndYValue()
+          + getItemCount()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartXValue()
+          + getStartY()
+          + getStartYValue()
+          + getX()
+          + getXValue()
+          + getY()
+          + getYValue()
+          + hashCode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultOHLCDataset {
+          - data : OHLCDataItem[]
+          - key : Comparable
+          + DefaultOHLCDataset()
+          + clone()
+          + equals()
+          + getClose()
+          + getCloseValue()
+          + getHigh()
+          + getHighValue()
+          + getItemCount()
+          + getLow()
+          + getLowValue()
+          + getOpen()
+          + getOpenValue()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getVolume()
+          + getVolumeValue()
+          + getX()
+          + getXDate()
+          + getY()
+          + sortDataByDate()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultTableXYDataset {
+          - autoPrune : boolean
+          - data : List
+          - intervalDelegate : IntervalXYDelegate
+          - propagateEvents : boolean
+          - xPoints : HashSet
+          + DefaultTableXYDataset()
+          + DefaultTableXYDataset()
+          + addSeries()
+          + clone()
+          + equals()
+          + getDomainBounds()
+          + getDomainLowerBound()
+          + getDomainUpperBound()
+          + getEndX()
+          + getEndY()
+          + getIntervalPositionFactor()
+          + getIntervalWidth()
+          + getItemCount()
+          + getItemCount()
+          + getSeries()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartY()
+          + getX()
+          + getY()
+          + hashCode()
+          + isAutoPrune()
+          + isAutoWidth()
+          + prune()
+          + removeAllSeries()
+          + removeAllValuesForX()
+          + removeSeries()
+          + removeSeries()
+          + seriesChanged()
+          + setAutoWidth()
+          + setIntervalPositionFactor()
+          + setIntervalWidth()
+          + updateXPoints()
+          # canPrune()
+          - updateXPoints()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultWindDataset {
+          - allSeriesData : List
+          - seriesKeys : List
+          + DefaultWindDataset()
+          + DefaultWindDataset()
+          + DefaultWindDataset()
+          + DefaultWindDataset()
+          + equals()
+          + getItemCount()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getWindDirection()
+          + getWindForce()
+          + getX()
+          + getY()
+          {static} + seriesNameListFromDataArray()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultXYDataset {
+          - seriesKeys : List
+          - seriesList : List
+          + DefaultXYDataset()
+          + addSeries()
+          + clone()
+          + equals()
+          + getDomainOrder()
+          + getItemCount()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getX()
+          + getXValue()
+          + getY()
+          + getYValue()
+          + hashCode()
+          + indexOf()
+          + removeSeries()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.DefaultXYZDataset {
+          - seriesKeys : List
+          - seriesList : List
+          + DefaultXYZDataset()
+          + addSeries()
+          + clone()
+          + equals()
+          + getDomainOrder()
+          + getItemCount()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getX()
+          + getXValue()
+          + getY()
+          + getYValue()
+          + getZ()
+          + getZValue()
+          + hashCode()
+          + indexOf()
+          + removeSeries()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      interface org.jfree.data.xy.IntervalXYDataset {
+          {abstract} + getEndX()
+          {abstract} + getEndXValue()
+          {abstract} + getEndY()
+          {abstract} + getEndYValue()
+          {abstract} + getStartX()
+          {abstract} + getStartXValue()
+          {abstract} + getStartY()
+          {abstract} + getStartYValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.IntervalXYDelegate {
+          - autoIntervalWidth : double
+          - autoWidth : boolean
+          - dataset : XYDataset
+          - fixedIntervalWidth : double
+          - intervalPositionFactor : double
+          {static} - serialVersionUID : long
+          + IntervalXYDelegate()
+          + IntervalXYDelegate()
+          + clone()
+          + datasetChanged()
+          + equals()
+          + getDomainBounds()
+          + getDomainLowerBound()
+          + getDomainUpperBound()
+          + getEndX()
+          + getEndXValue()
+          + getFixedIntervalWidth()
+          + getIntervalPositionFactor()
+          + getIntervalWidth()
+          + getStartX()
+          + getStartXValue()
+          + hashCode()
+          + isAutoWidth()
+          + setAutoWidth()
+          + setFixedIntervalWidth()
+          + setIntervalPositionFactor()
+          - calculateIntervalForSeries()
+          - recalculateInterval()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      interface org.jfree.data.xy.IntervalXYZDataset {
+          {abstract} + getEndXValue()
+          {abstract} + getEndYValue()
+          {abstract} + getEndZValue()
+          {abstract} + getStartXValue()
+          {abstract} + getStartYValue()
+          {abstract} + getStartZValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.MatrixSeries {
+          # data : double[][]
+          {static} - serialVersionUID : long
+          + MatrixSeries()
+          + equals()
+          + get()
+          + getColumnsCount()
+          + getItem()
+          + getItemColumn()
+          + getItemCount()
+          + getItemRow()
+          + getRowCount()
+          + update()
+          + zeroAll()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.MatrixSeriesCollection {
+          {static} - serialVersionUID : long
+          - seriesList : List
+          + MatrixSeriesCollection()
+          + MatrixSeriesCollection()
+          + addSeries()
+          + clone()
+          + equals()
+          + getItemCount()
+          + getSeries()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getX()
+          + getY()
+          + getZ()
+          + hashCode()
+          + removeAllSeries()
+          + removeSeries()
+          + removeSeries()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.NormalizedMatrixSeries {
+          {static} + DEFAULT_SCALE_FACTOR : double
+          - m_scaleFactor : double
+          - m_totalSum : double
+          + NormalizedMatrixSeries()
+          + getItem()
+          + getScaleFactor()
+          + setScaleFactor()
+          + update()
+          + zeroAll()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.OHLCDataItem {
+          - close : Number
+          - date : Date
+          - high : Number
+          - low : Number
+          - open : Number
+          {static} - serialVersionUID : long
+          - volume : Number
+          + OHLCDataItem()
+          + compareTo()
+          + equals()
+          + getClose()
+          + getDate()
+          + getHigh()
+          + getLow()
+          + getOpen()
+          + getVolume()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      interface org.jfree.data.xy.OHLCDataset {
+          {abstract} + getClose()
+          {abstract} + getCloseValue()
+          {abstract} + getHigh()
+          {abstract} + getHighValue()
+          {abstract} + getLow()
+          {abstract} + getLowValue()
+          {abstract} + getOpen()
+          {abstract} + getOpenValue()
+          {abstract} + getVolume()
+          {abstract} + getVolumeValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      interface org.jfree.data.xy.TableXYDataset {
+          {abstract} + getItemCount()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.Vector {
+          - x : double
+          - y : double
+          + Vector()
+          + equals()
+          + getAngle()
+          + getLength()
+          + getX()
+          + getY()
+          + hashCode()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.VectorDataItem {
+          + VectorDataItem()
+          + getVector()
+          + getVectorX()
+          + getVectorY()
+          + getXValue()
+          + getYValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.VectorSeries {
+          + VectorSeries()
+          + VectorSeries()
+          + add()
+          + add()
+          + getDataItem()
+          + getVectorXValue()
+          + getVectorYValue()
+          + getXValue()
+          + getYValue()
+          + remove()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.VectorSeriesCollection {
+          - data : List
+          + VectorSeriesCollection()
+          + addSeries()
+          + clone()
+          + equals()
+          + getItemCount()
+          + getSeries()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getVector()
+          + getVectorXValue()
+          + getVectorYValue()
+          + getX()
+          + getXValue()
+          + getY()
+          + getYValue()
+          + indexOf()
+          + removeAllSeries()
+          + removeSeries()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      interface org.jfree.data.xy.VectorXYDataset {
+          {abstract} + getVector()
+          {abstract} + getVectorXValue()
+          {abstract} + getVectorYValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.WindDataItem {
+          - windDir : Number
+          - windForce : Number
+          - x : Number
+          + WindDataItem()
+          + compareTo()
+          + equals()
+          + getWindDirection()
+          + getWindForce()
+          + getX()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      interface org.jfree.data.xy.WindDataset {
+          {abstract} + getWindDirection()
+          {abstract} + getWindForce()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XIntervalDataItem {
+          + XIntervalDataItem()
+          + getX()
+          + getXHighValue()
+          + getXLowValue()
+          + getYValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XIntervalSeries {
+          + XIntervalSeries()
+          + XIntervalSeries()
+          + add()
+          + add()
+          + getDataItem()
+          + getX()
+          + getXHighValue()
+          + getXLowValue()
+          + getYValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XIntervalSeriesCollection {
+          - data : List
+          + XIntervalSeriesCollection()
+          + addSeries()
+          + clone()
+          + equals()
+          + getEndX()
+          + getEndXValue()
+          + getEndY()
+          + getItemCount()
+          + getSeries()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartXValue()
+          + getStartY()
+          + getX()
+          + getY()
+          + getYValue()
+          + removeAllSeries()
+          + removeSeries()
+          + removeSeries()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYBarDataset {
+          - barWidth : double
+          - underlying : XYDataset
+          + XYBarDataset()
+          + clone()
+          + datasetChanged()
+          + equals()
+          + getBarWidth()
+          + getEndX()
+          + getEndXValue()
+          + getEndY()
+          + getEndYValue()
+          + getItemCount()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartXValue()
+          + getStartY()
+          + getStartYValue()
+          + getUnderlyingDataset()
+          + getX()
+          + getXValue()
+          + getY()
+          + getYValue()
+          + setBarWidth()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYCoordinate {
+          - x : double
+          - y : double
+          + XYCoordinate()
+          + XYCoordinate()
+          + compareTo()
+          + equals()
+          + getX()
+          + getY()
+          + hashCode()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYDataItem {
+          {static} - serialVersionUID : long
+          - x : Number
+          - y : Number
+          + XYDataItem()
+          + XYDataItem()
+          + clone()
+          + compareTo()
+          + equals()
+          + getX()
+          + getXValue()
+          + getY()
+          + getYValue()
+          + hashCode()
+          + setY()
+          + setY()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      interface org.jfree.data.xy.XYDataset {
+          {abstract} + getDomainOrder()
+          {abstract} + getItemCount()
+          {abstract} + getX()
+          {abstract} + getXValue()
+          {abstract} + getY()
+          {abstract} + getYValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYDatasetTableModel {
+          ~ model : TableXYDataset
+          + XYDatasetTableModel()
+          + XYDatasetTableModel()
+          + datasetChanged()
+          + getColumnCount()
+          + getColumnName()
+          + getRowCount()
+          + getValueAt()
+          + isCellEditable()
+          + setModel()
+          + setValueAt()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      interface org.jfree.data.xy.XYDomainInfo {
+          {abstract} + getDomainBounds()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYInterval {
+          - xHigh : double
+          - xLow : double
+          - y : double
+          - yHigh : double
+          - yLow : double
+          + XYInterval()
+          + equals()
+          + getXHigh()
+          + getXLow()
+          + getY()
+          + getYHigh()
+          + getYLow()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYIntervalDataItem {
+          + XYIntervalDataItem()
+          + getX()
+          + getXHighValue()
+          + getXLowValue()
+          + getYHighValue()
+          + getYLowValue()
+          + getYValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYIntervalSeries {
+          + XYIntervalSeries()
+          + XYIntervalSeries()
+          + add()
+          + add()
+          + getDataItem()
+          + getX()
+          + getXHighValue()
+          + getXLowValue()
+          + getYHighValue()
+          + getYLowValue()
+          + getYValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYIntervalSeriesCollection {
+          - data : List
+          + XYIntervalSeriesCollection()
+          + addSeries()
+          + clone()
+          + equals()
+          + getEndX()
+          + getEndXValue()
+          + getEndY()
+          + getEndYValue()
+          + getItemCount()
+          + getSeries()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartXValue()
+          + getStartY()
+          + getStartYValue()
+          + getX()
+          + getY()
+          + getYValue()
+          + removeAllSeries()
+          + removeSeries()
+          + removeSeries()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      interface org.jfree.data.xy.XYRangeInfo {
+          {abstract} + getRangeBounds()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYSeries {
+          # data : List
+          {static} ~ serialVersionUID : long
+          - allowDuplicateXValues : boolean
+          - autoSort : boolean
+          - maxX : double
+          - maxY : double
+          - maximumItemCount : int
+          - minX : double
+          - minY : double
+          + XYSeries()
+          + XYSeries()
+          + XYSeries()
+          + add()
+          + add()
+          + add()
+          + add()
+          + add()
+          + add()
+          + add()
+          + add()
+          + addOrUpdate()
+          + addOrUpdate()
+          + addOrUpdate()
+          + clear()
+          + clone()
+          + createCopy()
+          + delete()
+          + equals()
+          + getAllowDuplicateXValues()
+          + getAutoSort()
+          + getDataItem()
+          + getItemCount()
+          + getItems()
+          + getMaxX()
+          + getMaxY()
+          + getMaximumItemCount()
+          + getMinX()
+          + getMinY()
+          + getX()
+          + getY()
+          + hashCode()
+          + indexOf()
+          + remove()
+          + remove()
+          + setMaximumItemCount()
+          + toArray()
+          + update()
+          + update()
+          + updateByIndex()
+          ~ getRawDataItem()
+          - findBoundsByIteration()
+          - maxIgnoreNaN()
+          - minIgnoreNaN()
+          - updateBoundsForAddedItem()
+          - updateBoundsForRemovedItem()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.XYSeriesCollection {
+          - data : List
+          - intervalDelegate : IntervalXYDelegate
+          {static} - serialVersionUID : long
+          + XYSeriesCollection()
+          + XYSeriesCollection()
+          + addSeries()
+          + clone()
+          + equals()
+          + getDomainBounds()
+          + getDomainLowerBound()
+          + getDomainOrder()
+          + getDomainUpperBound()
+          + getEndX()
+          + getEndY()
+          + getIntervalPositionFactor()
+          + getIntervalWidth()
+          + getItemCount()
+          + getRangeBounds()
+          + getRangeLowerBound()
+          + getRangeUpperBound()
+          + getSeries()
+          + getSeries()
+          + getSeries()
+          + getSeriesCount()
+          + getSeriesIndex()
+          + getSeriesKey()
+          + getStartX()
+          + getStartY()
+          + getX()
+          + getY()
+          + hashCode()
+          + indexOf()
+          + isAutoWidth()
+          + removeAllSeries()
+          + removeSeries()
+          + removeSeries()
+          + setAutoWidth()
+          + setIntervalPositionFactor()
+          + setIntervalWidth()
+          + vetoableChange()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      interface org.jfree.data.xy.XYZDataset {
+          {abstract} + getZ()
+          {abstract} + getZValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      interface org.jfree.data.xy.XisSymbolic {
+          {abstract} + getXSymbolicValue()
+          {abstract} + getXSymbolicValue()
+          {abstract} + getXSymbolicValues()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.YInterval {
+          - y : double
+          - yHigh : double
+          - yLow : double
+          + YInterval()
+          + equals()
+          + getY()
+          + getYHigh()
+          + getYLow()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.YIntervalDataItem {
+          + YIntervalDataItem()
+          + getX()
+          + getYHighValue()
+          + getYLowValue()
+          + getYValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.YIntervalSeries {
+          + YIntervalSeries()
+          + YIntervalSeries()
+          + add()
+          + add()
+          + getDataItem()
+          + getX()
+          + getYHighValue()
+          + getYLowValue()
+          + getYValue()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.YIntervalSeriesCollection {
+          - data : List
+          + YIntervalSeriesCollection()
+          + addSeries()
+          + clone()
+          + equals()
+          + getEndX()
+          + getEndY()
+          + getEndYValue()
+          + getItemCount()
+          + getSeries()
+          + getSeriesCount()
+          + getSeriesKey()
+          + getStartX()
+          + getStartY()
+          + getStartYValue()
+          + getX()
+          + getY()
+          + getYValue()
+          + removeAllSeries()
+          + removeSeries()
+          + removeSeries()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      class org.jfree.data.xy.YWithXInterval {
+          - xHigh : double
+          - xLow : double
+          - y : double
+          + YWithXInterval()
+          + equals()
+          + getXHigh()
+          + getXLow()
+          + getY()
+      }
+    }
+  }
+  
+
+  namespace org.jfree.data {
+    namespace xy {
+      interface org.jfree.data.xy.YisSymbolic {
+          {abstract} + getYSymbolicValue()
+          {abstract} + getYSymbolicValue()
+          {abstract} + getYSymbolicValues()
+      }
+    }
+  }
+  
+
+  org.jfree.data.xy.AbstractIntervalXYDataset .up.|> IntervalXYDataset
+  org.jfree.data.xy.AbstractXYDataset .up.|> XYDataset
+  org.jfree.data.xy.AbstractXYZDataset .up.|> XYZDataset
+  org.jfree.data.xy.CategoryTableXYDataset .up.|> DomainInfo
+  org.jfree.data.xy.CategoryTableXYDataset .up.|> IntervalXYDataset
+  org.jfree.data.xy.CategoryTableXYDataset .up.|> PublicCloneable
+  org.jfree.data.xy.CategoryTableXYDataset .up.|> TableXYDataset
+  org.jfree.data.xy.DefaultHighLowDataset .up.|> OHLCDataset
+  org.jfree.data.xy.DefaultHighLowDataset .up.|> PublicCloneable
+  org.jfree.data.xy.DefaultIntervalXYDataset .up.|> PublicCloneable
+  org.jfree.data.xy.DefaultOHLCDataset .up.|> OHLCDataset
+  org.jfree.data.xy.DefaultOHLCDataset .up.|> PublicCloneable
+  org.jfree.data.xy.DefaultTableXYDataset .up.|> DomainInfo
+  org.jfree.data.xy.DefaultTableXYDataset .up.|> IntervalXYDataset
+  org.jfree.data.xy.DefaultTableXYDataset .up.|> PublicCloneable
+  org.jfree.data.xy.DefaultTableXYDataset .up.|> TableXYDataset
+  org.jfree.data.xy.DefaultWindDataset .up.|> PublicCloneable
+  org.jfree.data.xy.DefaultWindDataset .up.|> WindDataset
+  org.jfree.data.xy.DefaultXYDataset .up.|> PublicCloneable
+  org.jfree.data.xy.DefaultXYDataset .up.|> XYDataset
+  org.jfree.data.xy.DefaultXYZDataset .up.|> PublicCloneable
+  org.jfree.data.xy.DefaultXYZDataset .up.|> XYZDataset
+  org.jfree.data.xy.IntervalXYDelegate .up.|> Cloneable
+  org.jfree.data.xy.IntervalXYDelegate .up.|> DatasetChangeListener
+  org.jfree.data.xy.IntervalXYDelegate .up.|> DomainInfo
+  org.jfree.data.xy.IntervalXYDelegate .up.|> PublicCloneable
+  org.jfree.data.xy.IntervalXYDelegate .up.|> Serializable
+  org.jfree.data.xy.MatrixSeries .up.|> Serializable
+  org.jfree.data.xy.MatrixSeriesCollection .up.|> PublicCloneable
+  org.jfree.data.xy.MatrixSeriesCollection .up.|> Serializable
+  org.jfree.data.xy.MatrixSeriesCollection .up.|> XYZDataset
+  org.jfree.data.xy.OHLCDataItem .up.|> Comparable
+  org.jfree.data.xy.OHLCDataItem .up.|> Serializable
+  org.jfree.data.xy.Vector .up.|> Serializable
+  org.jfree.data.xy.VectorSeriesCollection .up.|> PublicCloneable
+  org.jfree.data.xy.VectorSeriesCollection .up.|> Serializable
+  org.jfree.data.xy.VectorSeriesCollection .up.|> VectorXYDataset
+  org.jfree.data.xy.WindDataItem .up.|> Comparable
+  org.jfree.data.xy.WindDataItem .up.|> Serializable
+  org.jfree.data.xy.XIntervalSeriesCollection .up.|> IntervalXYDataset
+  org.jfree.data.xy.XIntervalSeriesCollection .up.|> PublicCloneable
+  org.jfree.data.xy.XIntervalSeriesCollection .up.|> Serializable
+  org.jfree.data.xy.XYBarDataset .up.|> DatasetChangeListener
+  org.jfree.data.xy.XYBarDataset .up.|> IntervalXYDataset
+  org.jfree.data.xy.XYBarDataset .up.|> PublicCloneable
+  org.jfree.data.xy.XYCoordinate .up.|> Comparable
+  org.jfree.data.xy.XYCoordinate .up.|> Serializable
+  org.jfree.data.xy.XYDataItem .up.|> Cloneable
+  org.jfree.data.xy.XYDataItem .up.|> Comparable
+  org.jfree.data.xy.XYDataItem .up.|> Serializable
+  org.jfree.data.xy.XYDatasetTableModel .up.|> DatasetChangeListener
+  org.jfree.data.xy.XYDatasetTableModel .up.|> TableModel
+  org.jfree.data.xy.XYInterval .up.|> Serializable
+  org.jfree.data.xy.XYIntervalSeriesCollection .up.|> IntervalXYDataset
+  org.jfree.data.xy.XYIntervalSeriesCollection .up.|> PublicCloneable
+  org.jfree.data.xy.XYIntervalSeriesCollection .up.|> Serializable
+  org.jfree.data.xy.XYSeries .up.|> Cloneable
+  org.jfree.data.xy.XYSeries .up.|> Serializable
+  org.jfree.data.xy.XYSeriesCollection .up.|> DomainInfo
+  org.jfree.data.xy.XYSeriesCollection .up.|> IntervalXYDataset
+  org.jfree.data.xy.XYSeriesCollection .up.|> PublicCloneable
+  org.jfree.data.xy.XYSeriesCollection .up.|> RangeInfo
+  org.jfree.data.xy.XYSeriesCollection .up.|> Serializable
+  org.jfree.data.xy.XYSeriesCollection .up.|> VetoableChangeListener
+  org.jfree.data.xy.YInterval .up.|> Serializable
+  org.jfree.data.xy.YIntervalSeriesCollection .up.|> IntervalXYDataset
+  org.jfree.data.xy.YIntervalSeriesCollection .up.|> PublicCloneable
+  org.jfree.data.xy.YIntervalSeriesCollection .up.|> Serializable
+  org.jfree.data.xy.YWithXInterval .up.|> Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
