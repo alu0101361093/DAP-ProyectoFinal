@@ -29,7 +29,7 @@ public class TwitterHistogramDatasetCreator implements TwitterDatasetCreator {
 
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-        if (!name1.isEmpty() || !(name1 == "#") || !(name1 == "@")) {
+        if (!name1.isEmpty() && !name1.equals("#") && !name1.equals("@") && (name1 != null)) {
             for (Object o : (JSONArray) ( (JSONObject) data1).get("data") ) {
                 JSONObject jsonObject = (JSONObject) o;
                 LocalDateTime recordTime = formatter.parseLocalDateTime((String) jsonObject.get("start"));
@@ -38,7 +38,7 @@ public class TwitterHistogramDatasetCreator implements TwitterDatasetCreator {
                 dataset.addValue( (int) jsonObject.get("tweet_count"), name1, new Hour(recordTime.getHourOfDay(), recordDate.getDayOfMonth(), recordDate.getMonthOfYear(), recordDate.getYear()));
             }
         }
-        if (!name2.isEmpty() || !(name2 == "#") || !(name2 == "@")) {
+        if (!name2.isEmpty() && !name2.equals("#") && !name2.equals("@") && (name2 != null)) {
             for (Object o : (JSONArray) ( (JSONObject) data2).get("data") ) {
                 JSONObject jsonObject = (JSONObject) o;
                 LocalDateTime recordTime = formatter.parseLocalDateTime((String) jsonObject.get("start"));
@@ -46,7 +46,7 @@ public class TwitterHistogramDatasetCreator implements TwitterDatasetCreator {
                 String recordHourDayMonth =  recordDate.getDayOfMonth() + "-" + recordDate.getMonthOfYear() + "-" + recordTime.getHourOfDay();
                 dataset.addValue( (int) jsonObject.get("tweet_count"), name2, new Hour(recordTime.getHourOfDay(), recordDate.getDayOfMonth(), recordDate.getMonthOfYear(), recordDate.getYear()));}
         }
-        if (!name3.isEmpty() || !(name3 == "#") || !(name3 == "@")) {
+        if (!name3.isEmpty() && !name3.equals("#") && !name3.equals("@") && (name3 != null)) {
             for (Object o : (JSONArray) ( (JSONObject) data3).get("data") ) {
                 JSONObject jsonObject = (JSONObject) o;
                 LocalDateTime recordTime = formatter.parseLocalDateTime((String) jsonObject.get("start"));
@@ -54,7 +54,7 @@ public class TwitterHistogramDatasetCreator implements TwitterDatasetCreator {
                 String recordHourDayMonth =  recordDate.getDayOfMonth() + "-" + recordDate.getMonthOfYear() + "-" + recordTime.getHourOfDay();
                 dataset.addValue( (int) jsonObject.get("tweet_count"), name3, new Hour(recordTime.getHourOfDay(), recordDate.getDayOfMonth(), recordDate.getMonthOfYear(), recordDate.getYear()));}
         }
-        if (!name4.isEmpty() || !(name4 == "#") || !(name4 == "@")) {
+        if (!name4.isEmpty() && !name4.equals("#") && !name4.equals("@") && (name4 != null)) {
             for (Object o : (JSONArray) ( (JSONObject) data4).get("data") ) {
                 JSONObject jsonObject = (JSONObject) o;
                 LocalDateTime recordTime = formatter.parseLocalDateTime((String) jsonObject.get("start"));

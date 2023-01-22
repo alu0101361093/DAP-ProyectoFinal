@@ -14,7 +14,7 @@ public class PieChartDatasetCreator implements TwitterDatasetCreator {
 
         DefaultPieDataset dataset = new DefaultPieDataset();
 
-        if (!name1.isEmpty() || !(name1 == "#") || !(name1 == "@")) {
+        if (!name1.isEmpty() && !name1.equals("#") && !name1.equals("@") && (name1 != null)) {
             int count1 = 0;
             JSONObject jsonData1 = (JSONObject) data1;
             JSONArray array1 = (JSONArray) (jsonData1.get("data"));
@@ -23,7 +23,7 @@ public class PieChartDatasetCreator implements TwitterDatasetCreator {
             }
             dataset.setValue(name1, count1);
         }
-        if (!name2.isEmpty() || !(name2 == "#") || !(name2 == "@")) {
+        if (!name2.isEmpty() && !name2.equals("#") && !name2.equals("@") && (name2 != null)) {
             int count2 = 0;
             JSONObject jsonData2 = (JSONObject) data2;
             JSONArray array2 = (JSONArray) (jsonData2.get("data"));
@@ -31,7 +31,7 @@ public class PieChartDatasetCreator implements TwitterDatasetCreator {
                 count2 += (int) ((JSONObject) o).get("tweet_count");
             dataset.setValue(name2, count2);
         }
-        if (!name3.isEmpty() || !(name3 == "#") || !(name3 == "@")) {
+        if (!name3.isEmpty() && !name3.equals("#") && !name3.equals("@") && (name3 != null)) {
             int count3 = 0;
             JSONObject jsonData3 = (JSONObject) data3;
             JSONArray array3 = (JSONArray) (jsonData3.get("data"));
@@ -39,7 +39,7 @@ public class PieChartDatasetCreator implements TwitterDatasetCreator {
                 count3 += (int) ((JSONObject) o).get("tweet_count");
             dataset.setValue(name3, count3);
         }
-        if (!name4.isEmpty() || !(name4 == "#") || !(name4 == "@")) {
+        if (!name4.isEmpty() && !name4.equals("#") && !name4.equals("@") && (name4 != null)) {
             int count4 = 0;
             JSONObject jsonData4 = (JSONObject) data4;
             JSONArray array4 = (JSONArray) (jsonData4.get("data"));

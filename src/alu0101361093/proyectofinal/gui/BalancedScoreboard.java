@@ -95,7 +95,7 @@ public class BalancedScoreboard extends JFrame {
             } else if (button1State == 1) {
                 button1State++;
                 button1.setText("\uD83D\uDD0E");
-                searchOperator1 = "";
+                searchOperator1 = null;
             } else if (button1State == 2) {
                 button1State = 0;
                 button1.setText("@");
@@ -128,7 +128,7 @@ public class BalancedScoreboard extends JFrame {
             else if (button3State == 1) {
                 button3State++;
                 button3.setText("\uD83D\uDD0E");
-                searchOperator3 = "";
+                searchOperator3 = null;
             }
             else if (button3State == 2) {
                 button3State = 0;
@@ -145,7 +145,7 @@ public class BalancedScoreboard extends JFrame {
             else if (button4State == 1) {
                 button4State++;
                 button4.setText("\uD83D\uDD0E");
-                searchOperator4 = "";
+                searchOperator4 = null;
             }
             else if (button4State == 2) {
                 button4State = 0;
